@@ -54,3 +54,5 @@ write("audio.wav", 22050, audio)
 
 imshow(spec, origin="lower")
 plt.show()
+
+playsound.playsound("audio.wav")
