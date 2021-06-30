@@ -6,6 +6,8 @@
 # Paraohrase & Natural inference, dialogues agents, semantic parsing,
 # summarization, question answering, sentiment analysis.
 
+# https://ngc.nvidia.com/catalog/collections/nvidia:jarvis
+
 import torch
 import nemo.collections.nlp as nemo_nlp
 from nemo.utils.exp_manager import exp_manager
