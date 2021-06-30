@@ -251,6 +251,7 @@ if len(input_devices):
             empty_counter -= 1
             if empty_counter == 0:
                 print('.', end='\n')
+                # NLP here
                 stt += '.\n'
                 crnt_sentence = ""
         return (in_data, pyaudio.paContinue)
