@@ -10,14 +10,19 @@ print(spacy_model.pipe_names)
 
 
 result = spacy_model(text)
-print(result)
-
 # Sentence Segmentation
+print(result.text)
+
 # Word Tokenization
+for token in result:
+    print(token.text)
 # Key Phrase Extraction
 # POS Part of Speech Tagging
+    print(token.tag_)
 # NER Named Entity Recognition
+    print(token.ent_iob_, token.ent_type_)
 # Syntactic Parsing
+    print(token.dep_)
 # Entity Disambiguation
 # Coreference Resolution
 # Relation/Temporal/Event Extraction
