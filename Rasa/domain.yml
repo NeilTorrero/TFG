@@ -28,6 +28,6 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
 actions:
-- question_response
+- action_question_response
 - utter_greet
 - utter_happy

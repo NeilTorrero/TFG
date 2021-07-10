@@ -36,11 +36,11 @@ stories:
   - intent: inform
     entities:
     - question: time
-  - action: question_response
+  - action: action_question_response
 
 - story: asking_date
   steps:
   - intent: inform
     entities:
     - question: date
-  - action: question_response
+  - action: action_question_response
