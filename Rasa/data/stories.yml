@@ -28,3 +28,19 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: asking_time
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+    entities:
+    - question: time
+  - action: question_response
+
+- story: asking_date
+  steps:
+  - intent: inform
+    entities:
+    - question: date
+  - action: question_response

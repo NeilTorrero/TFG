@@ -203,3 +203,5 @@ kaldi/
 cmudict-0.7b
 
 *.wav
+*.gz
+Rasa/models
