@@ -185,6 +185,7 @@ pred_token_ids = list(map(tokenizer.convert_tokens_to_ids, pred_tokens))
 pred_token_ids = map(lambda tids: tids + [0] * (data.max_seq_len - len(tids)), pred_token_ids)
 pred_token_ids = np.array(list(pred_token_ids))
 
-prediction = model.predict(pred_token_ids).argmax(axis=-1)
+prediction = model.predict(pred_token_ids)
+print(prediction)  # confidence by class
 
-print("text:", sentence, "\nintent:", classes[prediction])
+print("text:", sentence, "\nintent:", classes[prediction.argmax(axis=-1)])
