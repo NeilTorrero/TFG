@@ -163,7 +163,7 @@ print("train acc", train_acc)
 print("test acc", test_acc)
 print(history.history)
 
-model.save_weights('/checkpoints/final')
+model.save_weights('/checkpoints/final.ckpt')
 
 y_pred = model.predict(data.x_test).argmax(axis=-1)
 print(classification_report(data.y_test, y_pred, target_names=classes))
