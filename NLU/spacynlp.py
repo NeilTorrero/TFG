@@ -23,6 +23,7 @@ for token in result:
     print(token.ent_iob_, token.ent_type_)
 # Syntactic Parsing
     print(token.dep_)
+    print(token.vector_norm)
 # Entity Disambiguation
 # Coreference Resolution
 # Relation/Temporal/Event Extraction

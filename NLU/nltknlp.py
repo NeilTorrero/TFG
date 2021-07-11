@@ -1,5 +1,6 @@
 import nltk
 
+# https://realpython.com/nltk-nlp-python/#getting-started-with-pythons-nltk
 # nltk.download()
 
 # Sentence Segmentation
