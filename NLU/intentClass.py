@@ -145,7 +145,7 @@ history = model.fit(
     batch_size=16,
     shuffle=True,
     epochs=10,
-    callbacks=[tensor_earlystop, cp_callback]
+    callbacks=[tensor_earlystop]
 )
 
 ax = plt.figure().gca()
@@ -177,7 +177,7 @@ print("train acc", train_acc)
 print("test acc", test_acc)
 print(history.history)
 
-model.save_weights('checkpoints/final_checkpoint')
+model.save_weights('checkpoints/training/final_checkpoint')
 model.save('checkpoints/saved_model_' + datetime.datetime.now().strftime("%Y%m%d-%H%M%s"))
 
 y_pred = model.predict(data.x_test).argmax(axis=-1)
