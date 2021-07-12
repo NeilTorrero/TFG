@@ -204,5 +204,5 @@ cmudict-0.7b
 
 *.wav
 NLU/model/
-
 NLU/checkpoints/training/
+NLU/checkpoints/
