@@ -4,6 +4,7 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - inform
+- thank
 - greet
 - mood_great
 - goodbye
@@ -13,6 +14,8 @@ intents:
 - bot_challenge
 entities:
 - question
+- location
+- name
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -25,6 +28,11 @@ responses:
   - text: Great, carry on!
   utter_goodbye:
   - text: Bye
+  - text: Goodbye!
+  - text: Bye!
+  - text: Ciao!
+  - text: Bye, was nice talking to you!
+  - text: Bye bye!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
 actions:
