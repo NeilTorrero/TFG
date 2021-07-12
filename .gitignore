@@ -205,3 +205,6 @@ cmudict-0.7b
 *.wav
 *.gz
 Rasa/models
+NLU/model/
+
+NLU/checkpoints/training/
