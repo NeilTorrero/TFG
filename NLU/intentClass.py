@@ -2,6 +2,20 @@
 # gdown --id 1OlcvGWReJMuyYQuOZm149vHWwPtlboR6 --output train.csv
 # gdown --id 1Oi5cRlTybuIF2Fl5Bfsr-KkqrXrdt77w --output valid.csv
 # gdown --id 1ep9H6-HvhB4utJRLVcLzieWNUSG3P_uF --output test.csv
+# Other links
+# https://medium.com/@nutanbhogendrasharma/step-by-step-intent-recognition-with-bert-1473202b8597
+# https://analyticsindiamag.com/how-to-implement-intent-recognition-with-bert/
+# https://analyticsindiamag.com/multi-class-text-classification-in-pytorch-using-torchtext/
+# https://github.com/practical-nlp/practical-nlp/blob/master/Ch6/02_BERT_ATIS.ipynb
+# https://stackoverflow.com/questions/44213549/python-nlp-intent-identification
+#   http://docs.deeppavlov.ai/en/master/features/skills/odqa.html
+#   https://github.com/explosion/spaCy/blob/v2.3.x/examples/training/train_intent_parser.py
+# https://stackoverflow.com/questions/56064650/multi-intent-natural-language-processing-and-classification
+# https://towardsdatascience.com/multi-label-intent-classification-1cdd4859b93
+# https://medium.com/bhavaniravi/intent-classification-demystifying-rasanlu-part-4-685fc02f5c1d
+
+
+
 import os
 import datetime
 
