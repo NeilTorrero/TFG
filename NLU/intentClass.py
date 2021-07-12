@@ -130,7 +130,7 @@ history = model.fit(
     validation_split=0.1,
     batch_size=16,
     shuffle=True,
-    epochs=100,
+    epochs=10,
     callbacks=[tensor_earlystop, cp_callback]
 )
 
@@ -164,6 +164,7 @@ print("test acc", test_acc)
 print(history.history)
 
 model.save_weights('checkpoints/final_checkpoint')
+model.save('checkpoints/saved_model_' + datetime.datetime.now().strftime("%Y%m%d-%H%M%s"))
 
 y_pred = model.predict(data.x_test).argmax(axis=-1)
 print(classification_report(data.y_test, y_pred, target_names=classes))
