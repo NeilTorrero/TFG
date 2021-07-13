@@ -1,4 +1,16 @@
 from rasa_api import check_Run_Server, check_Kill_Server, predictText, getResponses
+import spacy
+
+def spacyPipeline(text):
+    spacy_model = spacy.load("en_core_web_lg")
+    result = spacy_model(text)
+    # NER
+    for token in result:
+        print(token.ent_iob_, token.ent_type_)
+
+    return result
+
+
 def chat():
     """
     Preprocess the input
