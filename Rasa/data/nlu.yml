@@ -125,6 +125,7 @@ nlu:
     - yoo
     - ssup?
     - helleo
+    - Hello my name is [Jason](name)
 - intent: goodbye
   examples: |
     - cu
