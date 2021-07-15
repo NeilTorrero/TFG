@@ -208,3 +208,5 @@ Rasa/models
 NLU/model/
 
 NLU/checkpoints/training/
+*.db-shm
+*.db-wal
