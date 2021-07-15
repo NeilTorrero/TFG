@@ -1,14 +1,11 @@
 version: "2.0"
-
 stories:
-
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-
 - story: sad path 1
   steps:
   - intent: greet
@@ -18,7 +15,6 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
-
 - story: sad path 2
   steps:
   - intent: greet
@@ -28,7 +24,6 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
 - story: asking_time
   steps:
   - intent: greet
@@ -37,10 +32,21 @@ stories:
     entities:
     - question: time
   - action: action_question_response
-
 - story: asking_date
   steps:
   - intent: inform
     entities:
     - question: date
   - action: action_question_response
+- story: Story from Conversation ID 5c064f5a6e0b4523b3aafebe6b96c86b
+  steps:
+  - intent: user_name
+  - action: utter_greet_name
+  - intent: reminder
+    entities:
+    - task: the mail
+  - action: utter_reminder
+  - intent: thank
+  - action: utter_thanks_response
+  - intent: goodbye
+  - action: utter_goodbye

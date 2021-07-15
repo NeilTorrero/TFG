@@ -173,6 +173,7 @@ nlu:
     - Exit
     - Close this talk
     - byr
+    - Talk with you later
 - intent: affirm
   examples: |
     - yes
@@ -566,6 +567,7 @@ nlu:
     - Please, remind me to [call Vova](task)
     - please remind me to [take the car to the mechanic](task)
     - I must not forget to [call Juste](task)
+    - Could you remind me that I have to [pick up the mail](task).
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -607,3 +609,12 @@ nlu:
     - yes thanks
     - thanks for your information
     - thanks f
+- intent: food
+  examples: |
+    - I would like to [eat](action) a [pizza](food)
+    - I am hungry
+    - Where can I [buy](action) [bread](food)
+- intent: user_name
+  examples: |
+    - I'm Richard
+    - Its [neil](name)

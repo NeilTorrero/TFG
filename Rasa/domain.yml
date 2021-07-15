@@ -27,6 +27,10 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
+- food:
+    use_entities: true
+- user_name:
+    use_entities: true
 entities:
 - question
 - location
@@ -34,9 +38,9 @@ entities:
 - music_mode
 - playlist_name
 - task
-slots:
-  slot_name:
-    type: text
+- food
+- action
+slots: {}
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -65,9 +69,16 @@ responses:
   - text: Looking for the information.
   utter_reminder:
   - text: I will remind you of that.
+  utter_greet_name:
+  - text: Nice to meet you.
+  - text: ''
+  utter_thanks_response:
+  - text: You're welcome
 actions:
 - action_question_response
 - utter_greet
 - utter_happy
+- utter_greet_name
+- utter_thanks_response
 forms: {}
 e2e_actions: []
