@@ -1,29 +1,48 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform
-- thank
-- greet
-- mood_great
-- goodbye
-- affirm
-- deny
-- mood_unhappy
-- bot_challenge
+- inform:
+    use_entities: true
+- music:
+    use_entities: true
+- reminder:
+    use_entities: true
+- thank:
+    use_entities: true
+- greet:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
 entities:
 - question
 - location
 - name
+- music_mode
+- playlist_name
+- task
+slots: {}
 responses:
   utter_greet:
   - text: Hey! How are you?
   - text: Hello!
   - text: What do you want?
   utter_cheer_up:
-  - text: 'Here is something to cheer you up:'
-    image: https://i.imgur.com/nGF1K8f.jpg
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
   utter_did_that_help:
   - text: Did that help you?
   - text: Was that what you where looking for?
@@ -38,7 +57,15 @@ responses:
   - text: Bye bye!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_music:
+  - text: Playing music.
+  utter_inform:
+  - text: Looking for the information.
+  utter_reminder:
+  - text: I will remind you of that.
 actions:
 - action_question_response
 - utter_greet
 - utter_happy
+forms: {}
+e2e_actions: []

@@ -481,8 +481,6 @@ nlu:
     - no, thankyou
     - no. u r idiot
     - non
-    - noooooooooo
-    - noooooooooooooooooooooooooooooooooooooooo
     - nop
     - nope
     - nope!
@@ -519,6 +517,7 @@ nlu:
     - so good
     - so perfect
     - I'm fine, and you?
+    - I am happy
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -547,6 +546,26 @@ nlu:
     - Hey, what's the [date](question)?
     - Tell me the [time](question) in [Berlin](location)
     - What's the [weather](question) like?
+    - Can you tell me the [time](question)?
+- intent: music
+  examples: |
+    - play some music for me
+    - reproduce a song
+    - [shuffle](music_mode) some music
+    - play my playlist [favorites](playlist_name)
+    - reproduce [Best hits](playlist_name)
+    - [shuffle](music_mode) [mega mix](playlist_name)
+    - reproduce in [shuffle](music_mode) my playlist
+- intent: reminder
+  examples: |
+    - remind me to [turn off the oven](task) in an hour
+    - tomorrow i have to [go to the dentist](task)
+    - in ten minutes tell me to [check the mail](task)
+    - remind me to [call John](task)
+    - later I have to [call Alan](task)
+    - Please, remind me to [call Vova](task)
+    - please remind me to [take the car to the mechanic](task)
+    - I must not forget to [call Juste](task)
 - intent: thank
   examples: |
     - Cool. Thanks
