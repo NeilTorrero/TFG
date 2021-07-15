@@ -34,7 +34,9 @@ entities:
 - music_mode
 - playlist_name
 - task
-slots: {}
+slots:
+  slot_name:
+    type: text
 responses:
   utter_greet:
   - text: Hey! How are you?
