@@ -2,11 +2,6 @@ from rasa_api import check_Run_Server, check_Kill_Server, predictText, getRespon
 import spacy
 
 
-def searchInform(entities):
-    for entity in entities:
-        print(entity)
-
-
 def spacyPipeline(text):
     spacy_model = spacy.load("en_core_web_lg")
     result = spacy_model(text)
@@ -35,8 +30,8 @@ def chat():
     text = input("Your input: ")
 
     prediction = predictText(text)
-    result = spacyPipeline(text)
-    # also add duckling analisys either on the rasa model or here
+    # result = spacyPipeline(text)
+    # also add duckling analysis either on the rasa model or here
 
     intent = prediction['intent']['name']
     print(intent)
