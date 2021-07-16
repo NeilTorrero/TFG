@@ -774,3 +774,18 @@ nlu:
     - what's your name
     - what is you name
     - what is you name and where are you from
+- intent: chitchat/handleinsult
+  examples: |
+    - you're a loser
+    - you are a stupid bot
+    - i hate you
+    - Stupid
+    - fuck you
+    - dick
+    - you're a dick
+    - you don't understand anything I say
+    - you're not funny
+    - so dumb
+    - you are a moron
+    - you are an idiot
+    - so fucking dumb

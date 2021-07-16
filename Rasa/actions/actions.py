@@ -13,10 +13,24 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 
-class ActionQuestionResponse(Action):
+class ActionAskTime(Action):
 
     def name(self) -> Text:
-        return "action_question_response"
+        return "action_ask_time"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        #print(dispatcher, tracker, domain, self)
+        dispatcher.utter_message(text="Hello World!")
+
+        return []
+
+class ActionAskWeather(Action):
+
+    def name(self) -> Text:
+        return "action_ask_weather"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

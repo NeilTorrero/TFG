@@ -163,6 +163,7 @@ responses:
   - text: What do you call a pirate droid? - Arrrr-2-D2
   - text: Why did the robot cross the road? - Because he was programmed to.
 actions:
-- action_info_response
+- action_ask_weather
+- action_ask_time
 forms: {}
 e2e_actions: []
