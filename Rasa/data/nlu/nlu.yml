@@ -602,5 +602,5 @@ nlu:
     - Where can I [buy](action) [bread](food)
 - intent: user_name
   examples: |
-    - I'm Richard
+    - I'm [Richard](name)
     - Its [neil](name)

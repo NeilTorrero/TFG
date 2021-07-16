@@ -28,7 +28,7 @@ intents:
 - user_name:
     use_entities: true
 - chitchat:
-    use_enitites: true
+    use_entities: true
 entities:
 - location
 - name
@@ -37,9 +37,13 @@ entities:
 - task
 - food
 - action
+- language
 slots:
   name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -87,7 +91,7 @@ responses:
   - text: A little bit cold, otherwise fine.
   utter_chitchat/ask_howold:
   - text: Old enough to be a bot!
-  - text: "42"
+  - text: '42'
   - text: Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter.
   - text: My first git commit was many moons ago.
   - text: Why do you ask? Are my wrinkles showing?
