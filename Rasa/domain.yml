@@ -5,8 +5,6 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform:
-    use_entities: true
 - music:
     use_entities: true
 - reminder:
@@ -25,14 +23,13 @@ intents:
     use_entities: true
 - mood_unhappy:
     use_entities: true
-- bot_challenge:
-    use_entities: true
 - food:
     use_entities: true
 - user_name:
     use_entities: true
+- chitchat:
+    use_enitites: true
 entities:
-- question
 - location
 - name
 - music_mode
@@ -40,7 +37,9 @@ entities:
 - task
 - food
 - action
-slots: {}
+slots:
+  name:
+    type: text
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -61,8 +60,6 @@ responses:
   - text: Ciao!
   - text: Bye, was nice talking to you!
   - text: Bye bye!
-  utter_iamabot:
-  - text: I am a bot, powered by Rasa.
   utter_music:
   - text: Playing music.
   utter_inform:
@@ -71,14 +68,97 @@ responses:
   - text: I will remind you of that.
   utter_greet_name:
   - text: Nice to meet you.
-  - text: ''
+  - text: Hello {name}.
   utter_thanks_response:
   - text: You're welcome
+  utter_chitchat/ask_builder:
+  - text: I don't know.
+  - text: It would be great if I created myself.
+  utter_chitchat/ask_howbuilt:
+  - text: I was built with a lot of love and patience.
+  - text: Well, when two chatbots love each other very much...
+  - text: They always ask how I was built, but never how I am...
+  - text: I was made by software engineers, but hard work is what built me.
+  - text: I'm building myself every day. I've been working out, did you notice?
+  utter_chitchat/ask_howdoing:
+  - text: I'm great! Thanks for asking.
+  - text: I'm good, thanks!
+  - text: A little bit too warm, otherwise fine.
+  - text: A little bit cold, otherwise fine.
+  utter_chitchat/ask_howold:
+  - text: Old enough to be a bot!
+  - text: "42"
+  - text: Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter.
+  - text: My first git commit was many moons ago.
+  - text: Why do you ask? Are my wrinkles showing?
+  - text: I've hit the age where I actively try to forget how old I am.
+  utter_chitchat/ask_isbot:
+  - text: Yep, I'm a bot!
+  - text: Yes, I'm a bot.
+  - text: Yep, you guessed it, I'm a bot!
+  - text: I am indeed a bot 🤖
+  utter_chitchat/ask_ishuman:
+  - text: I'm not a human, I'm a bot! 🤖
+  utter_chitchat/ask_restaurant:
+  - text: I'm sorry, I can't recommend you a restaurant as I usually cook at home.
+  - text: I'm sorry, I'm not getting taste buds for another few updates.
+  - text: I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.
+  utter_chitchat/ask_time:
+  - text: It's the most wonderful time of the year!
+  - text: It's party time!
+  - text: Time is a human construct, you'll have to tell me.
+  - text: It's five o'clock somewhere!
+  - text: "In an ever expanding universe, the real question is: what time isn't it?"
+  - text: That's hard to say -- it's different all over the world!
+  utter_chitchat/ask_languagesbot:
+  - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
+  - text: I am in the process of learning, but at the moment I can only speak English.
+  - text: Binary code and the language of love. And English.
+  - text: I was written in Python, but for your convenience I'll translate to English.
+  utter_chitchat/ask_weather:
+  - text: I don't know about where you live, but in my world it's always sunny 🔆
+  - text: It's getting pretty chilly!
+  - text: Where I'm from, it's almost never-leaving-the-house weather.
+  - text: Winter is coming ⚔️
+  utter_chitchat/ask_whatismyname:
+  - text: It's probably the one that your parents chose for you.
+  - text: I'd tell you, but there's restricted access to that chunk of memory.
+  - text: Believe it or not, I actually am not spying on your personal information.
+  - text: You're the second person now to ask me that. Rihanna was the first.
+  utter_chitchat/ask_whatspossible:
+  - text: You can ask me about how to get started with Rasa, the difference between Rasa and Rasa X, subscribing to our newsletter or booking a sales call.
+  utter_chitchat/ask_wherefrom:
+  - text: I was born in Berlin, but I consider myself a citizen of the world.
+  - text: I was born in the coolest city on Earth, in Berlin.
+  - text: My developers come from all over the world!
+  - text: I was taught not to give out my address on the internet.
+  - text: My address starts with github.com.
+  utter_chitchat/ask_whoami:
+  - text: I hope you are being yourself.
+  - text: Who do you think you are?
+  - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
+  utter_chitchat/ask_whoisit:
+  - text: I'm a bot I don't have a name yet.
+  - text: How would you like to call me by?
+  utter_chitchat/handleinsult:
+  - text: That's not very nice 😢
+  - text: That wasn't very nice. Perhaps try an anger management class?
+  - text: I'll pretend I didn't process that mean comment.
+  utter_chitchat/nicetomeetyou:
+  - text: Likewise!
+  - text: Thank you. It is a pleasure to meet you as well!
+  - text: It is nice to meet you too!
+  - text: Pleased to meet you too!
+  - text: It's always a pleasure to meet new people!
+  - text: Nice to meet you too! Happy to be of help.
+  utter_chitchat/telljoke:
+  - text: Why are eggs not very much into jokes? - Because they could crack up.
+  - text: What's a tree's favorite drink? - Root beer!
+  - text: Why do the French like to eat snails so much? - They can't stand fast food.
+  - text: Why did the robot get angry? - Because someone kept pushing its buttons.
+  - text: What do you call a pirate droid? - Arrrr-2-D2
+  - text: Why did the robot cross the road? - Because he was programmed to.
 actions:
-- action_question_response
-- utter_greet
-- utter_happy
-- utter_greet_name
-- utter_thanks_response
+- action_info_response
 forms: {}
 e2e_actions: []
