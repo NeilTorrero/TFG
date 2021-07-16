@@ -207,6 +207,9 @@ cmudict-0.7b
 Rasa/models
 NLU/model/
 
-NLU/checkpoints/training/
+NLU/checkpoints/
 *.db-shm
 *.db-wal
+/venv2/
+
+Rasa/results/
