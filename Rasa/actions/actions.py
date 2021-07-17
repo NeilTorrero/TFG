@@ -16,6 +16,7 @@ import datetime
 import requests
 import pytz
 
+
 def searchInform(entities):
     for entity in entities:
         print(entity)
@@ -26,7 +27,7 @@ def getTime(city):
     # country_codes = {country: code for code, country in pytz.country_names.items()}
     # print(pytz.country_timezones[country_codes['Germany']])
     # tz = pytz.timezone('Europe/London')
-    now = datetime.datetime.now()#tz)
+    now = datetime.datetime.now()  # tz)
     date = now.strftime("%A %dth of %B")
     time = now.strftime("%H:%M")
     return date, time
@@ -62,13 +63,13 @@ class ActionAskTime(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         print(dispatcher, tracker, domain)
         date, time = getTime()
         print(date, time)
         dispatcher.utter_message(text="Date: " + date + "and Time: " + time)
 
         return []
+
 
 class ActionAskWeather(Action):
 
@@ -82,7 +83,9 @@ class ActionAskWeather(Action):
         print(dispatcher, tracker, domain)
         weather = getWeather()
         if weather:
-            dispatcher.utter_message(text="It's " + weather[3] + ", with a temperature of " + weather[0] + " and with a humidity of a " + weather[2] + "%.")
+            dispatcher.utter_message(
+                text="It's " + weather[3] + ", with a temperature of " + weather[0] + " and with a humidity of a " +
+                     weather[2] + "%.")
         else:
             dispatcher.utter_message(text="Sorry, couldn't find the weather for this city.")
 

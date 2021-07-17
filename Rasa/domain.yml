@@ -27,6 +27,10 @@ intents:
     use_entities: true
 - user_name:
     use_entities: true
+- ask_time:
+    use_entities: true
+- ask_weather:
+    use_entities: true
 - chitchat:
     use_entities: true
 entities:
@@ -107,23 +111,11 @@ responses:
   - text: I'm sorry, I can't recommend you a restaurant as I usually cook at home.
   - text: I'm sorry, I'm not getting taste buds for another few updates.
   - text: I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.
-  utter_chitchat/ask_time:
-  - text: It's the most wonderful time of the year!
-  - text: It's party time!
-  - text: Time is a human construct, you'll have to tell me.
-  - text: It's five o'clock somewhere!
-  - text: "In an ever expanding universe, the real question is: what time isn't it?"
-  - text: That's hard to say -- it's different all over the world!
   utter_chitchat/ask_languagesbot:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
   - text: Binary code and the language of love. And English.
   - text: I was written in Python, but for your convenience I'll translate to English.
-  utter_chitchat/ask_weather:
-  - text: I don't know about where you live, but in my world it's always sunny 🔆
-  - text: It's getting pretty chilly!
-  - text: Where I'm from, it's almost never-leaving-the-house weather.
-  - text: Winter is coming ⚔️
   utter_chitchat/ask_whatismyname:
   - text: It's probably the one that your parents chose for you.
   - text: I'd tell you, but there's restricted access to that chunk of memory.
