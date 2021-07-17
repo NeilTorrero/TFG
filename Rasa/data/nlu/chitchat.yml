@@ -150,6 +150,7 @@ nlu:
     - yow are you
     - Hey how's it going
     - are you cool
+    - Are you Happy?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -584,6 +585,7 @@ nlu:
     - what's your name
     - what is you name
     - what is you name and where are you from
+    - What's your name?
 - intent: chitchat/handleinsult
   examples: |
     - you're a loser
@@ -599,3 +601,14 @@ nlu:
     - you are a moron
     - you are an idiot
     - so fucking dumb
+- intent: chitchat/otherbots
+  examples: |
+    - what's your opinion of siri?
+    - what do you think of alexa?
+    - do you know cortana?
+    - do you know who is siri?
+    - have you meet alexa
+    - do you like the google assitant?
+- intent: chitchat/great_mood+whoisit
+  examples: |
+    - I'm Very well. Tanks. Whats your name

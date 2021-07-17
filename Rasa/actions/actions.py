@@ -84,9 +84,23 @@ class ActionAskWeather(Action):
         weather = getWeather()
         if weather:
             dispatcher.utter_message(
-                text="It's " + weather[3] + ", with a temperature of " + weather[0] + " and with a humidity of a " +
-                     weather[2] + "%.")
+                text="It's " + weather[3] + ", with a temperature of " + weather[0] + " and with a humidity of a " + weather[2] + "%.")
         else:
             dispatcher.utter_message(text="Sorry, couldn't find the weather for this city.")
+
+        return []
+
+
+class ActionFood(Action):
+
+    def name(self) -> Text:
+        return "action_food"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print(dispatcher, tracker, domain)
+        dispatcher.utter_message(text="I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.")
+        dispatcher.utter_message(text="I'm sorry, I can't recommend you a restaurant as I usually cook at home.")
 
         return []

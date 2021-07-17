@@ -107,10 +107,6 @@ responses:
   - text: I am indeed a bot 🤖
   utter_chitchat/ask_ishuman:
   - text: I'm not a human, I'm a bot! 🤖
-  utter_chitchat/ask_restaurant:
-  - text: I'm sorry, I can't recommend you a restaurant as I usually cook at home.
-  - text: I'm sorry, I'm not getting taste buds for another few updates.
-  - text: I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.
   utter_chitchat/ask_languagesbot:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
@@ -154,8 +150,13 @@ responses:
   - text: Why did the robot get angry? - Because someone kept pushing its buttons.
   - text: What do you call a pirate droid? - Arrrr-2-D2
   - text: Why did the robot cross the road? - Because he was programmed to.
+  utter_chitchat/otherbots:
+  - text: I think they're great!
+  - text: They are awesome!
+  - text: I would like to know more about all of them.
 actions:
 - action_ask_weather
 - action_ask_time
+- action_food
 forms: {}
 e2e_actions: []
