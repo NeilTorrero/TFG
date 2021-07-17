@@ -600,6 +600,61 @@ nlu:
     - I would like to [eat](action) a [pizza](food)
     - I am hungry
     - Where can I [buy](action) [bread](food)
+    - Any good restaurants nearby?
+    - Can you find a restaurant for me?
+    - Can you find me a burger joint?
+    - Can you find me a restaurant?
+    - Can you recommend a restaurant open right now
+    - Could you find a restaurant for me?
+    - Could you find me a restaurant to eat at?
+    - Could you find me a restaurant?
+    - Do you find me a restaurant?
+    - Do you seek me a restaurant?
+    - Find a restaurant for me to eat at.
+    - Find a restaurant for me where I can eat.
+    - Find a restaurant for me?
+    - Find me a fast food restaurant.
+    - Find me a place to eat
+    - Find me a restaurant where I can eat.
+    - Have you seen me a restaurant?
+    - Help me find a restaurant
+    - Help me with finding this restaurant
+    - Hey help me find a restaurant
+    - Hey, can you help me with locating this restaurant.
+    - Hi, can you give me the nearest fast food place?
+    - How can you help me find a restaurant.
+    - I am hungry, find me some place to go
+    - I need a new restaurant
+    - I need a restaurant.
+    - I need to find this restaurant
+    - I'm gonna need help finding a restaurant
+    - I'm looking for a Spanish restaurant.
+    - IS there any near by restaurant?
+    - Is there any restaurant?
+    - Pick a restaurant for me, please
+    - Recommend me a restaurant around here.
+    - Show me how to find a restaurant
+    - Show me the closest open restaurant
+    - Suggest me a good restaurant around
+    - What restaurant would you recommend for dinner?
+    - What's a good place to eat nearby
+    - What's the closest restaurant open near me
+    - Where is the restaurant
+    - Where should I eat?
+    - Where should I go for dinner?
+    - Will you find me a restaurant?
+    - Would you find a restaurant for me?
+    - Would you find any restaurant?
+    - Would you find me a restaurant?
+    - can i be shown a gluten free restaurant
+    - can you find me a restaurant?
+    - help me find restaurant
+    - i want a french restaurant
+    - i'm looking for a Chinese restaurant
+    - restaurants
+    - will you see any restaurant for me?
+    - I want to find some restauant nearby
+    - show me restaurents
 - intent: user_name
   examples: |
     - I'm [Richard](name)

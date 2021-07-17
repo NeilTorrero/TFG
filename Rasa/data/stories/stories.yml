@@ -38,21 +38,25 @@ stories:
   steps:
   - intent: ask_weather
   - action: action_ask_weather
-- story: ask weather
+- story: ask weather with location
   steps:
   - intent: ask_weather
     entities:
     - location: Paris
   - action: action_ask_weather
-- story: Story from Conversation ID 5c064f5a6e0b4523b3aafebe6b96c86b
+- story: reminder
   steps:
-  - intent: user_name
-  - action: utter_greet_name
   - intent: reminder
     entities:
-    - task: the mail
+    - task: pick up the mail
   - action: utter_reminder
   - intent: thank
   - action: utter_thanks_response
   - intent: goodbye
   - action: utter_goodbye
+- story: name path
+  steps:
+  - intent: user_name
+    entities:
+    - name: John
+  - action: utter_greet_name
