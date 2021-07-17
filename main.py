@@ -1,3 +1,4 @@
+from backendCalls import searchInform
 from rasa_api import check_Run_Server, check_Kill_Server, predictText, getResponses
 import spacy
 
