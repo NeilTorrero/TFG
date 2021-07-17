@@ -34,7 +34,7 @@ def getWeather(city='Barcelona'):
         humidity = info['humidity']
         weather_description = json_r['weather'][0]['description']
         print(temperature, pressure, humidity, weather_description)
-        return temperature, pressure, humidity, weather_description
+        return [temperature, pressure, humidity, weather_description]
     else:
         print("City not found")
-        return -1
+        return []
