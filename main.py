@@ -1,15 +1,22 @@
-import nemo
-import nemo.collections.asr as nemo_asr
-import nemo.collections.nlp as nemo_nlp
-import nemo.collections.tts as nemo_tts
+def chat():
+    text = input("Your input: ")
+    """
+        Preprocess the input
+        - cleaning (stop words, uncase, spell check, etc)
+        - tokenize
+        - pos
+        - featurize (vector representation)
+        Intent Classification (from tokens or features)
+        Entity Extraction (from tokens or features)
+        - dependency parsing
+        - lemmatize
+        - ner
+        - nes/d and nel (synonim/disambiguation and linking)
+        Response selector
+    """
+    
 
-from omegaconf import OmegaConf
-import copy
+
 
 if __name__ == '__main__':
-    print(nemo.__version__)
-    quartznet = nemo_asr.models.EncDecCTCModel.from_pretrained('QuartzNet15x5Base-En')
-    quartznet.summarize()
-
-    cfg = copy.deepcopy(quartznet.cfg)
-    print(OmegaConf.to_yaml(cfg))
+    chat()
