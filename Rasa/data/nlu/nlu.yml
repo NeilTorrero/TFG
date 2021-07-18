@@ -503,6 +503,7 @@ nlu:
     - stop it, i do not care!!!
     - none of them
     - I don't agree
+    - i don't know
 - intent: mood_great
   examples: |
     - amazing
@@ -656,6 +657,7 @@ nlu:
     - will you see any restaurant for me?
     - I want to find some restauant nearby
     - show me restaurents
+    - Where can I buy breae
 - intent: user_name
   examples: |
     - I'm [Richard](name)

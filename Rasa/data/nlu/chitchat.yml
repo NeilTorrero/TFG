@@ -612,3 +612,6 @@ nlu:
 - intent: chitchat/great_mood+whoisit
   examples: |
     - I'm Very well. Tanks. Whats your name
+- intent: chitchat/know_what
+  examples: |
+    - Wow, i have to tell you something
