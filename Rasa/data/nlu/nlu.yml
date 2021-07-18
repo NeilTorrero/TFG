@@ -127,6 +127,7 @@ nlu:
     - helleo
     - Hello my name is [Jason](name)
     - watts up
+    - hi my name is [Ethan](name)
 - intent: goodbye
   examples: |
     - cu
@@ -658,6 +659,7 @@ nlu:
     - I want to find some restauant nearby
     - show me restaurents
     - Where can I buy breae
+    - Show me restaurants near me
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -717,6 +719,8 @@ nlu:
     - whats the time now
     - What time is it?
     - Whta time is it?
+    - hey, tell me the time
+    - can you tell the time?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -797,6 +801,8 @@ nlu:
     - whats the weather like tomorrow?
     - wheather at you location?
     - wheather be like at your place?
+    - thanks and the weather?
+    - how it's the weather like?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)

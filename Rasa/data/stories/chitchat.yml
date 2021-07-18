@@ -18,3 +18,13 @@ stories:
   - action: utter_greet
   - intent: chitchat
   - action: utter_chitchat
+- story: food
+  steps:
+  - intent: food
+  - action: action_food
+- story: Story from Conversation ID 1acf06fd74b74f9081611e20b62dfb58
+  steps:
+  - intent: ask_time
+  - action: action_ask_time
+  - intent: ask_weather
+  - action: action_ask_weather

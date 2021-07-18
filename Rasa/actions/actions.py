@@ -22,7 +22,7 @@ def searchInform(entities):
         print(entity)
 
 
-def getTime(city):
+def getTime(city='Barcelona'):
     # check for ip lookup timezone https://ipapi.com / https://apilayer.com/#products
     # country_codes = {country: code for code, country in pytz.country_names.items()}
     # print(pytz.country_timezones[country_codes['Germany']])
@@ -30,6 +30,7 @@ def getTime(city):
     now = datetime.datetime.now()  # tz)
     date = now.strftime("%A %dth of %B")
     time = now.strftime("%H:%M")
+    print(date + " - " + time)
     return date, time
 
 
@@ -63,10 +64,16 @@ class ActionAskTime(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(dispatcher, tracker, domain)
+
+        print("\nDispacher: ")
+        print(dispatcher)
+        print("\nTracker: ")
+        print(tracker)
+        print("\nDomain: ")
+        print(domain)
         date, time = getTime()
         print(date, time)
-        dispatcher.utter_message(text="Date: " + date + "and Time: " + time)
+        dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
 
         return []
 
@@ -80,11 +87,16 @@ class ActionAskWeather(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print(dispatcher, tracker, domain)
+        print("\nDispacher: ")
+        print(dispatcher)
+        print("\nTracker: ")
+        print(tracker)
+        print("\nDomain: ")
+        print(domain)
         weather = getWeather()
         if weather:
             dispatcher.utter_message(
-                text="It's " + weather[3] + ", with a temperature of " + weather[0] + " and with a humidity of a " + weather[2] + "%.")
+                text="It's " + str(weather[3]) + ", with a temperature of " + str(weather[0]) + "ºC and with a humidity of a " + str(weather[2]) + "%.")
         else:
             dispatcher.utter_message(text="Sorry, couldn't find the weather for this city.")
 
