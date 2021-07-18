@@ -800,3 +800,5 @@ nlu:
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
+    - Who is [Alan Turing](search)
+    - Can you tell me [where is the Tower Eiffiel](search)

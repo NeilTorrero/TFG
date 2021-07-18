@@ -157,6 +157,12 @@ responses:
   - text: I think they're great!
   - text: They are awesome!
   - text: I would like to know more about all of them.
+  utter_chitchat/know_what:
+  - text: Tell me.
+  - text: What is it?
+  - text: I'm eager to know.
+  utter_chitchat/great_mood+whoisit:
+  - text: I glad you are doing greet, I'm a bot.
 actions:
 - action_ask_weather
 - action_ask_time
