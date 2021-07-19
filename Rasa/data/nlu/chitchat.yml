@@ -601,6 +601,8 @@ nlu:
     - you are a moron
     - you are an idiot
     - so fucking dumb
+    - bitch
+    - whore
 - intent: chitchat/otherbots
   examples: |
     - what's your opinion of siri?
@@ -620,3 +622,7 @@ nlu:
     - Whant to know something?
     - I need to tell you something.
     - Know what?
+- intent: chitchat/get_help
+  examples: |
+    - should I kill myself?
+    - I am quite depressed

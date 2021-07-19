@@ -60,3 +60,7 @@ stories:
     entities:
     - name: John
   - action: utter_greet_name
+- story: music
+  steps:
+  - intent: music
+  - action: action_music

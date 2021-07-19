@@ -22,7 +22,7 @@ stories:
   steps:
   - intent: food
   - action: action_food
-- story: Story from Conversation ID 1acf06fd74b74f9081611e20b62dfb58
+- story: time+weather
   steps:
   - intent: ask_time
   - action: action_ask_time
