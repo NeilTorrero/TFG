@@ -121,8 +121,8 @@ responses:
   utter_chitchat/ask_whatspossible:
   - text: You can ask me about how anything you want.
   utter_chitchat/ask_wherefrom:
-  - text: I was born in Berlin, but I consider myself a citizen of the world.
-  - text: I was born in the coolest city on Earth, in Berlin.
+  - text: I consider myself a citizen of the world.
+  - text: I was born in the Earth.
   - text: My developers come from all over the world!
   - text: I was taught not to give out my address on the internet.
   - text: My address starts with github.com.
@@ -167,5 +167,6 @@ actions:
 - action_ask_weather
 - action_ask_time
 - action_food
+- action_music
 forms: {}
 e2e_actions: []

@@ -34,7 +34,7 @@ def getTime(city='Barcelona'):
     return date, time
 
 
-def getWeather(city='Barcelona'):
+def getWeather(city='Barcelona', date='today'):
     # check for ip lookup city https://ipapi.com
     API_KEY = "2e40656c78ebe1ec22f4f6a82540f208"
     WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
