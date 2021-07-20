@@ -811,6 +811,8 @@ nlu:
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
-    - Who is [Alan Turing](search)
+    - [Who is Alan Turing](search)
     - Can you tell me [where is the Tower Eiffiel](search)
-    - which is the [best](playlist_name) shrek movie
+    - [how long does the Shrek movie lasts](search)
+    - Look [when did Freddie Mercury die](search)
+    - do you know the [distance between earth and sun](search)

@@ -9,6 +9,7 @@
 
 from typing import Any, Text, Dict, List
 
+from bs4 import BeautifulSoup
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -131,5 +132,60 @@ class ActionMusic(Action):
         print(dispatcher, tracker, domain)
 
         dispatcher.utter_message(text="Playing music.")
+
+        return []
+
+
+def webScrapAnswer(question):
+    headers = {
+        'User-agent':
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582",
+    }
+
+    params = {
+        'hl': 'en',
+        'gl': 'us',
+        'lr': 'lang_en'
+    }
+
+    html = requests.get('https://www.google.com/search?q=' + question + '&hl=en', headers=headers, params=params).text
+
+    soup = BeautifulSoup(html, 'lxml')
+
+    answer = soup.select_one('.Z0LcW.XcVN5d')
+    # if the box contains a upper link to de thing you are looking (USA / President)
+    # dates Z0LcW XcVN5d, people to but they might be in a link (<a>)
+    # for more info yxAsKe kZ91ed
+    more = soup.select_one('.yxAsKe.kZ91ed')
+    if answer is None:
+        # when info is inside divs '.zCubwf'
+        answera = soup.select_one('.zCubwf')
+        print(answera.text)
+        return answera.text
+    else:
+        print(answer.text)
+        print(more.text)
+        return answer.text + ',' + more.text
+
+    # when response is alone .IZ6rdc
+    # to get response from text which is in bold .hgKElc , b
+    # responses with a graph .KBXm4e
+
+
+class ActionSearchAnswer(Action):
+
+    def name(self) -> Text:
+        return "action_search_answer"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        question = tracker.latest_message['entities'].get('search')
+        if question is None:
+            question = tracker.latest_message.text
+        answer = webScrapAnswer(question)
+
+        dispatcher.utter_message(text=answer)
 
         return []

@@ -168,5 +168,6 @@ actions:
 - action_ask_time
 - action_food
 - action_music
+- action_search_answer
 forms: {}
 e2e_actions: []
