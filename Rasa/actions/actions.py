@@ -118,3 +118,18 @@ class ActionFood(Action):
         dispatcher.utter_message(text="I'm sorry, I can't recommend you a restaurant as I usually cook at home.")
 
         return []
+
+
+class ActionMusic(Action):
+
+    def name(self) -> Text:
+        return "action_music"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print(dispatcher, tracker, domain)
+
+        dispatcher.utter_message(text="Playing music.")
+
+        return []

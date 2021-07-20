@@ -71,8 +71,6 @@ responses:
   - text: Ciao!
   - text: Bye, was nice talking to you!
   - text: Bye bye!
-  utter_music:
-  - text: Playing music.
   utter_inform:
   - text: Looking for the information.
   utter_reminder:
@@ -121,7 +119,7 @@ responses:
   - text: Believe it or not, I actually am not spying on your personal information.
   - text: You're the second person now to ask me that. Rihanna was the first.
   utter_chitchat/ask_whatspossible:
-  - text: You can ask me about how to get started with Rasa, the difference between Rasa and Rasa X, subscribing to our newsletter or booking a sales call.
+  - text: You can ask me about how anything you want.
   utter_chitchat/ask_wherefrom:
   - text: I was born in Berlin, but I consider myself a citizen of the world.
   - text: I was born in the coolest city on Earth, in Berlin.
@@ -163,6 +161,8 @@ responses:
   - text: I'm eager to know.
   utter_chitchat/great_mood+whoisit:
   - text: I glad you are doing greet, I'm a bot.
+  utter_chitchat/get_help:
+  - text: You should ask for help.
 actions:
 - action_ask_weather
 - action_ask_time

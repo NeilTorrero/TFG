@@ -537,6 +537,9 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - is sadness our reality?
+    - I am crying
+    - I will cry
 - intent: music
   examples: |
     - play some music for me
@@ -546,6 +549,7 @@ nlu:
     - reproduce [Best hits](playlist_name)
     - [shuffle](music_mode) [mega mix](playlist_name)
     - reproduce in [shuffle](music_mode) my playlist
+    - Play some random music
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -721,6 +725,7 @@ nlu:
     - Whta time is it?
     - hey, tell me the time
     - can you tell the time?
+    - what hour is it?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -808,3 +813,4 @@ nlu:
     - Tell me [name of the president of USA](search)
     - Who is [Alan Turing](search)
     - Can you tell me [where is the Tower Eiffiel](search)
+    - which is the [best](playlist_name) shrek movie
