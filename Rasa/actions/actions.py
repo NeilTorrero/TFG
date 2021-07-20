@@ -65,12 +65,13 @@ class ActionAskTime(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print("\nDispacher: ")
-        print(dispatcher)
         print("\nTracker: ")
-        print(tracker)
-        print("\nDomain: ")
-        print(domain)
+        print(tracker.sender_id)
+        print(tracker.slots)
+        print(tracker.latest_message)
+        print(tracker.events)
+        print(tracker.active_loop)
+        print(tracker.latest_action_name)
         date, time = getTime()
         print(date, time)
         dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
@@ -87,12 +88,13 @@ class ActionAskWeather(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print("\nDispacher: ")
-        print(dispatcher)
         print("\nTracker: ")
-        print(tracker)
-        print("\nDomain: ")
-        print(domain)
+        print(tracker.sender_id)
+        print(tracker.slots)
+        print(tracker.latest_message)
+        print(tracker.events)
+        print(tracker.active_loop)
+        print(tracker.latest_action_name)
         weather = getWeather()
         if weather:
             dispatcher.utter_message(
