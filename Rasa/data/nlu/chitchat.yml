@@ -151,6 +151,8 @@ nlu:
     - Hey how's it going
     - are you cool
     - Are you Happy?
+    - How are you doing, clanker?
+    - are you ok?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -381,6 +383,8 @@ nlu:
     - what is my name
     - what is my name?
     - what's my name?
+    - my name is Marc
+    - What is my name again?
 - intent: chitchat/ask_whatspossible
   examples: |
     - Can you explain me in one sentence what you are doing?
@@ -486,6 +490,7 @@ nlu:
     - what can you teache me?
     - Can you do calculations?
     - what you can
+    - so... what con you do for me?
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?
@@ -611,6 +616,8 @@ nlu:
     - do you know who is siri?
     - have you meet alexa
     - do you like the google assitant?
+    - what do you thing about Siri?
+    - Do you know Siri?
 - intent: chitchat/great_mood+whoisit
   examples: |
     - I'm Very well. Tanks. Whats your name
@@ -629,3 +636,4 @@ nlu:
     - i wanna die
     - how do I become happy?
     - I feel like giving up on life
+    - I have no reason to live

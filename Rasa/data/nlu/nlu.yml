@@ -177,6 +177,7 @@ nlu:
     - byr
     - Talk with you later
     - Goodbye
+    - Adeu
 - intent: affirm
   examples: |
     - yes
@@ -550,6 +551,9 @@ nlu:
     - [shuffle](music_mode) [mega mix](playlist_name)
     - reproduce in [shuffle](music_mode) my playlist
     - Play some random music
+    - put me a song of [daft punk](song_name)
+    - play me the song [killer queen](song_name)
+    - Put some [rock](song_name) music
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -561,6 +565,7 @@ nlu:
     - please remind me to [take the car to the mechanic](task)
     - I must not forget to [call Juste](task)
     - Could you remind me that I have to [pick up the mail](task).
+    - put a timer for a half an hour to [turn off the oven](task)
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -726,6 +731,12 @@ nlu:
     - hey, tell me the time
     - can you tell the time?
     - what hour is it?
+    - what hour is it
+    - tell me the time
+    - what is today's date
+    - time?
+    - what is the time
+    - What time is it over there?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -808,6 +819,47 @@ nlu:
     - wheather be like at your place?
     - thanks and the weather?
     - how it's the weather like?
+    - I am sweating gimme the degrees
+    - check the weather
+    - gimme the weather
+    - The weather in [barcelona](location)
+    - it's raining at [barcelona](location)
+    - will rain at [barcelona](location)?
+    - it's hot at [barcelona](location)?
+    - hi droga which weather will be doing at [barcelona](location)
+    - tell me the degrees
+    - how many ºC?
+    - is it hot or cold outside?
+    - is it hot?
+    - is it scorching hot?
+    - Is it freezing?
+    - may I know what today is like?
+    - may I know what today will be like?
+    - ask the overall weather
+    - tell me if today will stom
+    - how much celsius are today?
+    - Can you tell me tomorrow's weather?
+    - the tomorrow's weather
+    - is it cloudy?
+    - is the sky with clouds?
+    - is the skyt clear?
+    - tell me if it's chilly today
+    - I'm sweating... how's the day?
+    - It's quite chilly today, how much?
+    - is today rainy?
+    - is today cold?
+    - is today warm?
+    - will tomorrow rain?
+    - tell me the weather
+    - and the weather?
+    - I was just kidding, how is the weather up there mate?
+    - What about the weather in [Uganda](location)?
+    - is it really humid?
+    - there is sun?
+    - is a storm coming?
+    - a storm is coming?
+    - is a storm brewing?
+    - Do I need an umbrella?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -816,3 +868,14 @@ nlu:
     - [how long does the Shrek movie lasts](search)
     - Look [when did Freddie Mercury die](search)
     - do you know the [distance between earth and sun](search)
+    - what actor was the lead in The Godfather?
+    - when I should water my poinsettia
+    - what is the [capital of brasil](search)
+    - how old was Michael Jackson when he died?
+    - tell me [who is alpharius](search)
+    - whats 1+1
+    - what is the recipe for a chocolate cake
+    - where I can find spare wheels for my bicycle
+    - what plants can I have inside my house?
+    - where I can [buy](action) a garden table and chairs?
+    - what means the error 33 on my AEG fridge?

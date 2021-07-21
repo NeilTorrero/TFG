@@ -7,7 +7,7 @@ pipeline:
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
    - name: SpacyNLP
-     model: "en_core_web_md"
+     model: "en_core_web_lg"
    - name: WhitespaceTokenizer
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
