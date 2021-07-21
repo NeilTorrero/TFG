@@ -45,6 +45,8 @@ entities:
 - action
 - language
 - search
+- time
+- song_name
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot

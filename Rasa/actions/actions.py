@@ -164,8 +164,11 @@ def webScrapAnswer(question):
         return answera.text
     else:
         print(answer.text)
-        print(more.text)
-        return answer.text + ',' + more.text
+        if more is None:
+            return answer.text
+        else:
+            print(more.text)
+            return answer.text + ',' + more.text
 
     # when response is alone .IZ6rdc
     # to get response from text which is in bold .hgKElc , b
@@ -181,8 +184,11 @@ class ActionSearchAnswer(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        question = tracker.latest_message['entities'].get('search')
-        if question is None:
+        question = ''
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'search':
+                question += entity['value']
+        if question == '':
             question = tracker.latest_message.text
         answer = webScrapAnswer(question)
 

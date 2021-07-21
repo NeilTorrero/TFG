@@ -879,3 +879,18 @@ nlu:
     - what plants can I have inside my house?
     - where I can [buy](action) a garden table and chairs?
     - what means the error 33 on my AEG fridge?
+    - when did Chaplin die?
+    - when was Chaplin born?
+    - how old is jeremy clarkson?
+    - when was Obama born?
+    - tellme the [name of the president of China](search)
+    - tell me the [name of the president of uk](search)
+    - tell me the [name of the president of USA](search)
+    - tell me the name of the [lead in top gun](search)
+    - tell me the [name of the president of Japan](search)
+    - when was obama born?
+    - tell me the [name of the president of spain](search)
+    - tell me the [name of the minister of France](search)
+    - tell me the [name of the president of united estates](search)
+    - tell me the name of the [presindent of the united states of america](search)
+    - can you tell me the [name of the president of usa](search)
