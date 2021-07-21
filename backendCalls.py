@@ -9,7 +9,15 @@ from requests_html import HTMLSession
 
 
 def searchInform(question):
-    """question = "president of usa"
+    """
+    https://stackoverflow.com/questions/49268359/scraping-googles-quick-answer-box-in-python
+    https://stackoverflow.com/questions/42808534/how-to-get-googles-fast-answer-box-text
+    https://stackoverflow.com/questions/42792503/web-scrape-from-google-quick-answer-box
+    https://dev.to/dimitryzub/how-to-scrape-google-knowledge-graph-with-python-2ilp
+    https://stackoverflow.com/questions/31798009/is-there-an-api-for-the-google-answer-boxes
+    https://practicaldatascience.co.uk/data-science/how-to-scrape-google-search-results-using-python
+
+    question = "president of usa"
     query = urllib.parse.quote_plus(question)
 
     session = HTMLSession()
@@ -73,7 +81,12 @@ def searchInform(question):
     # when response is alone .IZ6rdc
     # to get response from text which is in bold .hgKElc , b
     # responses with a graph .KBXm4e
-
+    # moeny converter .gzfeS
+    # response inside little boxes as a list .FozYP (bread ingredients)/(pokemon types "what type is rayquaza")
+    # calculator response .XSNERd
+    # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
+    # Translate .Y2IQFc
+    # Dictionary definition .sY7ric span
 
 
 def getTime(city):
