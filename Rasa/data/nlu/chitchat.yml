@@ -7,6 +7,8 @@ nlu:
     - who is your creator?
     - do you have a creator?
     - who made you?
+    - Is your creator a Robot?
+    - what's your creator?
 - intent: chitchat/ask_howbuilt
   examples: |
     - By what means were you made?
@@ -153,6 +155,9 @@ nlu:
     - Are you Happy?
     - How are you doing, clanker?
     - are you ok?
+    - are you happy?
+    - Haapy?
+    - are you good?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -252,6 +257,7 @@ nlu:
     - you robo
     - real bot then?
     - are you really a bbot?
+    - are you real?
 - intent: chitchat/ask_ishuman
   examples: |
     - hey are you human
@@ -591,6 +597,7 @@ nlu:
     - what is you name
     - what is you name and where are you from
     - What's your name?
+    - are you Alpharius?
 - intent: chitchat/handleinsult
   examples: |
     - you're a loser
@@ -608,6 +615,7 @@ nlu:
     - so fucking dumb
     - bitch
     - whore
+    - stupid
 - intent: chitchat/otherbots
   examples: |
     - what's your opinion of siri?
@@ -629,6 +637,8 @@ nlu:
     - Whant to know something?
     - I need to tell you something.
     - Know what?
+    - I have a question
+    - Wouldn't you like to know
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -637,3 +647,4 @@ nlu:
     - how do I become happy?
     - I feel like giving up on life
     - I have no reason to live
+    - I want to die

@@ -128,6 +128,8 @@ nlu:
     - Hello my name is [Jason](name)
     - watts up
     - hi my name is [Ethan](name)
+    - Hello we are [Núria](name) & [Elisabet](name)
+    - Hello there
 - intent: goodbye
   examples: |
     - cu
@@ -404,6 +406,8 @@ nlu:
     - More a less
     - sounds good!
     - really
+    - yes a lot
+    - nice
 - intent: deny
   examples: |
     - no
@@ -522,6 +526,7 @@ nlu:
     - so perfect
     - I'm fine, and you?
     - I am happy
+    - I'm great
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -541,6 +546,7 @@ nlu:
     - is sadness our reality?
     - I am crying
     - I will cry
+    - i am sad
 - intent: music
   examples: |
     - play some music for me
@@ -554,6 +560,7 @@ nlu:
     - put me a song of [daft punk](song_name)
     - play me the song [killer queen](song_name)
     - Put some [rock](song_name) music
+    - Play the playlist [Top 50](playlist_name)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -566,6 +573,9 @@ nlu:
     - I must not forget to [call Juste](task)
     - Could you remind me that I have to [pick up the mail](task).
     - put a timer for a half an hour to [turn off the oven](task)
+    - remind me that the 12th July is my [brother's birthday](task)
+    - remind me to [buy fruit](task)
+    - remember to do something
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -607,6 +617,7 @@ nlu:
     - yes thanks
     - thanks for your information
     - thanks f
+    - thank you a lot
 - intent: food
   examples: |
     - I would like to [eat](action) a [pizza](food)
@@ -860,6 +871,7 @@ nlu:
     - a storm is coming?
     - is a storm brewing?
     - Do I need an umbrella?
+    - what is today like?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -894,3 +906,28 @@ nlu:
     - tell me the [name of the president of united estates](search)
     - tell me the name of the [presindent of the united states of america](search)
     - can you tell me the [name of the president of usa](search)
+    - what is beer
+    - when is mothers day
+    - what type is gyarados
+    - which types is tyranitar
+    - what are the ingredients of bread
+    - how many are in the world
+    - how many kilometers are 10 miles
+    - tell me [how many pokemons are there](search)
+    - do you know [where is cambodia](search)
+    - what's 1+1?
+    - [who is the president of spain](search) ?
+    - [Who is the president of peru](search)
+    - what's 1+1
+    - [Who is the president](search)
+    - [whos the leader of north korea](search)
+    - [whos is the president of our motherland rusia](search)?
+    - [who is the president of china](search)
+    - [what is the president of brazil](search)?
+    - [what is the president of America](search)
+    - [what is the president of spain](search)
+    - [what's a computer](search)
+    - [what is barcelona country](search)
+    - [Where is barcelona](search)?
+    - [what is the capitalof brazil](search)
+    - [what is a cat](search)
