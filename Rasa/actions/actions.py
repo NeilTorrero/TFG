@@ -152,27 +152,90 @@ def webScrapAnswer(question):
 
     soup = BeautifulSoup(html, 'lxml')
 
-    answer = soup.select_one('.Z0LcW.XcVN5d')
     # if the box contains a upper link to de thing you are looking (USA / President)
     # dates Z0LcW XcVN5d, people to but they might be in a link (<a>)
-    # for more info yxAsKe kZ91ed
-    more = soup.select_one('.yxAsKe.kZ91ed')
-    if answer is None:
-        # when info is inside divs '.zCubwf'
-        answera = soup.select_one('.zCubwf')
-        print(answera.text)
-        return answera.text
-    else:
+    answer = soup.select_one('.Z0LcW.XcVN5d')
+    if answer is not None:
+        # for more info yxAsKe kZ91ed
+        more = soup.select_one('.yxAsKe.kZ91ed')
         print(answer.text)
         if more is None:
             return answer.text
         else:
             print(more.text)
             return answer.text + ',' + more.text
+    else:
+        # when info is inside divs (when is mothers day) '.zCubwf' or #EtGB6d div (for hole box)
+        answer = soup.select_one('.zCubwf')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
 
     # when response is alone .IZ6rdc
-    # to get response from text which is in bold .hgKElc , b
+    answer = soup.select_one('.IZ6rdc')
+    if answer is not None:
+        print(answer.text)
+        return answer.text
+    else:
+        # to get response from text which is in bold .hgKElc , b
+        answer = soup.select_one('.hgKElc b')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
     # responses with a graph .KBXm4e
+    answer = soup.select_one('.KBXm4e')
+    if answer is not None:
+        print(answer.text)
+        return answer.text
+    else:
+        # money converter .gzfeS
+        answer = soup.select_one('.gzfeS')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
+    # response inside little boxes as a list .FozYP (bread ingredients)/(pokemon types "what type is rayquaza")
+    answer = soup.select_one('.FozYP')
+    if answer is not None:
+        print(answer.text)
+        return answer.text
+    else:
+        # calculator response .XSNERd
+        answer = soup.select_one('.XSNERd')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
+    # Translate .Y2IQFc
+    answer = soup.select_one('.Y2IQFc')
+    if answer is not None:
+        print(answer.text)
+        return answer.text
+    else:
+        # Dictionary definition .sY7ric span
+        answer = soup.select_one('.sY7ric span')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
+    # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
+    answer = soup.select_one('#NotFQb .vXQmIe')
+    if answer is not None:
+        # for the formula .bjhkR
+        more = soup.select_one('.bjhkR')
+        print(answer.text)
+        if more is None:
+            return answer.text
+        else:
+            print(more.text)
+            return answer.text + ',' + more.text
+    else:
+        # when response is a snippet(wikipedia or other pages extracted) .iKJnec
+        answer = soup.select_one('.iKJnec')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
 
 
 class ActionSearchAnswer(Action):
