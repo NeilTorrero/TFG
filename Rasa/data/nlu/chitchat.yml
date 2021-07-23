@@ -158,6 +158,7 @@ nlu:
     - are you happy?
     - Haapy?
     - are you good?
+    - how do you do in the night
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -629,7 +630,7 @@ nlu:
 - intent: chitchat/great_mood+whoisit
   examples: |
     - I'm Very well. Tanks. Whats your name
-    - I'm greet, what's your name?
+    - I'm great, what's your name?
     - Fine, how are you called?
 - intent: chitchat/know_what
   examples: |
@@ -639,6 +640,9 @@ nlu:
     - Know what?
     - I have a question
     - Wouldn't you like to know
+    - Want to know something?
+    - know what?
+    - lisen i have to tell you something
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -648,3 +652,12 @@ nlu:
     - I feel like giving up on life
     - I have no reason to live
     - I want to die
+    - I'm depressed
+    - I don't feel good
+    - i want to end it all
+- intent: chitchat/tell_joke
+  examples: |
+    - tell me a joke
+    - make me laugh
+    - do you know any jokes?
+    - say something funny

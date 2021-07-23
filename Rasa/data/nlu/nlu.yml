@@ -931,3 +931,4 @@ nlu:
     - [Where is barcelona](search)?
     - [what is the capitalof brazil](search)
     - [what is a cat](search)
+    - [when is the Independence Day](search)?

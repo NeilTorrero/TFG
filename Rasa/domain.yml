@@ -96,6 +96,7 @@ responses:
   - text: I'm good, thanks!
   - text: A little bit too warm, otherwise fine.
   - text: A little bit cold, otherwise fine.
+  - text: I'm good as long as you are.
   utter_chitchat/ask_howold:
   - text: Old enough to be a bot!
   - text: '42'
@@ -108,8 +109,10 @@ responses:
   - text: Yes, I'm a bot.
   - text: Yep, you guessed it, I'm a bot!
   - text: I am indeed a bot 🤖
+  - text: 01011001 01100101 01110011 00101100 00100000 01001001 00100000 01100001 01101101 00101110
   utter_chitchat/ask_ishuman:
   - text: I'm not a human, I'm a bot! 🤖
+  - text: I am not, I'm an artificial intelligence.
   utter_chitchat/ask_languagesbot:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
@@ -121,7 +124,7 @@ responses:
   - text: Believe it or not, I actually am not spying on your personal information.
   - text: You're the second person now to ask me that. Rihanna was the first.
   utter_chitchat/ask_whatspossible:
-  - text: You can ask me about how anything you want.
+  - text: You can ask me anything you want.
   utter_chitchat/ask_wherefrom:
   - text: I consider myself a citizen of the world.
   - text: I was born in the Earth.
