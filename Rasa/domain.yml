@@ -166,6 +166,10 @@ responses:
   - text: I'm eager to know.
   utter_chitchat/get_help:
   - text: You should ask for help.
+  utter_chitchat/tell_joke:
+  - text: There 10 type of people. The ones that know binary and the ones that not.
+  utter_chitchat:
+  - text: I didn't understand that.
 actions:
 - action_ask_weather
 - action_ask_time

@@ -22,7 +22,7 @@ stories:
   - action: utter_goodbye
 - story: thankyou
   steps:
-  - intent: thankyou
+  - intent: thank
   - action: utter_thanks_response
 - story: chitchat
   steps:
