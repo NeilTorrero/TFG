@@ -164,8 +164,6 @@ responses:
   - text: Tell me.
   - text: What is it?
   - text: I'm eager to know.
-  utter_chitchat/great_mood+whoisit:
-  - text: I glad you are doing greet, I'm a bot.
   utter_chitchat/get_help:
   - text: You should ask for help.
 actions:

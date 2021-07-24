@@ -627,11 +627,6 @@ nlu:
     - do you like the google assitant?
     - what do you thing about Siri?
     - Do you know Siri?
-- intent: chitchat/great_mood+whoisit
-  examples: |
-    - I'm Very well. Tanks. Whats your name
-    - I'm great, what's your name?
-    - Fine, how are you called?
 - intent: chitchat/know_what
   examples: |
     - Wow, i have to tell you something
@@ -643,6 +638,11 @@ nlu:
     - Want to know something?
     - know what?
     - lisen i have to tell you something
+    - wanna know something?
+    - let me tell you something
+    - i have something to tell you
+    - i want to you to know something
+    - wanna know something?
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -661,3 +661,7 @@ nlu:
     - make me laugh
     - do you know any jokes?
     - say something funny
+    - do you have any jokes?
+    - tell me something funny
+    - can you tell me a joke
+    - know any jokes?
