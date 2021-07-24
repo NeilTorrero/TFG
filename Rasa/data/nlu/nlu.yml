@@ -549,18 +549,35 @@ nlu:
     - i am sad
 - intent: music
   examples: |
-    - play some music for me
-    - reproduce a song
+    - [play](music_mode) some music for me
+    - [reproduce](music_mode) a song
     - [shuffle](music_mode) some music
-    - play my playlist [favorites](playlist_name)
-    - reproduce [Best hits](playlist_name)
+    - [play](music_mode) my playlist [favorites](playlist_name)
+    - [reproduce](music_mode) [Best hits](playlist_name)
     - [shuffle](music_mode) [mega mix](playlist_name)
-    - reproduce in [shuffle](music_mode) my playlist
-    - Play some random music
+    - [reproduce](music_mode) in [shuffle](music_mode) my playlist
+    - [Play](music_mode) some random music
     - put me a song of [daft punk](song_name)
-    - play me the song [killer queen](song_name)
+    - [play](music_mode) me the song [killer queen](song_name)
     - Put some [rock](song_name) music
-    - Play the playlist [Top 50](playlist_name)
+    - [Play](music_mode) the playlist [Top 50](playlist_name)
+    - [pause](music_mode) the music
+    - [pause](music_mode)
+    - [resume](music_mode) the music
+    - [resume](music_mode)
+    - [shuffle](music_mode)
+    - [skip](music_mode) the song
+    - [skip](music_mode)
+    - [next](music_mode) song
+    - [next](music_mode)
+    - [previous](music_mode) song
+    - [previous](music_mode)
+    - put the song on [loop](music_mode)
+    - [loop](music_mode)
+    - [stop](music_mode) the music
+    - [stop](music_mode)
+    - [play](music_mode)
+    - [play](music_mode) the music
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -891,34 +908,34 @@ nlu:
     - what plants can I have inside my house?
     - where I can [buy](action) a garden table and chairs?
     - what means the error 33 on my AEG fridge?
-    - when did Chaplin die?
-    - when was Chaplin born?
-    - how old is jeremy clarkson?
-    - when was Obama born?
+    - [when did Chaplin die](search)?
+    - [when was Chaplin born](search)?
+    - [how old is jeremy clarkson](search)?
+    - [when was Obama born](search)?
     - tellme the [name of the president of China](search)
     - tell me the [name of the president of uk](search)
     - tell me the [name of the president of USA](search)
     - tell me the name of the [lead in top gun](search)
     - tell me the [name of the president of Japan](search)
-    - when was obama born?
+    - [when was obama born](search)?
     - tell me the [name of the president of spain](search)
     - tell me the [name of the minister of France](search)
     - tell me the [name of the president of united estates](search)
     - tell me the name of the [presindent of the united states of america](search)
     - can you tell me the [name of the president of usa](search)
-    - what is beer
-    - when is mothers day
-    - what type is gyarados
-    - which types is tyranitar
-    - what are the ingredients of bread
-    - how many are in the world
-    - how many kilometers are 10 miles
+    - [what is beer](search)
+    - [when is mothers day](search)
+    - [what type is gyarados](search)
+    - [which types is tyranitar](search)
+    - what are the [ingredients of bread](search)
+    - [how many people are in the world](search)
+    - how many kilometers are 10 miles](search)
     - tell me [how many pokemons are there](search)
     - do you know [where is cambodia](search)
     - what's 1+1?
-    - [who is the president of spain](search) ?
+    - [who is the president of spain](search)?
     - [Who is the president of peru](search)
-    - what's 1+1
+    - [what's 1+1](search)
     - [Who is the president](search)
     - [whos the leader of north korea](search)
     - [whos is the president of our motherland rusia](search)?
