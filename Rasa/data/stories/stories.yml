@@ -68,3 +68,7 @@ stories:
   steps:
   - intent: search_information
   - action: action_search_answer
+- story: timer
+  steps:
+    - intent: timer
+    - action: utter_timer

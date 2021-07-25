@@ -35,6 +35,8 @@ intents:
     use_entities: true
 - search_information:
     use_entities: true
+- timer:
+    use_entities: true
 entities:
 - location
 - name
@@ -170,6 +172,8 @@ responses:
   - text: There 10 type of people. The ones that know binary and the ones that not.
   utter_chitchat:
   - text: I didn't understand that.
+  utter_timer:
+  - text:  Setting the timer.Ups it seems this functionality isn't yet functional :).
 actions:
 - action_ask_weather
 - action_ask_time

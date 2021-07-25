@@ -578,6 +578,16 @@ nlu:
     - [stop](music_mode)
     - [play](music_mode)
     - [play](music_mode) the music
+    - turn the [volume](music_mode) up
+    - lower the [volume](music_mode)
+    - put the [volume](music_mode) to 50 percent
+    - increase the [volume](music_mode) by 20%
+    - lower the music [volume](music_mode)
+    - make the music [volume](music_mode) higher
+    - make it [sound](music_mode) louder
+    - i want it to [sound](music_mode) quieter
+    - increase the music's [volume](music_mode)
+    - upper the [volume](music_mode)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -589,10 +599,11 @@ nlu:
     - please remind me to [take the car to the mechanic](task)
     - I must not forget to [call Juste](task)
     - Could you remind me that I have to [pick up the mail](task).
-    - put a timer for a half an hour to [turn off the oven](task)
+    - put a timer for a half an hour to [disconnect the heater](task)
     - remind me that the 12th July is my [brother's birthday](task)
     - remind me to [buy fruit](task)
-    - remember to do something
+    - remember me [to do something](task)
+    - can you remember me to [wash the dishes](task)
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -701,6 +712,11 @@ nlu:
   examples: |
     - I'm [Richard](name)
     - Its [neil](name)
+    - My name is [Gustavo](name)
+    - Call me [Hammond]
+    - I am [Carol](name)
+    - I'm named [Ethan](name)
+    - It's [Carl](name)
 - intent: ask_time
   examples: |
     - Can you give me the time?
@@ -949,3 +965,17 @@ nlu:
     - [what is the capitalof brazil](search)
     - [what is a cat](search)
     - [when is the Independence Day](search)?
+- intent: timer
+  examples: |
+    - set a timer for 30 minutes
+    - let me know when 30 seconds have passed
+    - count 3 minutes.
+    - I want a timer for an hour
+    - put a 10 minute timer
+    - time 40 seconds
+    - count 10 seconds for me
+    - count to 10
+    - set a 25 minute timer
+    - Set the timer for one hour.
+    - Set a 45 second countdown
+    - Countdown 6 seconds.
