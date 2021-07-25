@@ -604,6 +604,7 @@ nlu:
     - remind me to [buy fruit](task)
     - remember me [to do something](task)
     - can you remember me to [wash the dishes](task)
+    - Remind me yo [buy groceries](action) in 3 minutes
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -781,6 +782,9 @@ nlu:
     - time?
     - what is the time
     - What time is it over there?
+    - What time is It in Japan?
+    - What time is It in russia
+    - What time is It on
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -913,13 +917,13 @@ nlu:
     - [how long does the Shrek movie lasts](search)
     - Look [when did Freddie Mercury die](search)
     - do you know the [distance between earth and sun](search)
-    - what actor was the lead in The Godfather?
-    - when I should water my poinsettia
+    - [what actor was the lead in The Godfather](search)?
+    - [when I should water my poinsettia](search)
     - what is the [capital of brasil](search)
-    - how old was Michael Jackson when he died?
+    - [how old was Michael Jackson when he died](search)?
     - tell me [who is alpharius](search)
-    - whats 1+1
-    - what is the recipe for a chocolate cake
+    - [whats 1+1](search)
+    - what is the [recipe for a chocolate cake](search)
     - where I can find spare wheels for my bicycle
     - what plants can I have inside my house?
     - where I can [buy](action) a garden table and chairs?
@@ -948,7 +952,7 @@ nlu:
     - how many kilometers are 10 miles](search)
     - tell me [how many pokemons are there](search)
     - do you know [where is cambodia](search)
-    - what's 1+1?
+    - [what's 1+1](search)?
     - [who is the president of spain](search)?
     - [Who is the president of peru](search)
     - [what's 1+1](search)
@@ -965,6 +969,60 @@ nlu:
     - [what is the capitalof brazil](search)
     - [what is a cat](search)
     - [when is the Independence Day](search)?
+    - [define flower](search)
+    - [what is humanity defense code](search)
+    - [what is 152+85](search)
+    - [what is1+1](search)
+    - [152+21](search)
+    - [1+1](search)
+    - [what is RASA](search)
+    - [what is meaning](search)
+    - [who is george floid](search)
+    - [What is star wars](search)
+    - [what is warhammer 40k](search)
+    - [who are the Xenos](search)
+    - [who is m.rajoy](search)
+    - [Who is the ninth doctor](search)?
+    - [Where can I see Doctor Who](search)?
+    - [who is joe biden](search)
+    - [When did gundam begin](search)?
+    - [What is gundam](search)
+    - [what is the meaning of symbol](search)
+    - [what is the meaning of life](search)
+    - [what is minecraft](search)
+    - What is the [most sold videogame](search)
+    - tell me [what is the suicide prevention number](search)
+    - [who is steve jobs](search)
+    - [Who is Mao zedung](search)
+    - [who is jeff bezos](search)
+    - [who is beatrice](search)
+    - [what is boku no pico](search)
+    - [What is a bard](search)
+    - [what is psychology](search)
+    - tell me [what is a meme](search)
+    - [what is a triangle](search)
+    - [what is a pentagon](search)
+    - [what is an hexagon](search)
+    - [what is diamond made of](search)
+    - [what are the continents name](search)
+    - [what is Peru](search)
+    - [what is a rick roll](search)
+    - [what is dark souls](search)
+    - [what is chemistry](search)
+    - [define chemistry](search)
+    - [what is science](search)
+    - [what is a sum](search)
+    - [Is the earth flat](search)?
+    - [is the eartch flat](search)?
+    - [what is love](search)
+    - [What's the scientific name of the Flamingo](search)?
+    - [what is ice](search)
+    - [What is python](search)
+    - [Where did Mao zedung die](search)
+    - [who is jhonny deep](search)
+    - [Where did Hitler die](search)?
+    - [what is youtube](search)
+    - [what is something really cold](search)
 - intent: timer
   examples: |
     - set a timer for 30 minutes

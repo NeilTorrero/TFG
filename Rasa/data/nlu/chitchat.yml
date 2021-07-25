@@ -159,6 +159,7 @@ nlu:
     - Haapy?
     - are you good?
     - how do you do in the night
+    - how ya doing
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -655,6 +656,9 @@ nlu:
     - I'm depressed
     - I don't feel good
     - i want to end it all
+    - I have [cripling](search) depression
+    - I have problems
+    - I wanna kill myself
 - intent: chitchat/tell_joke
   examples: |
     - tell me a joke
