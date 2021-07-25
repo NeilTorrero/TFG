@@ -785,6 +785,7 @@ nlu:
     - What time is It in Japan?
     - What time is It in russia
     - What time is It on
+    - what time is itç
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -1023,6 +1024,18 @@ nlu:
     - [Where did Hitler die](search)?
     - [what is youtube](search)
     - [what is something really cold](search)
+    - [Who is china leader](search)
+    - [who is the leader of the nazi party](search)
+    - [Who is adolf hitler](search)
+    - [where is  paris located](search)
+    - [who is the fuhrer](search)
+    - [where did hitler die](search)
+    - [what is icecream made of](search)
+    - [what is berserk(miura)](search)
+    - [what is an atom](search)
+    - [what  is youtube](search)
+    - [what is the meaning of  life](search)
+    - [who is the president of spain](search) ?
 - intent: timer
   examples: |
     - set a timer for 30 minutes
@@ -1037,3 +1050,4 @@ nlu:
     - Set the timer for one hour.
     - Set a 45 second countdown
     - Countdown 6 seconds.
+    - put a timer for a half an hour to [turn off the oven](task)
