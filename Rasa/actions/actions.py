@@ -18,21 +18,62 @@ import requests
 import pytz
 
 
-def searchInform(entities):
-    for entity in entities:
-        print(entity)
-
-
-def getTime(city='Barcelona'):
+def getTime(city):
+    # https://geocode.xyz/<city>?json=1 -> to get info of the place (long and lat)
     # check for ip lookup timezone https://ipapi.com / https://apilayer.com/#products
-    # country_codes = {country: code for code, country in pytz.country_names.items()}
-    # print(pytz.country_timezones[country_codes['Germany']])
-    # tz = pytz.timezone('Europe/London')
-    now = datetime.datetime.now()  # tz)
-    date = now.strftime("%A %dth of %B")
-    time = now.strftime("%H:%M")
-    print(date + " - " + time)
-    return date, time
+
+    # https://api.ipgeolocation.io/timezone?apiKey=API_KEY&location=London,%20UK
+    if city is None:
+        # tz = pytz.timezone('Europe/London')
+        now = datetime.datetime.now()  # tz)
+        date = now.strftime("%A %dth of %B")
+        time = now.strftime("%H:%M")
+        print(date + " - " + time)
+        return date, time
+    else:
+        API_KEY = "58e075c842754f2891afa358af81cf39"
+        LOC_URL = "https://api.ipgeolocation.io/timezone?apiKey="
+        url = LOC_URL + API_KEY + "&location=" + city
+
+        response = requests.get(url)
+        json_r = response.json()
+        date_time = json_r['date_time_txt'][:-3]
+        splited = date_time.rpartition(' ')
+        date = splited[0]
+        time = splited[2]
+        print(date + " - " + time)
+        return date, time
+
+
+
+
+class ActionAskTime(Action):
+
+    def name(self) -> Text:
+        return "action_ask_time"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("\nTracker: ")
+        # print(tracker.sender_id)
+        print(tracker.latest_message)
+        # print(tracker.events)
+        # print(tracker.active_loop)
+        # print(tracker.latest_action_name)
+        print("\nSlots: ")
+        # print(tracker.slots)
+
+        location = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'location':
+                location = entity['value']
+
+        date, time = getTime(location)
+        print(date, time)
+        dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
+
+        return []
 
 
 def getWeather(city='Barcelona', date='today'):
@@ -57,29 +98,6 @@ def getWeather(city='Barcelona', date='today'):
         return []
 
 
-class ActionAskTime(Action):
-
-    def name(self) -> Text:
-        return "action_ask_time"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        print("\nTracker: ")
-        print(tracker.sender_id)
-        print(tracker.slots)
-        print(tracker.latest_message)
-        print(tracker.events)
-        print(tracker.active_loop)
-        print(tracker.latest_action_name)
-        date, time = getTime()
-        print(date, time)
-        dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
-
-        return []
-
-
 class ActionAskWeather(Action):
 
     def name(self) -> Text:
@@ -90,16 +108,27 @@ class ActionAskWeather(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         print("\nTracker: ")
-        print(tracker.sender_id)
-        print(tracker.slots)
+        # print(tracker.sender_id)
         print(tracker.latest_message)
-        print(tracker.events)
-        print(tracker.active_loop)
-        print(tracker.latest_action_name)
-        weather = getWeather()
+        # print(tracker.events)
+        # print(tracker.active_loop)
+        # print(tracker.latest_action_name)
+        print("\nSlots: ")
+        # print(tracker.slots)
+
+        location = None
+        date = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'location':
+                location = entity['value']
+            if entity['entity'] == 'time':
+                date = entity['value']
+
+        weather = getWeather(location, date)
         if weather:
             dispatcher.utter_message(
-                text="It's " + str(weather[3]) + ", with a temperature of " + str(weather[0]) + "ºC and with a humidity of a " + str(weather[2]) + "%.")
+                text="It's " + str(weather[3]) + ", with a temperature of " + str(
+                    weather[0]) + "ºC and with a humidity of a " + str(weather[2]) + "%.")
         else:
             dispatcher.utter_message(text="Sorry, couldn't find the weather for this city.")
 
@@ -114,8 +143,16 @@ class ActionFood(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(dispatcher, tracker, domain)
-        dispatcher.utter_message(text="I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.")
+        print("\nTracker: ")
+        # print(tracker.sender_id)
+        print(tracker.latest_message)
+        # print(tracker.events)
+        # print(tracker.active_loop)
+        # print(tracker.latest_action_name)
+        print("\nSlots: ")
+        # print(tracker.slots)
+        dispatcher.utter_message(
+            text="I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.")
         dispatcher.utter_message(text="I'm sorry, I can't recommend you a restaurant as I usually cook at home.")
 
         return []
@@ -129,9 +166,16 @@ class ActionMusic(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(dispatcher, tracker, domain)
+        print("\nTracker: ")
+        # print(tracker.sender_id)
+        print(tracker.latest_message)
+        # print(tracker.events)
+        # print(tracker.active_loop)
+        # print(tracker.latest_action_name)
+        print("\nSlots: ")
+        # print(tracker.slots)
 
-        dispatcher.utter_message(text="Playing music.")
+        dispatcher.utter_message(text="Playing music. Well yes but actually no.")
 
         return []
 
@@ -155,87 +199,92 @@ def webScrapAnswer(question):
     # if the box contains a upper link to de thing you are looking (USA / President)
     # dates Z0LcW XcVN5d, people to but they might be in a link (<a>)
     answer = soup.select_one('.Z0LcW.XcVN5d')
-    if answer is not None:
-        # for more info yxAsKe kZ91ed
-        more = soup.select_one('.yxAsKe.kZ91ed')
-        print(answer.text)
-        if more is None:
+    try:
+        if answer is not None:
+            # for more info yxAsKe kZ91ed
+            more = soup.select_one('.yxAsKe.kZ91ed')
+            print(answer.text)
+            if more is None:
+                return answer.text
+            else:
+                print(more.text)
+                return answer.text + ',' + more.text
+        else:
+            # when info is inside divs (when is mothers day) '.zCubwf' or #EtGB6d div (for hole box)
+            answer = soup.select_one('.zCubwf')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # when response is alone .IZ6rdc
+        answer = soup.select_one('.IZ6rdc')
+        if answer is not None:
+            print(answer.text)
             return answer.text
         else:
-            print(more.text)
-            return answer.text + ',' + more.text
-    else:
-        # when info is inside divs (when is mothers day) '.zCubwf' or #EtGB6d div (for hole box)
-        answer = soup.select_one('.zCubwf')
+            # to get response from text which is in bold .hgKElc , b
+            answer = soup.select_one('.hgKElc b')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # responses with a graph .KBXm4e
+        answer = soup.select_one('.KBXm4e')
         if answer is not None:
             print(answer.text)
-            return answer.text
-
-    # when response is alone .IZ6rdc
-    answer = soup.select_one('.IZ6rdc')
-    if answer is not None:
-        print(answer.text)
-        return answer.text
-    else:
-        # to get response from text which is in bold .hgKElc , b
-        answer = soup.select_one('.hgKElc b')
-        if answer is not None:
-            print(answer.text)
-            return answer.text
-
-    # responses with a graph .KBXm4e
-    answer = soup.select_one('.KBXm4e')
-    if answer is not None:
-        print(answer.text)
-        return answer.text
-    else:
-        # money converter .gzfeS
-        answer = soup.select_one('.gzfeS')
-        if answer is not None:
-            print(answer.text)
-            return answer.text
-
-    # response inside little boxes as a list .FozYP (bread ingredients)/(pokemon types "what type is rayquaza")
-    answer = soup.select_one('.FozYP')
-    if answer is not None:
-        print(answer.text)
-        return answer.text
-    else:
-        # calculator response .XSNERd
-        answer = soup.select_one('.XSNERd')
-        if answer is not None:
-            print(answer.text)
-            return answer.text
-
-    # Translate .Y2IQFc
-    answer = soup.select_one('.Y2IQFc')
-    if answer is not None:
-        print(answer.text)
-        return answer.text
-    else:
-        # Dictionary definition .sY7ric span
-        answer = soup.select_one('.sY7ric span')
-        if answer is not None:
-            print(answer.text)
-            return answer.text
-
-    # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
-    answer = soup.select_one('#NotFQb .vXQmIe')
-    if answer is not None:
-        # for the formula .bjhkR
-        more = soup.select_one('.bjhkR')
-        print(answer.text)
-        if more is None:
             return answer.text
         else:
-            print(more.text)
-            return answer.text + ',' + more.text
-    else:
-        # when response is a snippet(wikipedia or other pages extracted) .iKJnec
-        answer = soup.select_one('.iKJnec')
+            # money converter .gzfeS
+            answer = soup.select_one('.gzfeS')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # response inside little boxes as a list .FozYP (bread ingredients)/(pokemon types "what type is rayquaza")
+        answer = soup.select_one('.FozYP')
         if answer is not None:
             print(answer.text)
             return answer.text
+        else:
+            # calculator response .XSNERd
+            answer = soup.select_one('.XSNERd')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # Translate .Y2IQFc
+        answer = soup.select_one('.Y2IQFc')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+        else:
+            # Dictionary definition .sY7ric span
+            answer = soup.select_one('.sY7ric span')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
+        answer = soup.select_one('#NotFQb .vXQmIe')
+        if answer is not None:
+            # for the formula .bjhkR
+            more = soup.select_one('.bjhkR')
+            print(answer.text)
+            if more is None:
+                return answer.text
+            else:
+                print(more.text)
+                return answer.text + ',' + more.text
+        else:
+            # when response is a snippet(wikipedia or other pages extracted) .iKJnec
+            answer = soup.select_one('.iKJnec')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+    except:
+        print(answer)
+        return "Something went wrong while looking for the answer, I will have this check and be solved as soon as possible."
+    return "I didn't find anything for what you asked."
 
 
 class ActionSearchAnswer(Action):
