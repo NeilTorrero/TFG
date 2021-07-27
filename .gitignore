@@ -213,5 +213,5 @@ NLU/checkpoints/
 /venv2/
 
 Rasa/results/
-
 Rasa/story_graph.dot
+Rasa/credentials.py
