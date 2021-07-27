@@ -4,9 +4,6 @@ import pytz
 import urllib.parse
 
 from bs4 import BeautifulSoup
-from requests_html import HTML
-from requests_html import HTMLSession
-
 
 def searchInform(question):
     """
@@ -169,13 +166,25 @@ def searchInform(question):
 
 
 def getTime(city):
+    # https://geocode.xyz/<city>?json=1 -> to get info of the place (long and lat)
     # check for ip lookup timezone https://ipapi.com / https://apilayer.com/#products
-    # country_codes = {country: code for code, country in pytz.country_names.items()}
-    # print(pytz.country_timezones[country_codes['Germany']])
+    # http://www.geonames.org/export/web-services.html#timezone
+
+    # https://api.ipgeolocation.io/timezone?apiKey=API_KEY&location=London,%20UK
+    API_KEY = "58e075c842754f2891afa358af81cf39"
+    LOC_URL = "https://api.ipgeolocation.io/timezone?apiKey="
+    url = LOC_URL + API_KEY + "&location=" + city
+
+    response = requests.get(url)
+    json_r = response.json()
+    date_time = json_r['date_time_txt'][:-3]
+    splited = date_time.rpartition(' ')
+    print(splited[0] + " - " + splited[2])
     # tz = pytz.timezone('Europe/London')
     now = datetime.datetime.now()  # tz)
     date = now.strftime("%A %dth of %B")
     time = now.strftime("%H:%M")
+    print(date + " - " + time)
     return date, time
 
 
@@ -202,4 +211,4 @@ def getWeather(city='Barcelona'):
 
 
 if __name__ == '__main__':
-    searchInform("hello")
+    getTime("california")

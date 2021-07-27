@@ -21,7 +21,12 @@ from pymongo.collection import Collection
 
 from rasa.core.brokers.broker import EventBroker
 from rasa.shared.core.domain import Domain
-from rasa.shared.core.events import SessionStarted
+from rasa.shared.core.events import (
+    SessionStarted,
+    UserUttered,
+    BotUttered,
+    ActionExecuted
+)
 from rasa.shared.core.trackers import (
     DialogueStateTracker,
     EventVerbosity,
@@ -90,6 +95,8 @@ class MongoTrackerStore(TrackerStore):
             self.stream_events(tracker)
 
         additional_events = self._additional_events(tracker)
+
+        #print([e.as_dict() for e in additional_events if type(e) == UserUttered or type(e) == BotUttered])
 
         self.conversations.update_one(
             {"sender_id": tracker.sender_id},

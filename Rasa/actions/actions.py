@@ -45,8 +45,6 @@ def getTime(city):
         return date, time
 
 
-
-
 class ActionAskTime(Action):
 
     def name(self) -> Text:
@@ -76,11 +74,14 @@ class ActionAskTime(Action):
         return []
 
 
-def getWeather(city='Barcelona', date='today'):
+def getWeather(city, date):
     # check for ip lookup city https://ipapi.com
     API_KEY = "2e40656c78ebe1ec22f4f6a82540f208"
     WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
+    # Forecast minute for 1 hour, hourly for 48 hours and daily for 7 days -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}&units=metric
 
+    if city is None:
+        city = 'Barcelona'
     url = WEATHER_URL + "q=" + city + "&appid=" + API_KEY + "&units=metric"
 
     response = requests.get(url)

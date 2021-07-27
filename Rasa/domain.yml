@@ -173,7 +173,7 @@ responses:
   utter_chitchat:
   - text: I didn't understand that.
   utter_timer:
-  - text: Setting the timer.Ups it seems this functionality isn't yet functional :).
+  - text: Setting the timer. Ups it seems this functionality isn't yet functional :).
 actions:
 - action_ask_weather
 - action_ask_time
