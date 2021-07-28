@@ -10,6 +10,7 @@
 from typing import Any, Text, Dict, List
 
 from bs4 import BeautifulSoup
+from rasa.shared.core.events import ReminderScheduled
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -308,3 +309,26 @@ class ActionSearchAnswer(Action):
         dispatcher.utter_message(text=answer)
 
         return []
+
+
+class ActionTimer(Action):
+    def name(self) -> Text:
+        return "action_timer"
+
+    async def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        date = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'time':
+                date = datetime.datetime.fromisoformat(entity['value'])
+
+        reminder = ReminderScheduled(
+            "utter_end_timer",
+            trigger_date_time=date,
+            name="timer",
+            kill_on_user_message=True,
+        )
+
+        return [reminder]

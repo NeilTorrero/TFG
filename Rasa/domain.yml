@@ -174,11 +174,14 @@ responses:
   - text: I didn't understand that.
   utter_timer:
   - text: Setting the timer. Ups it seems this functionality isn't yet functional :).
+  utter_end_timer:
+  - text: Hey, the time of the timer has ended!
 actions:
 - action_ask_weather
 - action_ask_time
 - action_food
 - action_music
 - action_search_answer
+- action_timer
 forms: {}
 e2e_actions: []

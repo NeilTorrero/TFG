@@ -67,8 +67,11 @@ stories:
 - story: q&a search
   steps:
   - intent: search_information
+    entities:
+    - search: what is the name of the pope
   - action: action_search_answer
 - story: timer
   steps:
     - intent: timer
     - action: utter_timer
+    - action: action_timer
