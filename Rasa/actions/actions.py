@@ -75,29 +75,68 @@ class ActionAskTime(Action):
         return []
 
 
-def getWeather(city, date):
+def getWeather(city, date, date_grain):
     # check for ip lookup city https://ipapi.com
     API_KEY = "2e40656c78ebe1ec22f4f6a82540f208"
-    WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
-    # Forecast minute for 1 hour, hourly for 48 hours and daily for 7 days -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}&units=metric
 
     if city is None:
         city = 'Barcelona'
-    url = WEATHER_URL + "q=" + city + "&appid=" + API_KEY + "&units=metric"
 
-    response = requests.get(url)
-    json_r = response.json()
-    if json_r['cod'] != '404':
-        info = json_r['main']
-        temperature = info['temp']
-        pressure = info['pressure']
-        humidity = info['humidity']
-        weather_description = json_r['weather'][0]['description']
-        print(temperature, pressure, humidity, weather_description)
-        return [temperature, pressure, humidity, weather_description]
+    # check if forecast can be done
+    # date format 2021-07-27T15:41:49.000+02:00 -> datetime.fromisoformat('2011-11-04T00:05:23+04:00')
+    # minute for 1 hour, hourly for 48 hours and daily for 7 days
+    if date is None:
+        WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
+        url = WEATHER_URL + "q=" + city + "&appid=" + API_KEY + "&units=metric"
+
+        response = requests.get(url)
+        json_r = response.json()
+        if json_r['cod'] != '404':
+            info = json_r['main']
+            temperature = info['temp']
+            pressure = info['pressure']
+            humidity = info['humidity']
+            weather_description = json_r['weather'][0]['description']
+            print(temperature, pressure, humidity, weather_description)
+            return [temperature, pressure, humidity, weather_description]
+        else:
+            print("City not found")
+            return []
     else:
-        print("City not found")
-        return []
+        diff = (datetime.datetime.fromisoformat(date) - datetime.datetime.now(datetime.datetime.fromisoformat(date).tzinfo))
+        if diff.days > 7:
+            print("I don't have the forecast for the date you are asking.")
+            return []
+
+        FORECAST_URL = "https://api.openweathermap.org/data/2.5/onecall?"
+        response = requests.get("https://geocode.xyz/" + city + "?json=1")
+        json_city = response.json()
+        if json_city['code'] != '018':
+            print('City not found')
+            return []
+        # Forecast -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API key}&units=metric
+        url = FORECAST_URL + "lat=" + json_city['latt'] + "&lon=" + json_city['longt'] + "&appid=" + API_KEY + "&units=metric"
+
+        response = requests.get(url)
+        json_r = response.json()
+        if json_r['cod'] != '404':
+            if date_grain == 'seconds' or date_grain == 'minutes':
+                if diff.seconds/60 <= 60:
+                    print('Check next hour')
+                elif diff.seconds/60/60 <= 48:
+                    print('Check next 48 hours')
+                else:
+                    print('Check next 7 days')
+            elif date_grain == 'hours':
+                if diff.seconds / 60 / 60 <= 48:
+                    print('Check next 48 hours')
+                else:
+                    print('Check next 7 days')
+            elif date_grain == 'days':
+                print('Check next 7 days')
+        else:
+            print("There's no forecast for this date.")
+            return[]
 
 
 class ActionAskWeather(Action):
@@ -120,13 +159,15 @@ class ActionAskWeather(Action):
 
         location = None
         date = None
+        date_grain = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location':
                 location = entity['value']
             if entity['entity'] == 'time':
-                date = entity['value']
+                date = datetime.datetime.fromisoformat(entity['value'])
+                date_grain = entity['additional_info']['grain']
 
-        weather = getWeather(location, date)
+        weather = getWeather(location, date, date_grain)
         if weather:
             dispatcher.utter_message(
                 text="It's " + str(weather[3]) + ", with a temperature of " + str(
