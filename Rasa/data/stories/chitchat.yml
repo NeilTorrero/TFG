@@ -4,6 +4,12 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+- story: user_name
+  steps:
+    - intent: user_name
+      entities:
+      - name: "Amelia"
+    - action: utter_greet_name
 - story: greet+name
   steps:
   - intent: greet

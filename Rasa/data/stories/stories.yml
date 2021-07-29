@@ -49,11 +49,7 @@ stories:
   - intent: reminder
     entities:
     - task: pick up the mail
-  - action: utter_reminder
-  - intent: thank
-  - action: utter_thanks_response
-  - intent: goodbye
-  - action: utter_goodbye
+  - action: action_reminder
 - story: name path
   steps:
   - intent: user_name
@@ -73,5 +69,4 @@ stories:
 - story: timer
   steps:
     - intent: timer
-    - action: utter_timer
     - action: action_timer

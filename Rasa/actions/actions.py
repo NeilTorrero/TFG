@@ -379,11 +379,48 @@ class ActionTimer(Action):
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
 
+        dispatcher.utter_message("Setting the timer.")
+
         reminder = ReminderScheduled(
             "utter_end_timer",
             trigger_date_time=date,
             name="timer",
             kill_on_user_message=True,
+        )
+
+        return [reminder]
+
+
+class ActionReminder(Action):
+    def name(self) -> Text:
+        return "action_reminder"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        date = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'time':
+                date = datetime.datetime.fromisoformat(entity['value'])
+
+        if date is None:
+            date = datetime.datetime.now() + datetime.timedelta(minutes=5)
+            dispatcher.utter_message("I will remind you of that in 5 minutes.")
+        else:
+            dispatcher.utter_message("I will remind you of that.")
+
+        entities = tracker.latest_message.get("entities")
+
+        reminder = ReminderScheduled(
+            "utter_remind",
+            trigger_date_time=date,
+            entities=entities,
+            name="reminder",
+            kill_on_user_message=False,
         )
 
         return [reminder]

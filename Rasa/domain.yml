@@ -77,8 +77,6 @@ responses:
   - text: Bye bye!
   utter_inform:
   - text: Looking for the information.
-  utter_reminder:
-  - text: I will remind you of that.
   utter_greet_name:
   - text: Nice to meet you.
   - text: Hello {name}.
@@ -172,8 +170,8 @@ responses:
   - text: There 10 type of people. The ones that know binary and the ones that not.
   utter_chitchat:
   - text: I didn't understand that.
-  utter_timer:
-  - text: Setting the timer. Ups it seems this functionality isn't yet functional :).
+  utter_remind:
+  - text: Remeber to {task}.
   utter_end_timer:
   - text: Hey, the time of the timer has ended!
 actions:
@@ -183,5 +181,6 @@ actions:
 - action_music
 - action_search_answer
 - action_timer
+- action_reminder
 forms: {}
 e2e_actions: []
