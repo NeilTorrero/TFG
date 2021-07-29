@@ -294,9 +294,9 @@ nlu:
     - Can you speak more than one language?
     - Do you know any other languages?
     - Do you know other languages?
-    - Do you speak [german](language)?
+    - Do you speak portuguese?
     - Do you speak any other languages?
-    - Do you understand [spanish](language)?
+    - Do you understand spanish?
     - How many different languages are you fluent in?
     - How many languages are you familiar with?
     - How many languages can you speak?
@@ -320,16 +320,16 @@ nlu:
     - Which languages do you speak?
     - are you bilingual?
     - are you multilingual?
-    - can you speak [Spanish](language)?
-    - can you speak in [italian](language)?
-    - do you know [chinese](language)
-    - do you speak [dutch](language)?
-    - do you speak [german](language)?
+    - can you speak Spanish?
+    - can you speak in italian?
+    - do you know chinese
+    - do you speak dutch?
+    - do you speak german?
     - do you speak any other languages?
     - how many languages are you fluent in?
     - how many languages do you know?
     - tell me some languages you know?
-    - what else do you know besides [English](language)?
+    - what else do you know besides English?
     - what foreign languages are you fluent in?
     - what foreign languages do you know?
     - what language do you use
@@ -345,13 +345,13 @@ nlu:
     - what languages you know?
     - what languages you prefer more speaking at?
     - which languages do you understand?
-    - you know [French](language)
-    - you speak [french](language) ?
+    - you know French
+    - you speak french ?
     - I want to speak binary with you
-    - ARE YOU [SPANISH](language)
-    - we cant converse in [french](language)?
-    - can we converse in [french](language)?
-    - Do you speak [italian](language)?
+    - ARE YOU SPANISH
+    - we cant converse in french?
+    - can we converse in french?
+    - Do you speak japanese?
 - intent: chitchat/ask_whatismyname
   examples: |
     - Can you tell me my name?

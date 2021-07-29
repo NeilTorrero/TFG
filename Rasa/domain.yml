@@ -47,8 +47,38 @@ entities:
 - action
 - language
 - search
-- time
 - song_name
+# duckling
+- time
+- temperature
+- number
+- ordinal
+- distance
+- volume
+- amount-of-money
+- duration
+- email
+- url
+- phone-number
+# spacy
+- CARDINAL
+- DATE
+- EVENT
+- FAC
+- GPE
+- LANGUAGE
+- LAW
+- LOC
+- MONEY
+- NORP
+- ORDINAL
+- ORG
+- PERCENT
+- PERSON
+- PRODUCT
+- QUANTITY
+- TIME
+- WORK_OF_ART
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot
@@ -174,6 +204,8 @@ responses:
   - text: Remeber to {task}.
   utter_end_timer:
   - text: Hey, the time of the timer has ended!
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that.
 actions:
 - action_ask_weather
 - action_ask_time

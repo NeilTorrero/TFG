@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: chitchat
   - action: utter_chitchat
+
+- rule: Fallback response
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
