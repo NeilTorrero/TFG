@@ -21,6 +21,8 @@ def searchInform(question):
     - Dictionary definition .sY7ric span
     - response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
     - when response is a snippet(wikipedia or other pages extracted) .iKJnec
+    + list of ranking .Crs1tb
+    + location .XCwAFc
     """
     """
     https://stackoverflow.com/questions/49268359/scraping-googles-quick-answer-box-in-python
