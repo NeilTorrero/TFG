@@ -104,7 +104,7 @@ def getWeather(city, date, date_grain):
             return []
     else:
         diff = (datetime.datetime.fromisoformat(date) - datetime.datetime.now(datetime.datetime.fromisoformat(date).tzinfo))
-        if diff.days > 7:
+        if not 7 >= diff.days >= 0:
             print("I don't have the forecast for the date you are asking.")
             return []
 
@@ -120,20 +120,34 @@ def getWeather(city, date, date_grain):
         response = requests.get(url)
         json_r = response.json()
         if json_r['cod'] != '404':
-            if date_grain == 'seconds' or date_grain == 'minutes':
-                if diff.seconds/60 <= 60:
-                    print('Check next hour')
-                elif diff.seconds/60/60 <= 48:
-                    print('Check next 48 hours')
-                else:
-                    print('Check next 7 days')
-            elif date_grain == 'hours':
+            if date_grain == 'seconds' or date_grain == 'minutes' or date_grain == 'hours':
                 if diff.seconds / 60 / 60 <= 48:
                     print('Check next 48 hours')
+                    info = json_r['hourly'][int(diff.seconds/60/60)]
+                    temperature = info['temp']
+                    pressure = info['pressure']
+                    humidity = info['humidity']
+                    weather_description = json_r['weather'][0]['description']
+                    print(temperature, pressure, humidity, weather_description)
+                    return [temperature, pressure, humidity, weather_description]
                 else:
                     print('Check next 7 days')
+                    info = json_r['daily'][int(diff.days)]
+                    temperature = info['temp']
+                    pressure = info['pressure']
+                    humidity = info['humidity']
+                    weather_description = json_r['weather'][0]['description']
+                    print(temperature, pressure, humidity, weather_description)
+                    return [temperature, pressure, humidity, weather_description]
             elif date_grain == 'days':
                 print('Check next 7 days')
+                info = json_r['daily'][int(diff.days)]
+                temperature = info['temp']
+                pressure = info['pressure']
+                humidity = info['humidity']
+                weather_description = json_r['weather'][0]['description']
+                print(temperature, pressure, humidity, weather_description)
+                return [temperature, pressure, humidity, weather_description]
         else:
             print("There's no forecast for this date.")
             return[]
@@ -173,7 +187,7 @@ class ActionAskWeather(Action):
                 text="It's " + str(weather[3]) + ", with a temperature of " + str(
                     weather[0]) + "ºC and with a humidity of a " + str(weather[2]) + "%.")
         else:
-            dispatcher.utter_message(text="Sorry, couldn't find the weather for this city.")
+            dispatcher.utter_message(text="Sorry, couldn't find the weather for this city or there wasn't forecast for it.")
 
         return []
 
