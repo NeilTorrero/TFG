@@ -10,7 +10,7 @@
 from typing import Any, Text, Dict, List
 
 from bs4 import BeautifulSoup
-from rasa.shared.core.events import ReminderScheduled
+from rasa_sdk.events import ReminderScheduled
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -65,7 +65,7 @@ class ActionAskTime(Action):
 
         location = None
         for entity in tracker.latest_message['entities']:
-            if entity['entity'] == 'location':
+            if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
 
         date, time = getTime(location)
@@ -120,7 +120,7 @@ def getWeather(city, date, date_grain):
         response = requests.get(url)
         json_r = response.json()
         if json_r['cod'] != '404':
-            if date_grain == 'seconds' or date_grain == 'minutes' or date_grain == 'hours':
+            if date_grain == 'seconds' or date_grain == 'second' or date_grain == 'minutes' or date_grain == 'minute' or date_grain == 'hours' or date_grain == 'hour':
                 if diff.seconds / 60 / 60 <= 48:
                     print('Check next 48 hours')
                     info = json_r['hourly'][int(diff.seconds/60/60)]
@@ -139,7 +139,7 @@ def getWeather(city, date, date_grain):
                     weather_description = json_r['weather'][0]['description']
                     print(temperature, pressure, humidity, weather_description)
                     return [temperature, pressure, humidity, weather_description]
-            elif date_grain == 'days':
+            elif date_grain == 'days' or date_grain == 'day':
                 print('Check next 7 days')
                 info = json_r['daily'][int(diff.days)]
                 temperature = info['temp']
@@ -175,11 +175,27 @@ class ActionAskWeather(Action):
         date = None
         date_grain = None
         for entity in tracker.latest_message['entities']:
-            if entity['entity'] == 'location':
+            if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
                 date_grain = entity['additional_info']['grain']
+            if entity['entity'] == 'duration':
+                date_grain = entity['additional_info']['unit']
+                if date_grain == 'day':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value'])
+                elif date_grain == 'hour':
+                    date = datetime.datetime.now() + datetime.timedelta(hours=entity['value'])
+                elif date_grain == 'minute':
+                    date = datetime.datetime.now() + datetime.timedelta(minutes=entity['value'])
+                elif date_grain == 'second':
+                    date = datetime.datetime.now() + datetime.timedelta(seconds=entity['value'])
+                elif date_grain == 'week':
+                    date = datetime.datetime.now() + datetime.timedelta(weeks=entity['value'])
+                elif date_grain == 'month':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*30)
+                elif date_grain == 'year':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
         weather = getWeather(location, date, date_grain)
         if weather:
@@ -378,6 +394,22 @@ class ActionTimer(Action):
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
+            if entity['entity'] == 'duration':
+                date_grain = entity['additional_info']['unit']
+                if date_grain == 'day':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value'])
+                elif date_grain == 'hour':
+                    date = datetime.datetime.now() + datetime.timedelta(hours=entity['value'])
+                elif date_grain == 'minute':
+                    date = datetime.datetime.now() + datetime.timedelta(minutes=entity['value'])
+                elif date_grain == 'second':
+                    date = datetime.datetime.now() + datetime.timedelta(seconds=entity['value'])
+                elif date_grain == 'week':
+                    date = datetime.datetime.now() + datetime.timedelta(weeks=entity['value'])
+                elif date_grain == 'month':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*30)
+                elif date_grain == 'year':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
         dispatcher.utter_message("Setting the timer.")
 
@@ -406,6 +438,22 @@ class ActionReminder(Action):
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
+            if entity['entity'] == 'duration':
+                date_grain = entity['additional_info']['unit']
+                if date_grain == 'day':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value'])
+                elif date_grain == 'hour':
+                    date = datetime.datetime.now() + datetime.timedelta(hours=entity['value'])
+                elif date_grain == 'minute':
+                    date = datetime.datetime.now() + datetime.timedelta(minutes=entity['value'])
+                elif date_grain == 'second':
+                    date = datetime.datetime.now() + datetime.timedelta(seconds=entity['value'])
+                elif date_grain == 'week':
+                    date = datetime.datetime.now() + datetime.timedelta(weeks=entity['value'])
+                elif date_grain == 'month':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*30)
+                elif date_grain == 'year':
+                    date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
         if date is None:
             date = datetime.datetime.now() + datetime.timedelta(minutes=5)
