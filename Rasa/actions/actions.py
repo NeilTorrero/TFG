@@ -518,4 +518,6 @@ class ValidateNameForm(FormValidationAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         print(slot_value)
-        return {"name": slot_value}
+        userDatabase(slot_value)
+
+        return {"user_db_name": slot_value}

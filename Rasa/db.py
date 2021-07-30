@@ -201,3 +201,18 @@ class MongoTrackerStore(TrackerStore):
     def keys(self) -> Iterable[Text]:
         """Returns sender_ids of the Mongo Tracker Store."""
         return [c["sender_id"] for c in self.conversations.find()]
+
+
+def userDatabase(user_db_name):
+    client = MongoClient(
+        host,
+        username=username,
+        password=password,
+        authSource='admin',
+        # delay connect until process forking is done
+        connect=False,
+    )
+
+    self.db = Database(self.client, db)
+    self.collection = 'users'
+
