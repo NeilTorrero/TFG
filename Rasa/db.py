@@ -17,7 +17,11 @@ from typing import (
     Text,
 )
 
+from pymongo.database import Database
+from pymongo import MongoClient
 from pymongo.collection import Collection
+
+from credentials import host, username, password, db
 
 from rasa.core.brokers.broker import EventBroker
 from rasa.shared.core.domain import Domain
@@ -52,10 +56,6 @@ class MongoTrackerStore(TrackerStore):
             event_broker: Optional[EventBroker] = None,
             **kwargs: Dict[Text, Any],
     ) -> None:
-        from pymongo.database import Database
-        from pymongo import MongoClient
-        from credentials import host, username, password, db
-
         self.client = MongoClient(
             host,
             username=username,
@@ -213,6 +213,11 @@ def userDatabase(user_db_name):
         connect=False,
     )
 
-    self.db = Database(self.client, db)
-    self.collection = 'users'
+    database = Database(client, db)
+    userDocument = {
+        "name": user_db_name
+    }
+    database['users'].insert_one(userDocument)
+
+
 
