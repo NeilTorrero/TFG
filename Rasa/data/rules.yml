@@ -16,3 +16,18 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_please_rephrase
+
+- rule: name form
+  conversation_start: true
+  steps:
+  - intent: register
+  - action: utter_greet
+  - action: name_form
+  - active_loop: name_form
+
+- rule: Submit form
+  condition:
+  - active_loop: name_form
+  steps:
+  - action: name_form
+  - active_loop: null

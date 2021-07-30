@@ -37,6 +37,10 @@ intents:
     use_entities: true
 - timer:
     use_entities: true
+- nlu_fallback:
+    use_entities: true
+- register:
+    use_entities: true
 entities:
 - location
 - name
@@ -214,5 +218,11 @@ actions:
 - action_search_answer
 - action_timer
 - action_reminder
-forms: {}
+- validate_name_form
+forms:
+  name_form:
+    required_slots:
+      name:
+      - entity: name
+        type: from_text
 e2e_actions: []

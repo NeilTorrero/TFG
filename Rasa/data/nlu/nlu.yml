@@ -1051,3 +1051,7 @@ nlu:
     - Set a 45 second countdown
     - Countdown 6 seconds.
     - put a timer for a half an hour to [turn off the oven](task)
+- intent: register
+  examples: |
+    - register user
+    - register
