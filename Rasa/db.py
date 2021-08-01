@@ -20,6 +20,7 @@ from typing import (
 from pymongo.database import Database
 from pymongo import MongoClient
 from pymongo.collection import Collection
+from rasa_sdk import Tracker
 
 from credentials import host, username, password, db
 
@@ -203,28 +204,30 @@ class MongoTrackerStore(TrackerStore):
         return [c["sender_id"] for c in self.conversations.find()]
 
 
-def setUserDBConversation(user_db_name , tracker):
+def setUserDBConversation(user_db_name, tracker):
     client = MongoClient(host, username, password, authSource='admin', connect=False)
     database = Database(client, db)
     colec = database['users']
 
     existsDocument = colec.find_one({"name": user_db_name})
     if existsDocument is None:
+        print('User created')
         userDocument = {
-            "name": user_db_name
-            "conversations": tracker['sender_id']
+            "name": user_db_name,
+            "conversations": tracker.sender_id
         }
         colec.insert_one(userDocument)
     else:
-        colec.update_one({"name": user_db_name}, { "$addToSet": { "name": tracker['sender_id']} })
+        print('User found')
+        colec.update_one({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
 
 
-def updateUserDBInfo(tracker):
+def updateUserDBInfo(tracker: Tracker):
     client = MongoClient(host, username, password, authSource='admin', connect=False)
     database = Database(client, db)
     colec = database['users']
 
-    user_db_name = tracker['slots']['user_db_name']
-    for e in tracker['slots']:
-        if [*e][0] is not 'session_started_metadata' and [*e][0] is not 'user_db_name':
-            document.update_one({"name": user_db_name}, {"$set": {e.as_dict()}})
+    user_db_name = tracker.slots['user_db_name']
+    for e in tracker.slots:
+        if [*e][0] != 'session_started_metadata' and [*e][0] != 'user_db_name':
+            colec.update_one({"name": user_db_name}, {"$set": e})

@@ -6,10 +6,14 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
-
+import logging
+import json
+import os
 from typing import Any, Text, Dict, List
 
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
+from pymongo.database import Database
 from rasa_sdk.events import ReminderScheduled, SessionStarted, SlotSet, ActionExecuted, EventType, BotUttered
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -17,6 +21,8 @@ from rasa_sdk.executor import CollectingDispatcher
 import datetime
 import requests
 import pytz
+
+logger = logging.getLogger(__name__)
 
 
 def getTime(city):
@@ -510,7 +516,7 @@ class ValidateNameForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_name_form"
 
-    def validate_name(
+    def validate_user_db_name(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -518,7 +524,31 @@ class ValidateNameForm(FormValidationAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         print(slot_value)
+
         setUserDBConversation(slot_value, tracker)
         dispatcher.utter_message("User registered.")
 
         return {"user_db_name": slot_value}
+
+
+def setUserDBConversation(user_db_name, tracker: Tracker):
+    print(os.path.abspath(os.getcwd()))
+    path = os.path.abspath('actions/credentials.json')
+    with open(path, 'r') as f:
+        data = json.load(f)
+    client = MongoClient(host=data['host'], username=data['username'], password=data['password'], authSource='admin', connect=False)
+    database = Database(client, data['db'])
+    colec = database['users']
+
+    existsDocument = colec.find_one({"name": user_db_name})
+    if existsDocument is None:
+        print('User created')
+        userDocument = {
+            "name": user_db_name,
+            "conversations": tracker.sender_id
+        }
+        colec.insert_one(userDocument)
+    else:
+        print('User found')
+        colec.update_one({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
+
