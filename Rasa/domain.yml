@@ -93,6 +93,24 @@ slots:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: false
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    influence_conversation: true
+  notes:
+    type: list
+  reminders:
+    type: list
+  birthday:
+    type: date
+  email:
+    type: text
+  gender:
+    type: categorical
+    values:
+      - male
+      - female
+      - non binary
+      - other
 responses:
   utter_greet:
   - text: Hey! How are you?

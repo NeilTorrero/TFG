@@ -203,21 +203,28 @@ class MongoTrackerStore(TrackerStore):
         return [c["sender_id"] for c in self.conversations.find()]
 
 
-def userDatabase(user_db_name):
-    client = MongoClient(
-        host,
-        username=username,
-        password=password,
-        authSource='admin',
-        # delay connect until process forking is done
-        connect=False,
-    )
-
+def setUserDBConversation(user_db_name , tracker):
+    client = MongoClient(host, username, password, authSource='admin', connect=False)
     database = Database(client, db)
-    userDocument = {
-        "name": user_db_name
-    }
-    database['users'].insert_one(userDocument)
+    colec = database['users']
+
+    existsDocument = colec.find_one({"name": user_db_name})
+    if existsDocument is None:
+        userDocument = {
+            "name": user_db_name
+            "conversations": tracker['sender_id']
+        }
+        colec.insert_one(userDocument)
+    else:
+        colec.update_one({"name": user_db_name}, { "$addToSet": { "name": tracker['sender_id']} })
 
 
+def updateUserDBInfo(tracker):
+    client = MongoClient(host, username, password, authSource='admin', connect=False)
+    database = Database(client, db)
+    colec = database['users']
 
+    user_db_name = tracker['slots']['user_db_name']
+    for e in tracker['slots']:
+        if [*e][0] is not 'session_started_metadata' and [*e][0] is not 'user_db_name':
+            document.update_one({"name": user_db_name}, {"$set": {e.as_dict()}})
