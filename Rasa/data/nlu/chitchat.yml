@@ -391,8 +391,9 @@ nlu:
     - what is my name
     - what is my name?
     - what's my name?
-    - my name is Marc
     - What is my name again?
+    - whats my name
+    - What is my name
 - intent: chitchat/ask_whatspossible
   examples: |
     - Can you explain me in one sentence what you are doing?
@@ -499,6 +500,7 @@ nlu:
     - Can you do calculations?
     - what you can
     - so... what con you do for me?
+    - i can ask you anything
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?
@@ -578,6 +580,7 @@ nlu:
     - who am i
     - who are I ?
     - who may i ?
+    - who am i?
 - intent: chitchat/ask_whoisit
   examples: |
     - who are you

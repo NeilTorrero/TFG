@@ -130,11 +130,15 @@ slots:
     - non binary
     - other
   task:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     auto_fill: true
+    influence_conversation: true
   time:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     auto_fill: true
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hey! How are you?

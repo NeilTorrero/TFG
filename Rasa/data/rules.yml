@@ -32,4 +32,4 @@ rules:
   - action: name_form
   - active_loop: null
   - slot_was_set:
-      - requested_slot: null
+      - user_db_name: null

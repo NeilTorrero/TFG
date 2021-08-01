@@ -207,7 +207,7 @@ class MongoTrackerStore(TrackerStore):
 
 
 def setUserDBConversation(user_db_name, tracker):
-    client = MongoClient(host, username, password, authSource='admin', connect=False)
+    client = MongoClient(host, username=username, password=password, authSource='admin', connect=False)
     database = Database(client, db)
     colec = database['users']
 
@@ -225,7 +225,7 @@ def setUserDBConversation(user_db_name, tracker):
 
 
 def updateUserDBInfo(tracker: Tracker):
-    client = MongoClient(host, username, password, authSource='admin', connect=False)
+    client = MongoClient(host, username=username, password=password, authSource='admin', connect=False)
     database = Database(client, db)
     colec = database['users']
 
