@@ -129,6 +129,12 @@ slots:
     - female
     - non binary
     - other
+  task:
+    type: text
+    auto_fill: true
+  time:
+    type: text
+    auto_fill: true
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -250,6 +256,12 @@ responses:
   - text: Hey, the time of the timer has ended!
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that.
+  utter_ask_user_db_name:
+  - text: Tell me the name you want to register with.
+  utter_ask_reminder_form_task:
+  - text: What do you want me to remember you?
+  utter_ask_reminder_form_date:
+  - text: When do you want me to remeber?
 actions:
 - action_ask_weather
 - action_ask_time
@@ -264,5 +276,13 @@ forms:
     required_slots:
       user_db_name:
       - entity: name
+        type: from_text
+  reminder_form:
+    required_slots:
+      task:
+      - entity: task
+        type: from_text
+      time:
+      - entity: time
         type: from_text
 e2e_actions: []

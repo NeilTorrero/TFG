@@ -44,11 +44,18 @@ stories:
     entities:
     - location: Paris
   - action: action_ask_weather
+#- story: reminder
+#  steps:
+#  - intent: reminder
+#    entities:
+#    - task: pick up the mail
+#  - action: action_reminder
 - story: reminder
   steps:
   - intent: reminder
-    entities:
-    - task: pick up the mail
+  - action: reminder_form
+  - active_loop: reminder_form
+  - active_loop: null
   - action: action_reminder
 - story: name path
   steps:

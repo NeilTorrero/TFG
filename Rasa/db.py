@@ -4,6 +4,7 @@ client = pymongo.MongoClient(
     "mongodb+srv://admin:G5F9udcUBYtg4eZ@cluster0.vuvdy.mongodb.net/Cluster0?retryWrites=true&w=majority")
 db = client.test
 print(db)"""
+# https://forum.rasa.com/t/custom-tracker-to-save-conversation-history-into-firebase-firestore/35432
 
 import itertools
 
@@ -98,6 +99,7 @@ class MongoTrackerStore(TrackerStore):
         additional_events = self._additional_events(tracker)
 
         #print([e.as_dict() for e in additional_events if type(e) == UserUttered or type(e) == BotUttered])
+        updateUserDBInfo(tracker)
 
         self.conversations.update_one(
             {"sender_id": tracker.sender_id},
