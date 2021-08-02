@@ -53,7 +53,6 @@ def getTime(city):
 
 
 class ActionAskTime(Action):
-
     def name(self) -> Text:
         return "action_ask_time"
 
@@ -160,7 +159,6 @@ def getWeather(city, date, date_grain):
 
 
 class ActionAskWeather(Action):
-
     def name(self) -> Text:
         return "action_ask_weather"
 
@@ -215,7 +213,6 @@ class ActionAskWeather(Action):
 
 
 class ActionFood(Action):
-
     def name(self) -> Text:
         return "action_food"
 
@@ -233,12 +230,12 @@ class ActionFood(Action):
         dispatcher.utter_message(
             text="I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.")
         dispatcher.utter_message(text="I'm sorry, I can't recommend you a restaurant as I usually cook at home.")
-
+        # TODO: search for restaurants or food related business nearby
+        
         return []
 
 
 class ActionMusic(Action):
-
     def name(self) -> Text:
         return "action_music"
 
@@ -255,6 +252,7 @@ class ActionMusic(Action):
         # print(tracker.slots)
 
         dispatcher.utter_message(text="Playing music. Well yes but actually no.")
+        # TODO: connect with spotify and do action requested
 
         return []
 
@@ -441,7 +439,10 @@ class ActionReminder(Action):
     ) -> List[Dict[Text, Any]]:
 
         date = None
+        task = None
         for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'task':
+                task = entity['value']
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
             if entity['entity'] == 'duration':
@@ -469,6 +470,10 @@ class ActionReminder(Action):
 
         entities = tracker.latest_message.get("entities")
 
+        # Add reminder to slot
+        reminders = tracker.get_slot('reminders')
+        reminders.append(task + date)
+
         reminder = ReminderScheduled(
             "utter_remind",
             trigger_date_time=date,
@@ -477,16 +482,67 @@ class ActionReminder(Action):
             kill_on_user_message=False,
         )
 
-        return [reminder]
+        return [reminder, SlotSet('reminders', reminders)]
 
 
+class ValidateNameForm(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_name_form"
+
+    def validate_user_db_name(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        print(slot_value)
+
+        slots = setUserDBConversation(slot_value, tracker)
+        dispatcher.utter_message("User registered.")
+        slots['user_db_name'] = slot_value
+        return slots  # {"user_db_name": slot_value}
+
+
+def setUserDBConversation(user_db_name, tracker: Tracker):
+    print(os.path.abspath(os.getcwd()))
+    path = os.path.abspath('actions/credentials.json')
+    with open(path, 'r') as f:
+        data = json.load(f)
+    client = MongoClient(host=data['host'], username=data['username'], password=data['password'], authSource='admin', connect=False)
+    database = Database(client, data['db'])
+    colec = database['users']
+
+    existsDocument = colec.find_one({"name": user_db_name})
+    if existsDocument is None:
+        print('User created')
+        userDocument = {
+            "name": user_db_name,
+            "conversations": tracker.sender_id
+        }
+        colec.insert_one(userDocument)
+        return None
+    else:
+        print('User found')
+        found = colec.find_one_and_update({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
+        # load slots that have been saved
+        slots = {}
+        for key in found.keys():
+            if key != 'conversations':
+                # slot = SlotSet(key, found[key])
+                # slots.append(slot)
+                slots[key] = found[key]
+        return slots
+
+
+"""
 class ActionSessionStart(Action):
     def name(self) -> Text:
         return "action_session_start"
 
     @staticmethod
     def fetch_slots(tracker: Tracker) -> List[EventType]:
-        """Collect slots that contain the user's name and phone number."""
+        # Collect slots that contain the user's name and phone number.
 
         slots = []
         for key in ("name", "phone_number"):
@@ -510,45 +566,4 @@ class ActionSessionStart(Action):
         events.append(ActionExecuted("action_listen"))
 
         return events
-
-
-class ValidateNameForm(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_name_form"
-
-    def validate_user_db_name(
-        self,
-        slot_value: Any,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> Dict[Text, Any]:
-        print(slot_value)
-
-        setUserDBConversation(slot_value, tracker)
-        dispatcher.utter_message("User registered.")
-
-        return {"user_db_name": slot_value}
-
-
-def setUserDBConversation(user_db_name, tracker: Tracker):
-    print(os.path.abspath(os.getcwd()))
-    path = os.path.abspath('actions/credentials.json')
-    with open(path, 'r') as f:
-        data = json.load(f)
-    client = MongoClient(host=data['host'], username=data['username'], password=data['password'], authSource='admin', connect=False)
-    database = Database(client, data['db'])
-    colec = database['users']
-
-    existsDocument = colec.find_one({"name": user_db_name})
-    if existsDocument is None:
-        print('User created')
-        userDocument = {
-            "name": user_db_name,
-            "conversations": tracker.sender_id
-        }
-        colec.insert_one(userDocument)
-    else:
-        print('User found')
-        colec.update_one({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
-
+"""
