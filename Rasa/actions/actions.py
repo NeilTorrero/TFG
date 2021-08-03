@@ -427,6 +427,22 @@ class ActionTimer(Action):
         return [reminder]
 
 
+class ActionCancelTimer(Action):
+    """Cancels timer."""
+
+    def name(self) -> Text:
+        return "action_cancel_timer"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(f"Okay, I'll cancel your timer.")
+
+        # Cancel timer
+        return [ReminderCancelled("timer")]
+
+
 class ActionReminder(Action):
     def name(self) -> Text:
         return "action_reminder"
@@ -478,11 +494,31 @@ class ActionReminder(Action):
             "utter_remind",
             trigger_date_time=date,
             entities=entities,
-            name="reminder",
+            name="reminder_" + task,
             kill_on_user_message=False,
         )
 
         return [reminder, SlotSet('reminders', reminders)]
+
+class ActionCancelReminder(Action):
+    """Cancels reminder."""
+
+    def name(self) -> Text:
+        return "action_cancel_reminder"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        task = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'task':
+                task = entity['value']
+
+        dispatcher.utter_message(f"Okay, I'll cancel your reminder.")
+
+        # Cancel reminder
+        return [ReminderCancelled("reminder_" + task)]
 
 
 class ValidateNameForm(FormValidationAction):
