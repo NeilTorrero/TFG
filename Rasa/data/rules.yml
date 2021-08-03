@@ -18,12 +18,13 @@ rules:
   - action: utter_please_rephrase
 
 - rule: name form
-  conversation_start: true
   steps:
   - intent: register
-  - action: utter_greet
+  - action: utter_ask_user_db_name
   - action: name_form
   - active_loop: name_form
+  - slot_was_set:
+      - user_db_name: null
 
 - rule: Submit form
   condition:
