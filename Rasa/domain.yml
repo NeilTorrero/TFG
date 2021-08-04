@@ -9,6 +9,8 @@ intents:
     use_entities: true
 - reminder:
     use_entities: true
+- cancel_reminder:
+    use_entities: true
 - thank:
     use_entities: true
 - greet:
@@ -36,6 +38,8 @@ intents:
 - search_information:
     use_entities: true
 - timer:
+    use_entities: true
+- cancel_timer:
     use_entities: true
 - nlu_fallback:
     use_entities: true
@@ -273,7 +277,9 @@ actions:
 - action_music
 - action_search_answer
 - action_timer
+- action_cancel_timer
 - action_reminder
+- action_cancel_reminder
 - validate_name_form
 forms:
   name_form:

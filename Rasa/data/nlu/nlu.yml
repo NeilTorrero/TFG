@@ -607,6 +607,12 @@ nlu:
     - can you remember me to [wash the dishes](task)
     - Remind me yo [buy groceries](action) in 3 minutes
     - Remind me to [jump](task) in five seconds
+- intent: cancel_reminder
+  examples: |
+    - cancel the [do the dishes](task) reminder
+    - dismiss the last reminder
+    - remove the reminder at 10:30
+    - discard the [dentist](task) reminder
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -1071,6 +1077,14 @@ nlu:
     - set for me a 1 minutes timer
     - put a 5 second timer
     - set a five second timer
+- intent: cancel_timer
+  examples: |
+    - cancel the timer
+    - stop the timer
+    - remove the timer
+    - quit the timer
+    - stop the countdown
+    - dismiss the timer
 - intent: register
   examples: |
     - register user

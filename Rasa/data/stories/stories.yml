@@ -57,6 +57,10 @@ stories:
   - active_loop: reminder_form
   - active_loop: null
   - action: action_reminder
+- story: cancel reminder
+  steps:
+  - intent: cancel_reminder
+  - action: action_cancel_reminder
 - story: name path
   steps:
   - intent: user_name
@@ -77,6 +81,10 @@ stories:
   steps:
     - intent: timer
     - action: action_timer
+- story: cancel timer
+  steps:
+    - intent: cancel_timer
+    - action: action_cancel_timer
 - story: register form
   steps:
   - intent: register
