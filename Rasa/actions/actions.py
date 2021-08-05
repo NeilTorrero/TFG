@@ -14,7 +14,8 @@ from typing import Any, Text, Dict, List
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 from pymongo.database import Database
-from rasa_sdk.events import ReminderScheduled, SessionStarted, SlotSet, ActionExecuted, EventType, BotUttered
+from rasa_sdk.events import ReminderScheduled, SessionStarted, SlotSet, ActionExecuted, EventType, BotUttered, \
+    ReminderCancelled
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 

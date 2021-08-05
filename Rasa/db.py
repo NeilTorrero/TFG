@@ -229,7 +229,9 @@ def updateUserDBInfo(tracker: Tracker):
     database = Database(client, db)
     colec = database['users']
 
-    user_db_name = tracker.slots['user_db_name']
-    for e in tracker.slots:
-        if [*e][0] != 'session_started_metadata' and [*e][0] != 'user_db_name':
-            colec.update_one({"name": user_db_name}, {"$set": e})
+    user_db_name = tracker.get_slot('user_db_name')
+    if user_db_name is not None:
+        for key in tracker.slots:
+            if key != 'session_started_metadata' and key != 'user_db_name':
+                if tracker.get_slot(key) is not None:
+                    colec.update_one({"name": user_db_name}, {"$set": tracker.get_slot(key)})
