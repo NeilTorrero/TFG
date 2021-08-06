@@ -589,7 +589,7 @@ nlu:
     - i want it to [sound](music_mode) quieter
     - increase the music's [volume](music_mode)
     - upper the [volume](music_mode)
-    - [Play](music_mode) [I'd Do Anything for Love (But I Won't Do That)](song_name)
+    - [Play](music_mode) [I'd Do Anything for Love](song_name) (But I Won't Do That)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
