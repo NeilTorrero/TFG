@@ -55,6 +55,9 @@ stories:
   - intent: reminder
   - action: reminder_form
   - active_loop: reminder_form
+  - slot_was_set:
+      - time: 2021-08-05T20:21:46.000+02:00
+      - task: buy the dinner
   - active_loop: null
   - action: action_reminder
 - story: cancel reminder

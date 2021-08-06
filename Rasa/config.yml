@@ -29,7 +29,7 @@ pipeline:
      timeout: 3
    - name: SpacyEntityExtractor
      # dimensions to extract
-     dimensions: [ "CARDINAL", "DATE", "EVENT", "FAC", "GPE", "LANGUAGE", "LAW", "LOC", "MONEY", "NORP", "ORDINAL", "ORG", "PERCENT", "PERSON", "PRODUCT", "QUANTITY", "TIME", "WORK_OF_ART" ]
+     dimensions: [ "CARDINAL", "EVENT", "FAC", "GPE", "LANGUAGE", "LAW", "LOC", "MONEY", "NORP", "ORG", "PERCENT", "PERSON", "PRODUCT", "QUANTITY", "WORK_OF_ART" ] # "DATE", "TIME", "ORDINAL",
    - name: DIETClassifier
      epochs: 200
      constrain_similarities: true

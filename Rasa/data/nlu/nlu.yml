@@ -589,6 +589,7 @@ nlu:
     - i want it to [sound](music_mode) quieter
     - increase the music's [volume](music_mode)
     - upper the [volume](music_mode)
+    - [Play](music_mode) [I'd Do Anything for Love (But I Won't Do That)](song_name)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -603,10 +604,12 @@ nlu:
     - put a timer for a half an hour to [disconnect the heater](task)
     - remind me that the 12th July is my [brother's birthday](task)
     - remind me to [buy fruit](task)
-    - remember me [to do something](task)
+    - remember me to [do something](task)
     - can you remember me to [wash the dishes](task)
     - Remind me yo [buy groceries](action) in 3 minutes
     - Remind me to [jump](task) in five seconds
+    - Remind me to [drink](task) in 15 seconds
+    - Remind me to [eat](action) in 20 minuts
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -731,6 +734,7 @@ nlu:
     - Call me [Neil](name)
     - My name is [Gundam](name)
     - my name is [Marc](name)
+    - My name is [Anderaan](name)
 - intent: ask_time
   examples: |
     - Can you give me the time?
@@ -775,9 +779,9 @@ nlu:
     - what is the time ?
     - what is the time in [Sydney](location)?
     - what is the time?
-    - what is time in US ?
-    - what is time is US ?
-    - what is time is USA ?
+    - what is time in [US](location) ?
+    - what is time is [US](location) ?
+    - what is time is [USA](location) ?
     - what time do you have?
     - what time is it
     - what time is it?
@@ -795,15 +799,18 @@ nlu:
     - time?
     - what is the time
     - What time is it over there?
-    - What time is It in Japan?
-    - What time is It in russia
+    - What time is It in [Japan](location)?
+    - What time is It in [russia](location)
     - What time is It on
     - what time is itç
-    - what time is in japan?
-    - tell me the time in mataro
-    - what time is it in japan?
-    - What time is it in Ghana?
+    - what time is in [japan](location)?
+    - tell me the time in [mataro](location)
+    - what time is it in [japan](location)?
+    - What time is it in [Ghana](location)?
     - I wanna know what time is it
+    - What's the hour for [Tokyo](location)?
+    - Which time is it in [London](location)¿
+    - What's the time for [Bangladesh](location)?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -928,9 +935,11 @@ nlu:
     - is a storm brewing?
     - Do I need an umbrella?
     - what is today like?
-    - how is the weather in california
+    - how is the weather in [california](location)
     - I want to go out, how's the weather?
     - Hey, how's the weather out there doc?
+    - Is it going to rain today?
+    - How's the weather up there?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -1057,6 +1066,14 @@ nlu:
     - [what  is youtube](search)
     - [what is the meaning of  life](search)
     - [who is the president of spain](search) ?
+    - Can you look for a [recipe on meatloaf](search)?
+    - What's the main [ingredient for cookies](search)?
+    - [What's the meaning of the name Kieran](search)?
+    - [Who's gilgamesh's best friend](search)?
+    - [What's the name of Kamen Rider Nigo](search)?
+    - [What's the name of Kamen Rider Ichigo](search)?
+    - [Who wrote chip and dale adventures](search)
+    - [Who is the pilot of Gundam](search)?
 - intent: timer
   examples: |
     - set a timer for 30 minutes

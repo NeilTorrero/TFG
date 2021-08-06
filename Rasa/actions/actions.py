@@ -183,7 +183,7 @@ class ActionAskWeather(Action):
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(entity['value'])
+                date = datetime.datetime.fromisoformat(str(entity['value']))
                 date_grain = entity['additional_info']['grain']
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
@@ -489,6 +489,8 @@ class ActionReminder(Action):
 
         # Add reminder to slot
         reminders = tracker.get_slot('reminders')
+        if reminders is None:
+            reminders = []
         reminders.append(task + date)
 
         reminder = ReminderScheduled(
@@ -500,6 +502,7 @@ class ActionReminder(Action):
         )
 
         return [reminder, SlotSet('reminders', reminders)]
+
 
 class ActionCancelReminder(Action):
     """Cancels reminder."""
