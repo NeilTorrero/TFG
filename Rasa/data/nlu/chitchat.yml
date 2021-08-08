@@ -501,6 +501,8 @@ nlu:
     - what you can
     - so... what con you do for me?
     - i can ask you anything
+    - how to get started
+    - how to start?
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?

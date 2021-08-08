@@ -610,6 +610,7 @@ nlu:
     - Remind me to [jump](task) in five seconds
     - Remind me to [drink](task) in 15 seconds
     - Remind me to [eat](action) in 20 minuts
+    - time to [get into shape](task) , remember me
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -811,6 +812,7 @@ nlu:
     - What's the hour for [Tokyo](location)?
     - Which time is it in [London](location)¿
     - What's the time for [Bangladesh](location)?
+    - what time is ti on New York?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -940,6 +942,7 @@ nlu:
     - Hey, how's the weather out there doc?
     - Is it going to rain today?
     - How's the weather up there?
+    - Damn, it's hot outside. What temperature is it exactly?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -1074,6 +1077,16 @@ nlu:
     - [What's the name of Kamen Rider Ichigo](search)?
     - [Who wrote chip and dale adventures](search)
     - [Who is the pilot of Gundam](search)?
+    - [who is ElRubiusOMG](search)
+    - [who is awesome](search)?
+    - where does play Lionel Messi?
+    - [who owns Burguer King](search)
+    - [who owns McDonalds](search)
+    - Who wrote Gundam?
+    - Who is Kim Jong Il?
+    - Who did Michael Jordan play for?
+    - Who won the gold in talbe tennis in the last olympics?
+    - [what is the best videogame ever](search)?
 - intent: timer
   examples: |
     - set a timer for 30 minutes

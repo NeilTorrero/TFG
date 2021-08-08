@@ -60,13 +60,13 @@ class ActionAskTime(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("\nTracker: ")
+        # print("\nTracker: ")
         # print(tracker.sender_id)
-        print(tracker.latest_message)
+        # print(tracker.latest_message)
         # print(tracker.events)
         # print(tracker.active_loop)
         # print(tracker.latest_action_name)
-        print("\nSlots: ")
+        # print("\nSlots: ")
         # print(tracker.slots)
 
         location = None
@@ -167,13 +167,13 @@ class ActionAskWeather(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print("\nTracker: ")
+        # print("\nTracker: ")
         # print(tracker.sender_id)
-        print(tracker.latest_message)
+        # print(tracker.latest_message)
         # print(tracker.events)
         # print(tracker.active_loop)
         # print(tracker.latest_action_name)
-        print("\nSlots: ")
+        # print("\nSlots: ")
         # print(tracker.slots)
 
         location = None
@@ -220,13 +220,13 @@ class ActionFood(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("\nTracker: ")
+        # print("\nTracker: ")
         # print(tracker.sender_id)
-        print(tracker.latest_message)
+        # print(tracker.latest_message)
         # print(tracker.events)
         # print(tracker.active_loop)
         # print(tracker.latest_action_name)
-        print("\nSlots: ")
+        # print("\nSlots: ")
         # print(tracker.slots)
         dispatcher.utter_message(
             text="I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds.")
@@ -243,16 +243,17 @@ class ActionMusic(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("\nTracker: ")
+        # print("\nTracker: ")
         # print(tracker.sender_id)
-        print(tracker.latest_message)
+        # print(tracker.latest_message)
         # print(tracker.events)
         # print(tracker.active_loop)
         # print(tracker.latest_action_name)
-        print("\nSlots: ")
+        # print("\nSlots: ")
         # print(tracker.slots)
 
         dispatcher.utter_message(text="Playing music. Well yes but actually no.")
+        # music entityes -> music_mode, song_name, playlist_name, WORK_OF_ART
         # TODO: connect with spotify and do action requested
 
         return []
@@ -359,8 +360,11 @@ def webScrapAnswer(question):
             if answer is not None:
                 print(answer.text)
                 return answer.text
-    except:
+    except Exception as e:
         print(answer)
+        LOG_FILENAME = 'Rasa/logs/actions.log'
+        logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
+        logging.exception("Exception = " + str(e) + "\n\n Question = " + question + "\n Answer = " + str(answer))
         return "Something went wrong while looking for the answer, I will have this check and be solved as soon as possible."
     return "I didn't find anything for what you asked."
 
@@ -381,6 +385,7 @@ class ActionSearchAnswer(Action):
         if question == '':
             question = tracker.latest_message.text
         answer = webScrapAnswer(question)
+        # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
 
         dispatcher.utter_message(text=answer)
 
