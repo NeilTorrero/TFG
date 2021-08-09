@@ -281,18 +281,19 @@ actions:
 - action_reminder
 - action_cancel_reminder
 - validate_name_form
+- action_submit_register
 forms:
   name_form:
     required_slots:
       user_db_name:
       - entity: name
-        type: from_text
+        type: from_entity
   reminder_form:
     required_slots:
       task:
       - entity: task
-        type: from_text
+        type: from_entity
       time:
       - entity: time
-        type: from_text
+        type: from_entity
 e2e_actions: []

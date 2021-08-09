@@ -542,11 +542,30 @@ class ValidateNameForm(FormValidationAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         print(slot_value)
+        if slot_value is None:
+            slot_value = tracker.get_slot('name')
+            if slot_value is None:
+                slot_value = tracker.get_slot('PERSON')
+                if slot_value is None:
+                    dispatcher.utter_message("I didn't understand that, please introduce the your name.")
+                    return {"user_db_name": None}
+        return {"user_db_name": slot_value}
 
-        slots = setUserDBConversation(slot_value, tracker)
-        dispatcher.utter_message("User registered.")
-        slots['user_db_name'] = slot_value
-        return slots  # {"user_db_name": slot_value}
+
+class ActionSubmitRegister(Action):
+    def name(self) -> Text:
+        return "action_submit_register"
+
+    def run(
+        self,
+        dispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        user = tracker.get_slot('user_db_name')
+        slots = setUserDBConversation(user, tracker)
+        dispatcher.utter_message("User registered as " + user + ".")
+        return slots
 
 
 def setUserDBConversation(user_db_name, tracker: Tracker):
@@ -571,12 +590,13 @@ def setUserDBConversation(user_db_name, tracker: Tracker):
         print('User found')
         found = colec.find_one_and_update({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
         # load slots that have been saved
-        slots = {}
+        slots = []
+        # slots = {}
         for key in found.keys():
             if key != 'conversations':
-                # slot = SlotSet(key, found[key])
-                # slots.append(slot)
-                slots[key] = found[key]
+                slot = SlotSet(key, found[key])
+                slots.append(slot)
+                #slots[key] = found[key]
         return slots
 
 

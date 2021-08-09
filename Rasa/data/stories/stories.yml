@@ -88,12 +88,11 @@ stories:
   steps:
     - intent: cancel_timer
     - action: action_cancel_timer
-- story: register form
-  steps:
-  - intent: register
-  - action: utter_ask_user_db_name
-  - action: name_form
-  - active_loop: name_form
-  - slot_was_set:
-      - user_db_name: Joestar
-  - active_loop: null
+#- story: register form
+#  steps:
+#  - intent: register
+#  - action: name_form
+#  - active_loop: name_form
+#  - slot_was_set:
+#      - user_db_name: Joestar
+#  - active_loop: null

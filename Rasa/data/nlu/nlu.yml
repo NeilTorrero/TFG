@@ -736,6 +736,9 @@ nlu:
     - My name is [Gundam](name)
     - my name is [Marc](name)
     - My name is [Anderaan](name)
+    - Quim
+    - I am Quim
+    - I am [quim](name)
 - intent: ask_time
   examples: |
     - Can you give me the time?
@@ -813,6 +816,7 @@ nlu:
     - Which time is it in [London](location)¿
     - What's the time for [Bangladesh](location)?
     - what time is ti on New York?
+    - I wish to know the time
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -943,6 +947,8 @@ nlu:
     - Is it going to rain today?
     - How's the weather up there?
     - Damn, it's hot outside. What temperature is it exactly?
+    - how is the weather like in [barcelona](location)?
+    - I wish to know the weather
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -1087,6 +1093,13 @@ nlu:
     - Who did Michael Jordan play for?
     - Who won the gold in talbe tennis in the last olympics?
     - [what is the best videogame ever](search)?
+    - [whos is russian president](search)
+    - [who is our great leader from china](search)?
+    - [who is china great leader](search)
+    - [who is the great leader of china republic](search)
+    - [china president please](search)
+    - [china president](search)
+    - [who is xi jiping](search)?
 - intent: timer
   examples: |
     - set a timer for 30 minutes
@@ -1119,3 +1132,4 @@ nlu:
   examples: |
     - register user
     - register
+    - I wish to register
