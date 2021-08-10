@@ -20,7 +20,7 @@ rules:
 - rule: Activate form
   steps:
   - intent: register
-  - action: utter_ask_user_db_name
+#  - action: utter_ask_user_db_name
   - action: name_form
   - active_loop: name_form
 
