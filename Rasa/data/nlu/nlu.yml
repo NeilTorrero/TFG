@@ -131,6 +131,146 @@ nlu:
     - Hello we are [Núria](name) & [Elisabet](name)
     - Hello there
     - Hello fella
+    - good afternoon are you around
+    - good afternoon are you around?
+    - good afternoon are you there
+    - good afternoon how are things going
+    - good afternoon how are you
+    - good afternoon how are you doing
+    - good afternoon how is it going
+    - good afternoon sup
+    - good afternoon whats up
+    - good afternoon whatsup
+    - good day
+    - good day are you around
+    - good day are you around?
+    - good day are you there
+    - good day how are things going
+    - good day how are you
+    - good day how are you doing
+    - good day how is it going
+    - good day sup
+    - good day whats up
+    - good day whatsup
+    - good morning are you around
+    - good morning are you around?
+    - good morning are you there
+    - good morning how are things going
+    - good morning how are you
+    - good morning how are you doing
+    - good morning how is it going
+    - good morning sup
+    - good morning whats up
+    - good morning whatsup
+    - hello good night
+    - good night are you around
+    - good night are you around?
+    - good night are you there
+    - good night how are things going
+    - good night how are you
+    - good night how are you doing
+    - good night how is it going
+    - good night sup
+    - good night whats up
+    - good night whatsup
+    - greetings are you around
+    - greetings are you around?
+    - greetings are you there
+    - greetings how are things going
+    - greetings how are you
+    - greetings how are you doing
+    - greetings how is it going
+    - greetings sup
+    - greetings whats up
+    - greetings whatsup
+    - hello [Alex](name)
+    - hello [Alicia](name)
+    - hello [Bob](name)
+    - hello [Dani](name)
+    - hello [Janis](name)
+    - hello [Marc](name)
+    - hello [Mary](name)
+    - hello [Neil](name)
+    - hello [Quim](name)
+    - hello [Sara](name)
+    - hello are you around
+    - hello are you around?
+    - hello are you there
+    - hello good afternoon
+    - hello good day
+    - hello good morning
+    - hello greetings
+    - hello how are things going
+    - hello how are you
+    - hello how are you doing
+    - hello how is it going
+    - hello morning
+    - hello sup
+    - hello whats up
+    - hello whatsup
+    - hey [Alex](name)
+    - hey [Alicia](name)
+    - hey [Bob](name)
+    - hey [Dani](name)
+    - hey [Janis](name)
+    - hey [Marc](name)
+    - hey [Mary](name)
+    - hey [Neil](name)
+    - hey [Quim](name)
+    - hey [Sara](name)
+    - hey are you around
+    - hey are you around?
+    - hey are you there
+    - hey good afternoon
+    - hey good day
+    - hey good morning
+    - hey good night
+    - hey greetings
+    - hey how are things going
+    - hey how are you
+    - hey how are you doing
+    - hey how is it going
+    - hey morning
+    - hey sup
+    - hey whats up
+    - hey whatsup
+    - hi [Alex](name)
+    - hi [Alicia](name)
+    - hi [Bob](name)
+    - hi [Dani](name)
+    - hi [Janis](name)
+    - hi [Marc](name)
+    - hi [Mary](name)
+    - hi [Neil](name)
+    - hi [Quim](name)
+    - hi [Sara](name)
+    - hi are you around
+    - hi are you around?
+    - hi are you there
+    - hi good afternoon
+    - hi good day
+    - hi good morning
+    - hi good night
+    - hi greetings
+    - hi how are things going
+    - hi how are you
+    - hi how are you doing
+    - hi how is it going
+    - hi morning
+    - hi sup
+    - hi whats up
+    - hi whatsup
+    - morning
+    - morning are you around
+    - morning are you around?
+    - morning are you there
+    - morning how are things going
+    - morning how are you
+    - morning how are you doing
+    - morning how is it going
+    - morning sup
+    - morning whats up
+    - morning whatsup
 - intent: goodbye
   examples: |
     - cu
@@ -181,15 +321,352 @@ nlu:
     - Talk with you later
     - Goodbye
     - Adeu
+    - adieu
+    - adieu [Alex](name)
+    - adieu [Alicia](name)
+    - adieu [Bob](name)
+    - adieu [Dani](name)
+    - adieu [Janis](name)
+    - adieu [Marc](name)
+    - adieu [Mary](name)
+    - adieu [Neil](name)
+    - adieu [Quim](name)
+    - adieu [Sara](name)
+    - adios [Alex](name)
+    - adios [Alicia](name)
+    - adios [Bob](name)
+    - adios [Dani](name)
+    - adios [Janis](name)
+    - adios [Marc](name)
+    - adios [Mary](name)
+    - adios [Neil](name)
+    - adios [Quim](name)
+    - adios [Sara](name)
+    - bye [Alex](name)
+    - bye [Alicia](name)
+    - bye [Bob](name)
+    - bye [Dani](name)
+    - bye [Janis](name)
+    - bye [Marc](name)
+    - bye [Mary](name)
+    - bye [Neil](name)
+    - bye [Quim](name)
+    - bye [Sara](name)
+    - chao
+    - chao [Alex](name)
+    - chao [Alicia](name)
+    - chao [Bob](name)
+    - chao [Dani](name)
+    - chao [Janis](name)
+    - chao [Marc](name)
+    - chao [Mary](name)
+    - chao [Neil](name)
+    - chao [Quim](name)
+    - chao [Sara](name)
+    - chau
+    - chau [Alex](name)
+    - chau [Alicia](name)
+    - chau [Bob](name)
+    - chau [Dani](name)
+    - chau [Janis](name)
+    - chau [Marc](name)
+    - chau [Mary](name)
+    - chau [Neil](name)
+    - chau [Quim](name)
+    - chau [Sara](name)
+    - farewell [Alex](name)
+    - farewell [Alicia](name)
+    - farewell [Bob](name)
+    - farewell [Dani](name)
+    - farewell [Janis](name)
+    - farewell [Marc](name)
+    - farewell [Mary](name)
+    - farewell [Neil](name)
+    - farewell [Quim](name)
+    - farewell [Sara](name)
+    - going out
+    - going out adieu
+    - going out adios
+    - going out bye
+    - going out chao
+    - going out chau
+    - going out farewell
+    - going out goodbye
+    - going out gtg
+    - going out ttyl
+    - goodbye [Alex](name)
+    - goodbye [Alicia](name)
+    - goodbye [Bob](name)
+    - goodbye [Dani](name)
+    - goodbye [Janis](name)
+    - goodbye [Marc](name)
+    - goodbye [Mary](name)
+    - goodbye [Neil](name)
+    - goodbye [Quim](name)
+    - goodbye [Sara](name)
+    - got to go
+    - got to go adieu
+    - got to go adios
+    - got to go bye
+    - got to go chao
+    - got to go chau
+    - got to go farewell
+    - got to go goodbye
+    - got to go gtg
+    - got to go ttyl
+    - gtg
+    - gtg [Alex](name)
+    - gtg [Alicia](name)
+    - gtg [Bob](name)
+    - gtg [Dani](name)
+    - gtg [Janis](name)
+    - gtg [Marc](name)
+    - gtg [Mary](name)
+    - gtg [Neil](name)
+    - gtg [Quim](name)
+    - gtg [Sara](name)
+    - have to go
+    - have to go adieu
+    - have to go adios
+    - have to go bye
+    - have to go chao
+    - have to go chau
+    - have to go farewell
+    - have to go goodbye
+    - have to go gtg
+    - have to go ttyl
+    - heading out
+    - heading out adieu
+    - heading out adios
+    - heading out bye
+    - heading out chao
+    - heading out chau
+    - heading out farewell
+    - heading out goodbye
+    - heading out gtg
+    - heading out ttyl
+    - im leaving now
+    - im leaving now adieu
+    - im leaving now adios
+    - im leaving now bye
+    - im leaving now chao
+    - im leaving now chau
+    - im leaving now farewell
+    - im leaving now goodbye
+    - im leaving now gtg
+    - im leaving now ttyl
+    - leaving
+    - leaving adieu
+    - leaving adios
+    - leaving bye
+    - leaving chao
+    - leaving chau
+    - leaving farewell
+    - leaving goodbye
+    - leaving gtg
+    - leaving ttyl
+    - talk to you later
+    - talk to you later adieu
+    - talk to you later adios
+    - talk to you later bye
+    - talk to you later chao
+    - talk to you later chau
+    - talk to you later farewell
+    - talk to you later goodbye
+    - talk to you later gtg
+    - talk to you later ttyl
+    - talk to you soon
+    - talk to you soon adieu
+    - talk to you soon adios
+    - talk to you soon bye
+    - talk to you soon chao
+    - talk to you soon chau
+    - talk to you soon farewell
+    - talk to you soon goodbye
+    - talk to you soon gtg
+    - talk to you soon ttyl
+    - ttyl
+    - ttyl [Alex](name)
+    - ttyl [Alicia](name)
+    - ttyl [Bob](name)
+    - ttyl [Dani](name)
+    - ttyl [Janis](name)
+    - ttyl [Marc](name)
+    - ttyl [Mary](name)
+    - ttyl [Neil](name)
+    - ttyl [Quim](name)
+    - ttyl [Sara](name)
 - intent: affirm
   examples: |
+    - affirmative
+    - affirmative affirmative
+    - affirmative agreed
+    - affirmative correct
+    - affirmative im ok with that
+    - affirmative ok
+    - affirmative please
+    - affirmative pls
+    - affirmative plz
+    - affirmative right
+    - affirmative sounds good
+    - affirmative yeah
+    - affirmative yep
+    - affirmative yes
+    - affirmative yes sir
+    - agreed
+    - agreed affirmative
+    - agreed agreed
+    - agreed correct
+    - agreed im ok with that
+    - agreed ok
+    - agreed please
+    - agreed pls
+    - agreed plz
+    - agreed right
+    - agreed sounds good
+    - agreed yeah
+    - agreed yep
+    - agreed yes
+    - agreed yes sir
+    - correct
+    - correct affirmative
+    - correct agreed
+    - correct correct
+    - correct im ok with that
+    - correct ok
+    - correct please
+    - correct pls
+    - correct plz
+    - correct right
+    - correct sounds good
+    - correct yeah
+    - correct yep
+    - correct yes
+    - correct yes sir
+    - im ok with that
+    - im ok with that affirmative
+    - im ok with that agreed
+    - im ok with that correct
+    - im ok with that im ok with that
+    - im ok with that ok
+    - im ok with that please
+    - im ok with that pls
+    - im ok with that plz
+    - im ok with that right
+    - im ok with that sounds good
+    - im ok with that yeah
+    - im ok with that yep
+    - im ok with that yes
+    - im ok with that yes sir
+    - ok
+    - ok affirmative
+    - ok agreed
+    - ok correct
+    - ok im ok with that
+    - ok ok
+    - ok please
+    - ok pls
+    - ok plz
+    - ok right
+    - ok sounds good
+    - ok yeah
+    - ok yep
+    - ok yes
+    - ok yes sir
+    - right
+    - right affirmative
+    - right agreed
+    - right correct
+    - right im ok with that
+    - right ok
+    - right please
+    - right pls
+    - right plz
+    - right right
+    - right sounds good
+    - right yeah
+    - right yep
+    - right yes
+    - right yes sir
+    - sounds good
+    - sounds good affirmative
+    - sounds good agreed
+    - sounds good correct
+    - sounds good im ok with that
+    - sounds good ok
+    - sounds good please
+    - sounds good pls
+    - sounds good plz
+    - sounds good right
+    - sounds good sounds good
+    - sounds good yeah
+    - sounds good yep
+    - sounds good yes
+    - sounds good yes sir
+    - yeah
+    - yeah affirmative
+    - yeah agreed
+    - yeah correct
+    - yeah im ok with that
+    - yeah ok
+    - yeah please
+    - yeah pls
+    - yeah plz
+    - yeah right
+    - yeah sounds good
+    - yeah yeah
+    - yeah yep
+    - yeah yes
+    - yeah yes sir
+    - yep
+    - yep affirmative
+    - yep agreed
+    - yep correct
+    - yep im ok with that
+    - yep ok
+    - yep please
+    - yep pls
+    - yep plz
+    - yep right
+    - yep sounds good
+    - yep yeah
+    - yep yep
+    - yep yes
+    - yep yes sir
     - yes
+    - yes affirmative
+    - yes agreed
+    - yes correct
+    - yes im ok with that
+    - yes ok
+    - yes please
+    - yes pls
+    - yes plz
+    - yes right
+    - yes sir
+    - yes sir affirmative
+    - yes sir agreed
+    - yes sir correct
+    - yes sir im ok with that
+    - yes sir ok
+    - yes sir please
+    - yes sir pls
+    - yes sir plz
+    - yes sir right
+    - yes sir sounds good
+    - yes sir yeah
+    - yes sir yep
+    - yes sir yes
+    - yes sir yes sir
+    - yes sounds good
+    - yes yeah
+    - yes yep
+    - yes yes
+    - yes yes sir
     - y
     - indeed
     - of course
     - that sounds good
-    - correct
-    - ok
     - Accept
     - Awesome!
     - Good
@@ -242,7 +719,6 @@ nlu:
     - absolutely
     - accept
     - accepted
-    - agreed
     - ah ok
     - alright
     - alright, cool
@@ -342,17 +818,14 @@ nlu:
     - ye
     - ye splease
     - yea
-    - yeah
     - yeah do that
     - yeah sure
     - yeah'=
     - yeah, why not
     - yeeeeezzzzz
     - yeeees
-    - yep
     - yep i want that
     - yep if i have to
-    - yep please
     - yep that's nice
     - yep thats cool
     - yep, will do thank you
@@ -373,9 +846,7 @@ nlu:
     - yes it was okay
     - yes of course
     - yes pleae
-    - yes please
     - yes please!
-    - yes pls
     - yes sirfr
     - yes that's great
     - yes that's what i want
@@ -409,6 +880,8 @@ nlu:
     - really
     - yes a lot
     - nice
+    - ok thanks [sara](name)
+    - ok thanks!
 - intent: deny
   examples: |
     - no
@@ -511,6 +984,67 @@ nlu:
     - none of them
     - I don't agree
     - i don't know
+    - didnt meant that
+    - don't do that
+    - dont mean that
+    - i don't want that
+    - incorrect
+    - incorrect didnt meant that
+    - incorrect don't do that
+    - incorrect dont mean that
+    - incorrect i don't want that
+    - incorrect it's not good
+    - incorrect its not correct
+    - incorrect its not ok
+    - incorrect that is wrong
+    - incorrect that's not correct
+    - incorrect that's not right
+    - incorrect that's not what i want
+    - incorrect that's wrong
+    - it's not good
+    - its not correct
+    - its not ok
+    - no didnt meant that
+    - no don't do that
+    - no dont mean that
+    - no i don't want that
+    - no it's not good
+    - no its not correct
+    - no its not ok
+    - no that is wrong
+    - no that's not correct
+    - no that's not right
+    - no that's not what i want
+    - no that's wrong
+    - nope didnt meant that
+    - nope don't do that
+    - nope dont mean that
+    - nope i don't want that
+    - nope it's not good
+    - nope its not correct
+    - nope its not ok
+    - nope that is wrong
+    - nope that's not correct
+    - nope that's not right
+    - nope that's not what i want
+    - nope that's wrong
+    - not really didnt meant that
+    - not really don't do that
+    - not really dont mean that
+    - not really i don't want that
+    - not really it's not good
+    - not really its not correct
+    - not really its not ok
+    - not really that is wrong
+    - not really that's not correct
+    - not really that's not right
+    - not really that's not what i want
+    - not really that's wrong
+    - that is wrong
+    - that's not correct
+    - that's not right
+    - that's not what i want
+    - that's wrong
 - intent: mood_great
   examples: |
     - amazing
@@ -611,6 +1145,14 @@ nlu:
     - Remind me to [drink](task) in 15 seconds
     - Remind me to [eat](action) in 20 minuts
     - time to [get into shape](task) , remember me
+    - remind me to [do the homework](task) in 30 seconds
+    - remind me to [do the homework](task) in 15 seconds
+    - remind me that tomorrow i have to [pick up my cousin from the airport](task)
+    - remind me to [return the call](task) in 10 minutes
+    - remeber me that tomorrow i have a [concert](task)
+    - can you remind me to [check on the washing machine](task) in 2 hours
+    - Remind me to [play drums](task) at 12
+    - remind me to [play the guiter](task) in an hour
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -637,9 +1179,6 @@ nlu:
     - cool, thanks
     - danke
     - great thanks
-    - ok thanks
-    - ok thanks sara
-    - ok thanks!
     - perfect thank you
     - thank u
     - thank you
@@ -655,7 +1194,6 @@ nlu:
     - thankyou
     - thnks
     - thx
-    - yes thanks
     - thanks for your information
     - thanks f
     - thank you a lot
@@ -1120,6 +1658,7 @@ nlu:
     - set for me a 1 minutes timer
     - put a 5 second timer
     - set a five second timer
+    - set a 10 second timer
 - intent: cancel_timer
   examples: |
     - cancel the timer

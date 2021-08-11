@@ -6,21 +6,21 @@ stories:
   - action: utter_greet
 - story: user_name
   steps:
-    - intent: user_name
-      entities:
-      - name: "Amelia"
-    - action: utter_greet_name
+  - intent: user_name
+    entities:
+    - name: Amelia
+  - action: utter_greet_name
 - story: greet+name
   steps:
   - intent: greet
     entities:
-    - name: "Joseph"
+    - name: Joseph
   - action: utter_greet_name
 - story: greet+name slot
   steps:
   - intent: greet
   - slot_was_set:
-    - name: "Richard"
+    - name: Richard
   - action: utter_greet_name
 - story: goodbye
   steps:
