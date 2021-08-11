@@ -45,6 +45,10 @@ intents:
     use_entities: true
 - register:
     use_entities: true
+- check_reminder:
+    use_entities: true
+- end_timer:
+    use_entities: true
 entities:
 - location
 - name
@@ -137,12 +141,12 @@ slots:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: true
+    influence_conversation: false
   time:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hey! How are you?

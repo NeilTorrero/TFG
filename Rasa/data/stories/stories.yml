@@ -44,22 +44,16 @@ stories:
     entities:
     - location: Paris
   - action: action_ask_weather
-#- story: reminder
+# - story: reminder
 #  steps:
 #  - intent: reminder
-#    entities:
-#    - task: pick up the mail
+#  - action: reminder_form
+#  - active_loop: reminder_form
+#  - slot_was_set:
+#      - time: 2021-08-05T20:21:46.000+02:00
+#      - task: buy the dinner
+#  - active_loop: null
 #  - action: action_reminder
-- story: reminder
-  steps:
-  - intent: reminder
-  - action: reminder_form
-  - active_loop: reminder_form
-  - slot_was_set:
-      - time: 2021-08-05T20:21:46.000+02:00
-      - task: buy the dinner
-  - active_loop: null
-  - action: action_reminder
 - story: cancel reminder
   steps:
   - intent: cancel_reminder
@@ -96,3 +90,41 @@ stories:
 #  - slot_was_set:
 #      - user_db_name: Joestar
 #  - active_loop: null
+- story: reminder
+  steps:
+  - intent: reminder
+    entities:
+    - time: '2021-08-11T16:31:21.000+02:00'
+    - task: do the homework
+  - slot_was_set:
+    - task: do the homework
+  - slot_was_set:
+    - time: '2021-08-11T16:31:21.000+02:00'
+  - action: reminder_form
+  - active_loop: reminder_form
+  - slot_was_set:
+    - task: do the homework
+  - slot_was_set:
+    - time: '2021-08-11T16:31:21.000+02:00'
+  - active_loop: null
+  - action: action_reminder
+  - slot_was_set:
+    - reminders:
+      - do the homework_2021-08-11 16:31:21+02:00
+  - intent: check_reminder
+    entities:
+    - time: '2021-08-11T16:31:21.000+02:00'
+    - task: do the homework
+  - slot_was_set:
+    - task: do the homework
+  - slot_was_set:
+    - time: '2021-08-11T16:31:21.000+02:00'
+  - action: utter_remind
+- story: timer
+  steps:
+  - intent: timer
+    entities:
+    - duration: 10
+  - action: action_timer
+  - intent: end_timer
+  - action: utter_end_timer

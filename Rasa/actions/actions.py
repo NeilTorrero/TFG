@@ -109,7 +109,7 @@ def getWeather(city, date, date_grain):
             print("City not found")
             return []
     else:
-        diff = (datetime.datetime.fromisoformat(date) - datetime.datetime.now(datetime.datetime.fromisoformat(date).tzinfo))
+        diff = (datetime.datetime.fromisoformat(str(date)) - datetime.datetime.now(datetime.datetime.fromisoformat(str(date)).tzinfo))
         if not 7 >= diff.days >= 0:
             print("I don't have the forecast for the date you are asking.")
             return []
@@ -424,7 +424,7 @@ class ActionTimer(Action):
         dispatcher.utter_message("Setting the timer.")
 
         reminder = ReminderScheduled(
-            "utter_end_timer",
+            "end_timer",
             trigger_date_time=date,
             name="timer",
             kill_on_user_message=True,
@@ -465,8 +465,12 @@ class ActionReminder(Action):
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
                 task = entity['value']
+                if task is None:
+                    task = tracker.get_slot('task')
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
+                if date is None:
+                    date = tracker.get_slot('time')
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -496,10 +500,10 @@ class ActionReminder(Action):
         reminders = tracker.get_slot('reminders')
         if reminders is None:
             reminders = []
-        reminders.append(task + date)
+        reminders.append(task + '_' + str(date))
 
         reminder = ReminderScheduled(
-            "utter_remind",
+            "check_reminder",
             trigger_date_time=date,
             entities=entities,
             name="reminder_" + task,

@@ -17,14 +17,26 @@ rules:
   - intent: nlu_fallback
   - action: utter_please_rephrase
 
-- rule: Activate form
+- rule: remind reminder
+  steps:
+  - intent: check_reminder
+    entities:
+      - task: null
+  - action: utter_remind
+
+- rule: remind timer
+  steps:
+  - intent: end_timer
+  - action: utter_end_timer
+
+- rule: Activate register form
   steps:
   - intent: register
 #  - action: utter_ask_user_db_name
   - action: name_form
   - active_loop: name_form
 
-- rule: Submit form
+- rule: Submit register form
   condition:
   # Condition that form is active.
   - active_loop: name_form
@@ -36,3 +48,23 @@ rules:
     - user_db_name: null
   # The actions we want to run when the form is submitted.
   - action: action_submit_register
+
+- rule: Activate reminder form
+  steps:
+  - intent: reminder
+  - action: reminder_form
+  - active_loop: reminder_form
+
+- rule: Submit reminder form
+  condition:
+  # Condition that form is active.
+  - active_loop: reminder_form
+  steps:
+  # Form is deactivated
+  - action: reminder_form
+  - active_loop: null
+  - slot_was_set:
+    - task: null
+    - time: null
+  # The actions we want to run when the form is submitted.
+  - action: action_reminder
