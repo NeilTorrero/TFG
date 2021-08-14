@@ -12,6 +12,12 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: respond to memory
+  steps:
+  - intent: memory
+  #- action: utter_memory
+  - action: action_memory
+
 - rule: Fallback response
   steps:
   - intent: nlu_fallback

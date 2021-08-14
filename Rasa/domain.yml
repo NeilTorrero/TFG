@@ -49,6 +49,8 @@ intents:
     use_entities: true
 - end_timer:
     use_entities: true
+- memory:
+    use_entities: true
 entities:
 - location
 - name
@@ -286,6 +288,7 @@ actions:
 - action_cancel_reminder
 - validate_name_form
 - action_submit_register
+- action_memory
 forms:
   name_form:
     required_slots:

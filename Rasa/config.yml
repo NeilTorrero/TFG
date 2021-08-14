@@ -9,6 +9,8 @@ pipeline:
    - name: SpacyNLP
      model: "en_core_web_trf"
    - name: WhitespaceTokenizer
+     intent_tokenization_flag: true
+     intent_split_symbol: "+"
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer
@@ -39,6 +41,10 @@ pipeline:
      constrain_similarities: true
    - name: ResponseSelector
      retrieval_intent: chitchat
+     epochs: 200
+     constrain_similarities: true
+   - name: ResponseSelector
+     retrieval_intent: memory
      epochs: 200
      constrain_similarities: true
    - name: FallbackClassifier

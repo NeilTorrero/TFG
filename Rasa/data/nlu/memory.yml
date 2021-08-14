@@ -1,0 +1,19 @@
+version: "2.0"
+nlu:
+  - intent: memory/retrieve_question
+    examples: |
+      - what i told you to search yesterday?
+      - remeber me what i made you look up last friday
+  - intent: memory/music
+    examples: |
+      - play the song i always ask you
+      - reproduce the last song I asked you
+      - play again the playlist i told you
+  - intent: memory/reminder
+    examples: |
+      - remind me the same thing i told you yesterday
+  - intent: memory/timer
+    examples: |
+      - put the same timer as last week
+      - set the timer as yesterday
+# do this using the chitchat/faq retrival intent model (also consider this for the information search and all the similars in the same retrival)

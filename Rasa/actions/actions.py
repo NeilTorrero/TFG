@@ -604,6 +604,19 @@ def setUserDBConversation(user_db_name, tracker: Tracker):
         return slots
 
 
+class ActionMemory(Action):
+    def name(self) -> Text:
+        return "action_memory"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        intent = tracker.latest_message['intent'].get('name')
+        dispatcher.utter_message(text="Database search and retrieval WIP (intent= " + intent + ')')
+        return []
+
+
 """
 class ActionSessionStart(Action):
     def name(self) -> Text:
