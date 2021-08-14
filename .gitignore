@@ -217,3 +217,5 @@ Rasa/story_graph.dot
 Rasa/credentials.py
 
 Rasa/actions/credentials.json
+
+ASR/model/
