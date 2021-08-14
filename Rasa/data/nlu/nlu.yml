@@ -1153,6 +1153,10 @@ nlu:
     - can you remind me to [check on the washing machine](task) in 2 hours
     - Remind me to [play drums](task) at 12
     - remind me to [play the guiter](task) in an hour
+    - remember me to [work out](task) in 30 seconds
+    - remind me to [do the dished](task) in one minute
+    - remind me to [do the homework](task) in 1 minute
+    - remind me to [save the book](task) in 5 seconds
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -1659,6 +1663,9 @@ nlu:
     - put a 5 second timer
     - set a five second timer
     - set a 10 second timer
+    - put a timer of 1 minute
+    - set a 1 second timer
+    - set a 15 second timer
 - intent: cancel_timer
   examples: |
     - cancel the timer
