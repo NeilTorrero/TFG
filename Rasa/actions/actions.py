@@ -104,22 +104,22 @@ def getWeather(city, date, date_grain):
             humidity = info['humidity']
             weather_description = json_r['weather'][0]['description']
             print(temperature, pressure, humidity, weather_description)
-            return [temperature, pressure, humidity, weather_description]
+            return ['OK', temperature, pressure, humidity, weather_description]
         else:
             print("City not found")
-            return []
+            return ['KO', "City not found"]
     else:
         diff = (datetime.datetime.fromisoformat(str(date)) - datetime.datetime.now(datetime.datetime.fromisoformat(str(date)).tzinfo))
         if not 7 >= diff.days >= 0:
             print("I don't have the forecast for the date you are asking.")
-            return []
+            return ['KO', "I don't have the forecast for the date you are asking."]
 
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/onecall?"
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
         json_city = response.json()
         if 'error' in json_city and json_city['code'] == '018':
             print('City not found')
-            return []
+            return ['KO', 'City not found']
         # Forecast -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API key}&units=metric
         url = FORECAST_URL + "lat=" + json_city['latt'] + "&lon=" + json_city['longt'] + "&appid=" + API_KEY + "&units=metric"
 
@@ -135,28 +135,28 @@ def getWeather(city, date, date_grain):
                     humidity = info['humidity']
                     weather_description = info['weather'][0]['description']
                     print(temperature, pressure, humidity, weather_description)
-                    return [temperature, pressure, humidity, weather_description]
+                    return ['OK', temperature, pressure, humidity, weather_description]
                 else:
                     print('Check next 7 days')
                     info = json_r['daily'][int(diff.days)]
-                    temperature = info['temp']
+                    temperature = 'a maximum of ' + str(info['temp']['max']) + 'ºC and a minimum of ' + str(info['temp']['min'])
                     pressure = info['pressure']
                     humidity = info['humidity']
                     weather_description = info['weather'][0]['description']
                     print(temperature, pressure, humidity, weather_description)
-                    return [temperature, pressure, humidity, weather_description]
+                    return ['OK', temperature, pressure, humidity, weather_description]
             elif date_grain == 'days' or date_grain == 'day':
                 print('Check next 7 days')
                 info = json_r['daily'][int(diff.days)]
-                temperature = info['temp']
+                temperature = 'a maximum of ' + str(info['temp']['max']) + 'ºC and a minimum of ' + str(info['temp']['min'])
                 pressure = info['pressure']
                 humidity = info['humidity']
                 weather_description = info['weather'][0]['description']
                 print(temperature, pressure, humidity, weather_description)
-                return [temperature, pressure, humidity, weather_description]
+                return ['OK', temperature, pressure, humidity, weather_description]
         else:
             print("There's no forecast for this date.")
-            return[]
+            return['KO', "There's no forecast for this date."]
 
 
 class ActionAskWeather(Action):
@@ -203,12 +203,12 @@ class ActionAskWeather(Action):
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
         weather = getWeather(location, date, date_grain)
-        if weather:
+        if weather[0] == 'OK':
             dispatcher.utter_message(
-                text="It's " + str(weather[3]) + ", with a temperature of " + str(
-                    weather[0]) + "ºC and with a humidity of a " + str(weather[2]) + "%.")
+                text="It's " + str(weather[4]) + ", with a temperature of " + str(
+                    weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%.")
         else:
-            dispatcher.utter_message(text="Sorry, couldn't find the weather for this city or there wasn't forecast for it.")
+            dispatcher.utter_message(text=weather[1])  # "Sorry, couldn't find the weather for this city or there wasn't forecast for it."
 
         return []
 
