@@ -15,7 +15,6 @@ rules:
 - rule: respond to memory
   steps:
   - intent: memory
-  #- action: utter_memory
   - action: action_memory
 
 - rule: Fallback response
@@ -28,7 +27,7 @@ rules:
   - intent: check_reminder
     entities:
       - task: null
-  - action: utter_remind
+  - action: action_remind
 
 - rule: remind timer
   steps:

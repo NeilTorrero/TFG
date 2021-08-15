@@ -264,8 +264,16 @@ responses:
   - text: There 10 type of people. The ones that know binary and the ones that not.
   utter_chitchat:
   - text: I didn't understand that.
-  utter_remind:
-  - text: Remeber to {task}.
+  utter_memory:
+  - text: Let me see.
+  utter_memory/retrieve_question:
+  - text: Looking for question.
+  utter_memory/music:
+  - text: Looking for music.
+  utter_memory/reminder:
+  - text: Looking for reminder.
+  utter_memory/timer:
+  - text: Looking for timer.
   utter_end_timer:
   - text: Hey, the time of the timer has ended!
   utter_please_rephrase:
@@ -275,7 +283,7 @@ responses:
   utter_ask_reminder_form_task:
   - text: What do you want me to remember you?
   utter_ask_reminder_form_date:
-  - text: When do you want me to remeber?
+  - text: When do you want me to remember?
 actions:
 - action_ask_weather
 - action_ask_time
@@ -288,6 +296,7 @@ actions:
 - action_cancel_reminder
 - validate_name_form
 - action_submit_register
+- action_remind
 - action_memory
 forms:
   name_form:

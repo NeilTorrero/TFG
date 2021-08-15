@@ -513,6 +513,26 @@ class ActionReminder(Action):
         return [reminder, SlotSet('reminders', reminders)]
 
 
+class ActionRemind(Action):
+
+    def name(self) -> Text:
+        return "action_remind"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        task = None
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'task':
+                task = entity['value']
+                if task is None:
+                    task = tracker.get_slot('task')
+        dispatcher.utter_message(text="Remember to " + task)
+
+        return [SlotSet("task", None), SlotSet("time", None)]
+
+
 class ActionCancelReminder(Action):
     """Cancels reminder."""
 
