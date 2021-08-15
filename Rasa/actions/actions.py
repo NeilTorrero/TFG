@@ -97,7 +97,7 @@ def getWeather(city, date, date_grain):
 
         response = requests.get(url)
         json_r = response.json()
-        if json_r['cod'] != '404':
+        if 'cod' not in json_r: # and json_r['cod'] != '404':
             info = json_r['main']
             temperature = info['temp']
             pressure = info['pressure']
@@ -117,7 +117,7 @@ def getWeather(city, date, date_grain):
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/onecall?"
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
         json_city = response.json()
-        if json_city['code'] != '018':
+        if 'error' in json_city and json_city['code'] == '018':
             print('City not found')
             return []
         # Forecast -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API key}&units=metric
@@ -125,7 +125,7 @@ def getWeather(city, date, date_grain):
 
         response = requests.get(url)
         json_r = response.json()
-        if json_r['cod'] != '404':
+        if 'cod' not in json_r: #and json_r['cod'] != '404':
             if date_grain == 'seconds' or date_grain == 'second' or date_grain == 'minutes' or date_grain == 'minute' or date_grain == 'hours' or date_grain == 'hour':
                 if diff.seconds / 60 / 60 <= 48:
                     print('Check next 48 hours')
@@ -133,7 +133,7 @@ def getWeather(city, date, date_grain):
                     temperature = info['temp']
                     pressure = info['pressure']
                     humidity = info['humidity']
-                    weather_description = json_r['weather'][0]['description']
+                    weather_description = info['weather'][0]['description']
                     print(temperature, pressure, humidity, weather_description)
                     return [temperature, pressure, humidity, weather_description]
                 else:
@@ -142,7 +142,7 @@ def getWeather(city, date, date_grain):
                     temperature = info['temp']
                     pressure = info['pressure']
                     humidity = info['humidity']
-                    weather_description = json_r['weather'][0]['description']
+                    weather_description = info['weather'][0]['description']
                     print(temperature, pressure, humidity, weather_description)
                     return [temperature, pressure, humidity, weather_description]
             elif date_grain == 'days' or date_grain == 'day':
@@ -151,7 +151,7 @@ def getWeather(city, date, date_grain):
                 temperature = info['temp']
                 pressure = info['pressure']
                 humidity = info['humidity']
-                weather_description = json_r['weather'][0]['description']
+                weather_description = info['weather'][0]['description']
                 print(temperature, pressure, humidity, weather_description)
                 return [temperature, pressure, humidity, weather_description]
         else:
