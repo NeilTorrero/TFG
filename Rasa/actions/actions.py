@@ -306,6 +306,12 @@ def webScrapAnswer(question):
             if answer is not None:
                 print(answer.text)
                 return answer.text
+            else:
+                # response from info paragraph .hgKElc
+                answer = soup.select_one('.hgKElc')
+                if answer is not None:
+                    print(answer.text)
+                    return answer.text
 
         # responses with a graph .KBXm4e
         answer = soup.select_one('.KBXm4e')
@@ -331,17 +337,21 @@ def webScrapAnswer(question):
                 print(answer.text)
                 return answer.text
 
-        # Translate .Y2IQFc
-        answer = soup.select_one('.Y2IQFc')
+        # wikipedia definition .kno-rdesc span
+        answer = soup.select_one('.kno-rdesc span')
         if answer is not None:
-            print(answer.text)
-            return answer.text
+            print('According to Wikipedia: ' + answer.text)
+            return 'According to Wikipedia: ' + answer.text
         else:
             # Dictionary definition .sY7ric span
-            answer = soup.select_one('.sY7ric span')
+            answer = soup.select('.sY7ric span')
             if answer is not None:
-                print(answer.text)
-                return answer.text
+                answers = 'Dictionary definition: \n'
+                for (idx, entry) in list(enumerate(answer))[1:]:
+                    if answer[idx - 1].text.isnumeric():
+                        answers += '- ' + entry.text + '\n'
+                print(answers)
+                return answers
 
         # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
         answer = soup.select_one('#NotFQb .vXQmIe')
@@ -360,6 +370,25 @@ def webScrapAnswer(question):
             if answer is not None:
                 print(answer.text)
                 return answer.text
+
+        # Suggestion .FLP8od
+        answer = soup.select_one('.FLP8od')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+        else:
+            # Translate .Y2IQFc
+            answer = soup.select_one('.Y2IQFc')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
+
+        # Suggestion .UTvhje
+        answer = soup.select_one('.UTvhje')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
     except Exception as e:
         print(answer)
         LOG_FILENAME = 'Rasa/logs/actions.log'

@@ -16,4 +16,6 @@ nlu:
     examples: |
       - put the same timer as last week
       - set the timer as yesterday
-# do this using the chitchat/faq retrival intent model (also consider this for the information search and all the similars in the same retrival)
+# do this using the chitchat/faq retrival intent model
+# also consider this for the information search and all the similars in the same retrival
+#     having the entity only get the [parrot](search) or [a parrot](search) add the what is depending on the intent or another entity named search type the last one doesnt need retrival

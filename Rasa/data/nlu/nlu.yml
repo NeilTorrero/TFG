@@ -271,6 +271,7 @@ nlu:
     - morning sup
     - morning whats up
     - morning whatsup
+    - hello again
 - intent: goodbye
   examples: |
     - cu
@@ -883,6 +884,7 @@ nlu:
     - nice
     - ok thanks [sara](name)
     - ok thanks!
+    - yes, thank you
 - intent: deny
   examples: |
     - no
@@ -1063,6 +1065,7 @@ nlu:
     - I'm fine, and you?
     - I am happy
     - I'm great
+    - I am happy now
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -1083,6 +1086,7 @@ nlu:
     - I am crying
     - I will cry
     - i am sad
+    - im a bit sad
 - intent: music
   examples: |
     - [play](music_mode) some music for me
@@ -1159,6 +1163,7 @@ nlu:
     - remind me to [do the homework](task) in 1 minute
     - remind me to [save the book](task) in 5 seconds
     - remind me to [go to work](task) in 15 seconds
+    - remind to [study](task) tomorrow
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -1203,6 +1208,7 @@ nlu:
     - thanks for your information
     - thanks f
     - thank you a lot
+    - Cool. thanks
 - intent: food
   examples: |
     - I would like to [eat](action) a [pizza](food)
@@ -1363,6 +1369,7 @@ nlu:
     - I wish to know the time
     - then tell me the time
     - what day is today
+    - What time is it in Japan? I want to see the olympics
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -1512,6 +1519,17 @@ nlu:
     - how hot is it
     - how hot is in paris
     - how hot is in barcelona
+    - How is the weather in [argentona](location)
+    - What is the forecast for tomorrow
+    - Its going to rain Wednesday?
+    - Its going to rain?
+    - What is the weather
+    - How is the weather
+    - how is the weather in a couple of hours?
+    - how is the weather for tomorrow in madrid?
+    - what the weather like?
+    - Collio, now I wonder how's the weather at home, in [Barcelona](location), [Spain](location)
+    - How's the weather in Almeria, Spain?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -1699,6 +1717,100 @@ nlu:
     - [what is  scp](search)
     - [what is a channel](search)
     - [what is a tiger](search)
+    - [who is the president of USA](search)
+    - who reigns in [russia](location)
+    - [what are caps](search)
+    - [who is OKAYU](search)
+    - who is korone
+    - where is madagascar
+    - who is ricardo milos
+    - [who is billy herrington](search)
+    - [what is a brother](search)
+    - [what is a sister](search)
+    - [what is a child](search)
+    - [what is a father](search)
+    - [what is a mother](search)
+    - [what is family](search)
+    - [what is the concept of old](search)
+    - [who is takashi69](search)
+    - [what is arrythmia](search)
+    - [what is a computer](search)
+    - [what is google](search)
+    - [what is the quadratic formula](search)
+    - [define love](search)
+    - [who is goku](search)
+    - [define gene](search)
+    - [define meme](search)
+    - [define logic gate](search)
+    - [define  language](search)
+    - [what is the coronavirus](search)
+    - [define covid 19](search)
+    - [define covid](search)
+    - [what are covid precautions](search)
+    - [who is the police](search)
+    - [who is shrek](search)
+    - [what is a hero](search)
+    - who is jojo
+    - who is thor
+    - [whos is loki](search)
+    - [whos is iron-man](search)
+    - [who is zelda](search)
+    - what is jojo
+    - [define math](search)
+    - [what is 1+1](search)
+    - [what is a pathfinder](search)
+    - [what is bts](search)
+    - [who is Xi Jinping](search)
+    - [who is china leader](search)
+    - [who is xi ping](search)
+    - [president of spain](search)
+    - [What is the meaning of what](search)?
+    - [Where is born the river Tajo](search)
+    - [Where is the river Tajo born](search)
+    - [Where is the start of the river Tajo](search)
+    - [Where was Rocio Durcla born](search)
+    - [What is the province of El Ejido](search)
+    - [Where is El Ejido](search)
+    - [Where was born Manolo Escobar](search)
+    - [covid symptoms](search)
+    - [precaution for the coronavirus](search)
+    - [define cracking](search)
+    - [what is a profanity](search)
+    - [what is an insult](search)
+    - [who is hitler](search)
+    - who was stalin
+    - [what is the scp fundation](search)
+    - [who is criss-chan](search)
+    - [what is marijuana](search)
+    - [what is 0](search)
+    - [what does 10 mean](search)
+    - [what does 1 mean](search)?
+    - [define glass](search)
+    - [define earth](search)
+    - [what is flat earth](search)
+    - [define gachi](search)
+    - [police number](search)
+    - [what is rasa](search)
+    - [define dark souls](search)
+    - search [nekopara](search)
+    - [what is a forecast](search)
+    - [how many feet in a yard](search)
+    - [define bible](search)
+    - [define quran](search)
+    - search me [the quran](search)
+    - search me [bts](search)
+    - [is 5 greater than 3](search)
+    - [what does king crimson do](search)
+    - [suicide prevention hotline number](search)
+    - nice answer, can I get the [president of spain](search)?
+    - [Who is Dan Avidan's partner in Ninja sex party](search)?
+    - [Who is Ninja Sex Party's lead singer](search)?
+    - And [who was the beatles' drummer](search)?
+    - [Who was Rush's drummer](search)?
+    - [what's 4*8](search)?
+    - [what's 4*8](search)
+    - [I wish for the suicide prevention phone](search)
+    - [What is the greatest Hit of Queen](search)?
 - intent: timer
   examples: |
     - set a timer for 30 minutes
@@ -1723,6 +1835,7 @@ nlu:
     - put a timer of 1 minute
     - set a 1 second timer
     - set a 15 second timer
+    - put a timer of 5 seconds
 - intent: cancel_timer
   examples: |
     - cancel the timer

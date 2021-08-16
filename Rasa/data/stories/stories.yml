@@ -128,3 +128,17 @@ stories:
   - action: action_timer
   - intent: end_timer
   - action: utter_end_timer
+- story: weather followup
+  steps:
+  - intent: ask_weather
+    entities:
+    - time: '2021-08-17T00:00:00.000+02:00'
+  - slot_was_set:
+    - time: '2021-08-17T00:00:00.000+02:00'
+  - action: action_ask_weather
+  - intent: follow_up
+    entities:
+    - time: '2021-08-20T00:00:00.000+02:00'
+  - slot_was_set:
+    - time: '2021-08-20T00:00:00.000+02:00'
+  - action: action_ask_weather

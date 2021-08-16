@@ -9,6 +9,7 @@ nlu:
     - who made you?
     - Is your creator a Robot?
     - what's your creator?
+    - who is your creator
 - intent: chitchat/ask_howbuilt
   examples: |
     - By what means were you made?
@@ -162,6 +163,8 @@ nlu:
     - how ya doing
     - how u doin?
     - I am having a good time, and you?
+    - are you happy?
+    - how is your day?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -650,7 +653,6 @@ nlu:
     - let me tell you something
     - i have something to tell you
     - i want to you to know something
-    - wanna know something?
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -666,6 +668,8 @@ nlu:
     - I have cripling depression
     - I have problems
     - I wanna kill myself
+    - I wanna die
+    - I want to kill myself
 - intent: chitchat/tell_joke
   examples: |
     - tell me a joke
@@ -676,3 +680,9 @@ nlu:
     - tell me something funny
     - can you tell me a joke
     - know any jokes?
+    - tell me another joke
+- intent: follow_up
+  examples: |
+    - And for friday?
+    - tomorrow?
+    - today?
