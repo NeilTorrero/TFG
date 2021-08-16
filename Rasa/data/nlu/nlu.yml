@@ -1849,3 +1849,5 @@ nlu:
     - register user
     - register
     - I wish to register
+    - register [Jose](name)
+    - register me

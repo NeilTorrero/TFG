@@ -388,6 +388,15 @@ def webScrapAnswer(question):
         if answer is not None:
             print(answer.text)
             return answer.text
+        else:
+            # information (like covid) .AupITe
+            answer = soup.select_one('.AupITe')
+            if answer is not None:
+                answers = ''
+                for (idx, entry) in list(enumerate(answer)):
+                    answers += '- ' + entry.text + '\n'
+                print(answers)
+                return answers
 
     except Exception as e:
         print(answer)

@@ -163,7 +163,6 @@ nlu:
     - how ya doing
     - how u doin?
     - I am having a good time, and you?
-    - are you happy?
     - how is your day?
 - intent: chitchat/ask_howold
   examples: |
@@ -607,7 +606,6 @@ nlu:
     - tell me your name
     - what's your name
     - what is you name
-    - what is you name and where are you from
     - What's your name?
     - are you Alpharius?
 - intent: chitchat/handleinsult
@@ -686,3 +684,5 @@ nlu:
     - And for friday?
     - tomorrow?
     - today?
+    - in barcelona?
+    - also Berlin
