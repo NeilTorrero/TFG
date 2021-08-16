@@ -161,6 +161,7 @@ nlu:
     - how do you do in the night
     - how ya doing
     - how u doin?
+    - I am having a good time, and you?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?

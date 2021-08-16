@@ -97,7 +97,7 @@ def getWeather(city, date, date_grain):
 
         response = requests.get(url)
         json_r = response.json()
-        if 'cod' not in json_r: # and json_r['cod'] != '404':
+        if json_r['cod'] != '404':
             info = json_r['main']
             temperature = info['temp']
             pressure = info['pressure']

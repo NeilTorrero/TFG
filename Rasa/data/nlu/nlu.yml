@@ -496,6 +496,7 @@ nlu:
     - ttyl [Neil](name)
     - ttyl [Quim](name)
     - ttyl [Sara](name)
+    - see ya next time
 - intent: affirm
   examples: |
     - affirmative
@@ -1157,6 +1158,7 @@ nlu:
     - remind me to [do the dished](task) in one minute
     - remind me to [do the homework](task) in 1 minute
     - remind me to [save the book](task) in 5 seconds
+    - remind me to [go to work](task) in 15 seconds
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -1359,6 +1361,8 @@ nlu:
     - What's the time for [Bangladesh](location)?
     - what time is ti on New York?
     - I wish to know the time
+    - then tell me the time
+    - what day is today
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -1491,6 +1495,23 @@ nlu:
     - Damn, it's hot outside. What temperature is it exactly?
     - how is the weather like in [barcelona](location)?
     - I wish to know the weather
+    - how is the weather next month
+    - how is the weather next year
+    - how is the weather on friday in murcia
+    - how is the weather for next week in murcia
+    - how is the weather next week
+    - how is the weather for tomorrow in [paris](location)
+    - how's the weather in a couple of hours?
+    - how is the weather in a couple of hours
+    - how is the weather for tomorrow in madrid
+    - how is the weather for tomorrow in [berlin](location)?
+    - what temperature are we at right now?
+    - how warm
+    - how cold
+    - how hot
+    - how hot is it
+    - how hot is in paris
+    - how hot is in barcelona
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -1642,6 +1663,42 @@ nlu:
     - [china president please](search)
     - [china president](search)
     - [who is xi jiping](search)?
+    - [who is justin biever](search)
+    - [who is ariana grande](search)?
+    - [capital of spain](search)
+    - [what is a franchise](search)
+    - [what is gas](search)
+    - [what is a liquid](search)
+    - [what is iron](search)
+    - [what is a solid](search)
+    - [why is water wet](search)
+    - [what is water](search)
+    - [what is a state](search)
+    - [what is a vegetal](search)
+    - [what is dragon ball](search)
+    - [who was teodosi](search)
+    - [who is cleopatra](search)
+    - [who is caesar](search)
+    - [who is chralemagne](search)
+    - [who is astolfo](search)
+    - [what is a femboy](search)
+    - [what is a tomgirl](search)
+    - [what is a tomboy](search)
+    - [what is the hemlich manouver](search)
+    - [what is a book](search)
+    - [what is warhammer fantasy](search)
+    - [what is warhammer40k](search)
+    - [what is warhammer](search)
+    - [what is World of warcraft](search)
+    - [what is a mmo](search)
+    - [What is king](search)
+    - [what is a parrot](search)
+    - [what is a dog](search)
+    - [who is russia leader](search)
+    - [russia leader](search)
+    - [what is  scp](search)
+    - [what is a channel](search)
+    - [what is a tiger](search)
 - intent: timer
   examples: |
     - set a timer for 30 minutes
