@@ -155,6 +155,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
+  - text: Hi, how can I help you?
   - text: Hey! How are you?
   - text: Hello!
   - text: What do you want?
@@ -164,8 +165,11 @@ responses:
   utter_did_that_help:
   - text: Did that help you?
   - text: Was that what you where looking for?
+  - text: Was that useful?
   utter_happy:
   - text: Great, carry on!
+  - text: That's awesome!
+  - text: Keep it up.
   utter_goodbye:
   - text: Bye
   - text: Goodbye!
@@ -178,6 +182,8 @@ responses:
   utter_greet_name:
   - text: Nice to meet you.
   - text: Hello {name}.
+  - text: Hi {name}.
+  - text: I will call you {name} then.
   utter_thanks_response:
   - text: You're welcome
   utter_chitchat/ask_builder:
@@ -223,6 +229,8 @@ responses:
   - text: You're the second person now to ask me that. Rihanna was the first.
   utter_chitchat/ask_whatspossible:
   - text: You can ask me anything you want.
+  - text: Try me.
+  - text: I hope that I can help you as much as possible.
   utter_chitchat/ask_wherefrom:
   - text: I consider myself a citizen of the world.
   - text: I was born in the Earth.
@@ -236,6 +244,7 @@ responses:
   utter_chitchat/ask_whoisit:
   - text: I'm a bot I don't have a name yet.
   - text: How would you like to call me by?
+  - text: Sometimes I been called by the name of Nat.
   utter_chitchat/handleinsult:
   - text: That's not very nice 😢
   - text: That wasn't very nice. Perhaps try an anger management class?
@@ -259,11 +268,13 @@ responses:
   - text: They are awesome!
   - text: I would like to know more about all of them.
   utter_chitchat/know_what:
+  - text: You can tell me anything.
   - text: Tell me.
   - text: What is it?
   - text: I'm eager to know.
   utter_chitchat/get_help:
   - text: You should ask for help.
+  - text: You should talk with a professional.
   utter_chitchat/tell_joke:
   - text: There 10 type of people. The ones that know binary and the ones that not.
   utter_chitchat:
@@ -280,14 +291,19 @@ responses:
   - text: Looking for timer.
   utter_end_timer:
   - text: Hey, the time of the timer has ended!
+  - text: The timer has run out.
+  - text: The countdown has finished.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that.
+  - text: I'm afraid I didn't get what you said.
   utter_ask_user_db_name:
   - text: Tell me the name you want to register with.
   utter_ask_reminder_form_task:
   - text: What do you want me to remember you?
+  - text: Tell me what do you want to be reminded of?
   utter_ask_reminder_form_date:
   - text: When do you want me to remember?
+  - text: At what time should I remind you?
 actions:
 - action_ask_weather
 - action_ask_time

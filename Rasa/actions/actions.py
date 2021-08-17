@@ -662,6 +662,26 @@ def setUserDBConversation(user_db_name, tracker: Tracker):
         return slots
 
 
+def getNews(interests, date):
+    # https://newsapi.org/v2/everything?q=bitcoin&apiKey=d7e327b9213748bd9c274abed9bfc5d7
+    API_KEY = 'd7e327b9213748bd9c274abed9bfc5d7'
+    NEWS_URL = "https://newsapi.org/v2/everything?"
+    url = NEWS_URL + "q=" + interests  + "&language=en&sortBy=popularity" + "&apiKey=" + API_KEY + ("" if date is None else ("&to=" + date))
+
+    response = requests.get(url)
+    json_r = response.json()
+
+    if json_r['status'] == 'ok':
+        article = json_r['articles'][0]
+        title = article['title']
+        description = article['description']
+        link = article['url']
+        return 'I found this article!\n Title: ' + title + "\n  " + description + "\n  Link: " + link
+    else:
+        # check for different errors with error code
+        return "Didn't find any news for what you asked."
+
+
 class ActionNews(Action):
     def name(self) -> Text:
         return "action_news"
@@ -670,8 +690,35 @@ class ActionNews(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        #ORG, PERSON, GPE, NORP
-        # https://newsapi.org/v2/everything?q=bitcoin&apiKey=d7e327b9213748bd9c274abed9bfc5d7
+        interests = None
+        date = None
+        # ORG, PERSON, GPE, NORP
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'date':
+                date = entity['value']
+            if entity['entity'] == 'ORG':
+                if interests is None:
+                    interests = entity['value']
+                else:
+                    interests += "AND " + entity['value']
+            if entity['entity'] == 'PERSON':
+                if interests is None:
+                    interests = entity['value']
+                else:
+                    interests += "AND " + entity['value']
+            if entity['entity'] == 'GPE':
+                if interests is None:
+                    interests = entity['value']
+                else:
+                    interests += "AND " + entity['value']
+            if entity['entity'] == 'NORP':
+                if interests is None:
+                    interests = entity['value']
+                else:
+                    interests += "AND " + entity['value']
+
+        response = getNews(interests, date)
+        dispatcher.utter_message(text=response)
         return []
 
 
