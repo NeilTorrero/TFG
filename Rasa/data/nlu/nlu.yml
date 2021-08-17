@@ -1370,6 +1370,9 @@ nlu:
     - then tell me the time
     - what day is today
     - What time is it in Japan? I want to see the olympics
+    - whats on the clock
+    - what's on the clock
+    - what does the clock say
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?

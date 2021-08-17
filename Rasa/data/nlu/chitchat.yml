@@ -164,6 +164,46 @@ nlu:
     - how u doin?
     - I am having a good time, and you?
     - how is your day?
+    - How’s everything?
+    - How’s it going?
+    - How are things?
+    - What’s up?
+    - How are you doing?
+    - What’s new?
+    - You all right?
+    - How have you been?
+    - How are things going?
+    - Are you well?
+    - What’s going on?
+    - How are you feeling?
+    - What are you up to?
+    - What’s sizzling?
+    - How do you do?
+    - Howdy!
+    - What’s good in the hood?
+    - Long time no see!
+    - What’s new with you?
+    - How long has it been?
+    - Must be tough, huh?
+    - Sup?
+    - Anything interesting happening in your life lately?
+    - What is happening?
+    - How are you holding up?
+    - How is life sailing?
+    - What are you heading?
+    - How are things coming along?
+    - What was the highlight of your day, so far?
+    - How was your day?
+    - What have you been doing since we last talked?
+    - How’s everything little thing in your life?
+    - How do you fare?
+    - How’s it rolling?
+    - What’s up with the flow?
+    - What’s with the face?
+    - How’s everything coming together?
+    - Is there anything concerning you?
+    - What’s the latest buzz in your world?
+    - What’s shakin’?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -679,3 +719,8 @@ nlu:
     - can you tell me a joke
     - know any jokes?
     - tell me another joke
+    - say something to make me laugh
+    - i want to have some laughs
+    - can you make me laugh
+    - do you kmow anything funny
+    - how about a joke?

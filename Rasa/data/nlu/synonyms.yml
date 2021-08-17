@@ -1,0 +1,67 @@
+nlu:
+- synonym: hello
+  examples: |
+    - greetings
+    - hey
+    - howdy
+    - hi
+    - yo
+    - greeting
+    - welcome
+    - hullo
+    - cheers
+    - good day
+    - ey
+    - gday
+    - hallo
+- synonym: goodbye
+  examples: |
+    - farewell
+    - ciao
+    - sayonata
+    - bye
+    - bye bye
+    - see you
+    - cu
+    - see ya
+    - see u
+    - so long
+- synonym: yes
+  examples: |
+    - sure
+    - aye
+    - yeah
+    - affirmative
+    - yup
+    - right
+    - of course
+    - certainly
+    - indeed
+    - oh yes
+    - by all means
+    - ok
+    - okey
+    - okey dokey
+    - yea
+    - absolutely
+    - surely
+    - yep
+    - okay
+    - exactly
+    - fine
+    - alright
+- synonym: no
+  examples: |
+    - nope
+    - negative
+    - not at all
+    - by no means
+    - no way
+    - not
+    - nay
+    - naw
+    - nah
+    - na
+    - nae
+
+# look up liikup tables pun not intended
