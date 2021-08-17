@@ -662,6 +662,19 @@ def setUserDBConversation(user_db_name, tracker: Tracker):
         return slots
 
 
+class ActionNews(Action):
+    def name(self) -> Text:
+        return "action_news"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        #ORG, PERSON, GPE, NORP
+        # https://newsapi.org/v2/everything?q=bitcoin&apiKey=d7e327b9213748bd9c274abed9bfc5d7
+        return []
+
+
 class ActionMemory(Action):
     def name(self) -> Text:
         return "action_memory"

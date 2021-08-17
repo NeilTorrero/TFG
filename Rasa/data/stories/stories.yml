@@ -1,5 +1,35 @@
 version: "2.0"
 stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: user_name
+  steps:
+  - intent: user_name
+    entities:
+    - name: Amelia
+  - action: utter_greet_name
+- story: greet and name
+  steps:
+  - intent: greet
+    entities:
+    - name: Joseph
+  - action: utter_greet_name
+- story: greet and name slot
+  steps:
+  - intent: greet
+  - slot_was_set:
+    - name: Richard
+  - action: utter_greet_name
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- story: thankyou
+  steps:
+  - intent: thank
+  - action: utter_thanks_response
 - story: happy path
   steps:
   - intent: greet
@@ -43,6 +73,23 @@ stories:
   - intent: ask_weather
     entities:
     - location: Paris
+  - action: action_ask_weather
+- story: food
+  steps:
+  - intent: food
+  - action: action_food
+- story: time and weather
+  steps:
+  - intent: ask_time
+  - action: action_ask_time
+  - intent: ask_weather
+  - action: action_ask_weather
+- story: ask weather with location and time
+  steps:
+  - intent: ask_weather
+    entities:
+    - location: Paris
+    - time: tomorrow
   - action: action_ask_weather
 # - story: reminder
 #  steps:

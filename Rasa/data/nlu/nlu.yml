@@ -1778,7 +1778,7 @@ nlu:
     - [what is a profanity](search)
     - [what is an insult](search)
     - [who is hitler](search)
-    - who was stalin
+    - [who was stalin](search)
     - [what is the scp fundation](search)
     - [who is criss-chan](search)
     - [what is marijuana](search)
@@ -1851,3 +1851,17 @@ nlu:
     - I wish to register
     - register [Jose](name)
     - register me
+- intent: follow_up
+  examples: |
+    - And for friday?
+    - tomorrow?
+    - today?
+    - in barcelona?
+    - also Berlin
+    - AND YOU?
+- intent: news
+  examples: |
+    - lastest news of FC Barcelona
+    - What's happening in North Korea?
+    - What are the news on Irak?
+    - I want to see the Syrian news

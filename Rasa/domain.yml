@@ -53,6 +53,8 @@ intents:
     use_entities: true
 - follow_up:
     use_entities: true
+- news:
+    use_entities: true
 entities:
 - location
 - name
