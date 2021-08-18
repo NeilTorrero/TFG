@@ -1,68 +1,33 @@
 version: "2.0"
 nlu:
-- synonym: hello
+- synonym: reproduce
   examples: |
-    - greetings
-    - hey
-    - howdy
-    - hi
-    - yo
-    - greeting
-    - welcome
-    - hullo
-    - cheers
-    - good day
-    - ey
-    - gday
-    - hallo
-- synonym: goodbye
+    - play
+    - Play
+    - resume
+    - turn on
+- synonym: next
   examples: |
-    - farewell
-    - ciao
-    - sayonata
-    - bye
-    - bye bye
-    - see you
-    - cu
-    - see ya
-    - see u
-    - so long
-- synonym: yes
+    - skip
+- synonym: previous
   examples: |
-    - sure
-    - aye
-    - yeah
-    - affirmative
-    - yup
-    - right
-    - of course
-    - certainly
-    - indeed
-    - oh yes
-    - by all means
-    - ok
-    - okey
-    - okey dokey
-    - yea
-    - absolutely
-    - surely
-    - yep
-    - okay
-    - exactly
-    - fine
-    - alright
-- synonym: no
+    - before
+    - back
+- synonym: volume
   examples: |
-    - nope
-    - negative
-    - not at all
-    - by no means
-    - no way
-    - not
-    - nay
-    - naw
-    - nah
-    - na
-    - nae
-
-# look up liikup tables pun not intended
+    - sound
+- synonym: up
+  examples: |
+    - high
+    - higher
+    - upper
+    - increase
+    - louder
+    - loud
+- synonym: down
+  examples: |
+    - low
+    - lower
+    - reduce
+    - quieter
+    - quiet

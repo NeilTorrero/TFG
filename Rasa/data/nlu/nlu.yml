@@ -1089,46 +1089,46 @@ nlu:
     - im a bit sad
 - intent: music
   examples: |
-    - [play](music_mode) some music for me
-    - [reproduce](music_mode) a song
+    - [play]{"entity": "music_mode", "value": "reproduce"} some music for me
+    - [reproduce]{"entity": "music_mode", "value": "reproduce"} a song
     - [shuffle](music_mode) some music
-    - [play](music_mode) my playlist [favorites](playlist_name)
-    - [reproduce](music_mode) [Best hits](playlist_name)
+    - [play]{"entity": "music_mode", "value": "reproduce"} my playlist [favorites](playlist_name)
+    - [reproduce]{"entity": "music_mode", "value": "reproduce"} [Best hits](playlist_name)
     - [shuffle](music_mode) [mega mix](playlist_name)
     - [reproduce](music_mode) in [shuffle](music_mode) my playlist
-    - [Play](music_mode) some random music
+    - [Play]{"entity": "music_mode", "value": "reproduce"} some random music
     - put me a song of [daft punk](song_name)
-    - [play](music_mode) me the song [killer queen](song_name)
+    - [play]{"entity": "music_mode", "value": "reproduce"} me the song [killer queen](song_name)
     - Put some [rock](song_name) music
-    - [Play](music_mode) the playlist [Top 50](playlist_name)
+    - [Play]{"entity": "music_mode", "value": "reproduce"} the playlist [Top 50](playlist_name)
     - [pause](music_mode) the music
     - [pause](music_mode)
-    - [resume](music_mode) the music
-    - [resume](music_mode)
+    - [resume]{"entity": "music_mode", "value": "reproduce"} the music
+    - [resume]{"entity": "music_mode", "value": "reproduce"}
     - [shuffle](music_mode)
-    - [skip](music_mode) the song
-    - [skip](music_mode)
-    - [next](music_mode) song
-    - [next](music_mode)
-    - [previous](music_mode) song
-    - [previous](music_mode)
+    - [skip]{"entity": "music_mode", "value": "next"} the song
+    - [skip]{"entity": "music_mode", "value": "next"}
+    - [next]{"entity": "music_mode", "value": "next"} song
+    - [next]{"entity": "music_mode", "value": "next"}
+    - [previous]{"entity": "music_mode", "value": "previous"} song
+    - [previous]{"entity": "music_mode", "value": "previous"}
     - put the song on [loop](music_mode)
     - [loop](music_mode)
     - [stop](music_mode) the music
     - [stop](music_mode)
-    - [play](music_mode)
-    - [play](music_mode) the music
-    - turn the [volume](music_mode) up
-    - lower the [volume](music_mode)
-    - put the [volume](music_mode) to 50 percent
-    - increase the [volume](music_mode) by 20%
-    - lower the music [volume](music_mode)
-    - make the music [volume](music_mode) higher
-    - make it [sound](music_mode) louder
-    - i want it to [sound](music_mode) quieter
-    - increase the music's [volume](music_mode)
-    - upper the [volume](music_mode)
-    - [Play](music_mode) [I'd Do Anything for Love](song_name) (But I Won't Do That)
+    - [play]{"entity": "music_mode", "value": "reproduce"}
+    - [play]{"entity": "music_mode", "value": "reproduce"} the music
+    - turn the [volume]{"entity": "music_mode", "value": "volume"} up
+    - lower the [volume]{"entity": "music_mode", "value": "volume"}
+    - put the [volume]{"entity": "music_mode", "value": "volume"} to 50 percent
+    - increase the [volume]{"entity": "music_mode", "value": "volume"} by 20%
+    - lower the music [volume]{"entity": "music_mode", "value": "volume"}
+    - make the music [volume]{"entity": "music_mode", "value": "volume"} higher
+    - make it [sound]{"entity": "music_mode", "value": "volume"} louder
+    - i want it to [sound]{"entity": "music_mode", "value": "volume"} quieter
+    - increase the music's [volume]{"entity": "music_mode", "value": "volume"}
+    - upper the [volume]{"entity": "music_mode", "value": "volume"}
+    - [Play]{"entity": "music_mode", "value": "reproduce"} [I'd Do Anything for Love](song_name) (But I Won't Do That)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
