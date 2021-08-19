@@ -9,16 +9,16 @@ stories:
   - intent: user_name
     entities:
     - name: Amelia
-  - action: utter_greet_name
+  - action: utter_user_name
 - story: greet and name
   steps:
-  - intent: greet
+  - intent: greet+user_name
     entities:
     - name: Joseph
   - action: utter_greet_name
 - story: greet and name slot
   steps:
-  - intent: greet
+  - intent: greet+user_name
   - slot_was_set:
     - name: Richard
   - action: utter_greet_name

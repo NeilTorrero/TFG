@@ -70,7 +70,6 @@ nlu:
     - hello sweatheart
     - hello sweet boy
     - hello world
-    - hello, my name is [Charles Pfeffer](name)
     - hello?
     - hello]
     - hellooo
@@ -94,8 +93,6 @@ nlu:
     - hi friend
     - hi friends
     - hi hi
-    - hi i'm [Sandra Hernandez](name)
-    - hi im [Amanda Anderson](name)
     - hi pal!
     - hi there
     - hi there it's me
@@ -109,7 +106,6 @@ nlu:
     - hlo
     - hola
     - howdy
-    - i am [Karen Mease](name)
     - jojojo
     - jop
     - konichiwa
@@ -125,11 +121,7 @@ nlu:
     - yoo
     - ssup?
     - helleo
-    - Hello my name is [Jason](name)
     - watts up
-    - hi my name is [Ethan](name)
-    - Hello i am [Núria](name)
-    - it's [Elisabet](name)
     - Hello there
     - Hello fella
     - good afternoon are you around
@@ -184,16 +176,6 @@ nlu:
     - greetings sup
     - greetings whats up
     - greetings whatsup
-    - hello i'm [Alex](name)
-    - hello my name is [Alicia](name)
-    - hello i'm [Bob](name)
-    - hello I'm [Dani](name)
-    - hello I am [Janis](name)
-    - hello Im [Marc](name)
-    - hello its [Mary](name)
-    - hello it's [Neil](name)
-    - hello my name's [Quim](name)
-    - hello my name is [Sara](name)
     - hello are you around
     - hello are you around?
     - hello are you there
@@ -209,16 +191,6 @@ nlu:
     - hello sup
     - hello whats up
     - hello whatsup
-    - hey my name is [Alex](name)
-    - hey my name's [Alicia](name)
-    - hey im [Bob](name)
-    - hey i am [Dani](name)
-    - hey i'm [Janis](name)
-    - hey it's [Marc](name)
-    - hey its [Mary](name)
-    - hey I am [Neil](name)
-    - hey I'm [Quim](name)
-    - hey I'm called [Sara](name)
     - hey are you around
     - hey are you around?
     - hey are you there
@@ -235,16 +207,6 @@ nlu:
     - hey sup
     - hey whats up
     - hey whatsup
-    - hi I'm called [Alex](name)
-    - hi I'm [Alicia](name)
-    - hi my name's [Bob](name)
-    - hi my name is [Dani](name)
-    - hi im [Janis](name)
-    - hi i'm [Marc](name)
-    - hi i am [Mary](name)
-    - hi its [Neil](name)
-    - hi it's [Quim](name)
-    - hi I am [Sara](name)
     - hi are you around
     - hi are you around?
     - hi are you there
@@ -273,6 +235,46 @@ nlu:
     - morning whats up
     - morning whatsup
     - hello again
+- intent: greet+user_name
+  examples: |
+    - hello, my name is [Charles Pfeffer](name)
+    - hi i'm [Sandra Hernandez](name)
+    - hi im [Amanda Anderson](name)
+    - i am [Karen Mease](name)
+    - Hello my name is [Jason](name)
+    - hi my name is [Ethan](name)
+    - Hello i am [Núria](name)
+    - it's [Elisabet](name)
+    - hello i'm [Alex](name)
+    - hello my name is [Alicia](name)
+    - hello i'm [Bob](name)
+    - hello I'm [Dani](name)
+    - hello I am [Janis](name)
+    - hello Im [Marc](name)
+    - hello its [Mary](name)
+    - hello it's [Neil](name)
+    - hello my name's [Quim](name)
+    - hello my name is [Sara](name)
+    - hey my name is [Alex](name)
+    - hey my name's [Alicia](name)
+    - hey im [Bob](name)
+    - hey i am [Dani](name)
+    - hey i'm [Janis](name)
+    - hey it's [Marc](name)
+    - hey its [Mary](name)
+    - hey I am [Neil](name)
+    - hey I'm [Quim](name)
+    - hey I'm called [Sara](name)
+    - hi I'm called [Alex](name)
+    - hi I'm [Alicia](name)
+    - hi my name's [Bob](name)
+    - hi my name is [Dani](name)
+    - hi im [Janis](name)
+    - hi i'm [Marc](name)
+    - hi i am [Mary](name)
+    - hi its [Neil](name)
+    - hi it's [Quim](name)
+    - hi I am [Sara](name)
 - intent: goodbye
   examples: |
     - cu

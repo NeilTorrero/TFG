@@ -184,7 +184,9 @@ responses:
   - text: Nice to meet you.
   - text: Hello {name}.
   - text: Hi {name}.
+  utter_user_name:
   - text: I will call you {name} then.
+  - text: That's a beatiful name, I will use it.
   utter_thanks_response:
   - text: You're welcome
   utter_chitchat/ask_builder:
