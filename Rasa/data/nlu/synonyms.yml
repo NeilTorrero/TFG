@@ -31,3 +31,32 @@ nlu:
     - reduce
     - quieter
     - quiet
+- synonym: rain
+  examples: |
+    - storm
+    - rainy
+    - raining
+    - thunder
+    - thundestorm
+    - heavy rain
+    - drizzle
+- synonym: snow
+  examples: |
+    - snowy
+    - Sleet
+- synonym: clear
+  examples: |
+    - sun
+    - sunny
+    - clear sky
+    - sun out
+- synonym: cloud
+  examples: |
+    - cloudy
+    - few clouds
+- synonym: temperature
+  examples: |
+    - degrees
+    - hot
+    - freezing
+    - cold

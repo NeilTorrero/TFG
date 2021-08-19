@@ -91,6 +91,7 @@ def getWeather(city, date, date_grain):
     # check if forecast can be done
     # date format 2021-07-27T15:41:49.000+02:00 -> datetime.fromisoformat('2011-11-04T00:05:23+04:00')
     # minute for 1 hour, hourly for 48 hours and daily for 7 days
+    # check for asked weather condition https://openweathermap.org/weather-conditions
     if date is None:
         WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
         url = WEATHER_URL + "q=" + city + "&appid=" + API_KEY + "&units=metric"
@@ -103,8 +104,9 @@ def getWeather(city, date, date_grain):
             pressure = info['pressure']
             humidity = info['humidity']
             weather_description = json_r['weather'][0]['description']
+            condition_code = json_r['weather'][0]['id']
             print(temperature, pressure, humidity, weather_description)
-            return ['OK', temperature, pressure, humidity, weather_description]
+            return ['OK', temperature, pressure, humidity, weather_description, condition_code]
         else:
             print("City not found")
             return ['KO', "City not found"]
@@ -134,8 +136,9 @@ def getWeather(city, date, date_grain):
                     pressure = info['pressure']
                     humidity = info['humidity']
                     weather_description = info['weather'][0]['description']
+                    condition_code = info['weather'][0]['id']
                     print(temperature, pressure, humidity, weather_description)
-                    return ['OK', temperature, pressure, humidity, weather_description]
+                    return ['OK', temperature, pressure, humidity, weather_description, condition_code]
                 else:
                     print('Check next 7 days')
                     info = json_r['daily'][int(diff.days)]
@@ -143,8 +146,9 @@ def getWeather(city, date, date_grain):
                     pressure = info['pressure']
                     humidity = info['humidity']
                     weather_description = info['weather'][0]['description']
+                    condition_code = info['weather'][0]['id']
                     print(temperature, pressure, humidity, weather_description)
-                    return ['OK', temperature, pressure, humidity, weather_description]
+                    return ['OK', temperature, pressure, humidity, weather_description, condition_code]
             elif date_grain == 'days' or date_grain == 'day':
                 print('Check next 7 days')
                 info = json_r['daily'][int(diff.days)]
@@ -152,8 +156,9 @@ def getWeather(city, date, date_grain):
                 pressure = info['pressure']
                 humidity = info['humidity']
                 weather_description = info['weather'][0]['description']
+                condition_code = info['weather'][0]['id']
                 print(temperature, pressure, humidity, weather_description)
-                return ['OK', temperature, pressure, humidity, weather_description]
+                return ['OK', temperature, pressure, humidity, weather_description, condition_code]
         else:
             print("There's no forecast for this date.")
             return['KO', "There's no forecast for this date."]
@@ -179,9 +184,12 @@ class ActionAskWeather(Action):
         location = None
         date = None
         date_grain = None
+        weather_condition = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
+            if entity['entity'] == 'weather_condition':
+                weather_condition = entity['value']
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(str(entity['value']))
                 date_grain = entity['additional_info']['grain']
@@ -202,11 +210,34 @@ class ActionAskWeather(Action):
                 elif date_grain == 'year':
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
-        weather = getWeather(location, date, date_grain)
+        weather = getWeather(location, date, date_grain)  # TODO: response also with the date asked if exists
         if weather[0] == 'OK':
-            dispatcher.utter_message(
-                text="It's " + str(weather[4]) + ", with a temperature of " + str(
-                    weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%.")
+            answer = "It's " + str(weather[4]) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
+            if weather_condition is not None:
+                # https://openweathermap.org/weather-conditions
+                if weather_condition == 'rain':
+                    if 200 <= weather[5] < 600:
+                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                    else:
+                        answer = "It doesn't like is " + ("raining, the weather is " if date is None else "going to rain. it's going to ") + str(weather[4])
+                elif weather_condition == 'snow':
+                    if 600 <= weather[5] < 700:
+                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                    else:
+                        answer = "It doesn't like is " + ("snowing, the weather is " if date is None else "going to snow. it's going to ") + str(weather[4])
+                elif weather_condition == 'clear':
+                    if weather[5] == 800:
+                        answer = "It seems there's " + ("" if date is None else "going to be a ") + str(weather[4])
+                    else:
+                        answer = "It doesn't like is " + ("sunny, the weather is " if date is None else "going to be a clear sky. it's going to ") + str(weather[4])
+                elif weather_condition == 'cloud':
+                    if 800 < weather[5] < 810:
+                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                    else:
+                        answer = "It doesn't like is " + ("cloudy, the weather is " if date is None else "going to be cloudy. it's going to ") + str(weather[4])
+                elif weather_condition == 'temperature':  # TODO: other parameters like humidity
+                    answer = "The temperature " + ("is of " if date is None else "going to be") + str(weather[1]) + "ºC"
+            dispatcher.utter_message(text=answer)
         else:
             dispatcher.utter_message(text=weather[1])  # "Sorry, couldn't find the weather for this city or there wasn't forecast for it."
 
@@ -678,7 +709,7 @@ def getNews(interests, date):
         link = article['url']
         return 'I found this article!\n Title: ' + title + "\n  " + description + "\n  Link: " + link
     else:
-        # check for different errors with error code
+        # TODO: check for different errors with error code
         return "Didn't find any news for what you asked."
 
 

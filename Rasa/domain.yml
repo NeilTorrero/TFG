@@ -66,6 +66,7 @@ entities:
 - language
 - search
 - song_name
+- weather_condition
 # duckling
 - time
 - temperature
