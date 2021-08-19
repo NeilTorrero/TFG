@@ -1,0 +1,782 @@
+version: "2.0"
+nlu:
+- intent: music
+  examples: |
+    - [play]{"entity": "music_mode", "value": "reproduce"} some music for me
+    - [reproduce](music_mode) a song
+    - [shuffle](music_mode) some music
+    - [play]{"entity": "music_mode", "value": "reproduce"} my playlist [favorites](playlist_name)
+    - [reproduce](music_mode) [Best hits](playlist_name)
+    - [shuffle](music_mode) [mega mix](playlist_name)
+    - [reproduce](music_mode) in [shuffle](music_mode) my playlist
+    - [Play]{"entity": "music_mode", "value": "reproduce"} some random music
+    - put me a song of [daft punk](song_name)
+    - [play]{"entity": "music_mode", "value": "reproduce"} me the song [killer queen](song_name)
+    - Put some [rock](song_name) music
+    - [Play]{"entity": "music_mode", "value": "reproduce"} the playlist [Top 50](playlist_name)
+    - [pause](music_mode) the music
+    - [pause](music_mode)
+    - [resume]{"entity": "music_mode", "value": "reproduce"} the music
+    - [resume]{"entity": "music_mode", "value": "reproduce"}
+    - [shuffle](music_mode)
+    - [skip]{"entity": "music_mode", "value": "next"} the song
+    - [skip]{"entity": "music_mode", "value": "next"}
+    - [next](music_mode) song
+    - [next](music_mode)
+    - [previous](music_mode) song
+    - [previous](music_mode)
+    - put the song on [loop](music_mode)
+    - [loop](music_mode)
+    - [stop](music_mode) the music
+    - [stop](music_mode)
+    - [play]{"entity": "music_mode", "value": "reproduce"}
+    - [play]{"entity": "music_mode", "value": "reproduce"} the music
+    - turn the [volume](music_mode) up
+    - lower the [volume](music_mode)
+    - put the [volume](music_mode) to 50 percent
+    - increase the [volume](music_mode) by 20%
+    - lower the music [volume](music_mode)
+    - make the music [volume](music_mode) higher
+    - make it [sound]{"entity": "music_mode", "value": "volume"} louder
+    - i want it to [sound]{"entity": "music_mode", "value": "volume"} quieter
+    - increase the music's [volume](music_mode)
+    - upper the [volume](music_mode)
+    - [Play]{"entity": "music_mode", "value": "reproduce"} [I'd Do Anything for Love](song_name) (But I Won't Do That)
+- intent: reminder
+  examples: |
+    - remind me to [turn off the oven](task) in an hour
+    - tomorrow i have to [go to the dentist](task)
+    - in ten minutes tell me to [check the mail](task)
+    - remind me to [call John](task)
+    - later I have to [call Alan](task)
+    - Please, remind me to [call Vova](task)
+    - please remind me to [take the car to the mechanic](task)
+    - I must not forget to [call Juste](task)
+    - Could you remind me that I have to [pick up the mail](task).
+    - put a timer for a half an hour to [disconnect the heater](task)
+    - remind me that the 12th July is my [brother's birthday](task)
+    - remind me to [buy fruit](task)
+    - remember me to [do something](task)
+    - can you remember me to [wash the dishes](task)
+    - Remind me yo [buy groceries](action) in 3 minutes
+    - Remind me to [jump](task) in five seconds
+    - Remind me to [drink](task) in 15 seconds
+    - Remind me to [eat](action) in 20 minuts
+    - time to [get into shape](task) , remember me
+    - remind me to [do the homework](task) in 30 seconds
+    - remind me to [do the homework](task) in 15 seconds
+    - remind me that tomorrow i have to [pick up my cousin from the airport](task)
+    - remind me to [return the call](task) in 10 minutes
+    - remeber me that tomorrow i have a [concert](task)
+    - can you remind me to [check on the washing machine](task) in 2 hours
+    - Remind me to [play drums](task) at 12
+    - remind me to [play the guiter](task) in an hour
+    - remember me to [work out](task) in 30 seconds
+    - remind me to [do the dished](task) in one minute
+    - remind me to [do the homework](task) in 1 minute
+    - remind me to [save the book](task) in 5 seconds
+    - remind me to [go to work](task) in 15 seconds
+    - remind to [study](task) tomorrow
+- intent: cancel_reminder
+  examples: |
+    - cancel the [do the dishes](task) reminder
+    - dismiss the last reminder
+    - remove the reminder at 10:30
+    - discard the [dentist](task) reminder
+- intent: food
+  examples: |
+    - I would like to [eat](action) a [pizza](food)
+    - I am hungry
+    - Where can I [buy](action) [bread](food)
+    - Any good restaurants nearby?
+    - Can you find a restaurant for me?
+    - Can you find me a burger joint?
+    - Can you find me a restaurant?
+    - Can you recommend a restaurant open right now
+    - Could you find a restaurant for me?
+    - Could you find me a restaurant to eat at?
+    - Could you find me a restaurant?
+    - Do you find me a restaurant?
+    - Do you seek me a restaurant?
+    - Find a restaurant for me to eat at.
+    - Find a restaurant for me where I can eat.
+    - Find a restaurant for me?
+    - Find me a fast food restaurant.
+    - Find me a place to eat
+    - Find me a restaurant where I can eat.
+    - Have you seen me a restaurant?
+    - Help me find a restaurant
+    - Help me with finding this restaurant
+    - Hey help me find a restaurant
+    - Hey, can you help me with locating this restaurant.
+    - Hi, can you give me the nearest fast food place?
+    - How can you help me find a restaurant.
+    - I am hungry, find me some place to go
+    - I need a new restaurant
+    - I need a restaurant.
+    - I need to find this restaurant
+    - I'm gonna need help finding a restaurant
+    - I'm looking for a Spanish restaurant.
+    - IS there any near by restaurant?
+    - Is there any restaurant?
+    - Pick a restaurant for me, please
+    - Recommend me a restaurant around here.
+    - Show me how to find a restaurant
+    - Show me the closest open restaurant
+    - Suggest me a good restaurant around
+    - What restaurant would you recommend for dinner?
+    - What's a good place to eat nearby
+    - What's the closest restaurant open near me
+    - Where is the restaurant
+    - Where should I eat?
+    - Where should I go for dinner?
+    - Will you find me a restaurant?
+    - Would you find a restaurant for me?
+    - Would you find any restaurant?
+    - Would you find me a restaurant?
+    - can i be shown a gluten free restaurant
+    - can you find me a restaurant?
+    - help me find restaurant
+    - i want a french restaurant
+    - i'm looking for a Chinese restaurant
+    - restaurants
+    - will you see any restaurant for me?
+    - I want to find some restauant nearby
+    - show me restaurents
+    - Where can I buy breae
+    - Show me restaurants near me
+- intent: ask_time
+  examples: |
+    - Can you give me the time?
+    - Can you tell me the time?
+    - Can you tell me what time it is?
+    - Can you tell the time?
+    - Could you tell me the time, please?
+    - Could you tell me the time?
+    - Could you tell me what time is it?
+    - Do you have the time?
+    - Do you know the time?
+    - Do you know what time it is?
+    - Excuse me, what time is it?
+    - Give me the time.
+    - Hi, I need the time.
+    - I need to know what time it is.
+    - Pardon me, but do you know the time?
+    - Tell me the time.
+    - Time, please!
+    - Time?
+    - What is the current time?
+    - What is the exact time?
+    - What is the hour and minute right now?
+    - What is the time?
+    - What might the time be?
+    - What time do we have?
+    - What time have we got?
+    - What time is it in [Berlin](location)?
+    - What time is it right now?
+    - What's the current time?
+    - What's the time right now?
+    - What's the time?
+    - Would you tell me what time it is?
+    - do you have the time?
+    - do you know the current time?
+    - tell me the current time.
+    - tell me the time it is.
+    - tell me the time.
+    - tell me what time you have.
+    - that's true. do you know what time it is?
+    - what is the current time?
+    - what is the time ?
+    - what is the time in [Sydney](location)?
+    - what is the time?
+    - what is time in [US](location) ?
+    - what is time is [US](location) ?
+    - what is time is [USA](location) ?
+    - what time do you have?
+    - what time is it
+    - what time is it?
+    - what time it is
+    - what's the time
+    - whats the time now
+    - What time is it?
+    - Whta time is it?
+    - hey, tell me the time
+    - can you tell the time?
+    - what hour is it?
+    - what hour is it
+    - tell me the time
+    - what is today's date
+    - time?
+    - what is the time
+    - What time is it over there?
+    - What time is It in [Japan](location)?
+    - What time is It in [russia](location)
+    - What time is It on
+    - what time is itç
+    - what time is in [japan](location)?
+    - tell me the time in [mataro](location)
+    - what time is it in [japan](location)?
+    - What time is it in [Ghana](location)?
+    - I wanna know what time is it
+    - What's the hour for [Tokyo](location)?
+    - Which time is it in [London](location)¿
+    - What's the time for [Bangladesh](location)?
+    - what time is ti on New York?
+    - I wish to know the time
+    - then tell me the time
+    - what day is today
+    - What time is it in Japan? I want to see the olympics
+    - whats on the clock
+    - what's on the clock
+    - what does the clock say
+- intent: ask_weather
+  examples: |
+    - Are there any meteorological changes that I need to be aware of?
+    - Are we in for a scorcher?
+    - Beautiful day, isn't it?
+    - Can I ask you something about weather
+    - Can we expect any [thunderstorms]{"entity": "weather_condition", "value": "rain"}?
+    - Do you have good weather?
+    - How is the weather today?
+    - How is the weather?
+    - How is weather today
+    - Is it hot or cold?
+    - Is it humid out there today?
+    - Is it quite breezy outside?
+    - Is it [raining]{"entity": "weather_condition", "value": "rain"}
+    - Is it [raining]{"entity": "weather_condition", "value": "rain"}?
+    - Looks like a beautiful day hey?
+    - Nice day out today?
+    - Weather?
+    - What is the temperature today?
+    - What is the weather at your place?
+    - What is the weather for tomorrow?
+    - What is the weather in newyork?
+    - What's it like out there?
+    - What's the weather forecast?
+    - What's the weather like over there?
+    - What's the weather like where I am right now?
+    - What's the weather like?
+    - Will I require my raincoat today?
+    - Will the skies be clear today?
+    - Will we build a snowman today?
+    - excellent - is it hot in [Berlin](location)?
+    - how is the weather
+    - how is the weather ?
+    - how is the weather in [berlin](location)?
+    - how is the weather?
+    - how's the weather ?
+    - how's the weather in [berlin](location)
+    - how's the weather?
+    - how's weather
+    - hows the waether
+    - hows the weather in bot world
+    - hows the weather today in [berlin](location)?
+    - is it hot ?
+    - is it hot outside ?
+    - is it [sunny]{"entity": "weather_condition", "value": "clear"}
+    - is the [sun out]{"entity": "weather_condition", "value": "clear"} where you are?
+    - is the [sun out]{"entity": "weather_condition", "value": "clear"} where zou are?
+    - it is cold
+    - temperature?
+    - the weather today
+    - weatger
+    - weather
+    - weather?
+    - well, if you wish: what about the weather
+    - what about the weather in [Lüneburg](location)
+    - what is the temperature
+    - what is the wather
+    - what is the weatehr
+    - what is the weather
+    - what is the weather in [Berlin](location)
+    - what is the weather in [zurich](location)?
+    - what is the weather like where you are?
+    - what is the weather like?
+    - what is the whether today
+    - what the wheather like?
+    - what"s the weather
+    - what's the weather
+    - what's the weather like
+    - what's the weather like in [LA](location)
+    - what's the weather like where you are?
+    - what's the weather like?
+    - what's the weather today
+    - what's the weather today?
+    - whats the temperature
+    - whats the temperature in [delhi](location)?
+    - whats the weather in [berlin](location)?
+    - whats the weather like tomorrow?
+    - wheather at you location?
+    - wheather be like at your place?
+    - thanks and the weather?
+    - how it's the weather like?
+    - I am sweating gimme the degrees
+    - check the weather
+    - gimme the weather
+    - The weather in [barcelona](location)
+    - it's [raining]{"entity": "weather_condition", "value": "rain"} at [barcelona](location)
+    - will [rain](weather_condition) at [barcelona](location)?
+    - it's hot at [barcelona](location)?
+    - hi droga which weather will be doing at [barcelona](location)
+    - tell me the degrees
+    - how many ºC?
+    - is it hot or cold outside?
+    - is it hot?
+    - is it scorching hot?
+    - Is it freezing?
+    - may I know what today is like?
+    - may I know what today will be like?
+    - ask the overall weather
+    - tell me if today will [storm]{"entity": "weather_condition", "value": "rain"}
+    - how much celsius are today?
+    - Can you tell me tomorrow's weather?
+    - the tomorrow's weather
+    - is it [cloudy]{"entity": "weather_condition", "value": "cloud"}?
+    - is the sky with [clouds]{"entity": "weather_condition", "value": "cloud"}?
+    - is the skyt [clear](weather_condition)?
+    - tell me if it's chilly today
+    - I'm sweating... how's the day?
+    - It's quite chilly today, how much?
+    - is today [rainy]{"entity": "weather_condition", "value": "rain"}?
+    - is today cold?
+    - is today warm?
+    - will tomorrow [rain](weather_condition)?
+    - tell me the weather
+    - and the weather?
+    - I was just kidding, how is the weather up there mate?
+    - What about the weather in [Uganda](location)?
+    - is it really humid?
+    - there is [sun]{"entity": "weather_condition", "value": "clear"}?
+    - is a [storm]{"entity": "weather_condition", "value": "rain"} coming?
+    - a [storm]{"entity": "weather_condition", "value": "rain"} is coming?
+    - is a [storm]{"entity": "weather_condition", "value": "rain"} brewing?
+    - Do I need an umbrella?
+    - what is today like?
+    - how is the weather in [california](location)
+    - I want to go out, how's the weather?
+    - Hey, how's the weather out there doc?
+    - Is it going to [rain](weather_condition) today?
+    - How's the weather up there?
+    - Damn, it's hot outside. What temperature is it exactly?
+    - how is the weather like in [barcelona](location)?
+    - I wish to know the weather
+    - how is the weather next month
+    - how is the weather next year
+    - how is the weather on friday in murcia
+    - how is the weather for next week in murcia
+    - how is the weather next week
+    - how is the weather for tomorrow in [paris](location)
+    - how's the weather in a couple of hours?
+    - how is the weather in a couple of hours
+    - how is the weather for tomorrow in madrid
+    - how is the weather for tomorrow in [berlin](location)?
+    - what temperature are we at right now?
+    - how warm
+    - how cold
+    - how hot
+    - how hot is it
+    - how hot is in paris
+    - how hot is in barcelona
+    - How is the weather in [argentona](location)
+    - What is the forecast for tomorrow
+    - Its going to [rain](weather_condition) Wednesday?
+    - Its going to [rain](weather_condition)?
+    - What is the weather
+    - How is the weather
+    - how is the weather in a couple of hours?
+    - how is the weather for tomorrow in madrid?
+    - what the weather like?
+    - Collio, now I wonder how's the weather at home, in [Barcelona](location), [Spain](location)
+    - How's the weather in Almeria, Spain?
+- intent: search_information
+  examples: |
+    - Tell me [name of the president of USA](search)
+    - [Who is Alan Turing](search)
+    - Can you tell me [where is the Tower Eiffiel](search)
+    - [how long does the Shrek movie lasts](search)
+    - Look [when did Freddie Mercury die](search)
+    - do you know the [distance between earth and sun](search)
+    - [what actor was the lead in The Godfather](search)?
+    - [when I should water my poinsettia](search)
+    - what is the [capital of brasil](search)
+    - [how old was Michael Jackson when he died](search)?
+    - tell me [who is alpharius](search)
+    - [whats 1+1](search)
+    - what is the [recipe for a chocolate cake](search)
+    - where I can find spare wheels for my bicycle
+    - what plants can I have inside my house?
+    - where I can [buy](action) a garden table and chairs?
+    - what means the error 33 on my AEG fridge?
+    - [when did Chaplin die](search)?
+    - [when was Chaplin born](search)?
+    - [how old is jeremy clarkson](search)?
+    - [when was Obama born](search)?
+    - tellme the [name of the president of China](search)
+    - tell me the [name of the president of uk](search)
+    - tell me the [name of the president of USA](search)
+    - tell me the name of the [lead in top gun](search)
+    - tell me the [name of the president of Japan](search)
+    - [when was obama born](search)?
+    - tell me the [name of the president of spain](search)
+    - tell me the [name of the minister of France](search)
+    - tell me the [name of the president of united estates](search)
+    - tell me the name of the [presindent of the united states of america](search)
+    - can you tell me the [name of the president of usa](search)
+    - [what is beer](search)
+    - [when is mothers day](search)
+    - [what type is gyarados](search)
+    - [which types is tyranitar](search)
+    - what are the [ingredients of bread](search)
+    - [how many people are in the world](search)
+    - how many kilometers are 10 miles](search)
+    - tell me [how many pokemons are there](search)
+    - do you know [where is cambodia](search)
+    - [what's 1+1](search)?
+    - [who is the president of spain](search)?
+    - [Who is the president of peru](search)
+    - [what's 1+1](search)
+    - [Who is the president](search)
+    - [whos the leader of north korea](search)
+    - [whos is the president of our motherland rusia](search)?
+    - [who is the president of china](search)
+    - [what is the president of brazil](search)?
+    - [what is the president of America](search)
+    - [what is the president of spain](search)
+    - [what's a computer](search)
+    - [what is barcelona country](search)
+    - [Where is barcelona](search)?
+    - [what is the capitalof brazil](search)
+    - [what is a cat](search)
+    - [when is the Independence Day](search)?
+    - [define flower](search)
+    - [what is humanity defense code](search)
+    - [what is 152+85](search)
+    - [what is1+1](search)
+    - [152+21](search)
+    - [1+1](search)
+    - [what is RASA](search)
+    - [what is meaning](search)
+    - [who is george floid](search)
+    - [What is star wars](search)
+    - [what is warhammer 40k](search)
+    - [who are the Xenos](search)
+    - [who is m.rajoy](search)
+    - [Who is the ninth doctor](search)?
+    - [Where can I see Doctor Who](search)?
+    - [who is joe biden](search)
+    - [When did gundam begin](search)?
+    - [What is gundam](search)
+    - [what is the meaning of symbol](search)
+    - [what is the meaning of life](search)
+    - [what is minecraft](search)
+    - What is the [most sold videogame](search)
+    - tell me [what is the suicide prevention number](search)
+    - [who is steve jobs](search)
+    - [Who is Mao zedung](search)
+    - [who is jeff bezos](search)
+    - [who is beatrice](search)
+    - [what is boku no pico](search)
+    - [What is a bard](search)
+    - [what is psychology](search)
+    - tell me [what is a meme](search)
+    - [what is a triangle](search)
+    - [what is a pentagon](search)
+    - [what is an hexagon](search)
+    - [what is diamond made of](search)
+    - [what are the continents name](search)
+    - [what is Peru](search)
+    - [what is a rick roll](search)
+    - [what is dark souls](search)
+    - [what is chemistry](search)
+    - [define chemistry](search)
+    - [what is science](search)
+    - [what is a sum](search)
+    - [Is the earth flat](search)?
+    - [is the eartch flat](search)?
+    - [what is love](search)
+    - [What's the scientific name of the Flamingo](search)?
+    - [what is ice](search)
+    - [What is python](search)
+    - [Where did Mao zedung die](search)
+    - [who is jhonny deep](search)
+    - [Where did Hitler die](search)?
+    - [what is youtube](search)
+    - [what is something really cold](search)
+    - [Who is china leader](search)
+    - [who is the leader of the nazi party](search)
+    - [Who is adolf hitler](search)
+    - [where is  paris located](search)
+    - [who is the fuhrer](search)
+    - [where did hitler die](search)
+    - [what is icecream made of](search)
+    - [what is berserk miura](search)
+    - [what is an atom](search)
+    - [what  is youtube](search)
+    - [what is the meaning of  life](search)
+    - [who is the president of spain](search) ?
+    - Can you look for a [recipe on meatloaf](search)?
+    - What's the main [ingredient for cookies](search)?
+    - [What's the meaning of the name Kieran](search)?
+    - [Who's gilgamesh's best friend](search)?
+    - [What's the name of Kamen Rider Nigo](search)?
+    - [What's the name of Kamen Rider Ichigo](search)?
+    - [Who wrote chip and dale adventures](search)
+    - [Who is the pilot of Gundam](search)?
+    - [who is ElRubiusOMG](search)
+    - [who is awesome](search)?
+    - where does play Lionel Messi?
+    - [who owns Burguer King](search)
+    - [who owns McDonalds](search)
+    - Who wrote Gundam?
+    - Who is Kim Jong Il?
+    - Who did Michael Jordan play for?
+    - Who won the gold in talbe tennis in the last olympics?
+    - [what is the best videogame ever](search)?
+    - [whos is russian president](search)
+    - [who is our great leader from china](search)?
+    - [who is china great leader](search)
+    - [who is the great leader of china republic](search)
+    - [china president please](search)
+    - [china president](search)
+    - [who is xi jiping](search)?
+    - [who is justin biever](search)
+    - [who is ariana grande](search)?
+    - [capital of spain](search)
+    - [what is a franchise](search)
+    - [what is gas](search)
+    - [what is a liquid](search)
+    - [what is iron](search)
+    - [what is a solid](search)
+    - [why is water wet](search)
+    - [what is water](search)
+    - [what is a state](search)
+    - [what is a vegetal](search)
+    - [what is dragon ball](search)
+    - [who was teodosi](search)
+    - [who is cleopatra](search)
+    - [who is caesar](search)
+    - [who is chralemagne](search)
+    - [who is astolfo](search)
+    - [what is a femboy](search)
+    - [what is a tomgirl](search)
+    - [what is a tomboy](search)
+    - [what is the hemlich manouver](search)
+    - [what is a book](search)
+    - [what is warhammer fantasy](search)
+    - [what is warhammer40k](search)
+    - [what is warhammer](search)
+    - [what is World of warcraft](search)
+    - [what is a mmo](search)
+    - [What is king](search)
+    - [what is a parrot](search)
+    - [what is a dog](search)
+    - [who is russia leader](search)
+    - [russia leader](search)
+    - [what is  scp](search)
+    - [what is a channel](search)
+    - [what is a tiger](search)
+    - [who is the president of USA](search)
+    - who reigns in [russia](location)
+    - [what are caps](search)
+    - [who is OKAYU](search)
+    - who is korone
+    - where is madagascar
+    - who is ricardo milos
+    - [who is billy herrington](search)
+    - [what is a brother](search)
+    - [what is a sister](search)
+    - [what is a child](search)
+    - [what is a father](search)
+    - [what is a mother](search)
+    - [what is family](search)
+    - [what is the concept of old](search)
+    - [who is takashi69](search)
+    - [what is arrythmia](search)
+    - [what is a computer](search)
+    - [what is google](search)
+    - [what is the quadratic formula](search)
+    - [define love](search)
+    - [who is goku](search)
+    - [define gene](search)
+    - [define meme](search)
+    - [define logic gate](search)
+    - [define  language](search)
+    - [what is the coronavirus](search)
+    - [define covid 19](search)
+    - [define covid](search)
+    - [what are covid precautions](search)
+    - [who is the police](search)
+    - [who is shrek](search)
+    - [what is a hero](search)
+    - who is jojo
+    - who is thor
+    - [whos is loki](search)
+    - [whos is iron-man](search)
+    - [who is zelda](search)
+    - what is jojo
+    - [define math](search)
+    - [what is 1+1](search)
+    - [what is a pathfinder](search)
+    - [what is bts](search)
+    - [who is Xi Jinping](search)
+    - [who is china leader](search)
+    - [who is xi ping](search)
+    - [president of spain](search)
+    - [What is the meaning of what](search)?
+    - [Where is born the river Tajo](search)
+    - [Where is the river Tajo born](search)
+    - [Where is the start of the river Tajo](search)
+    - [Where was Rocio Durcla born](search)
+    - [What is the province of El Ejido](search)
+    - [Where is El Ejido](search)
+    - [Where was born Manolo Escobar](search)
+    - [covid symptoms](search)
+    - [precaution for the coronavirus](search)
+    - [define cracking](search)
+    - [what is a profanity](search)
+    - [what is an insult](search)
+    - [who is hitler](search)
+    - [who was stalin](search)
+    - [what is the scp fundation](search)
+    - [who is criss-chan](search)
+    - [what is marijuana](search)
+    - [what is 0](search)
+    - [what does 10 mean](search)
+    - [what does 1 mean](search)?
+    - [define glass](search)
+    - [define earth](search)
+    - [what is flat earth](search)
+    - [define gachi](search)
+    - [police number](search)
+    - [what is rasa](search)
+    - [define dark souls](search)
+    - search [nekopara](search)
+    - [what is a forecast](search)
+    - [how many feet in a yard](search)
+    - [define bible](search)
+    - [define quran](search)
+    - search me [the quran](search)
+    - search me [bts](search)
+    - [is 5 greater than 3](search)
+    - [what does king crimson do](search)
+    - [suicide prevention hotline number](search)
+    - nice answer, can I get the [president of spain](search)?
+    - [Who is Dan Avidan's partner in Ninja sex party](search)?
+    - [Who is Ninja Sex Party's lead singer](search)?
+    - And [who was the beatles' drummer](search)?
+    - [Who was Rush's drummer](search)?
+    - [what's 4*8](search)?
+    - [what's 4*8](search)
+    - [I wish for the suicide prevention phone](search)
+    - [What is the greatest Hit of Queen](search)?
+- intent: timer
+  examples: |
+    - set a timer for 30 minutes
+    - let me know when 30 seconds have passed
+    - count 3 minutes.
+    - I want a timer for an hour
+    - put a 10 minute timer
+    - time 40 seconds
+    - count 10 seconds for me
+    - count to 10
+    - set a 25 minute timer
+    - Set the timer for one hour.
+    - Set a 45 second countdown
+    - Countdown 6 seconds.
+    - put a timer for a half an hour to [turn off the oven](task)
+    - set a timer in five seconds
+    - set a timer for 5 seconds
+    - set for me a 1 minutes timer
+    - put a 5 second timer
+    - set a five second timer
+    - set a 10 second timer
+    - put a timer of 1 minute
+    - set a 1 second timer
+    - set a 15 second timer
+    - put a timer of 5 seconds
+- intent: cancel_timer
+  examples: |
+    - cancel the timer
+    - stop the timer
+    - remove the timer
+    - quit the timer
+    - stop the countdown
+    - dismiss the timer
+- intent: news
+  examples: |
+    - lastest news of FC Barcelona
+    - What's happening in North Korea?
+    - What are the news on Irak?
+    - I want to see the Syrian news
+    - what news are of the bitcoin
+- synonym: reproduce
+  examples: |
+    - play
+    - Play
+    - resume
+    - turn on
+- synonym: next
+  examples: |
+    - skip
+    - next one
+- synonym: previous
+  examples: |
+    - before
+    - back
+- synonym: random
+  examples: |
+    - shuffle
+    - randomize
+    - disordered
+    - without order
+    - shuffled
+- synonym: volume
+  examples: |
+    - sound
+    - noise
+    - audio
+- synonym: up
+  examples: |
+    - high
+    - higher
+    - upper
+    - increase
+    - louder
+    - loud
+- synonym: down
+  examples: |
+    - low
+    - lower
+    - reduce
+    - quieter
+    - quiet
+- synonym: rain
+  examples: |
+    - storm
+    - rainy
+    - raining
+    - thunder
+    - thundestorm
+    - heavy rain
+    - drizzle
+- synonym: snow
+  examples: |
+    - snowy
+    - Sleet
+- synonym: clear
+  examples: |
+    - sun
+    - sunny
+    - clear sky
+    - sun out
+- synonym: cloud
+  examples: |
+    - cloudy
+    - few clouds
+- synonym: temperature
+  examples: |
+    - degrees
+    - hot
+    - freezing
+    - cold
