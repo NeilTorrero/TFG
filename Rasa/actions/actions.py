@@ -185,6 +185,7 @@ class ActionAskWeather(Action):
         date = None
         date_grain = None
         weather_condition = None
+        date_text = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
@@ -193,6 +194,7 @@ class ActionAskWeather(Action):
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(str(entity['value']))
                 date_grain = entity['additional_info']['grain']
+                date_text = entity['text']
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -210,33 +212,33 @@ class ActionAskWeather(Action):
                 elif date_grain == 'year':
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
-        weather = getWeather(location, date, date_grain)  # TODO: response also with the date asked if exists
+        weather = getWeather(location, date, date_grain)
         if weather[0] == 'OK':
-            answer = "It's " + str(weather[4]) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
+            answer = "It's " + str(weather[4]) + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
             if weather_condition is not None:
                 # https://openweathermap.org/weather-conditions
                 if weather_condition == 'rain':
                     if 200 <= weather[5] < 600:
-                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                     else:
-                        answer = "It doesn't like is " + ("raining, the weather is " if date is None else "going to rain. it's going to ") + str(weather[4])
+                        answer = "It doesn't like is " + ("raining, the weather is " + str(weather[4]) if date is None else "going to rain. it's going to " + str(weather[4]) + " " + date_text) + "."
                 elif weather_condition == 'snow':
                     if 600 <= weather[5] < 700:
-                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                     else:
-                        answer = "It doesn't like is " + ("snowing, the weather is " if date is None else "going to snow. it's going to ") + str(weather[4])
+                        answer = "It doesn't like is " + ("snowing, the weather is " + str(weather[4]) if date is None else "going to snow. it's going to " + str(weather[4]) + " " + date_text) + "."
                 elif weather_condition == 'clear':
                     if weather[5] == 800:
-                        answer = "It seems there's " + ("" if date is None else "going to be a ") + str(weather[4])
+                        answer = "It seems there's " + ("" + str(weather[4]) if date is None else "going to be a " + str(weather[4]) + " " + date_text) + "."
                     else:
-                        answer = "It doesn't like is " + ("sunny, the weather is " if date is None else "going to be a clear sky. it's going to ") + str(weather[4])
+                        answer = "It doesn't like is " + ("sunny, the weather is " + str(weather[4]) if date is None else "going to be a clear sky. it's going to " + str(weather[4]) + " " + date_text) + "."
                 elif weather_condition == 'cloud':
                     if 800 < weather[5] < 810:
-                        answer = "It seems is " + ("" if date is None else "going to ") + str(weather[4])
+                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                     else:
-                        answer = "It doesn't like is " + ("cloudy, the weather is " if date is None else "going to be cloudy. it's going to ") + str(weather[4])
+                        answer = "It doesn't like is " + ("cloudy, the weather is " + str(weather[4]) if date is None else "going to be cloudy. it's going to " + str(weather[4]) + " " + date_text) + "."
                 elif weather_condition == 'temperature':  # TODO: other parameters like humidity
-                    answer = "The temperature " + ("is of " if date is None else "going to be") + str(weather[1]) + "ºC"
+                    answer = "The temperature " + ("is of " + str(weather[4]) if date is None else "going to be" + str(weather[1]) + "ºC" + " " + date_text) + "."
             dispatcher.utter_message(text=answer)
         else:
             dispatcher.utter_message(text=weather[1])  # "Sorry, couldn't find the weather for this city or there wasn't forecast for it."
