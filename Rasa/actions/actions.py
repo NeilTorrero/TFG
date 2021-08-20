@@ -358,6 +358,23 @@ def webScrapAnswer(question):
                 print(answer.text)
                 return answer.text
 
+        # calculator operation #cwos
+        answer = soup.select_one('.TIGsTb div span')
+        if answer is not None:
+            result = soup.select_one('#cwos')
+            print(answer.text + " " + result.text)
+            return answer.text + " " + result.text
+        else:
+            # conversions #NotFQb .vXQmIe
+            answer = soup.select_one('#NotFQb .vXQmIe')
+            if answer is not None:
+                formula = soup.select_one('.bjhkR')
+                if formula is not None:
+                    print(answer.text + ", the formula to do this conversion is " + formula.text)
+                    return answer.text + ", the formula to do this conversion is " + formula.text
+                print(answer.text)
+                return answer.text
+
         # response inside little boxes as a list .FozYP (bread ingredients)/(pokemon types "what type is rayquaza")
         answer = soup.select_one('.FozYP')
         if answer is not None:

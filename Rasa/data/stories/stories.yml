@@ -121,6 +121,10 @@ stories:
     entities:
     - search: what is the name of the pope
   - action: action_search_answer
+- story: search
+  steps:
+  - intent: search_information
+  - action: action_search_answer
 - story: timer
   steps:
     - intent: timer
