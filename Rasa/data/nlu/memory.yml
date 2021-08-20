@@ -28,6 +28,5 @@ nlu:
       - set the timer again
       - set the timer as this morning
       - make the countdown like last week
-# TODO: do this using the chitchat/faq retrival intent model
 # TODO: also consider this for the information search and all the similars in the same retrival
 #     having the entity only get the [parrot](search) or [a parrot](search) add the what is depending on the intent or another entity named search type the last one doesnt need retrival

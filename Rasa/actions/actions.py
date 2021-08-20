@@ -12,6 +12,7 @@ import os
 from typing import Any, Text, Dict, List
 
 from bs4 import BeautifulSoup
+import bson
 from pymongo import MongoClient
 from pymongo.database import Database
 from rasa_sdk.events import ReminderScheduled, SessionStarted, SlotSet, ActionExecuted, EventType, BotUttered, \
@@ -69,7 +70,7 @@ class ActionAskTime(Action):
         # print("\nSlots: ")
         # print(tracker.slots)
 
-        location = None
+        location = tracker.get_slot('location')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
@@ -181,8 +182,8 @@ class ActionAskWeather(Action):
         # print("\nSlots: ")
         # print(tracker.slots)
 
-        location = None
-        date = None
+        location = tracker.get_slot('location')
+        date = tracker.get_slot('time')
         date_grain = None
         weather_condition = None
         date_text = None
@@ -488,7 +489,7 @@ class ActionTimer(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        date = None
+        date = tracker.get_slot('time')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
@@ -548,17 +549,13 @@ class ActionReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        date = None
-        task = None
+        date = tracker.get_slot('time')
+        task = tracker.get_slot('task')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
                 task = entity['value']
-                if task is None:
-                    task = tracker.get_slot('task')
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(entity['value'])
-                if date is None:
-                    date = tracker.get_slot('time')
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -610,12 +607,10 @@ class ActionRemind(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        task = None
+        task = tracker.get_slot('task')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
                 task = entity['value']
-                if task is None:
-                    task = tracker.get_slot('task')
         dispatcher.utter_message(text="Remember to " + task)
 
         return [SlotSet("task", None), SlotSet("time", None)]
@@ -631,7 +626,7 @@ class ActionCancelReminder(Action):
         self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
 
-        task = None
+        task = tracker.get_slot('task')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
                 task = entity['value']
@@ -694,13 +689,17 @@ def setUserDBConversation(user_db_name, tracker: Tracker):
         print('User created')
         userDocument = {
             "name": user_db_name,
-            "conversations": tracker.sender_id
+            "conversations": [{
+                "id": tracker.sender_id,
+                "added_time": datetime.datetime.fromtimestamp(tracker.current_state()['latest_event_time'], None)
+            }]
         }
         colec.insert_one(userDocument)
         return None
     else:
         print('User found')
-        found = colec.find_one_and_update({"name": user_db_name}, {"$addToSet": {"conversations": tracker.sender_id}})
+        isodate = datetime.datetime.fromtimestamp(tracker.current_state()['latest_event_time'], None)
+        found = colec.find_one_and_update({"name": user_db_name}, {"$addToSet": {"conversations": {"id": tracker.sender_id, "added_time": isodate}}})
         # load slots that have been saved
         slots = []
         # slots = {}
@@ -741,7 +740,7 @@ class ActionNews(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         interests = None
-        date = None
+        date = tracker.get_slot('time')
         # ORG, PERSON, GPE, NORP
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'date':
@@ -780,8 +779,26 @@ class ActionMemory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        intent = tracker.latest_message['intent'].get('name')
+        date = tracker.get_slot('time')
+        for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'time':
+                date = datetime.datetime.fromisoformat(entity['value'])
+
+
+        intent = tracker.latest_message['response_selector']['memory']['response']['intent_response_key']
         dispatcher.utter_message(text="Database search and retrieval WIP (intent= " + intent + ')')
+
+        if intent == 'memory/retrieve_question':
+            # asking for the task
+            print()
+
+        else:
+            # redo the task
+            print()
+
+
+
+
         return []
 
 
