@@ -41,8 +41,8 @@ print(results)
 # pretrained("qa_squadv1.1_bertbase)
 print(nemo_nlp.models.QAModel.list_available_models())
 model = nemo_nlp.models.QAModel.from_pretrained("qa_squadv1.1_bertbase")
-#results = model.inference(['Hello', 'we bought four shirts from the nvidia gear store in santa clara.', 'NVIDIA is a company.'])
-#print(results)
+results = model.inference(['Hello', 'we bought four shirts from the nvidia gear store in santa clara.', 'NVIDIA is a company.'])
+print(results)
 
 
 # Text classification -> https://ngc.nvidia.com/catalog/collections/nvidia:tlt_jarvis_textclassification

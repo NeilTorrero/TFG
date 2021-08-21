@@ -191,7 +191,7 @@ hmap.xaxis.set_ticklabels(hmap.xaxis.get_ticklabels(), rotation=30, ha='right')
 plt.ylabel('True label')
 plt.xlabel('Predicted label')
 
-sentence = "Play our song now"
+sentence = ["Play our song now", "When is new years?", "How is the weather in California?"]
 
 pred_tokens = map(tokenizer.tokenize, sentence)
 pred_tokens = map(lambda tok: ["[CLS]"] + tok + ["[SEP]"], pred_tokens)
@@ -203,4 +203,6 @@ pred_token_ids = np.array(list(pred_token_ids))
 prediction = model.predict(pred_token_ids)
 print(prediction)  # confidence by class
 
-print("text:", sentence, "\nintent:", classes[prediction.argmax(axis=-1)])
+for text, label in zip(sentence, prediction.argmax(axis=-1)):
+    print("Text:", text, "\nIntent:", classes[label])
+    print()
