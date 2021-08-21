@@ -676,7 +676,7 @@ class ActionSubmitRegister(Action):
 
 
 def setUserDBConversation(user_db_name, tracker: Tracker):
-    print(os.path.abspath(os.getcwd()))
+    # print(os.path.abspath(os.getcwd()))
     path = os.path.abspath('actions/credentials.json')
     with open(path, 'r') as f:
         data = json.load(f)
