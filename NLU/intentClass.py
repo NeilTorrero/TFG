@@ -190,6 +190,7 @@ hmap.yaxis.set_ticklabels(hmap.yaxis.get_ticklabels(), rotation=0, ha='right')
 hmap.xaxis.set_ticklabels(hmap.xaxis.get_ticklabels(), rotation=30, ha='right')
 plt.ylabel('True label')
 plt.xlabel('Predicted label')
+plt.show()
 
 sentence = ["Play our song now", "When is new years?", "How is the weather in California?"]
 
