@@ -100,6 +100,7 @@ entities:
 - QUANTITY
 - TIME
 - WORK_OF_ART
+- artist_name
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot
@@ -165,6 +166,13 @@ responses:
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
+  - text: Hello! I’m the happiness fairy. I’ve sprinkled happy dust on you. Now smile dammit, that shit’s expensive.
+  - text: If you’re having a bad day, just remember that you have managed to get through every bad day you’ve had. You’ll make it through this one too.
+  - text: You’ll never find a rainbow if you’re looking down.
+  - image: https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg
+    text: A picture of a cat always helps me.
+  - image: https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMDcwNjM1MS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY2NDI5MjM2OH0.u_y--qb3qcQPIP0Zwu9vEMQtgSYIR2W4rMjtISUanIw/img.jpg?width=1200&height=628
+    text: How about a dog, who doesn't likes dogs?
   utter_did_that_help:
   - text: Did that help you?
   - text: Was that what you where looking for?
@@ -191,6 +199,16 @@ responses:
   - text: That's a beatiful name, I will use it.
   utter_thanks_response:
   - text: You're welcome
+  - text: You’re very welcome.
+  - text: That’s all right.
+  - text: No problem.
+  - text: No worries.
+  - text: Don’t mention it.
+  - text: It’s my pleasure.
+  - text: My pleasure.
+  - text: Anytime.
+  - text: It was the least I could do.
+  - text: Glad to help.
   utter_chitchat/ask_builder:
   - text: I don't know.
   - text: It would be great if I created myself.
@@ -261,13 +279,6 @@ responses:
   - text: Pleased to meet you too!
   - text: It's always a pleasure to meet new people!
   - text: Nice to meet you too! Happy to be of help.
-  utter_chitchat/telljoke:
-  - text: Why are eggs not very much into jokes? - Because they could crack up.
-  - text: What's a tree's favorite drink? - Root beer!
-  - text: Why do the French like to eat snails so much? - They can't stand fast food.
-  - text: Why did the robot get angry? - Because someone kept pushing its buttons.
-  - text: What do you call a pirate droid? - Arrrr-2-D2
-  - text: Why did the robot cross the road? - Because he was programmed to.
   utter_chitchat/otherbots:
   - text: I think they're great!
   - text: They are awesome!
@@ -282,6 +293,13 @@ responses:
   - text: You should talk with a professional.
   utter_chitchat/tell_joke:
   - text: There 10 type of people. The ones that know binary and the ones that not.
+  - text: There’s a fine line between a numerator and a denominator. (Only a fraction of people get this.)
+  - text: Why are eggs not very much into jokes? - Because they could crack up.
+  - text: What's a tree's favorite drink? - Root beer!
+  - text: Why do the French like to eat snails so much? - They can't stand fast food.
+  - text: Why did the robot get angry? - Because someone kept pushing its buttons.
+  - text: What do you call a pirate droid? - Arrrr-2-D2
+  - text: Why did the robot cross the road? - Because he was programmed to.
   utter_chitchat:
   - text: I didn't understand that.
   utter_memory:
@@ -303,6 +321,8 @@ responses:
   - text: I'm afraid I didn't get what you said.
   utter_ask_user_db_name:
   - text: Tell me the name you want to register with.
+  - text: What name do you want to use?
+  - text: With what name do you wish to register?
   utter_ask_reminder_form_task:
   - text: What do you want me to remember you?
   - text: Tell me what do you want to be reminded of?

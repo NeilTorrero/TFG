@@ -1,2 +1,20 @@
 version: "2.0"
 stories:
+- story: weather and time
+  steps:
+  - intent: ask_weather
+    entities:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - slot_was_set:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - action: action_ask_weather
+  - intent: ask_time
+  - action: action_ask_time
+- story: time followup
+  steps:
+  - intent: ask_time
+  - action: action_ask_time
+  - intent: follow_up
+    entities:
+    - location: London
+  - action: action_ask_time

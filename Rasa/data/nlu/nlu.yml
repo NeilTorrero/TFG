@@ -411,6 +411,7 @@ nlu:
     - talk to you soon ttyl
     - ttyl
     - see ya next time
+    - It's pretty late i think i will go to sleep
 - intent: affirm
   examples: |
     - affirmative
@@ -1038,6 +1039,9 @@ nlu:
     - thanks f
     - thank you a lot
     - Cool. thanks
+    - Thx
+    - I'm fine thanks for asking
+    - Thanks that was very useful
 - intent: user_name
   examples: |
     - I'm [Richard](name)

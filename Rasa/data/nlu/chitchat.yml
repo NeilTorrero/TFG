@@ -166,7 +166,6 @@ nlu:
     - how is your day?
     - How’s everything?
     - How’s it going?
-    - How are things?
     - What’s up?
     - How are you doing?
     - What’s new?
@@ -193,7 +192,6 @@ nlu:
     - What are you heading?
     - How are things coming along?
     - What was the highlight of your day, so far?
-    - How was your day?
     - What have you been doing since we last talked?
     - How’s everything little thing in your life?
     - How do you fare?
@@ -724,3 +722,4 @@ nlu:
     - can you make me laugh
     - do you kmow anything funny
     - how about a joke?
+    - I need something to make me laugh

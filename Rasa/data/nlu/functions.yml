@@ -42,6 +42,7 @@ nlu:
     - increase the music's [volume](music_mode)
     - upper the [volume](music_mode)
     - [Play]{"entity": "music_mode", "value": "reproduce"} [I'd Do Anything for Love](song_name) (But I Won't Do That)
+    - [Play]{"entity": "music_mode", "value": "reproduce"} [around the world](song_name) by [daft punk](artist_name)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -77,6 +78,11 @@ nlu:
     - remind me to [save the book](task) in 5 seconds
     - remind me to [go to work](task) in 15 seconds
     - remind to [study](task) tomorrow
+    - Tell me to [ride a horse](task) at 11:45 am
+    - REmind me to [start the engine](task) at 8 pm
+    - remindme to [do the homework](task) in 10 minutes
+    - i have to remember to [check the time error in reminders](task) in 10 seconds
+    - Can you remind me to [charge the phone](task) in 10 seconds
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -389,6 +395,10 @@ nlu:
     - what the weather like?
     - Collio, now I wonder how's the weather at home, in [Barcelona](location), [Spain](location)
     - How's the weather in Almeria, Spain?
+    - will there be [clouds](weather_condition) at manlleu tomorrow?
+    - will there be [clouds](weather_condition) tomorrow?
+    - Should I bring an umbrella with me?
+    - How is the time today?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -670,6 +680,9 @@ nlu:
     - [what's 4*8](search)
     - [I wish for the suicide prevention phone](search)
     - [What is the greatest Hit of Queen](search)?
+    - [How many degrees is a kelvin](search)?
+    - [What is gpt3](search)?
+    - I was wondering, what is the [price of the bitcoin](search)?
 - intent: timer
   examples: |
     - set a timer for 30 minutes
@@ -695,6 +708,7 @@ nlu:
     - set a 1 second timer
     - set a 15 second timer
     - put a timer of 5 seconds
+    - Wake me up in 10 minutes
 - intent: cancel_timer
   examples: |
     - cancel the timer

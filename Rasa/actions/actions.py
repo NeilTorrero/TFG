@@ -75,7 +75,7 @@ class ActionAskTime(Action):
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
 
-        date, time = getTime(location)
+        date, time = getTime(location) # TODO: slot where user lives
         print(date, time)
         dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
 
@@ -86,7 +86,7 @@ def getWeather(city, date, date_grain):
     # check for ip lookup city https://ipapi.com
     API_KEY = "2e40656c78ebe1ec22f4f6a82540f208"
 
-    if city is None:
+    if city is None: # TODO: slot of where the user lives
         city = 'Barcelona'
 
     # check if forecast can be done
@@ -329,6 +329,12 @@ def webScrapAnswer(question):
                 print(answer.text)
                 return answer.text
 
+        # simple response .XcVN5d
+        answer = soup.select_one('.XcVN5d')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
+
         # when response is alone .IZ6rdc
         answer = soup.select_one('.IZ6rdc')
         if answer is not None:
@@ -388,22 +394,6 @@ def webScrapAnswer(question):
                 print(answer.text)
                 return answer.text
 
-        # wikipedia definition .kno-rdesc span
-        answer = soup.select_one('.kno-rdesc span')
-        if answer is not None:
-            print('According to Wikipedia: ' + answer.text)
-            return 'According to Wikipedia: ' + answer.text
-        else:
-            # Dictionary definition .sY7ric span
-            answer = soup.select('.sY7ric span')
-            if answer is not None:
-                answers = 'Dictionary definition: \n'
-                for (idx, entry) in list(enumerate(answer))[1:]:
-                    if answer[idx - 1].text.isnumeric():
-                        answers += '- ' + entry.text + '\n'
-                print(answers)
-                return answers
-
         # response conversion #NotFQb .vXQmIe (result) and .bjhkR (formula)
         answer = soup.select_one('#NotFQb .vXQmIe')
         if answer is not None:
@@ -448,6 +438,29 @@ def webScrapAnswer(question):
                     answers += '- ' + entry.text + '\n'
                 print(answers)
                 return answers
+
+        # wikipedia definition .kno-rdesc span
+        answer = soup.select_one('.kno-rdesc span')
+        if answer is not None:
+            print('According to Wikipedia: ' + answer.text)
+            return 'According to Wikipedia: ' + answer.text
+        else:
+            # Dictionary definition .sY7ric span
+            answer = soup.select('.sY7ric span')
+            if answer is not None:
+                answers = 'Dictionary definition: \n'
+                for (idx, entry) in list(enumerate(answer))[1:]:
+                    print(idx + " - " + entry.text)
+                    if answer[idx - 1].text.isnumeric():
+                        answers += '- ' + entry.text + '\n'
+                print(answers)
+                return answers
+
+        # extracted from web b
+        answer = soup.select_one('b')
+        if answer is not None:
+            print(answer.text)
+            return answer.text
 
     except Exception as e:
         print(answer)
