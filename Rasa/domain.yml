@@ -63,12 +63,13 @@ entities:
 - music_mode
 - playlist_name
 - task
-- food
+#- food
 - action
 - language
 - search
 - song_name
 - weather_condition
+- artist_name
 # duckling
 - time
 - temperature
@@ -100,7 +101,6 @@ entities:
 - QUANTITY
 - TIME
 - WORK_OF_ART
-- artist_name
 slots:
   name:
     type: rasa.shared.core.slots.TextSlot

@@ -8,9 +8,10 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
    - name: SpacyNLP
      model: "en_core_web_trf"
-   - name: WhitespaceTokenizer
+   - name: SpacyTokenizer
      intent_tokenization_flag: true
      intent_split_symbol: "+"
+   - name: SpacyFeaturizer
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer
@@ -35,17 +36,18 @@ pipeline:
    - name: DIETClassifier
      epochs: 200
      constrain_similarities: true
+     evaluate_on_number_of_examples: 0
+     evaluate_every_number_of_epochs: 5
+     tensorboard_log_directory: "./tensorboard"
+     tensorboard_log_level: "epoch"
    - name: EntitySynonymMapper
    - name: ResponseSelector
-     epochs: 200
-     constrain_similarities: true
-   - name: ResponseSelector
      retrieval_intent: chitchat
-     epochs: 200
+     epochs: 100
      constrain_similarities: true
    - name: ResponseSelector
      retrieval_intent: memory
-     epochs: 200
+     epochs: 100
      constrain_similarities: true
    - name: FallbackClassifier
      threshold: 0.6
@@ -61,5 +63,9 @@ policies:
    - name: RulePolicy
    - name: TEDPolicy
      max_history: 10
-     epochs: 200
+     epochs: 20
      constrain_similarities: true
+     evaluate_on_number_of_examples: 0
+     evaluate_every_number_of_epochs: 5
+     tensorboard_log_directory: "./tensorboard"
+     tensorboard_log_level: "epoch"

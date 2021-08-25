@@ -23,8 +23,22 @@ from rasa_sdk.executor import CollectingDispatcher
 import datetime
 import requests
 import pytz
+from spellchecker import SpellChecker
 
 logger = logging.getLogger(__name__)
+
+
+def spellCheck(entity):
+    spell = SpellChecker()
+    words = spell.unknown(spell.split_words(entity))
+    corrected_entity = ''
+    for word in words:
+        corrected = spell.correction(word)
+        print(word + " has been corrected to " + corrected)
+        if corrected_entity != '':
+            corrected_entity += ' '
+        corrected_entity += corrected
+    return corrected_entity
 
 
 def getTime(city):
@@ -75,7 +89,10 @@ class ActionAskTime(Action):
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 location = entity['value']
 
-        date, time = getTime(location) # TODO: slot where user lives
+        # Location Spell check
+        location = spellCheck(location)
+        # API/library call
+        date, time = getTime(location)  # TODO: slot where user lives
         print(date, time)
         dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
 
@@ -213,6 +230,9 @@ class ActionAskWeather(Action):
                 elif date_grain == 'year':
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
+        # Location Spell check
+        location = spellCheck(location)
+        # API calls
         weather = getWeather(location, date, date_grain)
         if weather[0] == 'OK':
             answer = "It's " + str(weather[4]) + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
@@ -808,9 +828,6 @@ class ActionMemory(Action):
         else:
             # redo the task
             print()
-
-
-
 
         return []
 

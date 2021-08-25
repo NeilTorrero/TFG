@@ -43,6 +43,7 @@ nlu:
     - upper the [volume](music_mode)
     - [Play]{"entity": "music_mode", "value": "reproduce"} [I'd Do Anything for Love](song_name) (But I Won't Do That)
     - [Play]{"entity": "music_mode", "value": "reproduce"} [around the world](song_name) by [daft punk](artist_name)
+    - [reproduce](music_mode) a song of [ACDC](artist_name)
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -91,9 +92,7 @@ nlu:
     - discard the [dentist](task) reminder
 - intent: food
   examples: |
-    - I would like to [eat](action) a [pizza](food)
     - I am hungry
-    - Where can I [buy](action) [bread](food)
     - Any good restaurants nearby?
     - Can you find a restaurant for me?
     - Can you find me a burger joint?
@@ -151,6 +150,8 @@ nlu:
     - show me restaurents
     - Where can I buy breae
     - Show me restaurants near me
+#    - I would like to [eat](action) a [pizza](food)
+#    - Where can I [buy](action) [bread](food)
 - intent: ask_time
   examples: |
     - Can you give me the time?
