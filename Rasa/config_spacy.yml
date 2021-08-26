@@ -6,12 +6,14 @@ pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-   - name: WhitespaceTokenizer
+   - name: SpacyNLP
+     model: "en_core_web_trf"
+   - name: SpacyTokenizer
      intent_tokenization_flag: true
      intent_split_symbol: "+"
-   - name: RegexFeaturizer
-   - name: LexicalSyntacticFeaturizer
-   - name: CountVectorsFeaturizer
+   - name: SpacyFeaturizer
+   - name: SpacyEntityExtractor
+     dimensions: [ "CARDINAL", "EVENT", "FAC", "GPE", "LANGUAGE", "LAW", "LOC", "MONEY", "NORP", "ORG", "PERCENT", "PERSON", "PRODUCT", "QUANTITY", "WORK_OF_ART" ] # "DATE", "TIME", "ORDINAL",
    - name: CountVectorsFeaturizer
      analyzer: char_wb
      min_ngram: 1

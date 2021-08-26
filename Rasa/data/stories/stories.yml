@@ -107,7 +107,7 @@ stories:
   - action: action_cancel_reminder
 - story: name path
   steps:
-  - intent: user_name
+  - intent: greet+user_name
     entities:
     - name: John
   - action: utter_greet_name
