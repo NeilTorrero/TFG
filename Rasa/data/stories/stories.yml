@@ -30,6 +30,14 @@ stories:
   steps:
   - intent: thank
   - action: utter_thanks_response
+- story: affirm
+  steps:
+  - intent: affirm
+  - action: utter_affirm_response
+- story: deny
+  steps:
+  - intent: deny
+  - action: utter_deny_response
 - story: happy path
   steps:
   - intent: greet
@@ -193,3 +201,63 @@ stories:
   - slot_was_set:
     - time: '2021-08-20T00:00:00.000+02:00'
   - action: action_ask_weather
+- story: time followup
+  steps:
+  - intent: ask_time
+    entities:
+    - location: New York
+  - slot_was_set:
+    - location: New York
+  - action: action_ask_time
+  - intent: follow_up
+    entities:
+    - location: Paris
+  - slot_was_set:
+    - location: Paris
+  - action: action_ask_time
+- story: news
+  steps:
+  - intent: ask_news
+  - action: action_news
+- story: news time
+  steps:
+  - intent: ask_news
+    entities:
+    - time: '2021-08-27T00:00:00.000+02:00'
+  - action: action_news
+- story: news with org
+  steps:
+  - intent: ask_news
+    entities:
+    - ORG: Amazon
+  - action: action_news
+- story: news with person
+  steps:
+  - intent: ask_news
+    entities:
+    - PERSON: Turing
+  - action: action_news
+- story: news with gpe
+  steps:
+  - intent: ask_news
+    entities:
+    - GPE: Tokyo
+  - action: action_news
+- story: news followup
+  steps:
+  - intent: ask_news
+    entities:
+    - PERSON: Joe Biden
+  - action: action_news
+  - intent: follow_up
+    entities:
+    - ORG: Tesla
+  - action: action_news
+- story: q&a search followup
+  steps:
+  - intent: search_information
+    entities:
+    - search: who invented penicilin
+  - action: action_search_answer
+  - intent: follow_up
+  - action: action_search_answer

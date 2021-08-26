@@ -771,7 +771,7 @@ nlu:
     - quit the timer
     - stop the countdown
     - dismiss the timer
-- intent: news
+- intent: ask_news
   examples: |
     - lastest news of FC Barcelona
     - What's happening in North Korea?

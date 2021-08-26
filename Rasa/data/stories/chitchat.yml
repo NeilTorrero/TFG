@@ -18,3 +18,9 @@ stories:
   - action: utter_greet
   - intent: chitchat
   - action: utter_chitchat
+- story: follow up chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: follow_up
+  - action: utter_chitchat

@@ -794,26 +794,11 @@ class ActionNews(Action):
 
         interests = None
         date = tracker.get_slot('time')
-        # ORG, PERSON, GPE, NORP
+        # ORG, PERSON, GPE, NORP, FAC, LOC, PRODUCT, EVENT, WORK_OF_ART, LAW
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'date':
                 date = entity['value']
-            if entity['entity'] == 'ORG':
-                if interests is None:
-                    interests = entity['value']
-                else:
-                    interests += "AND " + entity['value']
-            if entity['entity'] == 'PERSON':
-                if interests is None:
-                    interests = entity['value']
-                else:
-                    interests += "AND " + entity['value']
-            if entity['entity'] == 'GPE':
-                if interests is None:
-                    interests = entity['value']
-                else:
-                    interests += "AND " + entity['value']
-            if entity['entity'] == 'NORP':
+            if entity['entity'] in ['ORG', 'PERSON', 'GPE', 'NORP', 'FAC', 'LOC', 'PRODUCT', 'EVENT', 'WORK_OF_ART', 'LAW']:
                 if interests is None:
                     interests = entity['value']
                 else:

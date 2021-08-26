@@ -53,7 +53,7 @@ intents:
     use_entities: true
 - follow_up:
     use_entities: true
-- news:
+- ask_news:
     use_entities: true
 - greet+user_name:
     use_entities: true
@@ -209,6 +209,10 @@ responses:
   - text: Anytime.
   - text: It was the least I could do.
   - text: Glad to help.
+  utter_affirm_response:
+  - text: Let me know if you need anything else.
+  utter_deny_response:
+  - text: So that's wasn't what you were looking for.
   utter_chitchat/ask_builder:
   - text: I don't know.
   - text: It would be great if I created myself.
@@ -345,6 +349,7 @@ actions:
 - validate_name_form
 - action_submit_register
 - action_remind
+- action_news
 - action_memory
 forms:
   name_form:
