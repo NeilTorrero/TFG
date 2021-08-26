@@ -300,6 +300,9 @@ responses:
   - text: Why did the robot get angry? - Because someone kept pushing its buttons.
   - text: What do you call a pirate droid? - Arrrr-2-D2
   - text: Why did the robot cross the road? - Because he was programmed to.
+  utter_chitchat/handle_praise:
+  - text: Thanks, that's very kind of you.
+  - text: I'm honored.
   utter_chitchat:
   - text: I didn't understand that.
   utter_memory:

@@ -799,6 +799,8 @@ nlu:
     - ok thanks [sara](name)
     - ok thanks!
     - yes, thank you
+    - Aight
+    - True
 - intent: deny
   examples: |
     - no
@@ -1042,6 +1044,8 @@ nlu:
     - Thx
     - I'm fine thanks for asking
     - Thanks that was very useful
+    - Thanks !
+    - I apreciate it
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -1075,3 +1079,5 @@ nlu:
     - in barcelona?
     - also Berlin
     - AND YOU?
+    - and in the [US](location)?
+    - Another one

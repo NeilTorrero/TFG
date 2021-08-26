@@ -8,10 +8,9 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
    - name: SpacyNLP
      model: "en_core_web_trf"
-   - name: SpacyTokenizer
+   - name: WhitespaceTokenizer
      intent_tokenization_flag: true
      intent_split_symbol: "+"
-   - name: SpacyFeaturizer
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer

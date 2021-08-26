@@ -84,6 +84,7 @@ nlu:
     - remindme to [do the homework](task) in 10 minutes
     - i have to remember to [check the time error in reminders](task) in 10 seconds
     - Can you remind me to [charge the phone](task) in 10 seconds
+    - Can you remind me to [check the weather](task) in a few seconds?
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -236,6 +237,12 @@ nlu:
     - whats on the clock
     - what's on the clock
     - what does the clock say
+    - Date
+    - I wanna know the the current time
+    - What is the time
+    - Time
+    - What time is it now ?
+    - What time is it
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -400,6 +407,21 @@ nlu:
     - will there be [clouds](weather_condition) tomorrow?
     - Should I bring an umbrella with me?
     - How is the time today?
+    - What's the weather now?
+    - What will be tomorrow's weather?
+    - What's the weather today?
+    - How's the weather in France today?
+    - How's the weather?
+    - What's the weather?
+    - What's the weather in [France](location) ?
+    - Weather 26 august 2021
+    - Weather
+    - Can you help me by informing me about the weather?
+    - Can you tell me the weather
+    - Hey I would like to know what the weather is
+    - What's thw weather Today
+    - I would like to find out the weather
+    - The weather today
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -684,6 +706,37 @@ nlu:
     - [How many degrees is a kelvin](search)?
     - [What is gpt3](search)?
     - I was wondering, what is the [price of the bitcoin](search)?
+    - Can you recommend me a [new anime to watch](search)?
+    - Can you tell me the [recipe for a chocolate cake](search)?
+    - [Chocolate cake recipe](search)
+    - [When were the Pokemon Black/White games aired in Europe](search)??
+    - [When were the Pokemon Black/White games aired](search) ?
+    - [Whats a good movie to watch](search)?
+    - [What is a squamat](search)?
+    - [What is a dog](search)?
+    - [What's a cnidaria](search)?
+    - Any [new anime to watch](search)?
+    - How far is the sun from earth
+    - What's the second biggest city in France?
+    - How many days are there in a year
+    - Can you die from drinking too much water
+    - How old do you have to be to get a license
+    - [Who killed hitler](search)?
+    - Can you tell me who started world war 1?
+    - [When was the Lumières mouvement](search)?
+    - [Who created the NASA](search)?
+    - Who invented Little Nightmares?
+    - [Who invented Minecraft](search)?
+    - By [who was Minecraft created](search)?
+    - [When was FNAF released](search)?
+    - Who invented LN?
+    - Do you know the videogame Little Nightmares?
+    - On what console was Pacman first released?
+    - On what console was Pacman first released
+    - [When was Pac-Man released](search)?
+    - [YouTube](search)
+    - [chocolate cake recipe](search)
+    - [Dictionary definition](search)
 - intent: timer
   examples: |
     - set a timer for 30 minutes

@@ -10,6 +10,10 @@ nlu:
     - Is your creator a Robot?
     - what's your creator?
     - who is your creator
+    - Who are your creators?
+    - Who is your master
+    - Who created you
+    - Who created you ?
 - intent: chitchat/ask_howbuilt
   examples: |
     - By what means were you made?
@@ -61,6 +65,8 @@ nlu:
     - Are you built using rasa?
     - Are u developed in rasa
     - are you build with rasa ?
+    - By who were you created?
+    - How were you programmed?
 - intent: chitchat/ask_howdoing
   examples: |
     - Ahoy matey how are you?
@@ -202,6 +208,11 @@ nlu:
     - Is there anything concerning you?
     - What’s the latest buzz in your world?
     - What’s shakin’?
+    - How are you doing today?
+    - Fine, and you ?
+    - How are you ?
+    - How are you doing
+    - Wassap
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -258,6 +269,10 @@ nlu:
     - when were you born?
     - when you were bon
     - What's your age?
+    - How old are you ?
+    - Can you tell me what's your age?
+    - When's your birthday then ?
+    - When is your birthday?
 - intent: chitchat/ask_isbot
   examples: |
     - are you a human?
@@ -302,6 +317,7 @@ nlu:
     - real bot then?
     - are you really a bbot?
     - are you real?
+    - Are you real
 - intent: chitchat/ask_ishuman
   examples: |
     - hey are you human
@@ -545,6 +561,7 @@ nlu:
     - i can ask you anything
     - how to get started
     - how to start?
+    - What can you help me with?
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?
@@ -646,6 +663,7 @@ nlu:
     - what is you name
     - What's your name?
     - are you Alpharius?
+    - Who are you ?
 - intent: chitchat/handleinsult
   examples: |
     - you're a loser
@@ -664,6 +682,7 @@ nlu:
     - bitch
     - whore
     - stupid
+    - Are you dumb
 - intent: chitchat/otherbots
   examples: |
     - what's your opinion of siri?
@@ -674,6 +693,7 @@ nlu:
     - do you like the google assitant?
     - what do you thing about Siri?
     - Do you know Siri?
+    - Have you ever met other chatbots?
 - intent: chitchat/know_what
   examples: |
     - Wow, i have to tell you something
@@ -723,3 +743,7 @@ nlu:
     - do you kmow anything funny
     - how about a joke?
     - I need something to make me laugh
+    - Tell me a joke
+- intent: chitchat/handle_praise
+  examples: |
+    - It's nice to talk with you

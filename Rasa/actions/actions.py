@@ -90,7 +90,8 @@ class ActionAskTime(Action):
                 location = entity['value']
 
         # Location Spell check
-        location = spellCheck(location)
+        if location is not None:
+            location = spellCheck(location)
         # API/library call
         date, time = getTime(location)  # TODO: slot where user lives
         print(date, time)
@@ -131,8 +132,9 @@ def getWeather(city, date, date_grain):
     else:
         diff = (datetime.datetime.fromisoformat(str(date)) - datetime.datetime.now(datetime.datetime.fromisoformat(str(date)).tzinfo))
         if not 7 >= diff.days >= 0:
-            print("I don't have the forecast for the date you are asking.")
-            return ['KO', "I don't have the forecast for the date you are asking."]
+            if diff.seconds >= 86400:
+                print("I don't have the forecast for the date you are asking.")
+                return ['KO', "I don't have the forecast for the date you are asking."]
 
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/onecall?"
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
@@ -215,7 +217,7 @@ class ActionAskWeather(Action):
                 date_text = entity['text']
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
-                if date_grain == 'day':
+                if date_grain == 'day' or date_grain == 'days':
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value'])
                 elif date_grain == 'hour':
                     date = datetime.datetime.now() + datetime.timedelta(hours=entity['value'])
@@ -231,7 +233,8 @@ class ActionAskWeather(Action):
                     date = datetime.datetime.now() + datetime.timedelta(days=entity['value']*365)
 
         # Location Spell check
-        location = spellCheck(location)
+        if location is not None:
+            location = spellCheck(location)
         # API calls
         weather = getWeather(location, date, date_grain)
         if weather[0] == 'OK':
@@ -468,19 +471,34 @@ def webScrapAnswer(question):
             # Dictionary definition .sY7ric span
             answer = soup.select('.sY7ric span')
             if answer is not None:
-                answers = 'Dictionary definition: \n'
-                for (idx, entry) in list(enumerate(answer))[1:]:
+                if len(list(answer)) > 1:
+                    answers = 'Dictionary definition: \n'
+                    for (idx, entry) in list(enumerate(answer))[1:]:
+                        print(idx + " - " + entry.text)
+                        if answer[idx - 1].text.isnumeric():
+                            answers += '- ' + entry.text + '\n'
+                    print(answers)
+                    return answers
+
+        # recomendations .TrT0Xe
+        answer = soup.select('.sY7ric span')
+        if answer is not None:
+            if len(list(answer)) > 0:
+                for (idx, entry) in list(enumerate(answer)):
                     print(idx + " - " + entry.text)
                     if answer[idx - 1].text.isnumeric():
                         answers += '- ' + entry.text + '\n'
                 print(answers)
                 return answers
 
-        # extracted from web b
-        answer = soup.select_one('b')
+        # box for b response .LGOjhe
+        answer = soup.select_one('.LGOjhe')
         if answer is not None:
-            print(answer.text)
-            return answer.text
+            # extracted from web b
+            answer = soup.select_one('b')
+            if answer is not None:
+                print(answer.text)
+                return answer.text
 
     except Exception as e:
         print(answer)
