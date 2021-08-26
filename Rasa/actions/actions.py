@@ -476,7 +476,7 @@ def webScrapAnswer(question):
                 if len(list(answer)) > 1:
                     answers = 'Dictionary definition: \n'
                     for (idx, entry) in list(enumerate(answer))[1:]:
-                        print(idx + " - " + entry.text)
+                        print(str(idx) + " - " + entry.text)
                         if answer[idx - 1].text.isnumeric():
                             answers += '- ' + entry.text + '\n'
                     print(answers)
@@ -545,7 +545,7 @@ class ActionTimer(Action):
         date = tracker.get_slot('time')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(entity['value'])
+                date = datetime.datetime.fromisoformat(str(entity['value']))
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -608,7 +608,7 @@ class ActionReminder(Action):
             if entity['entity'] == 'task':
                 task = entity['value']
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(entity['value'])
+                date = datetime.datetime.fromisoformat(str(entity['value']))
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -835,7 +835,7 @@ class ActionMemory(Action):
         date = tracker.get_slot('time')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(entity['value'])
+                date = datetime.datetime.fromisoformat(str(entity['value']))
 
 
         intent = tracker.latest_message['response_selector']['memory']['response']['intent_response_key']
