@@ -139,9 +139,10 @@ def getWeather(city, date, date_grain):
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/onecall?"
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
         json_city = response.json()
-        if 'error' in json_city and json_city['code'] == '018':
-            print('City not found')
-            return ['KO', 'City not found']
+        if 'error' in json_city:
+            if json_city['code'] == '018':
+                print('City not found')
+                return ['KO', 'City not found']
         # Forecast -> https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={API key}&units=metric
         url = FORECAST_URL + "lat=" + json_city['latt'] + "&lon=" + json_city['longt'] + "&appid=" + API_KEY + "&units=metric"
 
@@ -182,6 +183,7 @@ def getWeather(city, date, date_grain):
         else:
             print("There's no forecast for this date.")
             return['KO', "There's no forecast for this date."]
+    return['KO', "Sorry I couldn't get you the weather."]
 
 
 class ActionAskWeather(Action):
