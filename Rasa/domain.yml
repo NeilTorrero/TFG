@@ -59,6 +59,8 @@ intents:
     use_entities: true
 - out_of_scope:
     use_entities: true
+- ask_weather+ask_time:
+    use_entities: true
 entities:
 - location
 - name
