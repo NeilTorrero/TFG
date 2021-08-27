@@ -520,13 +520,16 @@ class ActionSearchAnswer(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        question = ''
+        w_question = None
+        question = None
         for entity in tracker.latest_message['entities']:
+            if entity['entity'] == 'w_search':
+                w_question = entity['value']
             if entity['entity'] == 'search':
                 question += entity['value']
-        if question == '':
+        if question is None:
             question = tracker.latest_message.text
-        answer = webScrapAnswer(question)
+        answer = webScrapAnswer(w_question + ' ' + question)
         # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
 
         dispatcher.utter_message(text=answer)
