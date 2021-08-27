@@ -213,6 +213,7 @@ nlu:
     - How are you ?
     - How are you doing
     - Wassap
+    - How are you doing this weekend?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -744,6 +745,14 @@ nlu:
     - how about a joke?
     - I need something to make me laugh
     - Tell me a joke
+    - Tell me another joke
+    - I'm bored, tell me a joke
 - intent: chitchat/handle_praise
   examples: |
     - It's nice to talk with you
+    - That's adorable
+    - Damn, you're good
+- intent: chitchat/ask_whatdoing
+  examples: |
+    - What are you doing?
+    - What are you doing tomorrow night?

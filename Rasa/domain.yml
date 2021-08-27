@@ -57,6 +57,8 @@ intents:
     use_entities: true
 - greet+user_name:
     use_entities: true
+- out_of_scope:
+    use_entities: true
 entities:
 - location
 - name
