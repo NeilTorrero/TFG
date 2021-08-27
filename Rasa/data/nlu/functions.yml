@@ -60,10 +60,10 @@ nlu:
     - remind me to [buy fruit](task)
     - remember me to [do something](task)
     - can you remember me to [wash the dishes](task)
-    - Remind me yo [buy groceries](action) in 3 minutes
+    - Remind me yo [buy groceries](task) in 3 minutes
     - Remind me to [jump](task) in five seconds
     - Remind me to [drink](task) in 15 seconds
-    - Remind me to [eat](action) in 20 minuts
+    - Remind me to [eat](task) in 20 minuts
     - time to [get into shape](task) , remember me
     - remind me to [do the homework](task) in 30 seconds
     - remind me to [do the homework](task) in 15 seconds
@@ -96,6 +96,7 @@ nlu:
     - dismiss the last reminder
     - remove the reminder at 10:30
     - discard the [dentist](task) reminder
+    - forget that i have to [buy the bicycle](task)
 - intent: food
   examples: |
     - I am hungry
@@ -439,6 +440,9 @@ nlu:
     - How's the weather and time over in Moscow
     - How's the weather and time over in St. Petesburg
     - How's the weather and time over in Saint Petesburg?
+    - what time is it and how's the weather
+    - give me the time and the weather
+    - how's the weather and time?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
