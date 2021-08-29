@@ -33,13 +33,14 @@ pipeline:
      # dimensions to extract
      dimensions: [ "CARDINAL", "EVENT", "FAC", "GPE", "LANGUAGE", "LAW", "LOC", "MONEY", "NORP", "ORG", "PERCENT", "PERSON", "PRODUCT", "QUANTITY", "WORK_OF_ART", "PERCENT" ] # "DATE", "TIME", "ORDINAL",
    - name: DIETClassifier
-     epochs: 200
+     epochs: 100
      constrain_similarities: true
      evaluate_on_number_of_examples: 0
      evaluate_every_number_of_epochs: 5
      tensorboard_log_directory: "./tensorboard"
      tensorboard_log_level: "epoch"
    - name: EntitySynonymMapper
+   - name: emotion.EmotionExtractor
    - name: ResponseSelector
      retrieval_intent: chitchat
      epochs: 100
