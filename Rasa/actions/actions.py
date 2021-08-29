@@ -140,6 +140,7 @@ def getWeather(city, date, date_grain):
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
         json_city = response.json()
         if 'error' in json_city:
+            print(json_city)
             if json_city['code'] == '018':
                 print('City not found')
                 return ['KO', 'City not found']
@@ -570,7 +571,7 @@ class ActionTimer(Action):
 
         reminder = ReminderScheduled(
             "end_timer",
-            trigger_date_time=date,
+            trigger_date_time=datetime.datetime.fromisoformat(str(date)),
             name="timer",
             kill_on_user_message=True,
         )
@@ -645,7 +646,7 @@ class ActionReminder(Action):
 
         reminder = ReminderScheduled(
             "check_reminder",
-            trigger_date_time=date,
+            trigger_date_time=datetime.datetime.fromisoformat(str(date)),
             entities=entities,
             name="reminder_" + task,
             kill_on_user_message=False,
@@ -821,21 +822,149 @@ class ActionMemory(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         date = tracker.get_slot('time')
+        dateto = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
                 date = datetime.datetime.fromisoformat(str(entity['value']))
-
+                date_grain = entity['additional_info']['unit']
+                if date_grain == 'day':
+                    dateto = date + datetime.timedelta(days=1)
+                elif date_grain == 'hour':
+                    dateto = date + datetime.timedelta(hours=1)
+                elif date_grain == 'minute':
+                    dateto = date + datetime.timedelta(minutes=1)
+                elif date_grain == 'second':
+                    dateto = date + datetime.timedelta(seconds=1)
+                elif date_grain == 'week':
+                    dateto = date + datetime.timedelta(weeks=1)
+                elif date_grain == 'month':
+                    dateto = date + datetime.timedelta(days=30)
+                elif date_grain == 'year':
+                    dateto = date + datetime.timedelta(days=365)
+            if entity['entity'] == 'duration':
+                date = datetime.datetime.now()
+                date_grain = entity['additional_info']['unit']
+                if date_grain == 'day':
+                    dateto = date + datetime.timedelta(days=1)
+                elif date_grain == 'hour':
+                    dateto = date + datetime.timedelta(hours=1)
+                elif date_grain == 'minute':
+                    dateto = date + datetime.timedelta(minutes=1)
+                elif date_grain == 'second':
+                    dateto = date + datetime.timedelta(seconds=1)
+                elif date_grain == 'week':
+                    dateto = date + datetime.timedelta(weeks=1)
+                elif date_grain == 'month':
+                    dateto = date + datetime.timedelta(days=30)
+                elif date_grain == 'year':
+                    dateto = date + datetime.timedelta(days=365)
+        
+        path = os.path.abspath('actions/credentials.json')
+        with open(path, 'r') as f:
+            data = json.load(f)
+        client = MongoClient(host=data['host'], username=data['username'], password=data['password'], authSource='admin', connect=False)
+        database = Database(client, data['db'])
+        colec_users = database['users']
+        colec_convs = database['conversations']
 
         intent = tracker.latest_message['response_selector']['memory']['response']['intent_response_key']
         dispatcher.utter_message(text="Database search and retrieval WIP (intent= " + intent + ')')
+        user_db_name = tracker.get_slot('user_db_name')
 
-        if intent == 'memory/retrieve_question':
-            # asking for the task
-            print()
+        existsDocument = colec_users.find_one({"name": user_db_name})
+        
+        if existsDocument is not None:
+            result = colec_users.aggregate([
+                {
+                    "$match": {
+                        "name": 'Neil'	
+                    }
+                },
+                {
+                    "$unwind": '$conversations'
+                },
+                {
+                    "$match": {
+                        'conversations.added_time': {
+                            "$gte": date,
+                            "$lte": dateto
+                        }
+                    }
+                }
+            ])
+            ids = None
+            for pos in list(result):
+                ids.append(pos['conversations']['id'])
+                print(pos['conversations']['id'])
+            
+            if ids is not None:
+                if intent == 'memory/retrieve_question':
+                    # asking for the task
+                    result = colec_convs.aggregate([
+                        {"$match": {
+                            "sender_id": id	
+                        }},
+                        {"$project": {
+                            "events": {
+                                "$filter": {"input": "$events", "as": "e",
+                                "cond": { 
+                                    "$and": [
+                                        {"$eq": ["$$e.event", "user"]}, 
+                                        {"$eq": ["$$e.parse_data.intent.name", "search_information"]},
+                                        {"$gte": ["$$e.timestamp", date.timestamp()]}, 
+                                        {"$lte": ["$$e.timestamp", dateto.timestamp()]}
+                                    ]}
+                                }
+                            }
+                        }}
+                    ])
 
+                    results = list(result)
+                    for pos in results:
+                        for event in pos['events']:
+                            print(event['parse_data']['intent'])
+                            print(event['parse_data']['text'])
+                    if len(results) > 0:
+                        question = results[-1]['parse_data']['text']
+                        dispatcher.utter_message(text='You asked me: "' + question + '".')
+                    else:
+                        dispatcher.utter_message(text="I don't remember you asking me.")
+                else:
+                    # redo the task
+                    result = colec_convs.aggregate([
+                        {"$match": {
+                            "sender_id": id	
+                        }},
+                        {"$project": {
+                            "events": {
+                                "$filter": {"input": "$events", "as": "e",
+                                "cond": { 
+                                    "$and": [
+                                        {"$eq": ["$$e.event", "action"]}, 
+                                        {"$eq": ["$$e.parse_data.intent.name", intent.rsplit('/', 1)[-1]]},
+                                        {"$gte": ["$$e.timestamp", date.timestamp()]}, 
+                                        {"$lte": ["$$e.timestamp", dateto.timestamp()]}
+                                    ]}
+                                }
+                            }
+                        }}
+                    ])
+
+                    results = list(result)
+                    for pos in results:
+                        for event in pos['events']:
+                            print(event['parse_data']['intent'])
+                            print(event['parse_data']['text'])
+                    if len(results) > 0:
+                        question = results[-1]['parse_data']['text']
+                        dispatcher.utter_message(text='You asked me: "' + question + '".')
+                        # redo the task
+                    else:
+                        dispatcher.utter_message(text="I don't remember you asking me.")
+            else:
+                dispatcher.utter_message(text="I don't remember you asking me.")
         else:
-            # redo the task
-            print()
+            dispatcher.utter_message(text="I couldn't find it. You are not register.")
 
         return []
 

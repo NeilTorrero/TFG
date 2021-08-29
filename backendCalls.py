@@ -1,4 +1,7 @@
 import datetime
+import json
+import os
+from pymongo.database import Database
 import requests
 import pytz
 import urllib.parse
@@ -211,6 +214,64 @@ def getWeather(city='Barcelona'):
         print("City not found")
         return []
 
-
+from pymongo.mongo_client import MongoClient
 if __name__ == '__main__':
-    getTime("california")
+    path = os.path.abspath('Rasa/actions/credentials.json')
+    with open(path, 'r') as f:
+           data = json.load(f)
+    client = MongoClient(host=data['host'], username=data['username'], password=data['password'], authSource='admin', connect=False)
+    database = Database(client, data['db'])
+    colec = database['users']
+    result = colec.aggregate([
+        {
+            "$match": {
+                "name": 'Neil'	
+            }
+        },
+        {
+            "$unwind": '$conversations'
+        },
+        {
+            "$match": {
+                'conversations.added_time': {"$gte" : datetime.datetime.fromisoformat("2021-08-20T12:51:46.081+00:00"), "$lte": datetime.datetime.fromisoformat("2021-08-20T18:00:46.081+00:00")}
+            }
+        }
+    ])
+    id = None
+    for pos in list(result):
+        id = pos['conversations']['id']
+        print(pos['conversations']['id'])
+        print("----------")
+
+    colec_c = database['conversations']
+    result = colec_c.aggregate([
+        {
+            "$match": {
+                "sender_id": id	
+            }
+        },
+        {
+            "$project": {
+                "events": {
+                    "$filter": {
+                    "input": "$events",
+                    "as": "e",
+                    "cond": { "$and": [
+                            {"$eq": ["$$e.event", "user"]}, 
+                            {"$eq": ["$$e.parse_data.intent.name", "register"]},
+                            {"$gte": ["$$e.timestamp", datetime.datetime.fromisoformat("2021-08-20T13:00:46.081+00:00").timestamp()]}, 
+                            {"$lte": ["$$e.timestamp", datetime.datetime.fromisoformat("2021-08-20T20:00:46.081+00:00").timestamp()]}
+                        ] 
+                        }
+                    }
+                }
+            }
+        }
+    ])
+
+    for pos in list(result):
+        for event in pos['events']:
+            print(event['parse_data']['intent'])
+            print(event['parse_data']['text'])
+            print("||||||||||||||")
+        print("----------")
