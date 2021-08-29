@@ -312,6 +312,10 @@ responses:
   utter_chitchat/handle_praise:
   - text: Thanks, that's very kind of you.
   - text: I'm honored.
+  utter_chitchat/ask_whatdoing:
+  - text: Talking with you.
+  - text: What you tell me to.
+  - text: I hope that helping you.
   utter_chitchat:
   - text: I didn't understand that.
   utter_memory:
@@ -341,6 +345,9 @@ responses:
   utter_ask_reminder_form_date:
   - text: When do you want me to remember?
   - text: At what time should I remind you?
+  utter_out_of_scope:
+  - text: Sorry but I can't help you with that.
+  - text: I can't do that.
 actions:
 - action_ask_weather
 - action_ask_time
