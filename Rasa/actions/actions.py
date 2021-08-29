@@ -642,7 +642,7 @@ class ActionReminder(Action):
         reminders = tracker.get_slot('reminders')
         if reminders is None:
             reminders = []
-        reminders.append(task + '_' + str(date))
+        reminders.append(task + '_' + date.strftime("%Y-%m-%dT%H:%M:%S"))
 
         reminder = ReminderScheduled(
             "check_reminder",
@@ -684,11 +684,26 @@ class ActionCancelReminder(Action):
     ) -> List[Dict[Text, Any]]:
 
         task = tracker.get_slot('task')
+        date = tracker.get_slot('time')
+        reminders = tracker.get_slot('reminders')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
                 task = entity['value']
-
-        dispatcher.utter_message(f"Okay, I'll cancel your reminder.")
+            if entity['entity'] == 'time':
+                date = datetime.datetime.fromisoformat(str(entity['value']))
+        if task is None:
+            if len(reminders) > 0:
+                if date is None:
+                    for reminder in reminders:
+                        remsplit = reminder.rpartition('_')
+                        if remsplit[1] == date.strftime("%Y-%m-%dT%H:%M:%S"):
+                            task = remsplit[0]
+                else:
+                    task = reminders[-1].rpartition('_')[0]
+            else:
+                dispatcher.utter_message(f"You don't have any reminders scheduled.")
+        
+        dispatcher.utter_message(f"Okay, I'll cancel your " + task + " reminder.")
 
         # Cancel reminder
         return [ReminderCancelled("reminder_" + task)]
