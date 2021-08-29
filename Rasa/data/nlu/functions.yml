@@ -90,6 +90,205 @@ nlu:
     - remind me
     - remind me to [do the homework](task)
     - remindme to [do the homeworl](task)
+    - I have to [buy fruit](task) in 10 days
+    - I have to [buy fruit](task) today
+    - I have to [call Mom](task) at 23h
+    - I have to [charge the phone](task)
+    - I have to [charge the phone](task) next day
+    - I have to [charge the phone](task) wednesday
+    - I have to [do the dishes](task)
+    - I have to [do the dishes](task) in 3 weeks
+    - I have to [do the dishes](task) now
+    - I have to [drink water](task)
+    - I have to [eat dinner](task)
+    - I have to [go to the dentist](task)
+    - I have to [play the guitar](task) at ten pm
+    - I have to [read the book](task) in one month
+    - I have to remember at 10 am
+    - I have to remember at 10 pm
+    - I have to remember at 12 pm
+    - I have to remember at 14:00
+    - I have to remember at 18 h
+    - I have to remember at 2 am
+    - I have to remember at 2 pm
+    - I have to remember at 23h
+    - I have to remember at 7 pm
+    - I have to remember at seven pm
+    - I have to remember at ten am
+    - I have to remember at ten pm
+    - I have to remember at three am
+    - I have to remember at three pm
+    - I have to remember in 10 minutes
+    - I have to remember in 15 hours
+    - I have to remember in 2 weeks
+    - I have to remember in 3 weeks
+    - I have to remember in 30 hours
+    - I have to remember in a day
+    - I have to remember in a minute
+    - I have to remember in a month
+    - I have to remember in a second
+    - I have to remember in an hour
+    - I have to remember in couple weeks
+    - I have to remember in one day
+    - I have to remember in one hour
+    - I have to remember in one second
+    - I have to remember in one week
+    - I have to remember in twenty seconds
+    - I have to remember in two weeks
+    - I have to remember next hour
+    - I have to remember next minute
+    - I have to remember next month
+    - I have to remember next second
+    - I have to remember next week
+    - I have to remember something
+    - I have to remember to [do the dishes](task)
+    - I have to remember to [pick up the mail](task)
+    - I have to remember to [read the book](task)
+    - I have to remember to [ride a horse](task) in an hour
+    - I have to [return the call](task) in five seconds
+    - I have to [ride a horse](task)
+    - I have to [ride a horse](task) next hour
+    - I have to [ride a horse](task) next month
+    - I have to [study](task) at 7 pm
+    - can you remind me [buy fruit](task)
+    - can you remind me [call Mom](task) in 3 weeks
+    - can you remind me [eat dinner](task) next second
+    - can you remind me [play the guitar](task)
+    - can you remind me something
+    - can you remind me [study](task)
+    - can you remind me [the meeting](task) in an hour
+    - can you remind me [work out](task)
+    - i must not forget [buy fruit](task)
+    - i must not forget [drink water](task)
+    - i must not forget [drink water](task) at 2 pm
+    - i must not forget [eat dinner](task) in one week
+    - i must not forget [go to the dentist](task)
+    - i must not forget [pick up the mail](task) in an hour
+    - i must not forget [read the book](task) in one hour
+    - i must not forget [return the call](task)
+    - i must not forget [return the call](task) in an hour
+    - i must not forget [ride a horse](task) at seven am
+    - i must not forget something
+    - i must not forget [the meeting](task)
+    - i must not forget [work out](task) in one second
+    - please remind me
+    - please remind me at 10 am
+    - please remind me at 12 pm
+    - please remind me at 18 h
+    - please remind me at 23h
+    - please remind me at seven am
+    - please remind me at ten am
+    - please remind me at ten pm
+    - please remind me in a month
+    - please remind me in an hour
+    - please remind me in couple weeks
+    - please remind me in five days
+    - please remind me in one hour
+    - please remind me in one minute
+    - please remind me in one month
+    - please remind me in one second
+    - please remind me next day
+    - please remind me next minute
+    - please remind me next week
+    - please remind me something
+    - please remind me to [play the guitar](task)
+    - please remind me to [ride a horse](task) in two weeks
+    - pls remind me
+    - pls remind me at 7 pm
+    - pls remind me in 2 weeks
+    - pls remind me in 3 weeks
+    - pls remind me in a minute
+    - pls remind me in a month
+    - pls remind me in a second
+    - pls remind me in five minutes
+    - pls remind me in one month
+    - pls remind me next hour
+    - pls remind me next week
+    - pls remind me something
+    - pls remind me to [buy fruit](task)
+    - plz remind me
+    - plz remind me at 10 am
+    - plz remind me at 14:00
+    - plz remind me at 7 am
+    - plz remind me in a second
+    - plz remind me in couple weeks
+    - plz remind me in one day
+    - plz remind me in one month
+    - plz remind me in one second
+    - plz remind me in thirty minutes
+    - plz remind me next hour
+    - plz remind me something
+    - plz remind me to [do the dishes](task) at 7 pm
+    - plz remind me to [drink water](task) in a second
+    - plz remind me to [return the call](task) next hour
+    - plz remind me to [work out](task)
+    - remind me at 10 am
+    - remind me at 10 pm
+    - remind me at 10:00
+    - remind me at 18 h
+    - remind me at 2 pm
+    - remind me at 21:00
+    - remind me at 23h
+    - remind me at seven am
+    - remind me in 30 seconds
+    - remind me in a day
+    - remind me in a week
+    - remind me in an hour
+    - remind me in couple weeks
+    - remind me in one hour
+    - remind me in one month
+    - remind me in twenty days
+    - remind me next day
+    - remind me next hour
+    - remind me next month
+    - remind me next second
+    - remind me next week
+    - remind me something
+    - remind me to [call Mom](task) now
+    - tell me at 10 am
+    - tell me at 10 pm
+    - tell me at 12 am
+    - tell me at 12 pm
+    - tell me at 18 h
+    - tell me at 2 am
+    - tell me at 2 pm
+    - tell me at 21:00
+    - tell me at 23h
+    - tell me at 7 am
+    - tell me at 7 pm
+    - tell me at seven am
+    - tell me at seven pm
+    - tell me at ten am
+    - tell me in 15 days
+    - tell me in 20 days
+    - tell me in 3 weeks
+    - tell me in 30 days
+    - tell me in a day
+    - tell me in a minute
+    - tell me in a month
+    - tell me in a week
+    - tell me in an hour
+    - tell me in couple weeks
+    - tell me in five seconds
+    - tell me in one hour
+    - tell me in one minute
+    - tell me in one month
+    - tell me in one week
+    - tell me in thirty days
+    - tell me in thirty seconds
+    - tell me in twenty hours
+    - tell me in two weeks
+    - tell me next day
+    - tell me next hour
+    - tell me next minute
+    - tell me next month
+    - tell me next second
+    - tell me next week
+    - tell me to [charge the phone](task)
+    - tell me to [eat dinner](task)
+    - tell me to [pick up the mail](task)
+    - tell me to [read the book](task)
+    - tell me to [read the book](task) in 10 seconds
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -97,6 +296,206 @@ nlu:
     - remove the reminder at 10:30
     - discard the [dentist](task) reminder
     - forget that i have to [buy the bicycle](task)
+    - I don't have to [buy fruit](task)
+    - I don't have to [charge the phone](task)
+    - I don't have to [do the dishes](task)
+    - I don't have to [drink water](task)
+    - I don't have to [go to the dentist](task)
+    - I don't have to [pick up the mail](task)
+    - I don't have to [play the guitar](task)
+    - I don't have to [read the book](task)
+    - I don't have to remember to [call Mom](task)
+    - I don't have to remember to [charge the phone](task)
+    - I don't have to remember to [do the dishes](task)
+    - I don't have to remember to [drink water](task)
+    - I don't have to remember to [pick up the mail](task)
+    - I don't have to remember to [read the book](task)
+    - I don't have to remember to [return the call](task)
+    - I don't have to remember to [the meeting](task)
+    - I don't have to remember to [work out](task)
+    - I don't have to [return the call](task)
+    - I don't have to [ride a horse](task)
+    - I don't have to [the meeting](task)
+    - I don't have to [work out](task)
+    - cancel the [call Mom](task) reminder tomorrow
+    - cancel the [charge the phone](task) reminder
+    - cancel the [do the dishes](task) reminder tuesday
+    - cancel the [eat dinner](task) reminder
+    - cancel the [go to the dentist](task) reminder at 18 h
+    - cancel the [pick up the mail](task) reminder today
+    - cancel the [read the book](task) reminder
+    - cancel the [read the book](task) reminder at 21:00
+    - cancel the reminder at 10 am
+    - cancel the reminder at 10 pm
+    - cancel the reminder at 10:00
+    - cancel the reminder at 12 am
+    - cancel the reminder at 12 pm
+    - cancel the reminder at 14:00
+    - cancel the reminder at 18 h
+    - cancel the reminder at 2 am
+    - cancel the reminder at 2 pm
+    - cancel the reminder at 21:00
+    - cancel the reminder at 23h
+    - cancel the reminder at 7 am
+    - cancel the reminder at 7 pm
+    - cancel the reminder at seven am
+    - cancel the reminder at seven pm
+    - cancel the reminder at ten am
+    - cancel the reminder at ten pm
+    - cancel the reminder at three am
+    - cancel the reminder at three pm
+    - dismiss the [buy fruit](task) reminder
+    - dismiss the [call Mom](task) reminder
+    - dismiss the [call Mom](task) reminder tomorrow
+    - dismiss the [charge the phone](task) reminder
+    - dismiss the [charge the phone](task) reminder at ten pm
+    - dismiss the [charge the phone](task) reminder today
+    - dismiss the [do the dishes](task) reminder
+    - dismiss the [do the dishes](task) reminder today
+    - dismiss the [drink water](task) reminder next hour
+    - dismiss the [pick up the mail](task) reminder
+    - dismiss the [read the book](task) reminder at 10 pm
+    - dismiss the reminder at 10 am
+    - dismiss the reminder at 10 pm
+    - dismiss the reminder at 10:00
+    - dismiss the reminder at 12 am
+    - dismiss the reminder at 14:00
+    - dismiss the reminder at 18 h
+    - dismiss the reminder at 2 am
+    - dismiss the reminder at 21:00
+    - dismiss the reminder at 23h
+    - dismiss the reminder at 7 am
+    - dismiss the reminder at 7 pm
+    - dismiss the reminder at seven am
+    - dismiss the reminder at seven pm
+    - dismiss the reminder at ten am
+    - dismiss the reminder at ten pm
+    - dismiss the reminder at three am
+    - dismiss the [ride a horse](task) reminder
+    - dismiss the [study](task) reminder next minute
+    - dismiss the [the meeting](task) reminder
+    - dismiss the [the meeting](task) reminder at ten am
+    - dismiss the [work out](task) reminder
+    - don't remind me to [call Mom](task)
+    - don't remind me to [charge the phone](task)
+    - don't remind me to [drink water](task)
+    - don't remind me to [eat dinner](task)
+    - don't remind me to [go to the dentist](task)
+    - don't remind me to [read the book](task)
+    - don't tell me to [buy fruit](task)
+    - don't tell me to [call Mom](task)
+    - don't tell me to [do the dishes](task)
+    - don't tell me to [drink water](task)
+    - don't tell me to [pick up the mail](task)
+    - don't tell me to [read the book](task)
+    - don't tell me to [return the call](task)
+    - don't tell me to [ride a horse](task)
+    - don't tell me to [the meeting](task)
+    - don't tell me to [work out](task)
+    - forget about the [buy fruit](task) reminder
+    - forget about the [call Mom](task) reminder now
+    - forget about the [charge the phone](task) reminder
+    - forget about the [eat dinner](task) reminder
+    - forget about the [eat dinner](task) reminder at 2 pm
+    - forget about the [go to the dentist](task) reminder in 2 weeks
+    - forget about the [pick up the mail](task) reminder
+    - forget about the [play the guitar](task) reminder in 2 weeks
+    - forget about the reminder at 10 am
+    - forget about the reminder at 10 pm
+    - forget about the reminder at 10:00
+    - forget about the reminder at 12 am
+    - forget about the reminder at 12 pm
+    - forget about the reminder at 14:00
+    - forget about the reminder at 18 h
+    - forget about the reminder at 2 am
+    - forget about the reminder at 2 pm
+    - forget about the reminder at 21:00
+    - forget about the reminder at 23h
+    - forget about the reminder at 7 am
+    - forget about the reminder at 7 pm
+    - forget about the reminder at seven am
+    - forget about the reminder at seven pm
+    - forget about the reminder at ten am
+    - forget about the reminder at ten pm
+    - forget about the reminder at three am
+    - forget about the reminder at three pm
+    - forget about the [return the call](task) reminder
+    - forget about the [return the call](task) reminder at 21:00
+    - forget about the [return the call](task) reminder in one hour
+    - forget about the [ride a horse](task) reminder next month
+    - forget about the [study](task) reminder
+    - forget about the [the meeting](task) reminder
+    - forget the [buy fruit](task) reminder
+    - forget the [call Mom](task) reminder in one second
+    - forget the [call Mom](task) reminder monday
+    - forget the [call Mom](task) reminder next hour
+    - forget the [charge the phone](task) reminder
+    - forget the [charge the phone](task) reminder in one hour
+    - forget the [read the book](task) reminder
+    - forget the [read the book](task) reminder next hour
+    - forget the reminder at 10 am
+    - forget the reminder at 10 pm
+    - forget the reminder at 10:00
+    - forget the reminder at 12 am
+    - forget the reminder at 12 pm
+    - forget the reminder at 14:00
+    - forget the reminder at 18 h
+    - forget the reminder at 2 am
+    - forget the reminder at 2 pm
+    - forget the reminder at 21:00
+    - forget the reminder at 23h
+    - forget the reminder at 7 am
+    - forget the reminder at 7 pm
+    - forget the reminder at seven pm
+    - forget the reminder at ten am
+    - forget the reminder at three am
+    - forget the reminder at three pm
+    - forget the [return the call](task) reminder at 10 pm
+    - forget the [study](task) reminder
+    - forget the [the meeting](task) reminder
+    - forget the [the meeting](task) reminder in an hour
+    - please don't remind me to [buy fruit](task)
+    - please don't remind me to [do the dishes](task)
+    - please don't remind me to [drink water](task)
+    - please don't remind me to [go to the dentist](task)
+    - pls don't remind me to [play the guitar](task)
+    - pls don't remind me to [the meeting](task)
+    - plz don't remind me to [charge the phone](task)
+    - plz don't remind me to [drink water](task)
+    - plz don't remind me to [go to the dentist](task)
+    - plz don't remind me to [pick up the mail](task)
+    - remove the [buy fruit](task) reminder
+    - remove the [buy fruit](task) reminder next hour
+    - remove the [buy fruit](task) reminder next month
+    - remove the [charge the phone](task) reminder
+    - remove the [charge the phone](task) reminder now
+    - remove the [do the dishes](task) reminder
+    - remove the [do the dishes](task) reminder at 21:00
+    - remove the [do the dishes](task) reminder wednesday
+    - remove the [go to the dentist](task) reminder
+    - remove the [read the book](task) reminder in five hours
+    - remove the [read the book](task) reminder tomorrow
+    - remove the reminder at 10 am
+    - remove the reminder at 10 pm
+    - remove the reminder at 10:00
+    - remove the reminder at 12 am
+    - remove the reminder at 12 pm
+    - remove the reminder at 14:00
+    - remove the reminder at 18 h
+    - remove the reminder at 2 am
+    - remove the reminder at 2 pm
+    - remove the reminder at 21:00
+    - remove the reminder at 23h
+    - remove the reminder at 7 am
+    - remove the reminder at seven am
+    - remove the reminder at seven pm
+    - remove the reminder at ten am
+    - remove the reminder at three am
+    - remove the reminder at three pm
+    - remove the [return the call](task) reminder
+    - remove the [study](task) reminder
+    - remove the [work out](task) reminder at seven am
+    - remove the [work out](task) reminder next hour
 - intent: food
   examples: |
     - I am hungry
@@ -250,6 +649,129 @@ nlu:
     - What time is it now ?
     - What time is it
     - current time in [London](location)
+    - what is the hour in [Toronto](location)?
+    - time in [Moscow](location)?
+    - what hour is it in [Shanghai](location)?
+    - what is the time in [Saint Petersburg](location)?
+    - what is the hour in [Saint Petersburg](location)?
+    - hour in [Toronto](location)?
+    - what time is it in [Seoul](location)?
+    - what is the hour in [Seoul](location)?
+    - tell me the hour in [Beijing](location)
+    - what time is it in [Moscow](location)?
+    - what is the time in [Moscow](location)?
+    - tell me the hour in [Mexico City](location)
+    - what is the hour in [Tokyo](location)?
+    - hour in [Paris](location)?
+    - tell me the time in [Tokyo](location)
+    - tell me the hour in [Toronto](location)
+    - tell me the time in [Toronto](location)
+    - tell me the hour in [Sao Paulo](location)
+    - what time is it in [Paris](location)?
+    - time in [San Francisco](location)?
+    - what is the hour in [Buenos Aires](location)?
+    - time in [Paris](location)?
+    - time in [Mexico City](location)?
+    - tell me the hour in [Seoul](location)
+    - what time is it in [Mexico City](location)?
+    - what is the hour in [Paris](location)?
+    - what is the time in [Amsterdam](location)?
+    - tell me the hour in [Osaka](location)
+    - time in [Beijing](location)?
+    - time in [Osaka](location)?
+    - what time is it in [Buenos Aires](location)?
+    - what hour is it in [Barcelona](location)?
+    - what is the hour in [Osaka](location)?
+    - what is the time in [Barcelona](location)?
+    - what is the time in [San Francisco](location)?
+    - tell me the hour in [Saint Petersburg](location)
+    - what hour is it in [Amsterdam](location)?
+    - hour in [Osaka](location)?
+    - tell me the hour in [Moscow](location)
+    - what is the hour in [San Francisco](location)?
+    - what is the hour in [Sao Paulo](location)?
+    - what time is it in [Toronto](location)?
+    - tell me the time in [Paris](location)
+    - hour in [Amsterdam](location)?
+    - tell me the hour in [Buenos Aires](location)
+    - tell me the hour in [Paris](location)
+    - what is the hour in [Mexico City](location)?
+    - hour in [Barcelona](location)?
+    - time in [Buenos Aires](location)?
+    - tell me the time in [Buenos Aires](location)
+    - what is the hour in [Beijing](location)?
+    - tell me the time in [Mexico City](location)
+    - what hour is it in [Osaka](location)?
+    - what time is it in [Osaka](location)?
+    - tell me the hour
+    - what hour is it in [Beijing](location)?
+    - what time is it in [Sao Paulo](location)?
+    - time in [Sao Paulo](location)?
+    - what hour is it in [Saint Petersburg](location)?
+    - what is the time in [Sao Paulo](location)?
+    - what time is it in [Tokyo](location)?
+    - what time is it in [Amsterdam](location)?
+    - what hour is it in [Buenos Aires](location)?
+    - time in [Amsterdam](location)?
+    - tell me the hour in [Barcelona](location)
+    - what is the time in [Buenos Aires](location)?
+    - what hour is it in [Toronto](location)?
+    - tell me the hour in [San Francisco](location)
+    - what hour is it in [San Francisco](location)?
+    - what hour is it in [Mexico City](location)?
+    - tell me the time in [Saint Petersburg](location)
+    - hour in [Saint Petersburg](location)?
+    - hour in [Sao Paulo](location)?
+    - tell me the hour in [Amsterdam](location)
+    - hour in [Seoul](location)?
+    - time in [Seoul](location)?
+    - what hour is it in [Paris](location)?
+    - what hour is it in [Tokyo](location)?
+    - tell me the time in [Shanghai](location)
+    - tell me the time in [Barcelona](location)
+    - what hour is it in [Seoul](location)?
+    - what time is it in [Shanghai](location)?
+    - time in [Tokyo](location)?
+    - tell me the time in [Osaka](location)
+    - time in [Barcelona](location)?
+    - tell me the time in [San Francisco](location)
+    - tell me the time in [Moscow](location)
+    - time in [Saint Petersburg](location)?
+    - tell me the time in [Sao Paulo](location)
+    - hour in [Shanghai](location)?
+    - what is the time in [Seoul](location)?
+    - what is the time in [Toronto](location)?
+    - hour in [Tokyo](location)?
+    - tell me the time in [Seoul](location)
+    - hour in [Moscow](location)?
+    - what is the hour in [Moscow](location)?
+    - what time is it in [Barcelona](location)?
+    - what is the time in [Shanghai](location)?
+    - hour in [Buenos Aires](location)?
+    - tell me the time in [Amsterdam](location)
+    - what time is it in [San Francisco](location)?
+    - hour in [Beijing](location)?
+    - time in [Shanghai](location)?
+    - hour in [Mexico City](location)?
+    - what hour is it in [Sao Paulo](location)?
+    - what is the time in [Osaka](location)?
+    - what is the hour in [Shanghai](location)?
+    - what hour is it in [Moscow](location)?
+    - what is the time in [Mexico City](location)?
+    - what is the time in [Tokyo](location)?
+    - what is the hour in [Barcelona](location)?
+    - what time is it in [Beijing](location)?
+    - tell me the hour in [Tokyo](location)
+    - hour?
+    - what is the hour in [Amsterdam](location)?
+    - tell me the hour in [Shanghai](location)
+    - what time is it in [Saint Petersburg](location)?
+    - what is the time in [Beijing](location)?
+    - what is the hour?
+    - what is the time in [Paris](location)?
+    - tell me the time in [Beijing](location)
+    - hour in [San Francisco](location)?
+    - time in [Toronto](location)?
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -443,6 +965,206 @@ nlu:
     - what time is it and how's the weather
     - give me the time and the weather
     - how's the weather and time?
+    - hour and temperature  in [Beijing](location)?
+    - hour and temperature  in [Buenos Aires](location)?
+    - hour and temperature  in [Mexico City](location)?
+    - hour and temperature  in [Moscow](location)?
+    - hour and temperature  in [Saint Petersburg](location)?
+    - hour and temperature  in [Toronto](location)?
+    - hour and temperature?
+    - hour and weather  in [Buenos Aires](location)?
+    - hour and weather  in [Paris](location)?
+    - hour and weather  in [Seoul](location)?
+    - hour and weather?
+    - how is the temperature and the hour is it in [Beijing](location)?
+    - how is the temperature and the hour is it in [Buenos Aires](location)?
+    - how is the temperature and the hour is it in [Paris](location)?
+    - how is the temperature and the hour is it in [Seoul](location)?
+    - how is the temperature and the hour is it in [Shanghai](location)?
+    - how is the temperature and the hour is it in [Toronto](location)?
+    - how is the temperature and the hour is it?
+    - how is the temperature and the time is it in [Amsterdam](location)?
+    - how is the temperature and the time is it in [Barcelona](location)?
+    - how is the temperature and the time is it in [Buenos Aires](location)?
+    - how is the temperature and the time is it in [Mexico City](location)?
+    - how is the temperature and the time is it in [Saint Petersburg](location)?
+    - how is the temperature and the time is it?
+    - how is the weather and the hour is it in [Barcelona](location)?
+    - how is the weather and the hour is it in [Beijing](location)?
+    - how is the weather and the hour is it in [Mexico City](location)?
+    - how is the weather and the hour is it in [Paris](location)?
+    - how is the weather and the hour is it in [San Francisco](location)?
+    - how is the weather and the hour is it in [Toronto](location)?
+    - how is the weather and the hour is it?
+    - how is the weather and the time is it in [Mexico City](location)?
+    - how is the weather and the time is it in [Paris](location)?
+    - how is the weather and the time is it in [Seoul](location)?
+    - how is the weather and the time is it in [Toronto](location)?
+    - how is the weather and the time is it?
+    - tell me the at 12 am and temperature in [Barcelona](location)
+    - tell me the at 12 am and weather in [Paris](location)
+    - tell me the at 14:00 and weather in [Saint Petersburg](location)
+    - tell me the friday and temperature
+    - tell me the in 10 days and temperature in [Mexico City](location)
+    - tell me the in 2 weeks and weather in [Toronto](location)
+    - tell me the in 30 hours and temperature
+    - tell me the in a day and temperature in [Buenos Aires](location)
+    - tell me the in a month and temperature
+    - tell me the in a month and temperature in [Sao Paulo](location)
+    - tell me the in an hour and temperature in [Beijing](location)
+    - tell me the in five minutes and temperature
+    - tell me the in one hour and temperature
+    - tell me the in one hour and temperature in [Shanghai](location)
+    - tell me the in one hour and weather
+    - tell me the in one minute and weather
+    - tell me the in twenty days and weather
+    - tell me the in two weeks and weather
+    - tell me the monday and temperature in [Paris](location)
+    - tell me the next day and weather in [Toronto](location)
+    - tell me the next hour and temperature
+    - tell me the next hour and weather
+    - tell me the next hour and weather in [Beijing](location)
+    - tell me the next month and temperature in [Buenos Aires](location)
+    - tell me the next second and weather
+    - tell me the next week and temperature in [Toronto](location)
+    - tell me the now and weather in [Mexico City](location)
+    - tell me the sunday and weather
+    - tell me the temperature and hour
+    - tell me the temperature and hour in [Barcelona](location)
+    - tell me the temperature and hour in [Buenos Aires](location)
+    - tell me the temperature and hour in [Mexico City](location)
+    - tell me the temperature and hour in [Moscow](location)
+    - tell me the temperature and hour in [Osaka](location)
+    - tell me the temperature and hour in [Paris](location)
+    - tell me the temperature and hour in [Saint Petersburg](location)
+    - tell me the temperature and hour in [San Francisco](location)
+    - tell me the temperature and time
+    - tell me the temperature and time in [Barcelona](location)
+    - tell me the temperature and time in [Mexico City](location)
+    - tell me the temperature and time in [Moscow](location)
+    - tell me the today and weather
+    - tell me the tomorrow and temperature
+    - tell me the tomorrow and temperature in [Osaka](location)
+    - tell me the tomorrow and temperature in [San Francisco](location)
+    - tell me the tomorrow and temperature in [Toronto](location)
+    - tell me the tomorrow and weather
+    - tell me the weather and hour
+    - tell me the weather and hour in [Barcelona](location)
+    - tell me the weather and hour in [Beijing](location)
+    - tell me the weather and hour in [Moscow](location)
+    - tell me the weather and hour in [Osaka](location)
+    - tell me the weather and hour in [Paris](location)
+    - tell me the weather and hour in [Shanghai](location)
+    - tell me the weather and hour in [Tokyo](location)
+    - tell me the weather and time
+    - tell me the weather and time in [Mexico City](location)
+    - tell me the weather and time in [Paris](location)
+    - tell me the weather and time in [Saint Petersburg](location)
+    - tell me the weather and time in [Tokyo](location)
+    - tell me the wednesday and temperature in [Seoul](location)
+    - temperature and hour  in [Amsterdam](location)?
+    - temperature and hour  in [Moscow](location)?
+    - temperature and hour  in [Osaka](location)?
+    - temperature and hour  in [Saint Petersburg](location)?
+    - temperature and hour?
+    - temperature and time  in [Mexico City](location)?
+    - temperature and time  in [San Francisco](location)?
+    - temperature and time  in [Shanghai](location)?
+    - temperature and time  in [Toronto](location)?
+    - temperature and time?
+    - time and temperature  in [Amsterdam](location)?
+    - time and temperature  in [Barcelona](location)?
+    - time and temperature  in [Buenos Aires](location)?
+    - time and temperature  in [Mexico City](location)?
+    - time and temperature  in [Sao Paulo](location)?
+    - time and temperature  in [Shanghai](location)?
+    - time and temperature?
+    - time and weather  in [Amsterdam](location)?
+    - time and weather  in [Paris](location)?
+    - time and weather  in [Saint Petersburg](location)?
+    - time and weather  in [Seoul](location)?
+    - time and weather  in [Toronto](location)?
+    - time and weather?
+    - weather and hour  in [Buenos Aires](location)?
+    - weather and hour  in [Saint Petersburg](location)?
+    - weather and hour  in [Sao Paulo](location)?
+    - weather and hour  in [Seoul](location)?
+    - weather and hour?
+    - weather and time  in [Barcelona](location)?
+    - weather and time  in [Buenos Aires](location)?
+    - weather and time  in [Moscow](location)?
+    - weather and time  in [Saint Petersburg](location)?
+    - weather and time  in [Sao Paulo](location)?
+    - weather and time  in [Shanghai](location)?
+    - weather and time?
+    - what hour and temperature is it in [Amsterdam](location)?
+    - what hour and temperature is it in [Mexico City](location)?
+    - what hour and temperature is it in [Paris](location)?
+    - what hour and temperature is it?
+    - what hour and weather is it in [Beijing](location)?
+    - what hour and weather is it in [Buenos Aires](location)?
+    - what hour and weather is it in [Moscow](location)?
+    - what hour and weather is it in [Shanghai](location)?
+    - what hour and weather is it?
+    - what is the hour and temperature in [Buenos Aires](location)?
+    - what is the hour and temperature in [Moscow](location)?
+    - what is the hour and temperature in [Paris](location)?
+    - what is the hour and temperature in [Saint Petersburg](location)?
+    - what is the hour and temperature in [San Francisco](location)?
+    - what is the hour and temperature?
+    - what is the hour and weather in [Buenos Aires](location)?
+    - what is the hour and weather in [San Francisco](location)?
+    - what is the hour and weather in [Sao Paulo](location)?
+    - what is the hour and weather in [Shanghai](location)?
+    - what is the hour and weather?
+    - what is the temperature and hour in [Amsterdam](location)?
+    - what is the temperature and hour in [Barcelona](location)?
+    - what is the temperature and hour in [Moscow](location)?
+    - what is the temperature and hour in [Paris](location)?
+    - what is the temperature and hour in [Saint Petersburg](location)?
+    - what is the temperature and hour in [Shanghai](location)?
+    - what is the temperature and hour in [Toronto](location)?
+    - what is the temperature and hour?
+    - what is the temperature and time in [Buenos Aires](location)?
+    - what is the temperature and time in [Mexico City](location)?
+    - what is the temperature and time in [Paris](location)?
+    - what is the temperature and time in [Sao Paulo](location)?
+    - what is the temperature and time?
+    - what is the time and temperature in [Barcelona](location)?
+    - what is the time and temperature in [Beijing](location)?
+    - what is the time and temperature in [Buenos Aires](location)?
+    - what is the time and temperature in [Mexico City](location)?
+    - what is the time and temperature in [Paris](location)?
+    - what is the time and temperature in [Sao Paulo](location)?
+    - what is the time and temperature in [Seoul](location)?
+    - what is the time and temperature?
+    - what is the time and weather in [Amsterdam](location)?
+    - what is the time and weather in [Moscow](location)?
+    - what is the time and weather in [Saint Petersburg](location)?
+    - what is the time and weather in [San Francisco](location)?
+    - what is the time and weather in [Seoul](location)?
+    - what is the time and weather in [Toronto](location)?
+    - what is the time and weather?
+    - what is the weather and hour in [Beijing](location)?
+    - what is the weather and hour in [Paris](location)?
+    - what is the weather and hour?
+    - what is the weather and time in [Mexico City](location)?
+    - what is the weather and time in [Moscow](location)?
+    - what is the weather and time in [Osaka](location)?
+    - what is the weather and time in [Toronto](location)?
+    - what is the weather and time?
+    - what time and temperature is it in [Amsterdam](location)?
+    - what time and temperature is it in [Buenos Aires](location)?
+    - what time and temperature is it in [Saint Petersburg](location)?
+    - what time and temperature is it in [Sao Paulo](location)?
+    - what time and temperature is it?
+    - what time and weather is it in [Barcelona](location)?
+    - what time and weather is it in [Buenos Aires](location)?
+    - what time and weather is it in [Moscow](location)?
+    - what time and weather is it in [Paris](location)?
+    - what time and weather is it in [Seoul](location)?
+    - what time and weather is it in [Toronto](location)?
+    - what time and weather is it?
 - intent: search_information
   examples: |
     - Tell me [name of the president of USA](search)
@@ -822,6 +1544,128 @@ nlu:
     - put a timer of 5 seconds
     - Wake me up in 10 minutes
     - put a timer for 5 secods
+    - count 10 minutes
+    - count 10 seconds
+    - count 15 minutes
+    - count 15 seconds
+    - count 2 hours
+    - count 20 minutes
+    - count 20 seconds
+    - count 3 hours
+    - count 30 minutes
+    - count 30 seconds
+    - count couple hours
+    - count five minutes
+    - count five seconds
+    - count one minute timer
+    - count thirty minutes
+    - count thirty seconds
+    - count to 15
+    - count to 20
+    - count to 30
+    - count to five
+    - count to thirty
+    - count to twenty
+    - count twenty minutes
+    - count twenty seconds
+    - count two hours
+    - countdown 10 minutes
+    - countdown 10 seconds
+    - countdown 15 minutes
+    - countdown 15 seconds
+    - countdown 2 hours
+    - countdown 20 minutes
+    - countdown 20 seconds
+    - countdown 3 hours
+    - countdown 30 minutes
+    - countdown 30 seconds
+    - countdown couple hours
+    - countdown five minutes
+    - countdown five seconds
+    - countdown thirty minutes
+    - countdown thirty seconds
+    - countdown twenty minutes
+    - countdown twenty seconds
+    - countdown two hours
+    - put a 10 minutes timer
+    - put a 10 seconds timer
+    - put a 15 minutes timer
+    - put a 15 seconds timer
+    - put a 2 hours timer
+    - put a 20 minutes timer
+    - put a 20 seconds timer
+    - put a 3 hours timer
+    - put a 30 minutes timer
+    - put a 30 seconds timer
+    - put a couple hours timer
+    - put a five minutes timer
+    - put a five seconds timer
+    - put a one hour timer
+    - put a one minute timer
+    - put a thirty minutes timer
+    - put a thirty seconds timer
+    - put a timer of 10 minutes
+    - put a timer of 10 seconds
+    - put a timer of 15 minutes
+    - put a timer of 15 seconds
+    - put a timer of 2 hours
+    - put a timer of 20 minutes
+    - put a timer of 20 seconds
+    - put a timer of 3 hours
+    - put a timer of 30 minutes
+    - put a timer of 30 seconds
+    - put a timer of couple hours
+    - put a timer of five minutes
+    - put a timer of five seconds
+    - put a timer of one hour
+    - put a timer of thirty minutes
+    - put a timer of thirty seconds
+    - put a timer of twenty minutes
+    - put a timer of twenty seconds
+    - put a timer of two hours
+    - put a twenty minutes timer
+    - put a twenty seconds timer
+    - put a two hours timer
+    - set a 10 minutes timer
+    - set a 10 seconds timer
+    - set a 15 minutes timer
+    - set a 15 seconds timer
+    - set a 2 hours timer
+    - set a 20 minutes timer
+    - set a 20 seconds timer
+    - set a 3 hours timer
+    - set a 30 minutes timer
+    - set a 30 seconds timer
+    - set a couple hours timer
+    - set a five minutes timer
+    - set a five seconds timer
+    - set a one hour timer
+    - set a one minute timer
+    - set a thirty minutes timer
+    - set a thirty seconds timer
+    - set a timer of 1 minute
+    - set a timer of 10 minutes
+    - set a timer of 10 seconds
+    - set a timer of 15 minutes
+    - set a timer of 15 seconds
+    - set a timer of 2 hours
+    - set a timer of 20 minutes
+    - set a timer of 20 seconds
+    - set a timer of 3 hours
+    - set a timer of 30 minutes
+    - set a timer of 30 seconds
+    - set a timer of couple hours
+    - set a timer of five minutes
+    - set a timer of five seconds
+    - set a timer of one hour
+    - set a timer of thirty minutes
+    - set a timer of thirty seconds
+    - set a timer of twenty minutes
+    - set a timer of twenty seconds
+    - set a timer of two hours
+    - set a twenty minutes timer
+    - set a twenty seconds timer
+    - set a two hours timer
 - intent: cancel_timer
   examples: |
     - cancel the timer
@@ -830,6 +1674,18 @@ nlu:
     - quit the timer
     - stop the countdown
     - dismiss the timer
+    - forget about counting
+    - dismiss counting
+    - remove the countdown
+    - forget the countdown
+    - remove counting
+    - forget the timer
+    - cancel counting
+    - cancel the countdown
+    - forget counting
+    - dismiss the countdown
+    - forget about the timer
+    - forget about the countdown
 - intent: ask_news
   examples: |
     - lastest news of FC Barcelona
@@ -838,6 +1694,97 @@ nlu:
     - I want to see the Syrian news
     - what news are of the bitcoin
     - what happened yesterday?
+    - What are the news in [Amsterdam](location)?
+    - What are the news in [Barcelona](location)?
+    - What are the news in [Beijing](location)?
+    - What are the news in [Buenos Aires](location)?
+    - What are the news in [Mexico City](location)?
+    - What are the news in [Moscow](location)?
+    - What are the news in [Osaka](location)?
+    - What are the news in [Paris](location)?
+    - What are the news in [Saint Petersburg](location)?
+    - What are the news in [San Francisco](location)?
+    - What are the news in [Sao Paulo](location)?
+    - What are the news in [Seoul](location)?
+    - What are the news in [Shanghai](location)?
+    - What are the news in [Tokyo](location)?
+    - What are the news in [Toronto](location)?
+    - any news about Amazon
+    - any news about Apple
+    - any news about Olympics
+    - any news about bitcoin
+    - any news about economics
+    - any news about futbol
+    - any news about politics
+    - anything about Amazon
+    - anything about Apple
+    - anything about Olympics
+    - anything about bitcoin
+    - anything about economics
+    - anything about futbol
+    - anything about politics
+    - lastest news
+    - news in [Amsterdam](location)?
+    - news in [Barcelona](location)?
+    - news in [Beijing](location)?
+    - news in [Buenos Aires](location)?
+    - news in [Mexico City](location)?
+    - news in [Moscow](location)?
+    - news in [Osaka](location)?
+    - news in [Paris](location)?
+    - news in [Saint Petersburg](location)?
+    - news in [San Francisco](location)?
+    - news in [Sao Paulo](location)?
+    - news in [Seoul](location)?
+    - news in [Shanghai](location)?
+    - news in [Tokyo](location)?
+    - news in [Toronto](location)?
+    - tell me the news from [Amsterdam](location)
+    - tell me the news from [Barcelona](location)
+    - tell me the news from [Beijing](location)
+    - tell me the news from [Buenos Aires](location)
+    - tell me the news from [Mexico City](location)
+    - tell me the news from [Moscow](location)
+    - tell me the news from [Osaka](location)
+    - tell me the news from [Paris](location)
+    - tell me the news from [Saint Petersburg](location)
+    - tell me the news from [San Francisco](location)
+    - tell me the news from [Sao Paulo](location)
+    - tell me the news from [Seoul](location)
+    - tell me the news from [Shanghai](location)
+    - tell me the news from [Tokyo](location)
+    - tell me the news from [Toronto](location)
+    - what happend in [Amsterdam](location)?
+    - what happend in [Barcelona](location)?
+    - what happend in [Beijing](location)?
+    - what happend in [Buenos Aires](location)?
+    - what happend in [Mexico City](location)?
+    - what happend in [Moscow](location)?
+    - what happend in [Osaka](location)?
+    - what happend in [Paris](location)?
+    - what happend in [Saint Petersburg](location)?
+    - what happend in [San Francisco](location)?
+    - what happend in [Sao Paulo](location)?
+    - what happend in [Seoul](location)?
+    - what happend in [Shanghai](location)?
+    - what happend in [Tokyo](location)?
+    - what happend in [Toronto](location)?
+    - what happend yesterday?
+    - what is going on in [Amsterdam](location)?
+    - what is going on in [Barcelona](location)?
+    - what is going on in [Beijing](location)?
+    - what is going on in [Buenos Aires](location)?
+    - what is going on in [Mexico City](location)?
+    - what is going on in [Moscow](location)?
+    - what is going on in [Osaka](location)?
+    - what is going on in [Paris](location)?
+    - what is going on in [Saint Petersburg](location)?
+    - what is going on in [San Francisco](location)?
+    - what is going on in [Sao Paulo](location)?
+    - what is going on in [Seoul](location)?
+    - what is going on in [Shanghai](location)?
+    - what is going on in [Tokyo](location)?
+    - what is going on in [Toronto](location)?
 - synonym: reproduce
   examples: |
     - play

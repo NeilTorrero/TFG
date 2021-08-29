@@ -236,6 +236,33 @@ nlu:
     - morning whatsup
     - hello again
     - Good afternoon
+    - good afternoon
+    - good day
+    - good morning
+    - good night
+    - greetings
+    - hello
+    - hello good afternoon
+    - hello good day
+    - hello good morning
+    - hello good night
+    - hello greetings
+    - hello morning
+    - hey
+    - hey good afternoon
+    - hey good day
+    - hey good morning
+    - hey good night
+    - hey greetings
+    - hey morning
+    - hi
+    - hi good afternoon
+    - hi good day
+    - hi good morning
+    - hi good night
+    - hi greetings
+    - hi morning
+    - morning
 - intent: greet+user_name
   examples: |
     - hello, my name is [Charles Pfeffer](name)
@@ -276,6 +303,206 @@ nlu:
     - hi its [Neil](name)
     - hi it's [Quim](name)
     - hi I am [Sara](name)
+    - good afternoon I am [Gustavo](name)
+    - good afternoon I am [Quim](name)
+    - good afternoon I am named [Ester](name)
+    - good afternoon I am named [Neil](name)
+    - good afternoon I'm [Dani](name)
+    - good afternoon I'm [Neil](name)
+    - good afternoon I'm named [Quim](name)
+    - good afternoon [Mary](name)
+    - good afternoon [Neil](name)
+    - good afternoon [Quim](name)
+    - good afternoon call me [Elisabet](name)
+    - good afternoon it's [Jose](name)
+    - good afternoon it's [Marc](name)
+    - good afternoon it's [Neil](name)
+    - good afternoon my name is [Marc](name)
+    - good day I am [Alex](name)
+    - good day I am [Ester](name)
+    - good day I am named [Jose](name)
+    - good day I am named [Quim](name)
+    - good day I'm [Mary](name)
+    - good day it's [Marc](name)
+    - good day it's [Mary](name)
+    - good day my name's [Elisabet](name)
+    - good morning I am [Elisabet](name)
+    - good morning I am [Jose](name)
+    - good morning I am named [Elisabet](name)
+    - good morning I am named [Neil](name)
+    - good morning I'm [Gustavo](name)
+    - good morning I'm [Quim](name)
+    - good morning I'm named [Quim](name)
+    - good morning call me [Gustavo](name)
+    - good morning call me [Mary](name)
+    - good morning my name is [Neil](name)
+    - good morning my name's [Dani](name)
+    - good night I am [Alicia](name)
+    - good night I am [Quim](name)
+    - good night I am named [Gustavo](name)
+    - good night I am named [Jose](name)
+    - good night I'm named [Neil](name)
+    - good night call me [Alicia](name)
+    - good night call me [Gustavo](name)
+    - good night it's [Ester](name)
+    - good night my name's [Alex](name)
+    - greetings I am [Alicia](name)
+    - greetings I am [Mary](name)
+    - greetings I am named [Dani](name)
+    - greetings I am named [Mary](name)
+    - greetings I'm named [Mary](name)
+    - greetings I'm named [Quim](name)
+    - greetings [Marc](name)
+    - greetings call me [Gustavo](name)
+    - greetings it's [Alex](name)
+    - greetings it's [Gustavo](name)
+    - greetings my name is [Alicia](name)
+    - greetings my name is [Dani](name)
+    - greetings my name's [Jose](name)
+    - greetings my name's [Marc](name)
+    - hello [Alex](name)
+    - hello [Ester](name)
+    - hello I am [Ester](name)
+    - hello I am [Quim](name)
+    - hello I am named [Alicia](name)
+    - hello I am named [Elisabet](name)
+    - hello I am named [Gustavo](name)
+    - hello I am named [Neil](name)
+    - hello I'm [Alicia](name)
+    - hello I'm [Dani](name)
+    - hello I'm [Elisabet](name)
+    - hello I'm [Ester](name)
+    - hello I'm [Gustavo](name)
+    - hello I'm [Jose](name)
+    - hello I'm [Quim](name)
+    - hello I'm named [Alicia](name)
+    - hello I'm named [Gustavo](name)
+    - hello I'm named [Jose](name)
+    - hello I'm named [Mary](name)
+    - hello I'm named [Quim](name)
+    - hello [Quim](name)
+    - hello call me [Dani](name)
+    - hello call me [Marc](name)
+    - hello call me [Quim](name)
+    - hello good afternoon I am [Alicia](name)
+    - hello good afternoon I'm named [Jose](name)
+    - hello good day I am [Quim](name)
+    - hello good morning [Elisabet](name)
+    - hello good morning I am [Elisabet](name)
+    - hello good morning I am [Mary](name)
+    - hello good morning [Marc](name)
+    - hello good night I am named [Neil](name)
+    - hello good night my name's [Quim](name)
+    - hello greetings I am [Gustavo](name)
+    - hello greetings I'm named [Dani](name)
+    - hello it's [Dani](name)
+    - hello it's [Ester](name)
+    - hello it's [Neil](name)
+    - hello morning I am named [Quim](name)
+    - hello morning I'm [Elisabet](name)
+    - hello morning I'm named [Alex](name)
+    - hello my name is [Mary](name)
+    - hello my name is [Neil](name)
+    - hello my name's [Jose](name)
+    - hello my name's [Quim](name)
+    - hey [Alex](name)
+    - hey [Elisabet](name)
+    - hey [Ester](name)
+    - hey I am [Gustavo](name)
+    - hey I am [Jose](name)
+    - hey I am [Marc](name)
+    - hey I am [Quim](name)
+    - hey I am named [Gustavo](name)
+    - hey I am named [Jose](name)
+    - hey I am named [Mary](name)
+    - hey I am named [Neil](name)
+    - hey I am named [Quim](name)
+    - hey I'm [Alicia](name)
+    - hey I'm [Mary](name)
+    - hey I'm [Quim](name)
+    - hey I'm named [Ester](name)
+    - hey I'm named [Marc](name)
+    - hey I'm named [Neil](name)
+    - hey I'm named [Quim](name)
+    - hey [Jose](name)
+    - hey [Quim](name)
+    - hey call me [Gustavo](name)
+    - hey good afternoon [Alicia](name)
+    - hey good afternoon it's [Neil](name)
+    - hey good day my name's [Elisabet](name)
+    - hey good day my name's [Ester](name)
+    - hey good night I am [Mary](name)
+    - hey good night call me [Ester](name)
+    - hey greetings [Mary](name)
+    - hey greetings it's [Jose](name)
+    - hey it's [Dani](name)
+    - hey it's [Elisabet](name)
+    - hey it's [Gustavo](name)
+    - hey it's [Marc](name)
+    - hey it's [Quim](name)
+    - hey morning [Dani](name)
+    - hey morning I'm [Alicia](name)
+    - hey my name is [Alex](name)
+    - hey my name is [Neil](name)
+    - hey my name is [Quim](name)
+    - hey my name's [Alex](name)
+    - hey my name's [Marc](name)
+    - hey my name's [Quim](name)
+    - hi [Alicia](name)
+    - hi [Elisabet](name)
+    - hi I am [Alex](name)
+    - hi I am [Alicia](name)
+    - hi I am [Dani](name)
+    - hi I am [Ester](name)
+    - hi I am [Gustavo](name)
+    - hi I am [Marc](name)
+    - hi I am [Mary](name)
+    - hi I am [Quim](name)
+    - hi I am named [Alex](name)
+    - hi I am named [Alicia](name)
+    - hi I am named [Elisabet](name)
+    - hi I am named [Ester](name)
+    - hi I am named [Quim](name)
+    - hi I'm [Elisabet](name)
+    - hi I'm [Jose](name)
+    - hi I'm named [Jose](name)
+    - hi I'm named [Neil](name)
+    - hi I'm named [Quim](name)
+    - hi call me [Dani](name)
+    - hi call me [Ester](name)
+    - hi call me [Gustavo](name)
+    - hi call me [Jose](name)
+    - hi call me [Neil](name)
+    - hi call me [Quim](name)
+    - hi good afternoon I'm named [Alex](name)
+    - hi good afternoon call me [Ester](name)
+    - hi good afternoon call me [Quim](name)
+    - hi good day I am [Jose](name)
+    - hi good day I am named [Ester](name)
+    - hi good day my name's [Neil](name)
+    - hi good morning call me [Mary](name)
+    - hi greetings call me [Gustavo](name)
+    - hi it's [Alex](name)
+    - hi it's [Elisabet](name)
+    - hi it's [Quim](name)
+    - hi morning I am [Quim](name)
+    - hi morning my name's [Quim](name)
+    - hi my name is [Dani](name)
+    - hi my name is [Neil](name)
+    - hi my name is [Quim](name)
+    - hi my name's [Neil](name)
+    - hi my name's [Quim](name)
+    - morning [Alex](name)
+    - morning I am [Jose](name)
+    - morning I am named [Quim](name)
+    - morning I'm [Gustavo](name)
+    - morning I'm named [Dani](name)
+    - morning I'm named [Neil](name)
+    - morning [Jose](name)
+    - morning call me [Dani](name)
+    - morning it's [Marc](name)
+    - morning my name's [Alex](name)
+    - morning my name's [Quim](name)
 - intent: goodbye
   examples: |
     - cu
@@ -1051,6 +1278,199 @@ nlu:
     - Thanks that was very useful
     - Thanks !
     - I apreciate it
+    - you understood me thank u
+    - thank you very much i want that
+    - thank u that is what i want
+    - amazing thank you a million
+    - thank you a million its fine
+    - thank you a million for the help
+    - you understood me thx a bunch
+    - hundred thanks that is what i want
+    - thx a million great
+    - thank you that is good
+    - many thanks that is what i want
+    - you understood me thx lots
+    - thank you a bunch that is right
+    - perfect thank you a bunch
+    - cool thx a bunch
+    - that is good thank you a million
+    - thanks a million good
+    - thanks a million that is fine
+    - thanks a lot that is correct
+    - thank you very much that was very helpful
+    - thank u a million great
+    - that is what i want hundred thanks
+    - that is correct thx very much
+    - thanks a lot amazing
+    - thank you very much you understood me
+    - thank u very much you understood me
+    - thanks a bunch that is what i want
+    - many thanks that is fine
+    - thank you you understood me
+    - thank u lots amazing
+    - thx good
+    - good thanks very much
+    - perfect thank u lots
+    - i want that thx a million
+    - thank u a lot perfect
+    - that is good thank you very much
+    - that is correct thanks very much
+    - thank you very much perfect
+    - thank u a million that is what i want
+    - cool thx
+    - thx a bunch amazing
+    - thank u very much amazing
+    - thank you a million that is correct
+    - thx for the help
+    - that is good thanks lots
+    - that is right thank you lots
+    - i want that thanks a bunch
+    - thanks a bunch for the help
+    - thank you a bunch perfect
+    - thanks a lot for everything
+    - i want that million thanks
+    - great thx a bunch
+    - thanks a lot that is what i want
+    - thx a million you understood me
+    - thank u cool
+    - hundred thanks great
+    - its fine thank you a lot
+    - lots of thanks
+    - great thx a million
+    - lots of thanks for the help
+    - million thanks that is good
+    - that is correct many thanks
+    - thank u lots for the help
+    - that is fine thank you lots
+    - thx that was very helpful
+    - thank you that is what i want
+    - thank u lots great
+    - good thank u a lot
+    - thank u very much that is correct
+    - thank you a lot that is fine
+    - many thanks
+    - thank you lots its fine
+    - its fine thank you a million
+    - many thanks that is right
+    - amazing thank you a bunch
+    - perfect thanks very much
+    - cool thank u a million
+    - thanks that was very helpful
+    - thanks very much that is good
+    - great million thanks
+    - its fine thank you a bunch
+    - that is what i want thank u lots
+    - thank u for the help
+    - cool thank u
+    - that is what i want thanks a lot
+    - thanks very much
+    - thanks a lot that is right
+    - i want that thanks very much
+    - thx lots that is right
+    - million thanks great
+    - cool thank you very much
+    - thank you lots cool
+    - that is right thank u very much
+    - perfect thx
+    - thx a bunch that is right
+    - thank u that was very helpful
+    - that is what i want thank you
+    - you understood me thank you lots
+    - thank you lots good
+    - lots of thanks you understood me
+    - thx great
+    - thank u very much
+    - that is good thanks
+    - thank u perfect
+    - thank you that was very helpful
+    - lots of thanks cool
+    - cool thank u very much
+    - thank u a million i want that
+    - thx a lot perfect
+    - that is correct hundred thanks
+    - i want that thank u a bunch
+    - thx that is right
+    - thank you its fine
+    - that is what i want thx a bunch
+    - thank you lots perfect
+    - thanks that is correct
+    - thank u very much i want that
+    - i want that lots of thanks
+    - thx a lot that is good
+    - thank you a million you understood me
+    - you understood me thank you a lot
+    - that is correct thx a million
+    - that is good thank u
+    - amazing thanks a bunch
+    - thanks you understood me
+    - thank you good
+    - thx very much that is right
+    - thank you a million amazing
+    - thank u a lot you understood me
+    - perfect thank you very much
+    - thank u a bunch that is correct
+    - that is correct thx lots
+    - thx a million i want that
+    - thank u lots good
+    - its fine thank you
+    - good thank you a lot
+    - many thanks for the help
+    - that is what i want thank u a bunch
+    - great thank you a bunch
+    - its fine many thanks
+    - good million thanks
+    - thanks lots that is what i want
+    - thank you lots i want that
+    - lots of thanks that was very helpful
+    - thank u a bunch that is good
+    - that is what i want thanks a bunch
+    - many thanks good
+    - thx very much for the help
+    - thx a bunch that is correct
+    - thank u a million cool
+    - good thx a million
+    - million thanks that is what i want
+    - that is right thx a bunch
+    - thank u a lot great
+    - thanks lots good
+    - that is right thank you a lot
+    - thanks a lot good
+    - thx a bunch cool
+    - great many thanks
+    - perfect thank u a lot
+    - amazing thank u lots
+    - thanks lots for everything
+    - that is right lots of thanks
+    - that is fine thx very much
+    - thanks a million its fine
+    - that is fine hundred thanks
+    - thanks very much that is right
+    - thank u a bunch that is what i want
+    - thanks a lot that was very helpful
+    - i want that thx lots
+    - that is right hundred thanks
+    - thx a lot for the help
+    - thanks very much great
+    - thank you lots amazing
+    - thx very much i want that
+    - thx a million
+    - thx a million that is good
+    - thanks very much for everything
+    - thanks lots for the help
+    - thank u a million that is correct
+    - thanks a million for everything
+    - thank you that is correct
+    - good thank you a bunch
+    - thank you a million great
+    - great thanks a million
+    - its fine thanks
+    - that is good thank you
+    - hundred thanks i want that
+    - thank you very much that is good
+    - cool thx a million
+    - thank you lots for everything
+    - perfect thx a bunch
+    - you understood me thanks a bunch
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -1069,6 +1489,102 @@ nlu:
     - [Quim](name)
     - I am [Quim](name)
     - I am [quim](name)
+    - [Alex](name)
+    - [Alicia](name)
+    - [Dani](name)
+    - [Elisabet](name)
+    - [Ester](name)
+    - [Gustavo](name)
+    - I am [Alex](name)
+    - I am [Alicia](name)
+    - I am [Dani](name)
+    - I am [Elisabet](name)
+    - I am [Ester](name)
+    - I am [Gustavo](name)
+    - I am [Jose](name)
+    - I am [Marc](name)
+    - I am [Mary](name)
+    - I am [Neil](name)
+    - I am named [Alex](name)
+    - I am named [Alicia](name)
+    - I am named [Dani](name)
+    - I am named [Elisabet](name)
+    - I am named [Ester](name)
+    - I am named [Gustavo](name)
+    - I am named [Jose](name)
+    - I am named [Marc](name)
+    - I am named [Mary](name)
+    - I am named [Neil](name)
+    - I am named [Quim](name)
+    - I'm [Alex](name)
+    - I'm [Alicia](name)
+    - I'm [Dani](name)
+    - I'm [Elisabet](name)
+    - I'm [Ester](name)
+    - I'm [Gustavo](name)
+    - I'm [Jose](name)
+    - I'm [Marc](name)
+    - I'm [Mary](name)
+    - I'm [Neil](name)
+    - I'm [Quim](name)
+    - I'm named [Alex](name)
+    - I'm named [Alicia](name)
+    - I'm named [Dani](name)
+    - I'm named [Elisabet](name)
+    - I'm named [Ester](name)
+    - I'm named [Gustavo](name)
+    - I'm named [Jose](name)
+    - I'm named [Marc](name)
+    - I'm named [Mary](name)
+    - I'm named [Neil](name)
+    - I'm named [Quim](name)
+    - [Jose](name)
+    - [Marc](name)
+    - [Mary](name)
+    - [Neil](name)
+    - call me [Alex](name)
+    - call me [Alicia](name)
+    - call me [Dani](name)
+    - call me [Elisabet](name)
+    - call me [Ester](name)
+    - call me [Gustavo](name)
+    - call me [Jose](name)
+    - call me [Marc](name)
+    - call me [Mary](name)
+    - call me [Neil](name)
+    - call me [Quim](name)
+    - it's [Alex](name)
+    - it's [Alicia](name)
+    - it's [Dani](name)
+    - it's [Elisabet](name)
+    - it's [Ester](name)
+    - it's [Gustavo](name)
+    - it's [Jose](name)
+    - it's [Marc](name)
+    - it's [Mary](name)
+    - it's [Neil](name)
+    - it's [Quim](name)
+    - my name is [Alex](name)
+    - my name is [Alicia](name)
+    - my name is [Dani](name)
+    - my name is [Elisabet](name)
+    - my name is [Ester](name)
+    - my name is [Gustavo](name)
+    - my name is [Jose](name)
+    - my name is [Mary](name)
+    - my name is [Neil](name)
+    - my name is [Quim](name)
+    - my name's [Alex](name)
+    - my name's [Alicia](name)
+    - my name's [Dani](name)
+    - my name's [Elisabet](name)
+    - my name's [Ester](name)
+    - my name's [Gustavo](name)
+    - my name's [Jose](name)
+    - my name's [Marc](name)
+    - my name's [Mary](name)
+    - my name's [Neil](name)
+    - my name's [Quim](name)
 - intent: register
   examples: |
     - register user
@@ -1088,6 +1604,206 @@ nlu:
     - Another one
     - And Thursday?
     - And [the president of Denmark](search)?
+    - again but at ten pm
+    - and in [Mexico City](location)
+    - and at seven pm
+    - one more time for at 21:00
+    - again but tomorrow
+    - in 30 minutes
+    - in [Paris](location)
+    - and in couple weeks
+    - one more time for in 10 minutes
+    - and in [Seoul](location)
+    - one more time for in 30 days
+    - one more time for at 10 am
+    - and next month
+    - and for in an hour
+    - and in [Barcelona](location)
+    - one more time for in 15 hours
+    - in [Seoul](location)
+    - and in [Buenos Aires](location)
+    - and in an hour
+    - and for in one day
+    - and tuesday
+    - one more time for next second
+    - again but with [San Francisco](location)
+    - again but at 18 h
+    - and in 30 hours
+    - at 7 pm
+    - in thirty hours
+    - in five days
+    - again but at 21:00
+    - and for in thirty days
+    - and in 15 hours
+    - and for in 30 minutes
+    - in one week
+    - and in thirty seconds
+    - and next day
+    - [Shanghai](location)
+    - in a second
+    - and for in 10 days
+    - in [Buenos Aires](location)
+    - and in twenty days
+    - another one
+    - [Tokyo](location)
+    - in [Amsterdam](location)
+    - again but in one second
+    - in 10 days
+    - in [San Francisco](location)
+    - at seven pm
+    - and in 10 days
+    - again but next second
+    - one more time for [Sao Paulo](location)
+    - and for [Osaka](location)
+    - in [Beijing](location)
+    - and for [Beijing](location)
+    - and in 30 minutes
+    - and in twenty seconds
+    - in [Osaka](location)
+    - and next second
+    - in 20 hours
+    - again but in twenty seconds
+    - and for now
+    - and in one second
+    - again but in two weeks
+    - and for tuesday
+    - and for at 2 pm
+    - one more time for in 20 seconds
+    - and in one day
+    - in 15 days
+    - one more time for tomorrow
+    - one more time for next hour
+    - one more time for in 30 seconds
+    - and for in thirty minutes
+    - friday
+    - again but in a day
+    - again but in 10 seconds
+    - one more time for in five minutes
+    - again but in 15 days
+    - one more time for in 20 days
+    - at 10 pm
+    - and for in five seconds
+    - one more time for in 15 minutes
+    - one more time for in 15 seconds
+    - one more time for in thirty minutes
+    - again but with [Buenos Aires](location)
+    - one more time for at seven pm
+    - next minute
+    - one more time for today
+    - again but in thirty hours
+    - one more time for [Shanghai](location)
+    - in twenty minutes
+    - again but in 15 seconds
+    - and for in five days
+    - and for in 20 minutes
+    - again but in 30 hours
+    - one more time for in 20 minutes
+    - in [Shanghai](location)
+    - one more time for in thirty hours
+    - again but at 10 am
+    - one more time for next day
+    - and in [Moscow](location)
+    - and for [Tokyo](location)
+    - one more time for in thirty days
+    - one more time for in a second
+    - next day
+    - again but in five days
+    - and wednesday
+    - [Barcelona](location)
+    - and at 7 am
+    - in a minute
+    - one more time for [Tokyo](location)
+    - one more time for in 15 days
+    - one more time for at 12 am
+    - and for in twenty seconds
+    - one more time for [Amsterdam](location)
+    - again but with [Seoul](location)
+    - again but at 7 am
+    - in 3 weeks
+    - and in [Tokyo](location)
+    - one more time for in 10 days
+    - in thirty minutes
+    - and for at 7 am
+    - and in [Sao Paulo](location)
+    - and for next minute
+    - and for in one hour
+    - one more time for friday
+    - in 15 hours
+    - again but in 20 minutes
+    - again but with [Moscow](location)
+    - again but in thirty minutes
+    - and for [Barcelona](location)
+    - and for in 20 seconds
+    - and for at 10 am
+    - and in 2 weeks
+    - in 30 seconds
+    - one more time for at 7 pm
+    - and in [Toronto](location)
+    - again but with [Shanghai](location)
+    - again but at 12 pm
+    - again but next minute
+    - and for tomorrow
+    - in 15 minutes
+    - and in [Beijing](location)
+    - [San Francisco](location)
+    - and for next week
+    - and at seven am
+    - and for friday
+    - and at 21:00
+    - in [Moscow](location)
+    - again but in one month
+    - and next minute
+    - one more time for thursday
+    - one more time for in five days
+    - and for at seven am
+    - one more time for in 10 seconds
+    - and for at 2 am
+    - at 10:00
+    - in one minute
+    - and in five days
+    - also [Buenos Aires](location)
+    - and at 12 am
+    - and at 12 pm
+    - and at 10:00
+    - sunday
+    - also [Shanghai](location)
+    - and for at 14:00
+    - at 14:00
+    - and in 20 seconds
+    - again but in 3 weeks
+    - again but now
+    - also [Barcelona](location)
+    - at 18 h
+    - and for at 12 am
+    - in two weeks
+    - [Osaka](location)
+    - next month
+    - one more time for in one hour
+    - and for in 15 seconds
+    - and for sunday
+    - again but thursday
+    - one more time for in 30 hours
+    - and for [Paris](location)
+    - at 12 pm
+    - and in two weeks
+    - and monday
+    - again but in twenty hours
+    - [Moscow](location)
+    - one more time for at 14:00
+    - and for in one month
+    - [Toronto](location)
+    - one more time for in a day
+    - and in 15 days
+    - and for at 21:00
+    - again but in 30 days
+    - [Beijing](location)
+    - one more time for at three pm
+    - again but in five minutes
+    - and in twenty hours
+    - in a week
+    - again but in five hours
+    - also [Amsterdam](location)
+    - and in [Saint Petersburg](location)
 - intent: out_of_scope
   examples: |
     - Put me to sleep
