@@ -75,6 +75,7 @@ entities:
 - song_name
 - weather_condition
 - artist_name
+- emotion
 # duckling
 - time
 - temperature
@@ -162,6 +163,13 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  stat:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0.0
+    auto_fill: false
+    influence_conversation: true
+    max_value: 1.0
+    min_value: -1.0
 responses:
   utter_greet:
   - text: Hi, how can I help you?

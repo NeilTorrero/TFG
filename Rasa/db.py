@@ -100,7 +100,8 @@ class MongoTrackerStore(TrackerStore):
 
         #print([e.as_dict() for e in additional_events if type(e) == UserUttered or type(e) == BotUttered])
         updateUserDBInfo(tracker)
-
+        updateEmotionStats(tracker)
+        
         self.conversations.update_one(
             {"sender_id": tracker.sender_id},
             {
@@ -112,7 +113,6 @@ class MongoTrackerStore(TrackerStore):
             upsert=True,
         )
 
-        updateEmotionStats(tracker)
 
     def _additional_events(self, tracker: DialogueStateTracker) -> Iterator:
         """Return events from the tracker which aren't currently stored.
@@ -239,8 +239,11 @@ def updateUserDBInfo(tracker: Tracker):
                     colec.update_one({"name": user_db_name}, {"$set": {key: tracker.get_slot(key)}})
 
 def updateEmotionStats(tracker: Tracker):
-    stat = tracker.get_slot('emotion_stats')
-    for entity in tracker.latest_message['entities']:
+    stat = tracker.get_slot('stat')
+    if stat is None:
+        stat = 0
+    emotions = None
+    for entity in tracker.current_state()['latest_message']['entities']:
         if entity['entity'] == 'emotion':
             emotions = entity['labels']
     
@@ -249,37 +252,38 @@ def updateEmotionStats(tracker: Tracker):
     # -0.5 stat 0.5 -> +-0.25*percentage
     # ^⁺0.5 stat -> +0.25*percentage | -0.25*percentage
     # v-0.5 stat -> -0.25*percentage | +0.25*percentage
-    for label in emotions:
-        if label['label'] in ['joy', 'love', 'surprise']:
+    if emotions is not None:
+        for label in emotions:
             score = label['score']
-            if stat >= 0:
-                if label['label'] == 'love':
-                    score = score/2
-                if label['label'] == 'surprise':
-                    score = score/3
-                # stat + ((1 - stat) * 0.5*score)
-                stat += ((1 - stat) * 0.5*score)
-            else:
-                if label['label'] == 'love':
-                    score = score/2
-                if label['label'] == 'surprise':
-                    score = score/3
-                # if stat < 0: stat + ((0.5 - stat) * 0.5*score)
-                stat += ((0.5 - stat) * 0.5*score)    
-        elif label['label'] in ['sadness', 'fear', 'anger']:
-            if stat <= 0:
-                if label['label'] == 'anger':
-                    score = score/2
-                if label['label'] == 'fear':
-                    score = score/3
-                # stat - ((1 + stat) * 0.5*percentatge)
-                stat -= ((1 + stat) * 0.5*score)
-            else:
-                if label['label'] == 'anger':
-                    score = score/2
-                if label['label'] == 'fear':
-                    score = score/3
-                # if stat > 0: stat - ((0.5 + stat) * 0.5*score)
-                stat -= ((0.5 + stat) * 0.5*score)
+            if label['label'] in ['joy', 'love', 'surprise']:
+                if stat >= 0:
+                    #if label['label'] == 'love':
+                    #    score = score/2
+                    #if label['label'] == 'surprise':
+                    #    score = score/3
+                    # stat + ((1 - stat) * 0.5*score)
+                    stat += ((1 - stat) * 0.5*score)
+                else:
+                    #if label['label'] == 'love':
+                    #    score = score/2
+                    #if label['label'] == 'surprise':
+                    #    score = score/3
+                    # if stat < 0: stat + ((0.5 - stat) * 0.5*score)
+                    stat += ((0.5 - stat) * 0.5*score)    
+            elif label['label'] in ['sadness', 'fear', 'anger']:
+                if stat <= 0:
+                    #if label['label'] == 'anger':
+                    #    score = score/2
+                    #if label['label'] == 'fear':
+                    #    score = score/3
+                    # stat - ((1 + stat) * 0.5*percentatge)
+                    stat -= ((1 + stat) * 0.5*score)
+                else:
+                    #if label['label'] == 'anger':
+                    #    score = score/2
+                    #if label['label'] == 'fear':
+                    #    score = score/3
+                    # if stat > 0: stat - ((0.5 + stat) * 0.5*score)
+                    stat -= ((0.5 + stat) * 0.5*score)
 
-    tracker.add_slots(stat)
+        tracker._set_slot('stat', stat)
