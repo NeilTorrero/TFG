@@ -3,13 +3,12 @@ from typing import Any, Optional, Text, Dict, List, Type
 
 from rasa.nlu.components import Component
 from rasa.nlu.config import RasaNLUModelConfig
+from rasa.shared.nlu.constants import TEXT
 from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.shared.nlu.training_data.message import Message
-
-if typing.TYPE_CHECKING:
-    from rasa.nlu.model import Metadata
+from rasa.nlu.model import Metadata
 from transformers import pipeline
-
+import rasa.shared.core.trackers as trackers
 
 class EmotionExtractor(Component):
     name = "EmotionExtractor"
@@ -21,7 +20,6 @@ class EmotionExtractor(Component):
 
     def __init__(self, component_config: Optional[Dict[Text, Any]] = None) -> None:
         super().__init__(component_config)
-        from transformers import pipeline
         self.model = pipeline("text-classification",model='bhadresh-savani/distilbert-base-uncased-emotion', return_all_scores=True)
         
 
@@ -36,7 +34,6 @@ class EmotionExtractor(Component):
     def process(self, message: Message, **kwargs: Any) -> None:
         msg = message.get(TEXT)
         prediction = self.model(msg, )
-        print(prediction)
         """
         Output:
         [[
@@ -51,12 +48,7 @@ class EmotionExtractor(Component):
         labels = {"entity": "emotion",
             "extractor": "emotion_extractor",
             "labels": prediction[0]
-        } 
-        # try with rasa.shared.core.tracker
-        # api call to set the slots
-        # action called to make the avg
-        # make list entity
-
+        }
         message.set("entities", [labels], add_to_output=True)
 
 

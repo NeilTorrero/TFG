@@ -112,6 +112,8 @@ class MongoTrackerStore(TrackerStore):
             upsert=True,
         )
 
+        updateEmotionStats(tracker)
+
     def _additional_events(self, tracker: DialogueStateTracker) -> Iterator:
         """Return events from the tracker which aren't currently stored.
         Args:
@@ -235,3 +237,49 @@ def updateUserDBInfo(tracker: Tracker):
             if key != 'session_started_metadata' and key != 'user_db_name':
                 if tracker.get_slot(key) is not None:
                     colec.update_one({"name": user_db_name}, {"$set": {key: tracker.get_slot(key)}})
+
+def updateEmotionStats(tracker: Tracker):
+    stat = tracker.get_slot('emotion_stats')
+    for entity in tracker.latest_message['entities']:
+        if entity['entity'] == 'emotion':
+            emotions = entity['labels']
+    
+    # if stat^ + less | - more
+    # if statv + more | - less
+    # -0.5 stat 0.5 -> +-0.25*percentage
+    # ^⁺0.5 stat -> +0.25*percentage | -0.25*percentage
+    # v-0.5 stat -> -0.25*percentage | +0.25*percentage
+    for label in emotions:
+        if label['label'] in ['joy', 'love', 'surprise']:
+            score = label['score']
+            if stat >= 0:
+                if label['label'] == 'love':
+                    score = score/2
+                if label['label'] == 'surprise':
+                    score = score/3
+                # stat + ((1 - stat) * 0.5*score)
+                stat += ((1 - stat) * 0.5*score)
+            else:
+                if label['label'] == 'love':
+                    score = score/2
+                if label['label'] == 'surprise':
+                    score = score/3
+                # if stat < 0: stat + ((0.5 - stat) * 0.5*score)
+                stat += ((0.5 - stat) * 0.5*score)    
+        elif label['label'] in ['sadness', 'fear', 'anger']:
+            if stat <= 0:
+                if label['label'] == 'anger':
+                    score = score/2
+                if label['label'] == 'fear':
+                    score = score/3
+                # stat - ((1 + stat) * 0.5*percentatge)
+                stat -= ((1 + stat) * 0.5*score)
+            else:
+                if label['label'] == 'anger':
+                    score = score/2
+                if label['label'] == 'fear':
+                    score = score/3
+                # if stat > 0: stat - ((0.5 + stat) * 0.5*score)
+                stat -= ((0.5 + stat) * 0.5*score)
+
+    tracker.add_slots(stat)
