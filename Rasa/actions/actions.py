@@ -927,22 +927,14 @@ class ActionMemory(Action):
         
         if existsDocument is not None:
             result = colec_users.aggregate([
-                {
-                    "$match": {
-                        "name": 'Neil'	
+                {"$match": {"name": 'Neil'}},
+                {"$unwind": '$conversations'},
+                {"$match": {
+                    'conversations.added_time': {
+                        "$gte": date,
+                        "$lte": dateto
                     }
-                },
-                {
-                    "$unwind": '$conversations'
-                },
-                {
-                    "$match": {
-                        'conversations.added_time': {
-                            "$gte": date,
-                            "$lte": dateto
-                        }
-                    }
-                }
+                }}
             ])
             ids = None
             for pos in list(result):
@@ -953,14 +945,11 @@ class ActionMemory(Action):
                 if intent == 'memory/retrieve_question':
                     # asking for the task
                     result = colec_convs.aggregate([
-                        {"$match": {
-                            "sender_id": id	
-                        }},
+                        {"$match": {"sender_id": id}},
                         {"$project": {
                             "events": {
                                 "$filter": {"input": "$events", "as": "e",
-                                "cond": { 
-                                    "$and": [
+                                    "cond": { "$and": [
                                         {"$eq": ["$$e.event", "user"]}, 
                                         {"$eq": ["$$e.parse_data.intent.name", "search_information"]},
                                         {"$gte": ["$$e.timestamp", date.timestamp()]}, 
@@ -984,14 +973,11 @@ class ActionMemory(Action):
                 else:
                     # redo the task
                     result = colec_convs.aggregate([
-                        {"$match": {
-                            "sender_id": id	
-                        }},
+                        {"$match": {"sender_id": id}},
                         {"$project": {
                             "events": {
                                 "$filter": {"input": "$events", "as": "e",
-                                "cond": { 
-                                    "$and": [
+                                    "cond": {"$and": [
                                         {"$eq": ["$$e.event", "action"]}, 
                                         {"$eq": ["$$e.parse_data.intent.name", intent.rsplit('/', 1)[-1]]},
                                         {"$gte": ["$$e.timestamp", date.timestamp()]}, 
@@ -1011,6 +997,7 @@ class ActionMemory(Action):
                         question = results[-1]['parse_data']['text']
                         dispatcher.utter_message(text='You asked me: "' + question + '".')
                         # redo the task
+
                     else:
                         dispatcher.utter_message(text="I don't remember you asking me.")
             else:

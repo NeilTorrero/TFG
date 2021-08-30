@@ -28,15 +28,6 @@ class EmotionExtractor(EntityExtractor):
     def __init__(self, component_config: Optional[Dict[Text, Any]] = None) -> None:
         super().__init__(component_config)
         self.model = pipeline("text-classification",model='bhadresh-savani/distilbert-base-uncased-emotion', return_all_scores=True)
-        
-
-    def train(
-        self,
-        training_data: TrainingData,
-        config: Optional[RasaNLUModelConfig] = None,
-        **kwargs: Any,
-    ) -> None:
-        pass
 
     def process(self, message: Message, **kwargs: Any) -> None:
         msg = message.get(TEXT)
@@ -82,6 +73,3 @@ class EmotionExtractor(EntityExtractor):
             return cached_component
 
         return cls(meta)
-
-    def persist(self, file_name: Text, model_dir: Text) -> Optional[Dict[Text, Any]]:
-        pass
