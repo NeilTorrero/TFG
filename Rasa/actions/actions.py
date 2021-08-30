@@ -820,6 +820,8 @@ def getNews(interests, date):
     # https://newsapi.org/v2/everything?q=bitcoin&apiKey=d7e327b9213748bd9c274abed9bfc5d7
     API_KEY = 'd7e327b9213748bd9c274abed9bfc5d7'
     NEWS_URL = "https://newsapi.org/v2/everything?"
+    if interests is None:
+        interests = ''
     url = NEWS_URL + "q=" + interests  + "&language=en&sortBy=popularity" + "&apiKey=" + API_KEY + ("" if date is None else ("&to=" + date))
 
     response = requests.get(url)

@@ -242,17 +242,33 @@ def updateEmotionStats(tracker: Tracker):
     stat = tracker.get_slot('stat')
     if stat is None:
         stat = 0
-    emotions = None
+    joy = None
+    sadness = None
     for entity in tracker.current_state()['latest_message']['entities']:
-        if entity['entity'] == 'emotion':
-            emotions = entity['value']
+        if entity['entity'] == 'joy':
+            joy = entity['value']
+        if entity['entity'] == 'sadness':
+            sadness = entity['value']
     
     # if stat^ + less | - more
     # if statv + more | - less
     # -0.5 stat 0.5 -> +-0.25*percentage
     # ^⁺0.5 stat -> +0.25*percentage | -0.25*percentage
     # v-0.5 stat -> -0.25*percentage | +0.25*percentage
-    if emotions is not None:
+    if joy is not None:
+        if stat >= 0:
+            stat += ((1 - stat) * 0.5*joy)
+        else:
+            stat += ((0.5 - stat) * 0.5*joy)  
+    if sadness is not None:
+        if stat <= 0:
+            stat -= ((1 + stat) * 0.5*sadness)
+        else:
+            stat -= ((0.5 + stat) * 0.5*sadness)  
+    
+    tracker._set_slot('stat', stat)
+
+    """if emotions is not None:
         for label in emotions:
             score = label['score']
             if label['label'] in ['joy', 'love', 'surprise']:
@@ -285,5 +301,6 @@ def updateEmotionStats(tracker: Tracker):
                     #    score = score/3
                     # if stat > 0: stat - ((0.5 + stat) * 0.5*score)
                     stat -= ((0.5 + stat) * 0.5*score)
+    """
 
-        tracker._set_slot('stat', stat)
+        

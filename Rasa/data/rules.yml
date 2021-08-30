@@ -73,3 +73,8 @@ rules:
     - time: null
   # The actions we want to run when the form is submitted.
   - action: action_reminder
+
+  - rule: remind
+    steps:
+    - intent: check_reminder
+    - action: action_remind

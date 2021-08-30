@@ -75,7 +75,8 @@ entities:
 - song_name
 - weather_condition
 - artist_name
-- emotion
+- joy
+- sadness
 # duckling
 - time
 - temperature

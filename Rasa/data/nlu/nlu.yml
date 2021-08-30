@@ -236,32 +236,6 @@ nlu:
     - morning whatsup
     - hello again
     - Good afternoon
-    - good afternoon
-    - good day
-    - good morning
-    - greetings
-    - hello
-    - hello good afternoon
-    - hello good day
-    - hello good morning
-    - hello good night
-    - hello greetings
-    - hello morning
-    - hey
-    - hey good afternoon
-    - hey good day
-    - hey good morning
-    - hey good night
-    - hey greetings
-    - hey morning
-    - hi
-    - hi good afternoon
-    - hi good day
-    - hi good morning
-    - hi good night
-    - hi greetings
-    - hi morning
-    - morning
 - intent: greet+user_name
   examples: |
     - hello, my name is [Charles Pfeffer](name)
@@ -367,7 +341,6 @@ nlu:
     - hello I am named [Gustavo](name)
     - hello I am named [Neil](name)
     - hello I'm [Alicia](name)
-    - hello I'm [Dani](name)
     - hello I'm [Elisabet](name)
     - hello I'm [Ester](name)
     - hello I'm [Gustavo](name)
@@ -395,14 +368,12 @@ nlu:
     - hello greetings I'm named [Dani](name)
     - hello it's [Dani](name)
     - hello it's [Ester](name)
-    - hello it's [Neil](name)
     - hello morning I am named [Quim](name)
     - hello morning I'm [Elisabet](name)
     - hello morning I'm named [Alex](name)
     - hello my name is [Mary](name)
     - hello my name is [Neil](name)
     - hello my name's [Jose](name)
-    - hello my name's [Quim](name)
     - hey [Alex](name)
     - hey [Elisabet](name)
     - hey [Ester](name)
@@ -417,7 +388,6 @@ nlu:
     - hey I am named [Quim](name)
     - hey I'm [Alicia](name)
     - hey I'm [Mary](name)
-    - hey I'm [Quim](name)
     - hey I'm named [Ester](name)
     - hey I'm named [Marc](name)
     - hey I'm named [Neil](name)
@@ -436,11 +406,9 @@ nlu:
     - hey it's [Dani](name)
     - hey it's [Elisabet](name)
     - hey it's [Gustavo](name)
-    - hey it's [Marc](name)
     - hey it's [Quim](name)
     - hey morning [Dani](name)
     - hey morning I'm [Alicia](name)
-    - hey my name is [Alex](name)
     - hey my name is [Neil](name)
     - hey my name is [Quim](name)
     - hey my name's [Alex](name)
@@ -482,10 +450,8 @@ nlu:
     - hi greetings call me [Gustavo](name)
     - hi it's [Alex](name)
     - hi it's [Elisabet](name)
-    - hi it's [Quim](name)
     - hi morning I am [Quim](name)
     - hi morning my name's [Quim](name)
-    - hi my name is [Dani](name)
     - hi my name is [Neil](name)
     - hi my name is [Quim](name)
     - hi my name's [Neil](name)
@@ -638,6 +604,7 @@ nlu:
     - ttyl
     - see ya next time
     - It's pretty late i think i will go to sleep
+    - See you later escalator
 - intent: affirm
   examples: |
     - affirmative
@@ -1212,6 +1179,7 @@ nlu:
     - I am happy
     - I'm great
     - I am happy now
+    - im also feeling great!
 - intent: mood_unhappy
   examples: |
     - my day was horrible

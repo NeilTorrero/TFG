@@ -11,12 +11,12 @@ from rasa.shared.nlu.constants import (
     ENTITY_ATTRIBUTE_END,
     ENTITY_ATTRIBUTE_VALUE,
     ENTITIES,
+    EXTRACTOR,
 )
 from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.shared.nlu.training_data.message import Message
 from rasa.nlu.model import Metadata
 from transformers import pipeline
-import rasa.shared.core.trackers as trackers
 
 class EmotionExtractor(EntityExtractor):
     defaults = {}
@@ -53,10 +53,24 @@ class EmotionExtractor(EntityExtractor):
             {'label': 'surprise', 'score': 0.0002288572577526793}
             ]]
             """
-            labels = [{ENTITY_ATTRIBUTE_TYPE: "emotion",
+            joy_score = 0
+            sadness_score = 0
+            for label in prediction[0]:
+                if label['label'] == 'joy':
+                    joy_score = label['score']
+                if label['label'] == 'sadness':
+                    sadness_score = label['score']
+            
+            labels = [{ENTITY_ATTRIBUTE_TYPE: 'joy',
                 ENTITY_ATTRIBUTE_START: 0,
                 ENTITY_ATTRIBUTE_END: 0,
-                ENTITY_ATTRIBUTE_VALUE: prediction[0]
+                EXTRACTOR: 'emotion',
+                ENTITY_ATTRIBUTE_VALUE: joy_score
+            },{ENTITY_ATTRIBUTE_TYPE: 'sadness',
+                ENTITY_ATTRIBUTE_START: 0,
+                ENTITY_ATTRIBUTE_END: 0,
+                EXTRACTOR: 'emotion',
+                ENTITY_ATTRIBUTE_VALUE: sadness_score
             }]
             labels = self.add_extractor_name(labels)
             message.set(ENTITIES, message.get(ENTITIES, []) + labels, add_to_output=True)
