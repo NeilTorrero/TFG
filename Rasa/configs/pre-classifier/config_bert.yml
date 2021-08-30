@@ -1,0 +1,12 @@
+language: en
+
+pipeline:
+   - name: HFTransformersNLP
+     model_weights: "bert-base-uncased"
+     model_name: "bert"
+   - name: LanguageModelTokenizer
+     intent_tokenization_flag: true
+     intent_split_symbol: "+"
+   - name: LanguageModelFeaturizer
+   - name: DIETClassifier
+     epochs: 100

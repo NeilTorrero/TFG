@@ -1,0 +1,11 @@
+language: en
+
+pipeline:
+   - name: SpacyNLP
+     model: "en_core_web_trf"
+   - name: SpacyTokenizer
+     intent_tokenization_flag: true
+     intent_split_symbol: "+"
+   - name: SpacyFeaturizer
+   - name: DIETClassifier
+     epochs: 100

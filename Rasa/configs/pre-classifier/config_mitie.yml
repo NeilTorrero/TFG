@@ -1,0 +1,12 @@
+language: en
+
+pipeline:
+   - name: MitieNLP
+     model: "data/total_word_feature_extractor.dat"
+   - name: MitieTokenizer
+     intent_tokenization_flag: true
+     intent_split_symbol: "+"
+   - name: MitieFeaturizer
+   - name: DIETClassifier
+     epochs: 100
+   - name: MitieEntityExtractor
