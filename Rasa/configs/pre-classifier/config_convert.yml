@@ -1,9 +1,0 @@
-language: en
-
-pipeline:
-   - name: ConveRTTokenizer
-     intent_tokenization_flag: true
-     intent_split_symbol: "+"
-   - name: ConveRTFeaturizer
-   - name: DIETClassifier
-     epochs: 100
