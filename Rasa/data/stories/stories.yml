@@ -127,7 +127,7 @@ stories:
   steps:
   - intent: search_information
     entities:
-    - search: what is the name of the pope
+    - w_search: what
   - action: action_search_answer
 - story: search
   steps:
@@ -257,7 +257,7 @@ stories:
   steps:
   - intent: search_information
     entities:
-    - search: who invented penicilin
+    - w_search: who
   - action: action_search_answer
   - intent: follow_up
   - action: action_search_answer

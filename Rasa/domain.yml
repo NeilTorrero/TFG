@@ -70,7 +70,6 @@ entities:
 #- food
 #- action
 - language
-- search
 - w_search
 - song_name
 - weather_condition
