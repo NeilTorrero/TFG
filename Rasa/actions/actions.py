@@ -70,7 +70,7 @@ def getTime(city):
 
 class ActionAskTime(Action):
     def name(self) -> Text:
-        return "action_ask_time"
+        return "action_time"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -87,7 +87,8 @@ class ActionAskTime(Action):
         location = tracker.get_slot('location')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
-                location = entity['value']
+                if entity['value'] is not None:
+                    location = entity['value']
 
         # Location Spell check
         if location is not None:
@@ -189,7 +190,7 @@ def getWeather(city, date, date_grain):
 
 class ActionAskWeather(Action):
     def name(self) -> Text:
-        return "action_ask_weather"
+        return "action_weather"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -211,11 +212,13 @@ class ActionAskWeather(Action):
         date_text = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
-                location = entity['value']
+                if entity['value'] is not None:
+                    location = entity['value']
             if entity['entity'] == 'weather_condition':
                 weather_condition = entity['value']
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(str(entity['value']))
+                if entity['value'] is not None:
+                    date = datetime.datetime.fromisoformat(str(entity['value']))
                 date_grain = entity['additional_info']['grain']
                 date_text = entity['text']
             if entity['entity'] == 'duration':
@@ -527,7 +530,12 @@ class ActionSearchAnswer(Action):
             if entity['entity'] == 'w_search':
                 w_question = entity['value']
             if entity['entity'] == 'search':
-                question += entity['value']
+                if question is None:
+                    question = entity['value']
+                else:
+                    question += entity['value']
+        if w_question is None:
+            w_question = ''
         if question is None:
             question = tracker.latest_message.text
         answer = webScrapAnswer(w_question + ' ' + question)
@@ -549,7 +557,8 @@ class ActionTimer(Action):
         date = tracker.get_slot('time')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(str(entity['value']))
+                if entity['value'] is not None:
+                    date = datetime.datetime.fromisoformat(str(entity['value']))
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -610,9 +619,11 @@ class ActionReminder(Action):
         task = tracker.get_slot('task')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
-                task = entity['value']
+                if entity['value'] is not None:
+                    task = entity['value']
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(str(entity['value']))
+                if entity['value'] is not None:
+                    date = datetime.datetime.fromisoformat(str(entity['value']))
             if entity['entity'] == 'duration':
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
@@ -652,7 +663,7 @@ class ActionReminder(Action):
             kill_on_user_message=False,
         )
 
-        return [reminder, SlotSet('reminders', reminders)]
+        return [reminder, SlotSet('reminders', reminders),  SlotSet("task", None),  SlotSet("time", None)]
 
 
 class ActionRemind(Action):
@@ -667,7 +678,8 @@ class ActionRemind(Action):
         task = tracker.get_slot('task')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
-                task = entity['value']
+                if entity['value'] is not None:
+                    task = entity['value']
         dispatcher.utter_message(text="Remember to " + task)
 
         return [SlotSet("task", None), SlotSet("time", None)]
@@ -688,12 +700,14 @@ class ActionCancelReminder(Action):
         reminders = tracker.get_slot('reminders')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'task':
-                task = entity['value']
+                if entity['value'] is not None:
+                    task = entity['value']
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(str(entity['value']))
+                if entity['value'] is not None:
+                    date = datetime.datetime.fromisoformat(str(entity['value']))
         if task is None:
             if len(reminders) > 0:
-                if date is None:
+                if date is not None:
                     for reminder in reminders:
                         remsplit = reminder.rpartition('_')
                         if remsplit[1] == date.strftime("%Y-%m-%dT%H:%M:%S"):
@@ -816,7 +830,8 @@ class ActionNews(Action):
         # ORG, PERSON, GPE, NORP, FAC, LOC, PRODUCT, EVENT, WORK_OF_ART, LAW
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'date':
-                date = entity['value']
+                if entity['value'] is not None:
+                    date = entity['value']
             if entity['entity'] in ['ORG', 'PERSON', 'GPE', 'NORP', 'FAC', 'LOC', 'PRODUCT', 'EVENT', 'WORK_OF_ART', 'LAW']:
                 if interests is None:
                     interests = entity['value']
@@ -840,7 +855,8 @@ class ActionMemory(Action):
         dateto = None
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'time':
-                date = datetime.datetime.fromisoformat(str(entity['value']))
+                if entity['value'] is not None:
+                    date = datetime.datetime.fromisoformat(str(entity['value']))
                 date_grain = entity['additional_info']['unit']
                 if date_grain == 'day':
                     dateto = date + datetime.timedelta(days=1)

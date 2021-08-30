@@ -63,7 +63,7 @@ policies:
    - name: RulePolicy
    - name: TEDPolicy
      max_history: 10
-     epochs: 20
+     epochs: 100
      constrain_similarities: true
      evaluate_on_number_of_examples: 0
      evaluate_every_number_of_epochs: 5

@@ -64,41 +64,41 @@ stories:
   - action: utter_goodbye
 - story: ask time
   steps:
-  - intent: ask_time
-  - action: action_ask_time
+  - intent: ask_date
+  - action: action_time
 - story: ask time with location
   steps:
-  - intent: ask_time
+  - intent: ask_date
     entities:
     - location: London
-  - action: action_ask_time
+  - action: action_time
 - story: ask weather
   steps:
   - intent: ask_weather
-  - action: action_ask_weather
+  - action: action_weather
 - story: ask weather with location
   steps:
   - intent: ask_weather
     entities:
     - location: Paris
-  - action: action_ask_weather
+  - action: action_weather
 - story: food
   steps:
   - intent: food
   - action: action_food
 - story: time and weather
   steps:
-  - intent: ask_time
-  - action: action_ask_time
+  - intent: ask_date
+  - action: action_time
   - intent: ask_weather
-  - action: action_ask_weather
+  - action: action_weather
 - story: ask weather with location and time
   steps:
   - intent: ask_weather
     entities:
     - location: Paris
     - time: tomorrow
-  - action: action_ask_weather
+  - action: action_weather
 # - story: reminder
 #  steps:
 #  - intent: reminder
@@ -194,27 +194,27 @@ stories:
     - time: '2021-08-17T00:00:00.000+02:00'
   - slot_was_set:
     - time: '2021-08-17T00:00:00.000+02:00'
-  - action: action_ask_weather
+  - action: action_weather
   - intent: follow_up
     entities:
     - time: '2021-08-20T00:00:00.000+02:00'
   - slot_was_set:
     - time: '2021-08-20T00:00:00.000+02:00'
-  - action: action_ask_weather
+  - action: action_weather
 - story: time followup
   steps:
-  - intent: ask_time
+  - intent: ask_date
     entities:
     - location: New York
   - slot_was_set:
     - location: New York
-  - action: action_ask_time
+  - action: action_time
   - intent: follow_up
     entities:
     - location: Paris
   - slot_was_set:
     - location: Paris
-  - action: action_ask_time
+  - action: action_time
 - story: news
   steps:
   - intent: ask_news

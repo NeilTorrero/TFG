@@ -558,7 +558,7 @@ nlu:
     - Show me restaurants near me
 #    - I would like to [eat](action) a [pizza](food)
 #    - Where can I [buy](action) [bread](food)
-- intent: ask_time
+- intent: ask_date
   examples: |
     - Can you give me the time?
     - Can you tell me the time?
@@ -956,7 +956,7 @@ nlu:
     - I like to know Wednesday weather
     - how will be the day tomorrow?
     - tell me if today will [stom](weather_condition)
-- intent: ask_weather+ask_time
+- intent: ask_weather+ask_date
   examples: |
     - How's the weather and time over in St. Petersburg
     - How's the weather and time over in Moscow

@@ -29,7 +29,7 @@ intents:
     use_entities: true
 - user_name:
     use_entities: true
-- ask_time:
+- ask_date:
     use_entities: true
 - ask_weather:
     use_entities: true
@@ -59,7 +59,7 @@ intents:
     use_entities: true
 - out_of_scope:
     use_entities: true
-- ask_weather+ask_time:
+- ask_weather+ask_date:
     use_entities: true
 entities:
 - location
@@ -350,15 +350,15 @@ responses:
   utter_ask_reminder_form_task:
   - text: What do you want me to remember you?
   - text: Tell me what do you want to be reminded of?
-  utter_ask_reminder_form_date:
+  utter_ask_reminder_form_time:
   - text: When do you want me to remember?
   - text: At what time should I remind you?
   utter_out_of_scope:
   - text: Sorry but I can't help you with that.
   - text: I can't do that.
 actions:
-- action_ask_weather
-- action_ask_time
+- action_weather
+- action_time
 - action_food
 - action_music
 - action_search_answer

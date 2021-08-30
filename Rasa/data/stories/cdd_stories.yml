@@ -7,14 +7,20 @@ stories:
     - time: '2021-08-24T00:00:00.000+02:00'
   - slot_was_set:
     - time: '2021-08-24T00:00:00.000+02:00'
-  - action: action_ask_weather
-  - intent: ask_time
-  - action: action_ask_time
+  - action: action_weather
+  - intent: ask_date
+  - action: action_time
 - story: time followup
   steps:
-  - intent: ask_time
-  - action: action_ask_time
+  - intent: ask_date
+  - action: action_time
   - intent: follow_up
     entities:
     - location: London
-  - action: action_ask_time
+  - action: action_time
+- story: weather with condition
+  steps:
+  - intent: ask_weather
+    entities:
+    - weather_condition: clear
+  - action: action_weather
