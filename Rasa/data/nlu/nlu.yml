@@ -1569,7 +1569,7 @@ nlu:
     - and in the [US](location)?
     - Another one
     - And Thursday?
-    - And [the president of Denmark](search)?
+    - And the president of Denmark?
     - again but at ten pm
     - and in [Mexico City](location)
     - and at seven pm
