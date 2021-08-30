@@ -245,7 +245,7 @@ def updateEmotionStats(tracker: Tracker):
     emotions = None
     for entity in tracker.current_state()['latest_message']['entities']:
         if entity['entity'] == 'emotion':
-            emotions = entity['labels']
+            emotions = entity['value']
     
     # if stat^ + less | - more
     # if statv + more | - less

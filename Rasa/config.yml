@@ -11,6 +11,7 @@ pipeline:
    - name: WhitespaceTokenizer
      intent_tokenization_flag: true
      intent_split_symbol: "+"
+   - name: emotion.EmotionExtractor
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer
@@ -40,7 +41,6 @@ pipeline:
      tensorboard_log_directory: "./tensorboard"
      tensorboard_log_level: "epoch"
    - name: EntitySynonymMapper
-   - name: emotion.EmotionExtractor
    - name: ResponseSelector
      retrieval_intent: chitchat
      epochs: 100

@@ -239,7 +239,6 @@ nlu:
     - good afternoon
     - good day
     - good morning
-    - good night
     - greetings
     - hello
     - hello good afternoon
@@ -272,7 +271,6 @@ nlu:
     - Hello my name is [Jason](name)
     - hi my name is [Ethan](name)
     - Hello i am [Núria](name)
-    - it's [Elisabet](name)
     - hello i'm [Alex](name)
     - hello my name is [Alicia](name)
     - hello i'm [Bob](name)

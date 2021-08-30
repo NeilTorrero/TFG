@@ -2,16 +2,23 @@ import typing
 from typing import Any, Optional, Text, Dict, List, Type
 
 from rasa.nlu.components import Component
+from rasa.nlu.extractors.extractor import EntityExtractor
 from rasa.nlu.config import RasaNLUModelConfig
-from rasa.shared.nlu.constants import TEXT
+from rasa.shared.nlu.constants import (
+    TEXT,
+    ENTITY_ATTRIBUTE_TYPE,
+    ENTITY_ATTRIBUTE_START,
+    ENTITY_ATTRIBUTE_END,
+    ENTITY_ATTRIBUTE_VALUE,
+    ENTITIES,
+)
 from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.shared.nlu.training_data.message import Message
 from rasa.nlu.model import Metadata
 from transformers import pipeline
 import rasa.shared.core.trackers as trackers
 
-class EmotionExtractor(Component):
-    name = "EmotionExtractor"
+class EmotionExtractor(EntityExtractor):
     defaults = {}
     supported_language_list = ["en"]
 
@@ -46,15 +53,17 @@ class EmotionExtractor(Component):
             {'label': 'surprise', 'score': 0.0002288572577526793}
             ]]
             """
-            labels = {"entity": "emotion",
-                "extractor": "emotion_extractor",
-                "labels": prediction[0]
-            }
-            message.set("entities", [labels], add_to_output=True)
+            labels = [{ENTITY_ATTRIBUTE_TYPE: "emotion",
+                ENTITY_ATTRIBUTE_START: 0,
+                ENTITY_ATTRIBUTE_END: 0,
+                ENTITY_ATTRIBUTE_VALUE: prediction[0]
+            }]
+            labels = self.add_extractor_name(labels)
+            message.set(ENTITIES, message.get(ENTITIES, []) + labels, add_to_output=True)
 
 
     @classmethod
-    def load(cls, meta: Dict[Text, Any], model_dir: Optional[Text] = None, model_metadat: Optional[Metadata] = None, cached_component: Optional['NeuralCoref'] = None, **kwargs: Any) -> 'NeuralCoref':
+    def load(cls, meta: Dict[Text, Any], model_dir: Optional[Text] = None, model_metadat: Optional[Metadata] = None, cached_component: Optional["EmotionExtractor"] = None, **kwargs: Any) -> 'NeuralCoref':
         if cached_component:
             return cached_component
 
