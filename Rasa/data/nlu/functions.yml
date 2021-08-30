@@ -1288,8 +1288,6 @@ nlu:
     - [what](w_search) is icecream made of
     - [what](w_search) is berserk miura
     - [what](w_search) is an atom
-    - [what](w_search) is youtube
-    - [what](w_search) is the meaning of life
     - [who](w_search) is the president of spain ?
     - Can you look for a recipe on meatloaf?
     - [What's](w_search) the main ingredient for cookies?
@@ -1488,7 +1486,6 @@ nlu:
     - [Where and when](w_search) are the next Olympic
     - Can you tell me [how many](w_search) countries there are in the world
     - [What](w_search) day of the week is the 15 of September?
-    - [How old](w_search) do you have to be to get a license
     - [How many](w_search) hours should i sleep?
     - [Who](w_search) is the president of spain?
     - [When](w_search) is the new season of the Witcher airing?

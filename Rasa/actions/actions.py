@@ -94,11 +94,14 @@ class ActionAskTime(Action):
         if location is not None:
             location = spellCheck(location)
         # API/library call
-        date, time = getTime(location)  # TODO: slot where user lives
-        print(date, time)
-        dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
-
-        return []
+        try:
+            date, time = getTime(location)  # TODO: slot where user lives
+            print(date, time)
+            dispatcher.utter_message(text="Date: " + date + " and Time: " + time)
+        except:
+            dispatcher.utter_message(text="Sorry I wasn't able to get the time.")    
+        finally:
+            return []
 
 
 def getWeather(city, date, date_grain):
@@ -242,38 +245,41 @@ class ActionAskWeather(Action):
         if location is not None:
             location = spellCheck(location)
         # API calls
-        weather = getWeather(location, date, date_grain)
-        if weather[0] == 'OK':
-            answer = "It's " + str(weather[4]) + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
-            if weather_condition is not None:
-                # https://openweathermap.org/weather-conditions
-                if weather_condition == 'rain':
-                    if 200 <= weather[5] < 600:
-                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
-                    else:
-                        answer = "It doesn't like is " + ("raining, the weather is " + str(weather[4]) if date is None else "going to rain. it's going to " + str(weather[4]) + " " + date_text) + "."
-                elif weather_condition == 'snow':
-                    if 600 <= weather[5] < 700:
-                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
-                    else:
-                        answer = "It doesn't like is " + ("snowing, the weather is " + str(weather[4]) if date is None else "going to snow. it's going to " + str(weather[4]) + " " + date_text) + "."
-                elif weather_condition == 'clear':
-                    if weather[5] == 800:
-                        answer = "It seems there's " + ("" + str(weather[4]) if date is None else "going to be a " + str(weather[4]) + " " + date_text) + "."
-                    else:
-                        answer = "It doesn't like is " + ("sunny, the weather is " + str(weather[4]) if date is None else "going to be a clear sky. it's going to " + str(weather[4]) + " " + date_text) + "."
-                elif weather_condition == 'cloud':
-                    if 800 < weather[5] < 810:
-                        answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
-                    else:
-                        answer = "It doesn't like is " + ("cloudy, the weather is " + str(weather[4]) if date is None else "going to be cloudy. it's going to " + str(weather[4]) + " " + date_text) + "."
-                elif weather_condition == 'temperature':  # TODO: other parameters like humidity
-                    answer = "The temperature " + ("is of " + str(weather[4]) if date is None else "going to be" + str(weather[1]) + "ºC" + " " + date_text) + "."
-            dispatcher.utter_message(text=answer)
-        else:
-            dispatcher.utter_message(text=weather[1])  # "Sorry, couldn't find the weather for this city or there wasn't forecast for it."
-
-        return []
+        try:
+            weather = getWeather(location, date, date_grain)
+            if weather[0] == 'OK':
+                answer = "It's " + str(weather[4]) + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
+                if weather_condition is not None:
+                    # https://openweathermap.org/weather-conditions
+                    if weather_condition == 'rain':
+                        if 200 <= weather[5] < 600:
+                            answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
+                        else:
+                            answer = "It doesn't like is " + ("raining, the weather is " + str(weather[4]) if date is None else "going to rain. it's going to " + str(weather[4]) + " " + date_text) + "."
+                    elif weather_condition == 'snow':
+                        if 600 <= weather[5] < 700:
+                            answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
+                        else:
+                            answer = "It doesn't like is " + ("snowing, the weather is " + str(weather[4]) if date is None else "going to snow. it's going to " + str(weather[4]) + " " + date_text) + "."
+                    elif weather_condition == 'clear':
+                        if weather[5] == 800:
+                            answer = "It seems there's " + ("" + str(weather[4]) if date is None else "going to be a " + str(weather[4]) + " " + date_text) + "."
+                        else:
+                            answer = "It doesn't like is " + ("sunny, the weather is " + str(weather[4]) if date is None else "going to be a clear sky. it's going to " + str(weather[4]) + " " + date_text) + "."
+                    elif weather_condition == 'cloud':
+                        if 800 < weather[5] < 810:
+                            answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
+                        else:
+                            answer = "It doesn't like is " + ("cloudy, the weather is " + str(weather[4]) if date is None else "going to be cloudy. it's going to " + str(weather[4]) + " " + date_text) + "."
+                    elif weather_condition == 'temperature':  # TODO: other parameters like humidity
+                        answer = "The temperature " + ("is of " + str(weather[4]) if date is None else "going to be" + str(weather[1]) + "ºC" + " " + date_text) + "."
+                dispatcher.utter_message(text=answer)
+            else:
+                dispatcher.utter_message(text=weather[1])  # "Sorry, couldn't find the weather for this city or there wasn't forecast for it."
+        except:
+            dispatcher.utter_message(text="Sorry I wasn't able to get the weather.")   
+        finally:
+            return []
 
 
 class ActionFood(Action):
@@ -545,29 +551,32 @@ class ActionSearchAnswer(Action):
         from pyate.term_extraction_pipeline import TermExtractionPipeline
         from nltk.tokenize import WhitespaceTokenizer
 
-        nlp = spacy.load("en_core_web_trf")
-        nlp.add_pipe("combo_basic")
-        message = tracker.latest_message['text']
-        message = message[0: w_start:] + message[w_end + 1::]
-        doc = nlp(message)
-        key_phrases = doc._.combo_basic.index.tolist()
+        try:
+            nlp = spacy.load("en_core_web_trf")
+            nlp.add_pipe("combo_basic")
+            message = tracker.latest_message['text']
+            message = message[0: w_start:] + message[w_end + 1::]
+            doc = nlp(message)
+            key_phrases = doc._.combo_basic.index.tolist()
 
-        tk = WhitespaceTokenizer()
-        tokens = []
-        for phrase in key_phrases:
-            tokens += tk.tokenize(phrase)
+            tk = WhitespaceTokenizer()
+            tokens = []
+            for phrase in key_phrases:
+                tokens += tk.tokenize(phrase)
 
-        if len(tokens) != 0:
-            question = ' '.join(list(dict.fromkeys(tokens)))
-        else:
-            question = tracker.latest_message['text']
-        
-        answer = webScrapAnswer(w_question + ' ' + question)
-        # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
+            if len(tokens) != 0:
+                question = ' '.join(list(dict.fromkeys(tokens)))
+            else:
+                question = tracker.latest_message['text']
+            
+            answer = webScrapAnswer(w_question + ' ' + question)
+            # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
 
-        dispatcher.utter_message(text=answer)
-
-        return []
+            dispatcher.utter_message(text=answer)
+        except:
+            dispatcher.utter_message(text="Sorry I wasn't able to find what you asked.")
+        finally:
+            return []
 
 
 class ActionTimer(Action):
@@ -883,9 +892,13 @@ class ActionNews(Action):
                 else:
                     interests += "AND " + entity['value']
 
-        response = getNews(interests, date)
-        dispatcher.utter_message(text=response)
-        return []
+        try:
+            response = getNews(interests, date)
+            dispatcher.utter_message(text=response)
+        except:
+            dispatcher.utter_message(text="Sorry I wasn't able to get the news.")
+        finally:  
+            return []
 
 
 class ActionMemory(Action):
