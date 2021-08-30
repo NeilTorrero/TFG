@@ -529,15 +529,39 @@ class ActionSearchAnswer(Action):
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'w_search':
                 w_question = entity['value']
-            if entity['entity'] == 'search':
-                if question is None:
-                    question = entity['value']
-                else:
-                    question += entity['value']
+                w_start = entity['start']
+                w_end = entity['end']
+            #if entity['entity'] == 'search':
+            #    if question is None:
+            #        question = entity['value']
+            #    else:
+            #        question += entity['value']
         if w_question is None:
             w_question = ''
-        if question is None:
-            question = tracker.latest_message.text
+        #if question is None:
+        #    question = tracker.latest_message.text
+
+        import spacy
+        from pyate.term_extraction_pipeline import TermExtractionPipeline
+        from nltk.tokenize import WhitespaceTokenizer
+
+        nlp = spacy.load("en_core_web_trf")
+        nlp.add_pipe("combo_basic")
+        message = tracker.latest_message['text']
+        message = message[0: w_start:] + message[w_end + 1::]
+        doc = nlp(message)
+        key_phrases = doc._.combo_basic.index.tolist()
+
+        tk = WhitespaceTokenizer()
+        tokens = []
+        for phrase in key_phrases:
+            tokens += tk.tokenize(phrase)
+
+        if len(tokens) != 0:
+            question = ' '.join(list(dict.fromkeys(tokens)))
+        else:
+            question = tracker.latest_message['text']
+        
         answer = webScrapAnswer(w_question + ' ' + question)
         # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
 
