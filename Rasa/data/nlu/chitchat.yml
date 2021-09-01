@@ -710,6 +710,7 @@ nlu:
     - let me tell you something
     - i have something to tell you
     - i want to you to know something
+    - Chitchat
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?

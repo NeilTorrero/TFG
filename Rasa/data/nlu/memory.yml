@@ -1,32 +1,31 @@
 version: "2.0"
 nlu:
-  - intent: memory/retrieve_question
-    examples: |
-      - what i told you to search yesterday?
-      - remember me what i made you look up last friday
-      - what did i ask you this morning?
-      - what was the thing i told you to search a couple days ago?
-      - which was the thing i wanted to know at 9 am
-  - intent: memory/music
-    examples: |
-      - play the song i always ask you
-      - reproduce the last song I asked you
-      - play again the playlist i told you
-      - repeat the song you played yesterday
-      - play sunday's song again
-  - intent: memory/reminder
-    examples: |
-      - remind me the same thing i told you yesterday
-      - do i have any pending reminders
-      - what reminder did i set last friday
-      - i told you to remind me something?
-      - do i have any reminders
-  - intent: memory/timer
-    examples: |
-      - put the same timer as last week
-      - set the timer as yesterday
-      - set the timer again
-      - set the timer as this morning
-      - make the countdown like last week
-# TODO: also consider this for the information search and all the similars in the same retrival
-#     having the entity only get the [parrot](search) or [a parrot](search) add the what is depending on the intent or another entity named search type the last one doesnt need retrival
+- intent: memory/retrieve_question
+  examples: |
+    - what i told you to search yesterday?
+    - remember me what i made you look up last friday
+    - what did i ask you this morning?
+    - what was the thing i told you to search a couple days ago?
+    - which was the thing i wanted to know at 9 am
+    - what did a asked you to search last week?
+- intent: memory/music
+  examples: |
+    - play the song i always ask you
+    - reproduce the last song I asked you
+    - play again the playlist i told you
+    - repeat the song you played yesterday
+    - play sunday's song again
+- intent: memory/reminder
+  examples: |
+    - remind me the same thing i told you yesterday
+    - do i have any pending reminders
+    - what reminder did i set last friday
+    - i told you to remind me something?
+    - do i have any reminders
+- intent: memory/timer
+  examples: |
+    - put the same timer as last week
+    - set the timer as yesterday
+    - set the timer again
+    - set the timer as this morning
+    - make the countdown like last week

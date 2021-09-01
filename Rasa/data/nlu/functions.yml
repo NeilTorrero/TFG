@@ -44,6 +44,8 @@ nlu:
     - [Play]{"entity": "music_mode", "value": "reproduce"} [I'd Do Anything for Love](song_name) (But I Won't Do That)
     - [Play]{"entity": "music_mode", "value": "reproduce"} [around the world](song_name) by [daft punk](artist_name)
     - [reproduce](music_mode) a song of [ACDC](artist_name)
+    - [Play](music_mode) [out of touch](song_name) on youtube
+    - what [does the fox say](song_name) music
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -556,8 +558,11 @@ nlu:
     - show me restaurents
     - Where can I buy breae
     - Show me restaurants near me
-#    - I would like to [eat](action) a [pizza](food)
-#    - Where can I [buy](action) [bread](food)
+    - where to eat in manlleu?
+    - Oh, oh! I want pizza
+    - I want some pizza, where can I get some?
+    - where do I buya [sandwich](language)
+    - Look for a route to the nearest papa john's
 - intent: ask_date
   examples: |
     - Can you give me the time?
@@ -1514,6 +1519,20 @@ nlu:
     - [what](w_search) is a pedo
     - [what](w_search) is a padofile
     - define lolicon
+    - Can racoons and cats be friends?
+    - divide 5/6
+    - 5/6
+    - [what](w_search) is  scp
+    - define chemistry
+    - [why](w_search) 7 ate 9
+    - [what](w_search) can you tell about ArmA 3
+    - [what](w_search) is1+1
+    - [what](w_search) is berserk(miura)
+    - [where](w_search) is  paris located
+    - search wikipedia
+    - is covid19
+    - Thoughts on biden being president of US?
+    - [Where](w_search) I can get a tiger
 - intent: timer
   examples: |
     - set a timer for 30 minutes

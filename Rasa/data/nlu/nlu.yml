@@ -1770,8 +1770,11 @@ nlu:
     - again but in five hours
     - also [Amsterdam](location)
     - and in [Saint Petersburg](location)
+    - And [who](w_search) is the other musician?
 - intent: out_of_scope
   examples: |
     - Put me to sleep
     - emmmm
     - what do I want
+    - Give me a meme
+    - for the love of god give me a meme
