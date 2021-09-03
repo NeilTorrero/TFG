@@ -78,3 +78,8 @@ rules:
   steps:
   - intent: check_reminder
   - action: action_remind
+
+- rule: timer
+  steps:
+    - intent: timer
+    - action: action_timer

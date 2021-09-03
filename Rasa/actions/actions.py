@@ -122,6 +122,7 @@ def getWeather(city, date, date_grain):
         response = requests.get(url)
         json_r = response.json()
         if json_r['cod'] != '404':
+            print(json_r)
             info = json_r['main']
             temperature = info['temp']
             pressure = info['pressure']
@@ -611,14 +612,14 @@ class ActionTimer(Action):
 
         dispatcher.utter_message("Setting the timer.")
 
-        reminder = ReminderScheduled(
+        timer = ReminderScheduled(
             "end_timer",
             trigger_date_time=datetime.datetime.fromisoformat(str(date)),
             name="timer",
-            kill_on_user_message=True,
+            kill_on_user_message=False,
         )
 
-        return [reminder]
+        return [timer]
 
 
 class ActionCancelTimer(Action):

@@ -241,6 +241,11 @@ responses:
   - text: A little bit too warm, otherwise fine.
   - text: A little bit cold, otherwise fine.
   - text: I'm good as long as you are.
+  utter_chitchat/greet+ask_howdoing:
+  - text: Hi I'm great! Thanks for asking.
+  - text: Hello I'm good, thanks!
+  - text: Hi I'm good as long as you are.
+  - text: Hello I'm doing great, and you?
   utter_chitchat/ask_howold:
   - text: Old enough to be a bot!
   - text: '42'

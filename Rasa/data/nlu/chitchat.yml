@@ -94,7 +94,6 @@ nlu:
     - What's new?
     - What's up
     - What's up man
-    - and you
     - are you alright
     - are you happy
     - are you having a good day
@@ -105,7 +104,6 @@ nlu:
     - hey how are you?
     - hi how are you?
     - hi how u doing
-    - how ?
     - how are things going
     - how are things with you?
     - how are u
@@ -214,6 +212,45 @@ nlu:
     - How are you doing
     - Wassap
     - How are you doing this weekend?
+- intent: chitchat/greet+ask_howdoing
+  examples: |
+    - good afternoon how are things going
+    - good afternoon how are you
+    - good afternoon how are you doing
+    - good afternoon how is it going
+    - good day how are things going
+    - good day how are you
+    - good day how are you doing
+    - good day how is it going
+    - good morning how are things going
+    - good morning how are you
+    - good morning how are you doing
+    - good morning how is it going
+    - good night how are things going
+    - good night how are you
+    - good night how are you doing
+    - good night how is it going
+    - greetings how are things going
+    - greetings how are you
+    - greetings how are you doing
+    - greetings how is it going
+    - hello how are things going
+    - hello how are you
+    - hello how are you doing
+    - hello how is it going
+    - hey how are things going
+    - hey how are you
+    - hey how are you doing
+    - hey how is it going
+    - hi how are things going
+    - hi how are you
+    - hi how are you doing
+    - hi how is it going
+    - morning how are things going
+    - morning how are you
+    - morning how are you doing
+    - morning how is it going
+
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
