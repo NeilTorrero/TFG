@@ -220,5 +220,6 @@ Rasa/actions/credentials.json
 
 ASR/model/
 /Rasa/tensorboard/
-
+Rasa/tbDIET/
+Rasa/tbTED/
 Rasa/data/total_word_feature_extractor.dat

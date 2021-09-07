@@ -8,12 +8,19 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
    - name: SpacyNLP
      model: "en_core_web_trf"
+     #case_sensitive: false
    - name: WhitespaceTokenizer
      intent_tokenization_flag: true
      intent_split_symbol: "+"
    - name: emotion.EmotionExtractor
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
+     features: [
+      ["low", "title", "upper"],
+      ["BOS", "EOS", "low", "upper", "title", "digit"],
+      ["low", "title", "upper"],
+      ["pos", "pos2"],
+     ]
    - name: CountVectorsFeaturizer
    - name: CountVectorsFeaturizer
      analyzer: char_wb
@@ -35,10 +42,12 @@ pipeline:
      dimensions: [ "CARDINAL", "EVENT", "FAC", "GPE", "LANGUAGE", "LAW", "LOC", "MONEY", "NORP", "ORG", "PERCENT", "PERSON", "PRODUCT", "QUANTITY", "WORK_OF_ART", "PERCENT" ] # "DATE", "TIME", "ORDINAL",
    - name: DIETClassifier
      epochs: 100
+     #number_of_transformer_layers: 4
      constrain_similarities: true
-     evaluate_on_number_of_examples: 0
-     evaluate_every_number_of_epochs: 5
-     tensorboard_log_directory: "./tensorboard"
+     #use_masked_language_model: true
+     evaluate_on_number_of_examples: 500
+     evaluate_every_number_of_epochs: 1
+     tensorboard_log_directory: "./tbDIET"
      tensorboard_log_level: "epoch"
    - name: EntitySynonymMapper
    - name: ResponseSelector
@@ -65,7 +74,7 @@ policies:
      max_history: 10
      epochs: 100
      constrain_similarities: true
-     evaluate_on_number_of_examples: 0
-     evaluate_every_number_of_epochs: 5
-     tensorboard_log_directory: "./tensorboard"
+     evaluate_on_number_of_examples: 500
+     evaluate_every_number_of_epochs: 1
+     tensorboard_log_directory: "./tbTED"
      tensorboard_log_level: "epoch"

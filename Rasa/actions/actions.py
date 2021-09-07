@@ -256,22 +256,22 @@ class ActionAskWeather(Action):
                         if 200 <= weather[5] < 600:
                             answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                         else:
-                            answer = "It doesn't like is " + ("raining, the weather is " + str(weather[4]) if date is None else "going to rain. it's going to " + str(weather[4]) + " " + date_text) + "."
+                            answer = "It doesn't look like is " + ("raining, the weather is " + str(weather[4]) if date is None else "going to rain. it's going to " + str(weather[4]) + " " + date_text) + "."
                     elif weather_condition == 'snow':
                         if 600 <= weather[5] < 700:
                             answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                         else:
-                            answer = "It doesn't like is " + ("snowing, the weather is " + str(weather[4]) if date is None else "going to snow. it's going to " + str(weather[4]) + " " + date_text) + "."
+                            answer = "It doesn't look like is " + ("snowing, the weather is " + str(weather[4]) if date is None else "going to snow. it's going to " + str(weather[4]) + " " + date_text) + "."
                     elif weather_condition == 'clear':
                         if weather[5] == 800:
                             answer = "It seems there's " + ("" + str(weather[4]) if date is None else "going to be a " + str(weather[4]) + " " + date_text) + "."
                         else:
-                            answer = "It doesn't like is " + ("sunny, the weather is " + str(weather[4]) if date is None else "going to be a clear sky. it's going to " + str(weather[4]) + " " + date_text) + "."
+                            answer = "It doesn't look like is " + ("sunny, the weather is " + str(weather[4]) if date is None else "going to be a clear sky. it's going to " + str(weather[4]) + " " + date_text) + "."
                     elif weather_condition == 'cloud':
                         if 800 < weather[5] < 810:
                             answer = "It seems is " + ("" + str(weather[4]) if date is None else "going to " + str(weather[4]) + " " + date_text) + "."
                         else:
-                            answer = "It doesn't like is " + ("cloudy, the weather is " + str(weather[4]) if date is None else "going to be cloudy. it's going to " + str(weather[4]) + " " + date_text) + "."
+                            answer = "It doesn't look like is " + ("cloudy, the weather is " + str(weather[4]) if date is None else "going to be cloudy. it's going to " + str(weather[4]) + " " + date_text) + "."
                     elif weather_condition == 'temperature':  # TODO: other parameters like humidity
                         answer = "The temperature " + ("is of " + str(weather[4]) if date is None else "going to be" + str(weather[1]) + "ºC" + " " + date_text) + "."
                 dispatcher.utter_message(text=answer)
