@@ -46,6 +46,11 @@ nlu:
     - [reproduce](music_mode) a song of [ACDC](artist_name)
     - [Play](music_mode) [out of touch](song_name) on youtube
     - what [does the fox say](song_name) music
+    - Can you [play](music_mode) Roxanne by The Police?
+    - can you reccomend me a song?
+    - can you [play](music_mode) music?
+    - What is my most played song?
+    - alexa [play]{"entity": "music_mode", "value": "reproduce"} despasito
 - intent: reminder
   examples: |
     - remind me to [turn off the oven](task) in an hour
@@ -291,6 +296,10 @@ nlu:
     - tell me to [pick up the mail](task)
     - tell me to [read the book](task)
     - tell me to [read the book](task) in 10 seconds
+    - remember to do something
+    - Tomorrow i have a [meeting](task) at 8 am
+    - I must remember to [write the report](task)
+    - Remind me to [clean the car](task)
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -563,6 +572,13 @@ nlu:
     - I want some pizza, where can I get some?
     - where do I buya [sandwich](language)
     - Look for a route to the nearest papa john's
+    - I would like to eat a pizza
+    - Where can I find Yougurt
+    - Recommend me sushi restaurants bro
+    - What kind of food should I eat?
+    - i want to order pizza, check domino's hours
+    - find the nearest restaurant
+    - Can you recommend a sushi restaurant?
 - intent: ask_date
   examples: |
     - Can you give me the time?
@@ -777,6 +793,9 @@ nlu:
     - tell me the time in [Beijing](location)
     - hour in [San Francisco](location)?
     - time in [Toronto](location)?
+    - Yes! Anyway, what time is it in [Tokyo](location)? I need to know when the next chapter of Naruto is coming out
+    - What about the time?
+    - What time it is in [Norway](location)
 - intent: ask_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
@@ -961,6 +980,11 @@ nlu:
     - I like to know Wednesday weather
     - how will be the day tomorrow?
     - tell me if today will [stom](weather_condition)
+    - hwo is the weather?
+    - i hope today its great
+    - weathe
+    - how hot is going to be tomorrow?
+    - Its [sunny]{"entity": "weather_condition", "value": "clear"} outside?
 - intent: ask_weather+ask_date
   examples: |
     - How's the weather and time over in St. Petersburg
@@ -1533,6 +1557,28 @@ nlu:
     - is covid19
     - Thoughts on biden being president of US?
     - [Where](w_search) I can get a tiger
+    - [what](w_search)'s on tv this night?
+    - [when](w_search) I should water my poinsettia
+    - [which](w_search) is the best shrek movie
+    - tell me about cats
+    - [who](w_search) is quim nuñez
+    - [who](w_search) is ernesto
+    - [Who](w_search) is siri
+    - [what](w_search)  is youtube
+    - [what](w_search) is the meaning of  life
+    - define flower
+    - [What](w_search)'s the fastest way to get to London from Barcelona?
+    - I need information about ArmA 3
+    - define  language
+    - 10 meters to kilometers
+    - Do you know [what](w_search) is warhammer??
+    - Could you remind me of it?
+    - [How many](w_search) hours left until 8 am?
+    - [What](w_search) about spider-man being the best superhero?
+    - [What](w_search)'s binary code for baby
+    - [How](w_search) can you do CPR?
+    - [Who](w_search) is Neil
+    - At [what](w_search) time does the [sun]{"entity": "weather_condition", "value": "clear"} come out?
 - intent: timer
   examples: |
     - set a timer for 30 minutes
@@ -1682,6 +1728,7 @@ nlu:
     - set a twenty minutes timer
     - set a twenty seconds timer
     - set a two hours timer
+    - Wake me up at 7 am
 - intent: cancel_timer
   examples: |
     - cancel the timer
@@ -1801,6 +1848,7 @@ nlu:
     - what is going on in [Shanghai](location)?
     - what is going on in [Tokyo](location)?
     - what is going on in [Toronto](location)?
+    - News
 - synonym: reproduce
   examples: |
     - play

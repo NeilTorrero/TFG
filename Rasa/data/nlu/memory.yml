@@ -8,6 +8,7 @@ nlu:
     - what was the thing i told you to search a couple days ago?
     - which was the thing i wanted to know at 9 am
     - what did a asked you to search last week?
+    - What did I ask last week?
 - intent: memory/music
   examples: |
     - play the song i always ask you
@@ -15,6 +16,12 @@ nlu:
     - play again the playlist i told you
     - repeat the song you played yesterday
     - play sunday's song again
+    - What did you play 2 hours ago?
+    - What did you play last week?
+    - What did you play yesterday?
+    - what did I asked you to play for me last week?
+    - play again the song i asked you yesterday
+    - play again the song i always ask you
 - intent: memory/reminder
   examples: |
     - remind me the same thing i told you yesterday
@@ -22,6 +29,7 @@ nlu:
     - what reminder did i set last friday
     - i told you to remind me something?
     - do i have any reminders
+    - at what time I have the [appointment with the doctor](task)?
 - intent: memory/timer
   examples: |
     - put the same timer as last week
@@ -29,3 +37,6 @@ nlu:
     - set the timer again
     - set the timer as this morning
     - make the countdown like last week
+    - put the last timer again
+    - repeat the timer from before
+    - set the same timer again

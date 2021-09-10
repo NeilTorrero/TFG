@@ -212,6 +212,7 @@ nlu:
     - How are you doing
     - Wassap
     - How are you doing this weekend?
+    - [How](w_search) well did the new Evangelion film?
 - intent: chitchat/greet+ask_howdoing
   examples: |
     - good afternoon how are things going
@@ -250,7 +251,7 @@ nlu:
     - morning how are you
     - morning how are you doing
     - morning how is it going
-
+    - hi how are you doing?
 - intent: chitchat/ask_howold
   examples: |
     - Do you have friends the same age as you, if so, how old are they?
@@ -448,6 +449,9 @@ nlu:
     - we cant converse in french?
     - can we converse in french?
     - Do you speak japanese?
+    - [what](w_search) is ñanguage
+    - Speak English
+    - I dont speak binary
 - intent: chitchat/ask_whatismyname
   examples: |
     - Can you tell me my name?
@@ -600,6 +604,12 @@ nlu:
     - how to get started
     - how to start?
     - What can you help me with?
+    - Can you play piano man?
+    - can you do sums?
+    - can you show pictures?
+    - Do you want to help me?
+    - Can you launch youtube?
+    - Can you sing for me?
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?
@@ -651,6 +661,7 @@ nlu:
     - where do you live
     - where do you live?
     - where's your home town?
+    - Where is ur home?
 - intent: chitchat/ask_whoami
   examples: |
     - Can you tell me who I am?
@@ -680,6 +691,7 @@ nlu:
     - who are I ?
     - who may i ?
     - who am i?
+    - who am I?
 - intent: chitchat/ask_whoisit
   examples: |
     - who are you
@@ -702,6 +714,7 @@ nlu:
     - What's your name?
     - are you Alpharius?
     - Who are you ?
+    - Who is you
 - intent: chitchat/handleinsult
   examples: |
     - you're a loser
@@ -748,6 +761,8 @@ nlu:
     - i have something to tell you
     - i want to you to know something
     - Chitchat
+    - I want to talk to you!
+    - Look i would like to have some fun
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -790,6 +805,7 @@ nlu:
     - It's nice to talk with you
     - That's adorable
     - Damn, you're good
+    - This is awesome
 - intent: chitchat/ask_whatdoing
   examples: |
     - What are you doing?

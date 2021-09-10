@@ -200,6 +200,10 @@ nlu:
     - morning whatsup
     - hello again
     - Good afternoon
+    - fabcy meeting
+    - glad to meet you
+    - Hello, are u there?
+    - Hello, today is a good day!
 - intent: greet+user_name
   examples: |
     - hello, my name is [Charles Pfeffer](name)
@@ -569,6 +573,7 @@ nlu:
     - see ya next time
     - It's pretty late i think i will go to sleep
     - See you later escalator
+    - Yo bye then
 - intent: affirm
   examples: |
     - affirmative
@@ -960,6 +965,10 @@ nlu:
     - True
     - oh fine
     - good
+    - Great, carry on!
+    - Haaaall yeah
+    - Aw, it's fine
+    - Please do
 - intent: deny
   examples: |
     - no
@@ -1125,6 +1134,9 @@ nlu:
     - that's wrong
     - ehhh not really
     - wrong
+    - Weither
+    - no i even more sad
+    - i dont like this
 - intent: mood_great
   examples: |
     - amazing
@@ -1144,6 +1156,7 @@ nlu:
     - I'm great
     - I am happy now
     - im also feeling great!
+    - I'm doing fine
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -1165,6 +1178,8 @@ nlu:
     - I will cry
     - i am sad
     - im a bit sad
+    - disappointing
+    - im sad
 - intent: thank
   examples: |
     - Cool. Thanks
@@ -1401,6 +1416,8 @@ nlu:
     - thank you lots for everything
     - perfect thx a bunch
     - you understood me thanks a bunch
+    - I mean, thanks for the date and time
+    - Thanks for the info
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -1522,6 +1539,8 @@ nlu:
     - I wish to register
     - register [Jose](name)
     - register me
+    - register [Roger](name)
+    - register [Neil](name)
 - intent: follow_up
   examples: |
     - And for friday?
@@ -1735,6 +1754,12 @@ nlu:
     - also [Amsterdam](location)
     - and in [Saint Petersburg](location)
     - And [who](w_search) is the other musician?
+    - Where?
+    - and in girona?
+    - yes, [who](w_search)
+    - And in [quebec](name)?
+    - And Monday?
+    - and tuesday?
 - intent: out_of_scope
   examples: |
     - Put me to sleep
@@ -1742,3 +1767,18 @@ nlu:
     - what do I want
     - Give me a meme
     - for the love of god give me a meme
+    - Bread
+    - Milk
+    - I am in love
+    - Wow, i am robot power by pizza
+    - tell me the telephone number from Jose
+    - open calculator
+    - for a in len(40)
+    - you like ice cream?
+    - open wikipedia
+    - what do you think about racism
+    - Do you like Star Wars?
+    - open Google Maps
+    - to [play](music_mode) the [guitar](task)
+    - Why are we here?
+    - Thoughts on marina being meta again?
