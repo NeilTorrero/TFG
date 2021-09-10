@@ -38,6 +38,8 @@ def spellCheck(entity):
         if corrected_entity != '':
             corrected_entity += ' '
         corrected_entity += corrected
+    if corrected_entity == '':
+        return entity
     return corrected_entity
 
 
@@ -120,6 +122,7 @@ def getWeather(city, date, date_grain):
         url = WEATHER_URL + "q=" + city + "&appid=" + API_KEY + "&units=metric"
 
         response = requests.get(url)
+        print("Open weather json")
         json_r = response.json()
         if json_r['cod'] != '404':
             print(json_r)
@@ -145,6 +148,8 @@ def getWeather(city, date, date_grain):
         response = requests.get("https://geocode.xyz/" + city + "?json=1")
         json_city = response.json()
         if 'error' in json_city:
+            print("Error in city search")
+            print("https://geocode.xyz/" + city + "?json=1")
             print(json_city)
             if json_city['code'] == '018':
                 print('City not found')
@@ -153,6 +158,7 @@ def getWeather(city, date, date_grain):
         url = FORECAST_URL + "lat=" + json_city['latt'] + "&lon=" + json_city['longt'] + "&appid=" + API_KEY + "&units=metric"
 
         response = requests.get(url)
+        print("Weather json")
         json_r = response.json()
         if 'cod' not in json_r: #and json_r['cod'] != '404':
             if date_grain == 'seconds' or date_grain == 'second' or date_grain == 'minutes' or date_grain == 'minute' or date_grain == 'hours' or date_grain == 'hour':
