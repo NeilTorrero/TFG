@@ -12,6 +12,7 @@ from rasa.shared.nlu.constants import (
     ENTITY_ATTRIBUTE_VALUE,
     ENTITIES,
     EXTRACTOR,
+    METADATA,
 )
 from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasa.shared.nlu.training_data.message import Message
@@ -53,18 +54,14 @@ class EmotionExtractor(EntityExtractor):
                     sadness_score = label['score']
             
             labels = [{ENTITY_ATTRIBUTE_TYPE: 'joy',
-                ENTITY_ATTRIBUTE_START: 0,
-                ENTITY_ATTRIBUTE_END: 0,
                 EXTRACTOR: 'emotion',
                 ENTITY_ATTRIBUTE_VALUE: joy_score
             },{ENTITY_ATTRIBUTE_TYPE: 'sadness',
-                ENTITY_ATTRIBUTE_START: 0,
-                ENTITY_ATTRIBUTE_END: 0,
                 EXTRACTOR: 'emotion',
                 ENTITY_ATTRIBUTE_VALUE: sadness_score
             }]
             labels = self.add_extractor_name(labels)
-            message.set(ENTITIES, message.get(ENTITIES, []) + labels, add_to_output=True)
+            message.set(METADATA, message.get(METADATA, []) + labels, add_to_output=True)
 
 
     @classmethod

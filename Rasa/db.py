@@ -244,11 +244,11 @@ def updateEmotionStats(tracker: Tracker):
         stat = 0
     joy = None
     sadness = None
-    for entity in tracker.current_state()['latest_message']['entities']:
-        if entity['entity'] == 'joy':
-            joy = entity['value']
-        if entity['entity'] == 'sadness':
-            sadness = entity['value']
+    for metadata in tracker.current_state()['latest_message']['metadata']:
+        if metadata['entity'] == 'joy':
+            joy = metadata['value']
+        if metadata['entity'] == 'sadness':
+            sadness = metadata['value']
     
     # if stat^ + less | - more
     # if statv + more | - less
