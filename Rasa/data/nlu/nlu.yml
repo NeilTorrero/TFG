@@ -1157,6 +1157,7 @@ nlu:
     - I am happy now
     - im also feeling great!
     - I'm doing fine
+    - Im happy
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -1418,6 +1419,7 @@ nlu:
     - you understood me thanks a bunch
     - I mean, thanks for the date and time
     - Thanks for the info
+    - Thank you very much
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -1760,6 +1762,19 @@ nlu:
     - And in [quebec](name)?
     - And Monday?
     - and tuesday?
+    - and you?
+    - to [wash the dishes](task)
+    - [to shower](task)
+    - [eat dinner](task)
+    - [go to school](task)
+    - to [go to school](task)
+    - to [brush my teeth](task)
+    - [brush me teeth](task)
+    - in 10 seconds
+    - to [do the dishes](task)
+    - to [work](task)
+    - [cook lunch](task)
+    - tomorrow
 - intent: out_of_scope
   examples: |
     - Put me to sleep

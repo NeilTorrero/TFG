@@ -610,6 +610,7 @@ nlu:
     - Do you want to help me?
     - Can you launch youtube?
     - Can you sing for me?
+    - Can you tell me something?
 - intent: chitchat/ask_wherefrom
   examples: |
     - Are you from around here?

@@ -300,6 +300,14 @@ nlu:
     - Tomorrow i have a [meeting](task) at 8 am
     - I must remember to [write the report](task)
     - Remind me to [clean the car](task)
+    - remind me to [wash the car](task) in 30 minutes
+    - remind me [to shower](task) in 30 minutes
+    - can you remind me of going to [work](task) in 30 seconds
+    - tell me to [work](task) at 11:21
+    - remind me in 10 seconds
+    - remind me to [wash the car](task) in 2 hours
+    - remind me to [wash the car](task) in the afternoon
+    - i must remember to write [the report](task)
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -507,6 +515,10 @@ nlu:
     - remove the [study](task) reminder
     - remove the [work out](task) reminder at seven am
     - remove the [work out](task) reminder next hour
+    - cancel the reminder
+    - cancel the [wash the car](task) reminder
+    - cancel that remidner
+    - cancel that reminder
 - intent: food
   examples: |
     - I am hungry
@@ -985,6 +997,10 @@ nlu:
     - weathe
     - how hot is going to be tomorrow?
     - Its [sunny]{"entity": "weather_condition", "value": "clear"} outside?
+    - How is the weather in [Tokyo](location)?
+    - How is the weather today in [Barcelona](location)?
+    - how is today?
+    - How is the day?
 - intent: ask_weather+ask_date
   examples: |
     - How's the weather and time over in St. Petersburg
@@ -1729,6 +1745,7 @@ nlu:
     - set a twenty seconds timer
     - set a two hours timer
     - Wake me up at 7 am
+    - countdown to 10
 - intent: cancel_timer
   examples: |
     - cancel the timer
