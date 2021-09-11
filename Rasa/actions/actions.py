@@ -964,7 +964,7 @@ class ActionMemory(Action):
         colec_convs = database['conversations']
 
         intent = tracker.latest_message['response_selector']['memory']['response']['intent_response_key']
-        dispatcher.utter_message(text="Database search and retrieval WIP (intent= " + intent + ')')
+        print("Database search and retrieval WIP (intent= " + intent + ')')
         user_db_name = tracker.get_slot('user_db_name')
 
         existsDocument = colec_users.find_one({"name": user_db_name})
@@ -1047,7 +1047,7 @@ class ActionMemory(Action):
             else:
                 dispatcher.utter_message(text="I don't remember you asking me.")
         else:
-            dispatcher.utter_message(text="I couldn't find it. You are not register.")
+            dispatcher.utter_message(text="I couldn't find it. You are not registered.")
 
         return []
 

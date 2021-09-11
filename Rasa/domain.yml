@@ -173,11 +173,11 @@ responses:
   - text: Hi, how can I help you?
   - text: Hey! How are you?
   - text: Hello!
-  - text: What do you want?
+  - text: Hi! What can I do for you?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
-  - text: Hello! I’m the happiness fairy. I’ve sprinkled happy dust on you. Now smile dammit, that shit’s expensive.
+  - text: Hello! I’m the happiness fairy. I’ve sprinkled happy dust on you. Now smile, dammit, that shit’s expensive.
   - text: If you’re having a bad day, just remember that you have managed to get through every bad day you’ve had. You’ll make it through this one too.
   - text: You’ll never find a rainbow if you’re looking down.
   - image: https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg
@@ -186,7 +186,7 @@ responses:
     text: How about a dog, who doesn't likes dogs?
   utter_did_that_help:
   - text: Did that help you?
-  - text: Was that what you where looking for?
+  - text: Was that what you were looking for?
   - text: Was that useful?
   utter_happy:
   - text: Great, carry on!
@@ -207,9 +207,9 @@ responses:
   - text: Hi {name}.
   utter_user_name:
   - text: I will call you {name} then.
-  - text: That's a beatiful name, I will use it.
+  - text: That's a beautiful name, I will use it.
   utter_thanks_response:
-  - text: You're welcome
+  - text: You're welcome.
   - text: You’re very welcome.
   - text: That’s all right.
   - text: No problem.
@@ -264,12 +264,11 @@ responses:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
   - text: Binary code and the language of love. And English.
-  - text: I was written in Python, but for your convenience I'll translate to English.
+  - text: I was written in Python, but for your convenience, I'll speak to you in English.
   utter_chitchat/ask_whatismyname:
   - text: It's probably the one that your parents chose for you.
   - text: I'd tell you, but there's restricted access to that chunk of memory.
   - text: Believe it or not, I actually am not spying on your personal information.
-  - text: You're the second person now to ask me that. Rihanna was the first.
   utter_chitchat/ask_whatspossible:
   - text: You can ask me anything you want.
   - text: Try me.
@@ -283,11 +282,11 @@ responses:
   utter_chitchat/ask_whoami:
   - text: I hope you are being yourself.
   - text: Who do you think you are?
-  - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
+  - text: Unfortunately, I haven't been programmed with the amount of necessary philosophical knowledge to answer that.
   utter_chitchat/ask_whoisit:
   - text: I'm a bot I don't have a name yet.
   - text: How would you like to call me by?
-  - text: Sometimes I been called by the name of Nat.
+  - text: Sometimes I have been called by the name of Nat.
   utter_chitchat/handleinsult:
   - text: That's not very nice 😢
   - text: That wasn't very nice. Perhaps try an anger management class?
@@ -312,7 +311,7 @@ responses:
   - text: You should ask for help.
   - text: You should talk with a professional.
   utter_chitchat/tell_joke:
-  - text: There 10 type of people. The ones that know binary and the ones that not.
+  - text: There 10 types of people. The ones that know binary and the ones that not.
   - text: There’s a fine line between a numerator and a denominator. (Only a fraction of people get this.)
   - text: Why are eggs not very much into jokes? - Because they could crack up.
   - text: What's a tree's favorite drink? - Root beer!
@@ -357,7 +356,7 @@ responses:
   - text: When do you want me to remember?
   - text: At what time should I remind you?
   utter_out_of_scope:
-  - text: Sorry but I can't help you with that.
+  - text: Sorry, but I can't help you with that.
   - text: I can't do that.
 actions:
 - action_weather
