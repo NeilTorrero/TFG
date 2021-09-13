@@ -308,6 +308,11 @@ nlu:
     - remind me to [wash the car](task) in 2 hours
     - remind me to [wash the car](task) in the afternoon
     - i must remember to write [the report](task)
+    - can you remind me?
+    - theres something a need to remind
+    - tomorrow I have to remeber to [check the flight](task)
+    - can you remind me of something
+    - to [book a trip](task)
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -522,6 +527,7 @@ nlu:
     - Drop the last reminder.
     - Get rid of the [go hikking](task) reminder.
     - Undo the 12 am reminder.
+    - scrapt that last reminder
 - intent: food
   examples: |
     - I am hungry
@@ -1004,6 +1010,7 @@ nlu:
     - How is the weather today in [Barcelona](location)?
     - how is today?
     - How is the day?
+    - how is the day?
 - intent: ask_weather+ask_date
   examples: |
     - How's the weather and time over in St. Petersburg
@@ -1750,6 +1757,8 @@ nlu:
     - Wake me up at 7 am
     - countdown to 10
     - Set a chronometer of 10 seconds.
+    - can you set a 10 second timer for me?
+    - set a timer
 - intent: cancel_timer
   examples: |
     - cancel the timer
@@ -1888,6 +1897,20 @@ nlu:
     - News
     - Tell me the news.
     - What are the lastest news?
+- intent: roll_random
+  examples: |
+    - roll a dice
+    - flip coin
+    - flip a coin
+    - try to flip a coin
+    - flip coinf
+    - roll dice
+    - Roll Dices
+    - Roll 2d20 and 1d6
+    - give me a random number
+    - roll 2d10
+    - throw a dice for me
+    - roll one d6
 - synonym: reproduce
   examples: |
     - play

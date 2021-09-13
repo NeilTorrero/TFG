@@ -255,7 +255,7 @@ class ActionAskWeather(Action):
         try:
             weather = getWeather(location, date, date_grain)
             if weather[0] == 'OK':
-                answer = "It's " + str(weather[4]) + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
+                answer = str(weather[4]).capitalize() + ("" if date is None else " " + date_text) + ", with a temperature of " + str(weather[1]) + "ºC and with a humidity of a " + str(weather[3]) + "%."
                 if weather_condition is not None:
                     # https://openweathermap.org/weather-conditions
                     if weather_condition == 'rain':
@@ -579,7 +579,7 @@ class ActionSearchAnswer(Action):
             answer = webScrapAnswer(w_question + ' ' + question)
             # maybe adding a secondary search for the whole msg in case this one fails or the ner is not correct
 
-            dispatcher.utter_message(text=answer)
+            dispatcher.utter_message(text=answer.capitalize())
         except:
             dispatcher.utter_message(text="Sorry I wasn't able to find what you asked.")
         finally:
@@ -901,7 +901,7 @@ class ActionNews(Action):
 
         try:
             response = getNews(interests, date)
-            dispatcher.utter_message(text=response)
+            dispatcher.utter_message(text=response.capitalize())
         except:
             dispatcher.utter_message(text="Sorry I wasn't able to get the news.")
         finally:  

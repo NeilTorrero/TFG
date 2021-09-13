@@ -819,7 +819,6 @@ nlu:
     - This is awesome
     - It's great to talk to you.
     - I'm happy to talk to you.
-
 - intent: chitchat/ask_whatdoing
   examples: |
     - What are you doing?

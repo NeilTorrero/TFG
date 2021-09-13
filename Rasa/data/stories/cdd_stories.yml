@@ -24,3 +24,30 @@ stories:
     entities:
     - weather_condition: clear
   - action: action_weather
+- story: ask weather+time
+  steps:
+  - intent: ask_weather+ask_date
+    entities:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - slot_was_set:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - action: action_weather
+  - action: action_time
+- story: ask weather+time with condition
+  steps:
+  - intent: ask_weather+ask_date
+    entities:
+    - weather_condition: temperature
+  - slot_was_set:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - action: action_weather
+  - action: action_time
+- story: ask weather+time with location
+  steps:
+  - intent: ask_weather+ask_date
+    entities:
+    - location: Berlin
+  - slot_was_set:
+    - time: '2021-08-24T00:00:00.000+02:00'
+  - action: action_weather
+  - action: action_time

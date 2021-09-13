@@ -574,6 +574,7 @@ nlu:
     - It's pretty late i think i will go to sleep
     - See you later escalator
     - Yo bye then
+    - im afraid i have to leave
 - intent: affirm
   examples: |
     - affirmative
@@ -1137,6 +1138,8 @@ nlu:
     - Weither
     - no i even more sad
     - i dont like this
+    - nothing
+    - thats not what i meant
 - intent: mood_great
   examples: |
     - amazing
@@ -1158,6 +1161,7 @@ nlu:
     - im also feeling great!
     - I'm doing fine
     - Im happy
+    - im good
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -1420,6 +1424,7 @@ nlu:
     - I mean, thanks for the date and time
     - Thanks for the info
     - Thank you very much
+    - Thank u very much
 - intent: user_name
   examples: |
     - I'm [Richard](name)
@@ -1775,6 +1780,10 @@ nlu:
     - to [work](task)
     - [cook lunch](task)
     - tomorrow
+    - and tomorrow?
+    - today its a great day
+    - [book a trip](task)
+    - next week
 - intent: out_of_scope
   examples: |
     - Put me to sleep
@@ -1797,3 +1806,6 @@ nlu:
     - to [play](music_mode) the [guitar](task)
     - Why are we here?
     - Thoughts on marina being meta again?
+    - search images of Cats
+    - search an image of Elmo
+    - I want to search for cat images

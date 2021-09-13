@@ -61,6 +61,8 @@ intents:
     use_entities: true
 - ask_weather+ask_date:
     use_entities: true
+- roll_random:
+    use_entities: true
 entities:
 - location
 - name
