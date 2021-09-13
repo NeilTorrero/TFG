@@ -1809,3 +1809,10 @@ nlu:
     - search images of Cats
     - search an image of Elmo
     - I want to search for cat images
+- intent: where_user
+  examples: |
+    - I live in London.
+    - I am at Tokyo.
+    - I'm from New York.
+    - My house is in Vancover.
+    - My place is at Berlin.

@@ -86,7 +86,10 @@ class ActionAskTime(Action):
         # print("\nSlots: ")
         # print(tracker.slots)
 
+        location = None
         location = tracker.get_slot('location')
+        if location == None:
+            location = tracker.get_slot('user_location')
         for entity in tracker.latest_message['entities']:
             if entity['entity'] == 'location' or entity['entity'] == 'GPE':
                 if entity['value'] is not None:
@@ -214,8 +217,10 @@ class ActionAskWeather(Action):
         # print(tracker.latest_action_name)
         # print("\nSlots: ")
         # print(tracker.slots)
-
+        location = None
         location = tracker.get_slot('location')
+        if location == None:
+            location = tracker.get_slot('user_location')
         date = tracker.get_slot('time')
         date_grain = None
         weather_condition = None

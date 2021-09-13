@@ -261,3 +261,11 @@ stories:
   - action: action_search_answer
   - intent: follow_up
   - action: action_search_answer
+  - story: where user lives
+  steps:
+  - intent: where_user
+    entities:
+    - location: New York
+  - slot_was_set:
+    - user_location: New York
+  - action: utter_where_user

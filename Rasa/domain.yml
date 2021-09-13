@@ -63,6 +63,8 @@ intents:
     use_entities: true
 - roll_random:
     use_entities: true
+- where_user:
+    use_entities: true
 entities:
 - location
 - name
@@ -118,6 +120,11 @@ slots:
     initial_value: null
     auto_fill: false
     influence_conversation: false
+  user_location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   location:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -226,6 +233,9 @@ responses:
   - text: Let me know if you need anything else.
   utter_deny_response:
   - text: So that's wasn't what you were looking for.
+  utter_where_user:
+  - text: I heard that's a good place.
+  - text: Good to know.
   utter_chitchat/ask_builder:
   - text: I don't know.
   - text: It would be great if I created myself.
