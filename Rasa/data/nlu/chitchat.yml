@@ -663,6 +663,7 @@ nlu:
     - where do you live?
     - where's your home town?
     - Where is ur home?
+    - Where you from, anyway?
 - intent: chitchat/ask_whoami
   examples: |
     - Can you tell me who I am?
@@ -693,6 +694,9 @@ nlu:
     - who may i ?
     - who am i?
     - who am I?
+    - Can you say who I am?
+    - Please tell me who I am?
+    - Can you let me know who I am?
 - intent: chitchat/ask_whoisit
   examples: |
     - who are you
@@ -716,6 +720,7 @@ nlu:
     - are you Alpharius?
     - Who are you ?
     - Who is you
+    - Do you have a name?
 - intent: chitchat/handleinsult
   examples: |
     - you're a loser
@@ -764,6 +769,9 @@ nlu:
     - Chitchat
     - I want to talk to you!
     - Look i would like to have some fun
+    - Would you like to know something?
+    - You want to hear something?
+    - You want to know a thing?
 - intent: chitchat/get_help
   examples: |
     - should I kill myself?
@@ -801,13 +809,19 @@ nlu:
     - Tell me a joke
     - Tell me another joke
     - I'm bored, tell me a joke
+    - Tell me a funny story.
 - intent: chitchat/handle_praise
   examples: |
     - It's nice to talk with you
     - That's adorable
     - Damn, you're good
+    - You are good.
     - This is awesome
+    - It's great to talk to you.
+    - I'm happy to talk to you.
+
 - intent: chitchat/ask_whatdoing
   examples: |
     - What are you doing?
     - What are you doing tomorrow night?
+    - What are you up to?
