@@ -29,6 +29,8 @@ nlu:
     - what reminder did i set last friday
     - i told you to remind me something?
     - do i have any reminders
+    - tell me what i need to remind
+    - anything I need to remind?
     - at what time I have the [appointment with the doctor](task)?
 - intent: memory/timer
   examples: |
