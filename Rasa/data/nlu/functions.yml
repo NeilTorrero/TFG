@@ -308,6 +308,13 @@ nlu:
     - remind me to [wash the car](task) in 2 hours
     - remind me to [wash the car](task) in the afternoon
     - i must remember to write [the report](task)
+    - Please remind me that the [film starts](task) at 19:00
+    - Please remind me that the [movie begins](task) at 3 p.m.
+    - Remind me that I have to [go running](task)
+    - Remind me that I need to [go to the doctor](task)
+    - Tell me to [wake up](task) in a couple hours
+    - Tell me to [shower](task) in a few hours.
+    - Warn me to [shut down the stove](task)
 - intent: cancel_reminder
   examples: |
     - cancel the [do the dishes](task) reminder
@@ -1750,6 +1757,7 @@ nlu:
     - Wake me up at 7 am
     - countdown to 10
     - Set a chronometer of 10 seconds.
+    - Let me now when 30 minutes have passed
 - intent: cancel_timer
   examples: |
     - cancel the timer
@@ -1786,6 +1794,7 @@ nlu:
     - Call off the timer.
     - Get rid off the timer.
     - Undo the timer.
+    - Dismiss the chronometer.
 - intent: ask_news
   examples: |
     - lastest news of FC Barcelona
